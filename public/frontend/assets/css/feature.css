@@ -1,0 +1,41 @@
+.hero-image-header {
+    /* min-height: 96.445vh; */
+
+}
+
+.hero-with-img  {
+    background-image: url('../images/features/background.svg');
+    min-height: 27.938rem;
+}
+
+
+.hero-image-header .img {
+    margin-top: -5.25rem;
+    width: 58.25rem;
+    min-height:26.313rem;
+}
+
+.hero-image-header .img img{
+    height: 33.875rem;
+}
+.btn-work-with-us {
+    margin-bottom: 31px;
+}
+
+/*  ################################## wrapper###############################################  */
+
+
+.wrapper .wrapper-content h2 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 64px;
+    color: var(--secondary-color);
+}
+
+.wrapper .wrapper-content p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 38.4px;
+    color: #3A3A3A;
+
+}

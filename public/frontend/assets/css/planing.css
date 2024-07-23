@@ -1,0 +1,357 @@
+
+/*  ################################## planing###############################################  */
+.bg-warning{
+    background-color: #E11E1E !important;
+}
+.text-warning{
+    color: #E11E1E !important;
+}
+.planing .planing-content {
+    margin: 1rem;
+
+    padding: 2rem 2.688rem;
+    border-radius: 1.5rem;
+    border: solid 1px #EFF0F6;
+}
+
+.planing .planing-content.left-plan,
+.planing .planing-content.right-plan {
+    background-color: var(--white-color);
+}
+
+.planing .planing-content.center-plan {
+    background-color: #29387E;
+}
+
+.planing .planing-img {
+    border-radius:1rem;
+
+    /* width: 72px;
+    height: 72px; */
+    padding: 0.625rem;
+    margin-right: 1.094rem;
+}
+
+.planing .planing-content.right-plan .planing-img,
+.planing .planing-content.left-plan .planing-img {
+    background-color: var(--primary-color);
+}
+
+.planing .planing-content.center-plan .planing-img {
+    background-color: var(--primary-color);
+}
+
+.planing .planing-img img {
+
+    width: 3.191rem;
+    height:3.724rem;
+
+
+}
+
+.planing .planing-text p {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size:1.125rem;
+    line-height: 1.8rem;
+
+
+}
+
+.planing .planing-content.left-plan .planing-text p,
+.planing .planing-content.right-plan .planing-text p {
+    color: #525252;
+}
+
+.planing .planing-content.center-plan .planing-text p {
+    color: var(--white-color);
+}
+
+.planing .planing-text h3 {
+
+    font-weight: 700;
+    font-size:1.5rem;
+    line-height: 2.4rem;
+
+}
+
+.planing .planing-content.left-plan .planing-text h3,
+.planing .planing-content.right-plan .planing-text h3 {
+    color: #170F49;
+}
+
+.planing .planing-content.center-plan .planing-text h3 {
+    color: var(--white-color);
+}
+
+.planing .planing-content.center-plan {
+    color: var(--white-color);
+}
+
+.planing .planing-middle h6 {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    
+}
+
+.planing .planing-content.left-plan .planing-middle h6,
+.planing .planing-content.right-plan .planing-middle h6 {
+    color: #6F6C90;
+}
+
+.planing .planing-middle h6 span {
+    font-weight: 600;
+    font-size:3rem;
+    line-height: 5.6rem;
+}
+
+.planing .planing-content.left-plan .planing-middle h6 span,
+.planing .planing-content.right-plan .planing-middle h6 span {
+    color: #170F49;
+}
+
+.planing .planning-bottom h4 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28.8px;
+
+
+}
+
+.planing .planing-content.left-plan .planning-bottom h4,
+.planing .planing-content.right-plan .planning-bottom h4 {
+    color: #170F49;
+}
+
+.planing .planning-bottom ul li {
+    padding-bottom: 16px;
+}
+
+.planing .planning-bottom ul li i {
+
+    padding: 6px;
+
+    border-radius: 50%;
+}
+
+.planing .planing-content.left-plan .planning-bottom ul li i,
+.planing .planing-content.right-plan .planning-bottom ul li i {
+    background-color: #29387E;
+    color: var(--white-color);
+}
+
+.planing .planing-content.center-plan .planning-bottom ul li i {
+    background-color: var(--white-color);
+    color: #29387E;
+}
+
+.planing .planning-bottom ul li span {
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28.8px;
+
+}
+
+.planing .planing-content.left-plan .planning-bottom ul li span,
+.planing .planing-content.left-plan .planning-bottom ul li span {
+    color: #170F49;
+}
+
+.planing .btn-subscribe {
+    border-radius: 96px;
+
+    transition: all 1s ease-in-out;
+}
+
+.planing .planing-content.left-plan .btn-subscribe,
+.planing .planing-content.right-plan .btn-subscribe {
+    border: solid 2px #29387E;
+}
+
+.planing .planing-content.center-plan .btn-subscribe {
+    border: var(--white-color);
+    background-color: var(--white-color);
+    color: #170F49;
+}
+
+.planing .planing-content.left-plan .btn-subscribe:hover,
+.planing .planing-content.right-plan .btn-subscribe:hover {
+    background-color: #29387E;
+    color: var(--white-color);
+}
+
+/* .planing .center-plan {
+    background-color: #29387E;
+} */
+
+
+
+
+.planing .popular-plan span {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    /* Font
+DM Sans */
+    border-radius: 8px;
+    border: 1px;
+    padding: 13px 24px;
+    margin-bottom: 8px;
+
+}
+
+.planing .planing-content.center-plan {
+    /* transform: translateY(-50px); */
+    transform: scaleY(1.1);
+}
+.planing .planing-title h2{
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 64px;
+   color: #29387E;
+}
+.planing .planing-title p{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 38.4px;
+   color: #525252;
+
+}
+.planing .planing-title span{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25.6px;
+    color: #6B6B6B;
+   
+ 
+}
+
+.nav{
+    margin-top: 24px !important;
+    width: 270px !important;
+    background: white;
+    border-radius: 50px;
+padding:0px, 35px, 0px, 0px;
+margin-bottom: 5rem !important;
+
+}
+.nav .nav-item {
+    border-radius: 50px;
+    padding:25px, 52px, 26px, 52px;
+    width: 50%;
+    
+
+   font-family: 600;
+   font-size: 16px;
+    line-height: 25.6px;
+    
+}
+.nav .nav-item:first-child{
+    background: linear-gradient(90deg, #23316E 0%, #435ED4 100%);
+}
+.nav .nav-item:last-child{
+    background: white;
+}
+.nav .nav-item a{
+    color: red;
+}
+
+@media (max-width: 1400px)and (min-width: 299px) {
+
+.planing .planing-content {
+  
+    padding: 12px 23px;
+}
+
+.planing .planing-middle h6 span {
+    font-weight: 500;
+    font-size:2.5rem;
+    line-height: 3.6rem;
+}
+    
+
+
+
+}
+@media (max-width: 1200px) {
+    .planing .planing-content.center-plan {
+        transform: none !important;
+    }
+}
+@media (max-width: 992px) {
+    .planing .planing-content.center-plan {
+        transform: none !important;
+    }
+
+
+    .planing .planing-text p {
+        margin-bottom: 0;
+        font-weight: 500;
+        font-size:12px;
+        line-height: 19.2px;
+    
+    }
+
+    .planing .planing-text h3 {
+
+        font-weight: 600;
+        font-size:1rem;
+        line-height: 25.6px;
+    
+    }
+
+    
+.planing .planing-middle h6 {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28.8px;
+
+ 
+}
+.planing .planing-middle h6 span {
+    font-weight: 600;
+    font-size:40px;
+    line-height:64px;
+
+}
+
+.planing .planning-bottom ul li span {
+    font-size: 12px;
+    line-height: 19.2px;
+}
+.planing .planning-bottom ul li i {
+
+   font-size: 15px;
+   padding: 4px;
+}
+
+
+.planing .planing-title h2{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38.4px;
+   
+
+
+}
+.planing .planing-title p{
+    font-size: 12px;
+    line-height: 19.2px;
+  
+
+}
+.planing .planing-title span{
+ 
+    font-size: 12px;
+    line-height: 19.2px;
+
+   
+ 
+}
+}

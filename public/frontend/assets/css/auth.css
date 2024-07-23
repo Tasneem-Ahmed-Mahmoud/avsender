@@ -1,0 +1,65 @@
+
+/*reset*/
+.forget-password{
+    height: 79vh;
+}
+.reset-container{
+    text-align: center;
+    margin-top: 6.688rem;
+   
+}
+
+.reset-h2{
+    color: #002F87;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 51.2px;
+}
+
+.reset{
+    margin: 0 auto;
+    max-width: 559px;
+}
+
+.reset-form{
+    text-align: left !important;
+
+}
+
+.reset-input{
+    height: 52px;
+    border: 1px solid #E4E6EE;
+    border-radius: 8px;
+    /* width: 100%; */
+}
+
+.reset-btn{
+    background-color: #29387E;
+    color: #fff;
+    border: 1px solid #29387E;
+    border-radius: 96px !important;
+    width: 100%;
+    border-radius: 4px;
+    height: 52px;
+    margin-top: 3.5rem;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38.4px;
+}
+
+.reset-label{
+    color: #002F87;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28.8px;
+    margin: .5rem 0;
+}
+
+
+.reset-h6{
+    color: #6B6B6B;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25.6px;
+}
+

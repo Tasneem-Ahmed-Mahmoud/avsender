@@ -43,6 +43,8 @@
                            <h3 class="tp-login-title">{{ __('Register your Account') }}</h3>
                         </div>
                         <div class="tplogin__form">
+                          <h1>regusksnkn</h1>
+            
                           <form method="POST" action="{{ url('register-plan',$plan->id) }}">
                             @csrf
                              <div class="tp-mail">

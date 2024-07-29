@@ -69,7 +69,7 @@
            @foreach($plans ?? [] as $plan)
          
            <!-- planing left -->
-           <div class="col-xl-4 col-md-6 col-12">
+           <div class="col-xl-4 col-md-6 col-12 mb-3">
              <div class="planing-content  {{ $plan->is_recommended == 1 ? 'center-plan' : 'left-plan' }} ">
                <div class="planing-top d-flex" >
                <figure class="planing-img d-flex justify-content-center align-items-center">   <img src="assets/images/planing/1.svg" alt="" srcset=""></figure>
@@ -95,6 +95,8 @@
                </div>
              </div>
            </div>
+
+           
 @endforeach
 
        </div>

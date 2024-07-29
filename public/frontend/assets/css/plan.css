@@ -1,0 +1,366 @@
+ /* .stepper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            width: 25%;
+            position: relative;
+        }
+
+        .step .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #1D4FA0;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px auto;
+        }
+
+        .step.active .circle {
+            background-color: #1D4FA0;
+            color: white;
+        }
+
+        .step.completed .circle {
+            background-color: #1D4FA0;
+            color: white;
+        }
+
+        .step.completed .circle::before {
+            content: '✔';
+        }
+
+        .step .label {
+            font-size: 14px;
+            color: #1D4FA0;
+        }
+
+        .step.disabled .label {
+            color: #ccc;
+        }
+
+        .line {
+            position: absolute;
+            top: 15px;
+            left: 12.5%;
+            width: 75%;
+            height: 2px;
+            background-color: #ccc;
+            z-index: -1;
+        }
+
+        .line-active {
+            background-color: #1D4FA0;
+            width: calc(25% * 2);
+            z-index: -1;
+        }
+
+
+        .label{
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28.8px;
+        } */
+
+        
+        
+        .step-cont{
+            /* width: 748px; */
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        .step-cont-sm{
+            display: none;
+        }
+        
+        /* .step-labels{
+            width: 748px;
+            margin: 0 auto;
+        } */
+        
+        .step-item.active{
+            color: #29387E;
+        }
+        
+        .step-item{
+            color: #B5B5B5;
+        }
+        
+        
+        .step-cont-h5{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28.8px;
+            margin-top: 16px;
+        }
+        
+        
+        
+                .plan-center{
+                    margin: 48px auto;
+                    width: 246px;
+                    margin-top: 48px;
+                    margin-bottom: 40px;
+                }
+        
+                .plan-center-right_top{
+                    color: #838383;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 28.8px;
+                }
+        
+                .plan-center-right_bottom{
+                    margin-top: 8px;
+                    color: #29387E;
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 38.4px;
+                }
+        
+        
+                .plan-card{
+                    height: 328px;
+                    background-color: #fff;
+                    width: 450px !important;
+                    border-radius: 24px;
+                    padding: 24px 71px;
+                    margin-bottom: 72px;
+                }
+        
+                .plan-card-h3{
+                    color: #170F49;
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 38.4px;
+                }
+        
+                .plan-card-l{
+                    margin-left: auto;
+                    margin-right: 30px;
+                    box-shadow: 0px 2px 12px 0px #14142B14;
+                    ;
+                }
+        
+                .plan-card-r{
+                    margin-right: auto;
+                    margin-left: 30px;
+        
+                }
+        
+                .subscribe-btn{
+                    height: 48px;
+                    background-color: #fff;
+                    border: 2px solid #29387E;
+                    border-radius:96px;
+                    width: 308px;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 28.8px;
+                    color: #29387E;
+                }
+        
+                .plan-every{
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 28.8px;
+                    color: #525252;
+                    margin-top: 8px;
+                    margin-bottom: 32px;
+                }
+        
+                .plan-price-SAR{
+                    color: #29387E;
+                    font-weight: 600;
+                    font-size: 48px;
+                    line-height: 76.8px;
+                }
+        
+                .plan-price-month{
+                    color: #6F6C90;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 32px;
+                    margin-top: 40px;
+                    margin-left: 10px;
+                }
+        
+        
+               
+               .plan-card-r{
+                position: relative;
+               }
+                .Save_pres{
+                    background: linear-gradient(90deg, #23316E 0%, #435ED4 100%);
+                    border-radius: 8px;
+                    box-shadow: 0px 4px 10px 0px #FFFFFF61;
+                 
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 25.6px;
+                    text-align: center;
+                    color: #FFFFFF;
+                    width: 97px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        
+        justify-content: center;
+        position: absolute;
+        top: 30;
+        right: 25px;
+                }
+        
+                @media (max-width: 999px) {
+                    .plan-every{
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 22.8px;
+                        color: #525252;
+                        margin-top: 8px;
+                        margin-bottom: 16px;
+                    }
+                    .Save_pres{
+                        background: linear-gradient(90deg, #23316E 0%, #435ED4 100%);
+                        border-radius: 8px;
+                        box-shadow: 0px 4px 10px 0px #FFFFFF61;
+                     
+                        font-size: 12px;
+                        font-weight: 600;
+                        line-height: 19.6px;
+                        text-align: center;
+                        color: #FFFFFF;
+                        width: 74px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            
+            justify-content: center;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+                    }
+                    .plan-card {
+                        padding: 30px;
+                    }
+                    .plan-card-r{
+                       
+                        margin: 0 auto;
+                        
+            
+                    }
+                    .plan-card-l{
+                       
+                        margin: 24px auto;
+                    }
+                    
+                    .planCards{
+                        padding: 39px;
+                    }
+        
+                    .plan-card-h3{
+                        color: #170F49;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 25px;
+                    }
+        
+                    .subscribe-btn{
+                        height:32px;
+                        background-color: #fff;
+                        border: 2px solid #29387E;
+                        border-radius:96px;
+                        width: 172px;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 25px;
+                        color: #29387E;
+                        margin-bottom: 21px;
+                    }
+            
+                   
+            
+                    .plan-price-SAR{
+                        color: #29387E;
+                        font-weight: 600;
+                        font-size: 36px;
+                        line-height: 57.6px;
+                    }
+            .planCards{
+                padding-top: 16px !important;
+            }
+        
+                    .plan-price-month{
+                        color: #6F6C90;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 25px;
+                        margin-top: 30px;
+                        margin-left: 10px;
+                    }
+        
+                    .plan-card{
+                        /* height: 328px; */
+                        background-color: #fff;
+                        width: 450px !important;
+                        border-radius: 24px;
+                        padding: 30px 21px;
+                        /* margin-bottom: 72px; */
+                        height: auto;
+        
+                    }
+        
+                   
+                    .plan-center{
+                        margin: 16px auto;
+                        width: 246px;
+                    }
+            
+                    .plan-center-right_top{
+                        color: #838383;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 19.2px;
+                    }
+            
+                    .plan-center-right_bottom{
+                        margin-top: 8px;
+                        color: #29387E;
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 25.6px;
+                    }
+        
+                    .step-cont-h5{
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 19.2px;
+                        margin-top: 16px;
+                    }
+        
+                    .step-cont{
+                        display: none;
+                    }
+                    .step-cont-sm{
+                        display: flex;
+                        justify-content: center;
+                        text-align: center;
+                        margin-top: 32px;
+        
+                    }
+                    
+                  }

@@ -34,8 +34,8 @@ class FeatureInstructionSeeder extends Seeder
                  "photo"=>"",
                  "instruction"=>"4-Here you can select from yor templets , and select device number and the group you want to send the messages to them .",
             ]
-            ],
-     ""
+            ]
+    
          
         ];
 

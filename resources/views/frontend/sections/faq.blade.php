@@ -1,44 +1,47 @@
-<div class="tp-support__area pt-120 pb-120 grey-bg p-relative">
-         <div class="tp-support__bg">
-            <img src="{{ asset('assets/frontend/img/faq/faq-bg-shape.png') }}" alt="">
-         </div>
-         <div class="container">
-            <div class="row">
-               <div class="col-12">
-                  <div class="tp-support__title-box text-center mb-70">
-                     <h3 class="tp-section-title">{{ __('Frequently asked questions') }} 📣</h3>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-12">
-                  <div class="tp-support__faq">
-                     <div class="tp-custom-accordio-2">
-                        <div class="accordion" id="accordionExample-2">
-                        	@foreach($faqs as $key => $faq)
-                            @if($faq->slug != 'top')
-                           <div class="accordion-items">
-                              <h2 class="accordion-header" id="heading-{{ $key+1 }}">
-                                 <button class="accordion-buttons {{ $key > 0 ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse-{{ $key+1 }}" aria-expanded="{{ $key == 0 ? true : false }}" aria-controls="collapse-1">
-                                    {{ $faq->title }}
-                                 </button>
-                              </h2>
-                              <div id="collapse-{{ $key+1 }}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}" aria-labelledby="heading-{{ $key+1 }}"
-                                 data-bs-parent="#accordionExample-2">
-                                 <div class="accordion-body">
-                                     {{ $faq->excerpt->value ?? '' }}
+
+
+
+
+
+
+
+
+      <div class="faq-text-home">
+         <h3 class="FAQ-h3-home">FAQ</h3>
+         <p class="FAQ-p-home">We are here to help you</p>
+         <div class="faq__content_container">
+            <div class="container">
+               <div class="row faq__content_container_row mt-2 mb-4 d-flex justify-content-center">
+                  @foreach($faqs as $key => $faq)
+                  <div class="col-md-10 col-sm-12 mt-4">
+                     <div class="faq_box_content faq_box_content-home">
+                        <div class="d-flex justify-content-between ">
+                           <div>
+                              <p class="faq_box_content-p" id="{{ $loop->iteration }}"> {{ $faq->title }}</p>
+                              <div class="collapse" id="{{ $loop->iteration }}" data-faq-target="{{ $loop->iteration }}">
+                                 <div class="faq_box_content-p">
+                                    <hr class="faq_box_content-hr" />
+                                    {{ $faq->excerpt->value ?? '' }}
                                  </div>
                               </div>
                            </div>
-
-                           
-                           @endif
-                          @endforeach
+                           <div class="more-info-faq-div" id="more-info-faq-div">
+                              <img src="{{ asset('frontend/assets/images/faq')}}/more-info-faq.svg" alt="more-info-faq"
+                                 class="more-info-faq" data-bs-toggle="collapse" href="#{{ $loop->iteration }}"
+                                 role="button" aria-expanded="false" aria-controls="{{ $loop->iteration }}"
+                                 id="toggleImage" />
+                           </div>
                         </div>
                      </div>
                   </div>
+   
+                  @endforeach
+   
+   
+   
                </div>
+   
             </div>
          </div>
+   
       </div>

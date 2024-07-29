@@ -23,9 +23,7 @@
                   <input placeholder="example@email.com" type="email" class="form-control reset-input" id="new-email"
                      name="email" value="{{ old('email') ??''}}">
                   @error('email')
-                  <small class="text-danger">
-                     {{ $message }}
-                  </small>
+                  @include("frontend.inc.error", ['message' => $message] )
                   @enderror
                </div>
 

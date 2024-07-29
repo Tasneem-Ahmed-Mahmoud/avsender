@@ -17,89 +17,59 @@ class FeatureServiceSeeder extends Seeder
             "Bulk message" => [
                 [
                     "photo" => "uploads/featureServices/organize.svg",
-                    "description" => [
-                        "en" => "Organize and classify messages and create groups.",
-                        "ar" => "تنظيم وتصنيف الرسائل وإنشاء مجموعات."
-                    ],
+                    "description" =>"Organize and classify messages and create groups."
                 ],
                 [
                     "photo" => "uploads/featureServices/send-VariousType.svg",
-                    "description" => [
-                        "en" => "Send various types of media, including files, images, and videos.",
-                        "ar" => "إرسال أنواع مختلفة من الوسائط، بما في ذلك الملفات والصور ومقاطع الفيديو."
-                    ],
+                    "description" =>"Send various types of media, including files, images, and videos."
                 ],
                 [
                     "photo" => "uploads/featureServices/target.svg",
-                    "description" => [
-                        "en" => "Target customers with multiple messages without keeping mobile numbers.",
-                        "ar" => "استهداف العملاء برسائل متعددة دون الاحتفاظ بأرقام الهواتف."
-                    ],
+                    "description" => "Target customers with multiple messages without keeping mobile numbers."
                 ],
                 [
                     "photo" => "uploads/featureServices/SendVariablesMessages.svg",
-                    "description" => [
-                        "en" => "Send variable messages, appointments, and reminders.",
-                        "ar" => "إرسال رسائل متغيرة، ومواعيد، وتذكيرات."
-                    ],
+                    "description" =>"Send variable messages, appointments, and reminders."
                 ],
                 [
                     "photo" => "uploads/featureServices/ScheduleMessages.svg",
-                    "description" => [
-                        "en" => "Schedule messages over the web.",
-                        "ar" => "جدولة الرسائل عبر الويب."
-                    ],
+                    "description" =>  "Schedule messages over the web."
                 ],
             ],
-        
+
             "Template messaging" => [
                 [
                     "photo" => "uploads/featureServices/Time-Saving.svg",
-                    "description" => [
-                        "en" => "Time-Saving.",
-                        "ar" => "توفير الوقت."
-                    ],
+                    "description" => "Time-Saving."
                 ],
                 [
                     "photo" => "uploads/featureServices/Controlled Communication.svg",
-                    "description" => [
-                        "en" => "Controlled Communication.",
-                        "ar" => "التواصل المنضبط."
-                    ],
+                    "description" => "Controlled Communication."
+
                 ],
                 [
                     "photo" => "uploads/featureServices/Quick Responses.svg",
-                    "description" => [
-                        "en" => "Quick Responses.",
-                        "ar" => "الاستجابات السريعة."
-                    ],
+                    "description" => "Quick Responses."
+
                 ],
                 [
                     "photo" => "uploads/featureServices/Error Reduction.svg",
-                    "description" => [
-                        "en" => "Error Reduction.",
-                        "ar" => "تقليل الأخطاء."
-                    ],
+                    "description" => "Error Reduction."
+
                 ],
+
                 [
                     "photo" => "uploads/featureServices/Feedback Mechanism.svg",
-                    "description" => [
-                        "en" => "Feedback Mechanism.",
-                        "ar" => "آلية التغذية الراجعة."
-                    ],
+                    "description" => "Feedback Mechanism."
+
                 ],
                 [
                     "photo" => "uploads/featureServices/Integration with CRM Systems.svg",
-                    "description" => [
-                        "en" => "Integration with CRM Systems.",
-                        "ar" => "التكامل مع أنظمة إدارة علاقات العملاء."
-                    ],
+                    "description" => "Integration with CRM Systems."
+
                 ],
             ],
         ];
-        
-
-
 
         foreach ($FeatureServices as $featureTitle => $services) {
             $post_id = Post::where("title", $featureTitle)->first()->id;

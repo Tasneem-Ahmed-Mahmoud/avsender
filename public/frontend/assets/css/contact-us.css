@@ -1,0 +1,121 @@
+.contact_h2{
+
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 76.8px;
+    text-align: left;
+    color: #29387E;
+    padding-top: 3.5rem;
+    padding-bottom: 2.2rem;
+    }
+    
+    .input_contact{
+    
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25.6px;
+    text-align: left;
+    color: #29387E;
+    margin-bottom: 10px;
+    }
+    .form-control-contact{
+        border-radius: 8px;
+        border: 1px solid #E4E6EE !important
+        ;
+        margin-top: 5px;
+        margin-bottom: 22px;
+        height: 40px !important;
+    }
+    .input_contact-p{
+        padding-top: 1.4rem;
+    }
+    .btn-submit{
+     
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        line-height: 28.8px !important;
+        text-align: center !important;
+        color: #29387E !important;
+        border: 2px solid #29387E !important;
+        border-radius: 90px !important;
+        margin-top: 2.3rem !important;
+        margin-bottom: 4rem;
+    }
+    .contact-us-row{
+        display: flex;
+        justify-content: space-between;
+    }
+    .btn-submit:hover{
+     
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        line-height: 28.8px !important;
+        text-align: center !important;
+        color: #29387E !important;
+        border: 2px solid #29387E !important;
+        border-radius: 90px !important;
+        margin-top: 2.3rem !important;
+    }
+    .maps-contact{
+        padding-top: 270px;
+    }
+    .info-contact{
+    
+    font-size:1.5rem;
+    font-weight: 500;
+    line-height: 38.4px;
+    text-align: center;
+    color: #29387E;
+    margin-bottom: 25px;
+    }
+    .info-contact-margin{
+        margin-bottom: 60px;
+    }
+    @media (max-width:790px){
+        .contact_h2{
+    
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 38.4px;
+    padding-top: 11px;
+    padding-bottom: 1.5rem;
+        }
+        .maps-contact{
+            padding-top: 20px;
+        }
+        .maps{
+            width: 327.24px;
+            height: 267.99px;
+        
+            
+        }
+        .info-contact{
+    
+            
+            text-align: left;
+           
+            }
+        .contact-us-row{
+            display: flex;
+            justify-content: center;
+        }
+        .input_contact{
+    
+         
+            font-weight: 500;
+            line-height: 25.6px;
+           
+            
+            }
+            .btn-submit{
+     
+                margin-top: 1.5rem !important;
+                margin-bottom: 3.2rem;
+            }
+    }
+    
+    
+    
+    .hero_container-feature-contact{
+        border-radius: 0 !important;
+    }

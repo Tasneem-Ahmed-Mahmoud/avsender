@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('meta_title')</title>
-  <meta name="meta_description" content="@yield('description')">
+  <meta name="meta_description" content="@yield('meta_description')">
   <meta name="meta_keywords" content="@yield('meta_keywords')">
+ 
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- font-family -->
@@ -16,15 +17,23 @@
   <!-- bootstrap -->
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/bootstrap.min.css">
   <!-- custom css -->
+ 
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/home.css">
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/service.css">
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/login.css">
+  <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/main.css">
   @yield('style')
-
+  <script type="text/javascript">
+      
+    $('.language-switch').on('change',function(){
+       location.href = `{{ url('/local') }}/`+$(this).val();
+       
+    });
+ </script>
 </head>
 
-<body>
+<body >
 
     @include('frontend.inc.navbar')
 

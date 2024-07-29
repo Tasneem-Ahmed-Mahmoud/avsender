@@ -1,0 +1,341 @@
+.createAccount-h2 {
+
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 64px;
+    /* text-align: center; */
+    color: #29387E;
+    margin-top: 56px;
+    margin-bottom: 32px;
+
+}
+
+.lable-name {
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28.8px;
+    color: #29387E;
+    margin-bottom: 8px;
+
+}
+
+.inputs-create {
+    border: 1px solid #E4E6EE;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    color: #95989C;
+
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    margin-bottom: 24px;
+}
+
+.checkbox-div {
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25.6px;
+    color: #29387E;
+
+
+}
+
+.checkbox {
+    color: #29387E !important;
+
+}
+
+.Create_Account_btn {
+
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 38.4px !important;
+    text-align: center !important;
+    color: aliceblue !important;
+    background-color: #29387E !important;
+    border-radius: 96px !important;
+    margin-top: 32px !important;
+    margin-bottom: 24px !important;
+
+}
+
+.Login-div {
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    color: #292D32;
+    margin-bottom: 41px;
+}
+
+.Login-a {
+    color: #002F87;
+    font-weight: 600;
+
+
+}
+
+
+/*pay*/
+.pay-row {
+    margin-top: 60px !important;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pay-h2 {
+
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 38.4px;
+    /* text-align: center; */
+    color: #6B6B6B;
+    margin-bottom: 28px;
+}
+
+.my-fatoorah {
+    margin-left: 1.5rem !important;
+}
+
+.my-fatoorah-div {
+    margin-bottom: 182px;
+}
+
+.pay-div-white {
+    box-shadow: 0px 2px 12px 0px #14142B14;
+    border-radius: 24px;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28.8px;
+    color: #838383;
+    background-color: #FFFFFF;
+    padding: 40px;
+
+}
+.Back-arrow{
+   
+font-family: Raleway;
+font-size: 16px;
+font-weight: 600;
+line-height: 25.6px;
+color:#29387E
+
+}
+.Enterprise {
+    color: #29387E;
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 38.4px;
+
+}
+
+.Monthly_Plan {
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+
+    color: #29387E;
+    margin-top: 36px;
+    padding-left: 20px;
+    /* border:; */
+    margin-bottom: 0;
+    /* border-bottom: 4px solid  linear-gradient(90deg, #374BA8 5.25%, #2FB7F0 77.6%); */
+
+
+}
+
+.linear-month {
+    padding-left: 20px;
+}
+
+.monthly-sar {
+
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 76.8px;
+    padding-left: 20px;
+
+    color: #29387E;
+
+}
+
+.Billing_every {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 0px !important;
+}
+
+.home-img-div {
+    display: flex;
+    justify-content: center;
+}
+
+.createAccount {
+    padding-bottom: 188px;
+}
+.line1_line1{
+    margin-left: -50px;
+}
+@media (max-width: 790px) {
+    .Back-arrow{
+        display: none;
+    }
+    .monthly-sar {
+
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 57.6px;
+
+
+    }
+
+    .createAccount {
+        padding-bottom: 40px;
+    }
+
+    .pay-row {
+        margin-top: 35px !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .home-img-div {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 15px;
+    }
+
+    .pay-div-white {
+
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 19.2px;
+
+        width: 298px !important;
+        height: 259px !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .home-img {
+        width: 48px;
+        height: 48px;
+
+    }
+
+    .Enterprise {
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 25.6px;
+
+
+
+    }
+
+    .Monthly_Plan {
+
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 25.6px;
+
+
+    }
+
+    .my-fatoorah-div {
+        margin-bottom: 34px;
+    }
+
+    .Proceed {
+        display: none;
+    }
+
+    .createAccount-h2 {
+
+        font-size: 24px;
+
+        line-height: 38.4px;
+        margin-top: 25px;
+        /* margin-bottom: 32px; */
+
+    }
+
+    .lable-name {
+
+        font-size: 16px;
+
+        line-height: 25.6px;
+
+
+    }
+
+
+    .inputs-create {
+        border: 1px solid #E4E6EE;
+
+        font-size: 12px !important;
+        font-weight: 400;
+        line-height: 19.6px;
+        color: #95989C;
+
+        padding: 8px 10px !important;
+        border-radius: 8px;
+        margin-bottom: 22px;
+    }
+
+    .img-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .Create_Account_btn {
+
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        line-height: 25.6px !important;
+
+
+    }
+
+    .Login-div {
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22.4px;
+        margin-bottom: 131px;
+
+    }
+
+    /*************************************************/
+    .pay-row {
+        margin-top: 50px;
+    }
+
+    .pay-h2 {
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22.4px;
+
+        color: #6B6B6B;
+        margin-bottom: 19px;
+    }
+
+    .my-fatoorah {
+        width: 77px;
+        height: 33px;
+        margin-left: 1rem !important;
+    }
+
+    .my-fatoorah-radio {
+        width: 20px;
+        height: 20px;
+    }
+}

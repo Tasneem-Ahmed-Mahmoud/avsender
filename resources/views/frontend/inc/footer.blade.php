@@ -9,13 +9,32 @@
              </figure>
              <p>Unlock Your Brand’s Potential</p>
              <div class="social-icons d-flex justify-content-between align-items-center">
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
+              
+            {{-- @if(!empty(get_option('primary_data',true)->socials->twitter))
+            <a href="{{ get_option('primary_data',true)->socials->twitter }}"><i class="fa-brands fa-x-twitter"></i></a>
+            @endif
             <a href=""><i class="fa-brands fa-snapchat"></i></a>
          
             <a href=""><i class="fa-brands fa-x-twitter"></i></a>
             <a href=""><i class="fa-brands fa-youtube"></i></a>
             <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a href=""><i class="fa-brands fa-tiktok"></i></a> --}}
+
+
+            @if(!empty(get_option('primary_data',true)->socials->twitter))
+            <li>   <a href="{{ get_option('primary_data',true)->socials->twitter }}"><i class="fa-brands fa-x-twitter"></i></a>  </li>
+        @endif
+        @if(!empty(get_option('primary_data',true)->socials->instagram))
+          <li> <a href="{{ get_option('primary_data',true)->socials->instagram }}"><i class="fa-brands fa-instagram"></i></a></li> 
+        @endif
+        @if(!empty(get_option('primary_data',true)->socials->facebook))
+        <li>   <a href="{{ get_option('primary_data',true)->socials->facebook }}"><i
+                    class="fa-brands fa-facebook"></i></a></li> 
+        @endif
+        @if(!empty(get_option('primary_data',true)->socials->linkedin))
+        <li>   <a href="{{ get_option('primary_data',true)->socials->linkedin }}"><i
+                    class="fa-brands fa-linkedin"></i></a></li> 
+        @endif
 
              </div>
           </div>
@@ -25,12 +44,12 @@
           <div class="col-lg-6 col-md-4  col-sm-5 col-4  ">
             <div class="content ">
               <ul class="footer-links">
-                <li ><a href="" class="active">Home</a></li>
-                <li ><a href="">About</a></li>
-                <li ><a href="">Features</a></li>
-                <li ><a href="">Pricing</a></li>
-                <li ><a href="">Blog</a></li>
-                <li ><a href="">Help</a></li>
+                <li ><a  class=" {{ url()->current() == url('/') ? 'active' : '' }} " href="/" >Home</a></li>
+                <li><a  class=" {{ url()->current() == url('/features') ? 'active' : '' }} " href="{{ url('/features') }}">{{ __('Features') }}</a></li>
+                <li><a  class=" {{ url()->current() == url('/about') ? 'active' : '' }} " href="{{ url('/about') }}">{{ __('About Us') }}</a></li>
+                <li><a  class=" {{ url()->current() == url('/pricing')  ? 'active' : '' }}" href="{{ url('/pricing') }}">{{ __('Pricing') }}</a></li>
+                <li><a  class=" {{ url()->current() ==  url('/faq')  ? 'active' : '' }} " href="{{ url('/faq') }}">{{ __('FAQ') }}</a></li>
+                <li><a  class=" {{ url()->current() == url('/blogs') ? 'active' : '' }}" href="{{ url('/blogs') }}">{{ __('News') }}</a></li>
              
               </ul>
               </div>
@@ -41,10 +60,10 @@
             <div class="content">
               <ul class="footer-links contact-icons ">
               
-                <li ><a href="" class="active">Contact</a></li>
-                <li ><a href=""  class="d-flex  g-2  "> <i class="fa-solid fa-paper-plane "></i> <span>info@avnology.com</span></a></li>
-                <li ><a href=""  class="d-flex g-2 "> <i class="fa-solid fa-phone"></i> <span> +966 555466532</span></a></li>
-                <li ><a href=""  class="d-flex  g-2  "><i class="fa-solid fa-location-dot"></i> <span>Jeddah , Saudi Arabia</span></a></li>
+                <li ><a href="#" class="active">Contact</a></li>
+                <li ><a href="maito:{{ get_option('primary_data',true)->contact_email ?? '' }}"  class="d-flex  g-2  "> <i class="fa-solid fa-paper-plane "></i> <span>{{ get_option('primary_data',true)->contact_email ?? 'info@avnology.com' }}</span></a></li>
+                <li ><a href="tel:{{ get_option('primary_data',true)->contact_phone ?? '' }}"  class="d-flex g-2 "> <i class="fa-solid fa-phone"></i> <span> {{ get_option('primary_data',true)->contact_phone ?? '' }}</span></a></li>
+                <li ><a href=""  class="d-flex  g-2  "><i class="fa-solid fa-location-dot"></i> <span>{{ get_option('primary_data',true)->address ?? '' }}</span></a></li>
               </ul>
               </div>
            </div>
@@ -60,7 +79,7 @@
     </div>
    </footer>
    <!-- jquery -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
   <!-- bootstrap -->
   <script  src = "{{ asset('frontend') }}/assets/js/bootstrap.bundle.min.js"></script>
   <!-- custom js -->

@@ -1,3 +1,5 @@
+
+/* ################################ */
 .hero-home-content{
     width: 90%;
     margin-left: auto;
@@ -8,7 +10,6 @@
     margin-left: auto;
     margin-right: auto;
 } */
-
 .home-hero-section{
     height: 54.25rem !important;
     align-items: start !important;
@@ -145,14 +146,14 @@ text-align: center;
     position: relative;
 }
 .ChatBot-left-box{
-    position: absolute;
+    /* position: absolute; */
     top: 70%;
 }
 .ChatBot-right{
     position: relative;
 }
 .ChatBot-left-right{
-    position: absolute;
+    /* position: absolute; */
     top: 70%;
 }
 .faq_box_content-home{
@@ -162,12 +163,82 @@ text-align: center;
 .whats-app{
     margin-top: 85px !important;
 }
+
+.section-white{
+    background-color:#FFFFFF;
+  border-radius: 24px;
+  display: flex;
+  justify-content:space-evenly;
+  padding:20px 40px;
+  align-items: center;
+  margin-bottom: 146px;
+  margin-top: 147px !important;
+}
+.number-icon{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 37.6px;
+  color: #29387E;
+}
+.para-icon{
+
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 38.4px;
+    color: #838383;
+}
+.div-white-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.div-white-flex-content{
+    margin-left: 8px;
+    margin-right: 8px;
+    border-right:1px solid #CDCDCD;
+    padding-right: 30px;
+
+}
+.div-white-flex-last-child{
+    border: none !important;
+}
+.div-white-flex-img{
+    width: 82px;
+height: 82px;
+display: flex;
+align-items: center;
+
+}
+.div-white-flex-img{
+    width: 82px;
+height: 82px;
+
+}
+.clear{
+    clear: both;
+}
+
 @media (max-width: 1000px) {
     .hero-image-home-Trusted {
         display: none !important;
     
     }
+ .number-icon{
+   
  
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28.8px;
+  
+    
+    
+}
+.para-icon{
+
+font-size: 12px;
+
+line-height: 19.2px;
+
+}
     .hero-image-home-Trusted img{
         display: none !important;
     
@@ -203,8 +274,90 @@ display: none;
     color: #525252;
     margin-bottom: 40px;
 }
+.swiper-button-div{
+    display: none;
+}
 @media (max-width: 790px) {
+    .Our-Features-p{
+        text-align: center;
+    }
+.Our-Features-h3-text{
+    display: flex;
+    justify-content: center !important;
+    text-align: center;
+    margin: auto;
+}
+.Our-Features-h3{
+    text-align: center;
+}
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .swiper-slide {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
+
+.swiper-button-div{
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    /* left: 50%; */
+    direction: rtl;
+}
+#box-home .Features-box{
+    height: 340px;
+}
+    .section-white{
+        background-color:#FFFFFF;
+      border-radius: 24px;
+      display: flex;
+      justify-content:space-evenly;
+      padding:20px 40px;
+    }
+    .div-white-flex {
+        display: block;
+        text-align: center;
+    }
+    .div-white-flex-content {
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 10px;
+    }
+    .section-white{
+      
+      padding:10px 40px;
+     margin-bottom: 40px;
+    margin-top: 27px !important;
+    }
+    .para-icon {
+margin-bottom: .5rem;
+    }
+    .div-white-flex-img {
+         /* width: 30px;
+        height: 30px;   */
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+    }
+    .div-mb{
+        display: flex;
+        justify-content: center;
+    }
+    .div-white-flex-img img{
+        /* width: 100%;
+height: 100%; */
+width: 30px;
+height: 30px;
+
+    }
 .btn-center-whats{
      display: flex;
 justify-content: center !important;  
@@ -389,3 +542,4 @@ line-height: 28.8px !important;
     
     }
 }
+

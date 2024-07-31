@@ -7,6 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class FeatureInstruction extends Model
 {
+   
     use HasFactory;
-    protected $fillable=["post_id","instruction",'photo'];
+   
+    protected $fillable = ["instruction", 'photo', 'post_id','slug','lang'];
+
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    function post(){
+        return $this->belongsTo(Post::class);
+    }
 }

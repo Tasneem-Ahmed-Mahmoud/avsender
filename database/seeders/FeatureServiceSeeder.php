@@ -2,12 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\FeatureService;
 use App\Models\Post;
+use App\Traits\Slug;
+use App\Models\FeatureService;
 use Illuminate\Database\Seeder;
 
 class FeatureServiceSeeder extends Seeder
 {
+    use Slug;
     /**
      * Run the database seeds.
      */
@@ -16,23 +18,23 @@ class FeatureServiceSeeder extends Seeder
         $FeatureServices = [
             "Bulk message" => [
                 [
-                    "photo" => "uploads/featureServices/organize.svg",
+                    "photo" => "uploads/bulk-message/1.svg",
                     "description" =>"Organize and classify messages and create groups."
                 ],
                 [
-                    "photo" => "uploads/featureServices/send-VariousType.svg",
+                    "photo" => "uploads/bulk-message/2.svg",
                     "description" =>"Send various types of media, including files, images, and videos."
                 ],
                 [
-                    "photo" => "uploads/featureServices/target.svg",
+                    "photo" => "uploads/bulk-message/3.svg",
                     "description" => "Target customers with multiple messages without keeping mobile numbers."
                 ],
                 [
-                    "photo" => "uploads/featureServices/SendVariablesMessages.svg",
+                    "photo" => "uploads/bulk-message/4.svg",
                     "description" =>"Send variable messages, appointments, and reminders."
                 ],
                 [
-                    "photo" => "uploads/featureServices/ScheduleMessages.svg",
+                    "photo" => "uploads/bulk-message/5.svg",
                     "description" =>  "Schedule messages over the web."
                 ],
             ],
@@ -79,6 +81,7 @@ class FeatureServiceSeeder extends Seeder
                     "photo" => $service["photo"],
                     "description" => $service["description"],
                     "post_id" => $post_id,
+                    "slug"=>$this->slugValue($service["description"]),
                 ]);
             }
         }

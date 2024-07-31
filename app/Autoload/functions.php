@@ -329,17 +329,18 @@ if (!function_exists('PrintMenu')) {
 		
     	$locale = current_locale();
 
-    	$data = cache_remember($position . $locale, function () use ($position, $locale) {
+    	// $data = cache_remember($position . $locale, function () use ($position, $locale) {
 			
 			
-    		$menus = Menu::where('position', $position)->where('lang', $locale)->first();
-			
+    		// $menus = Menu::where('position', $position)->first();
+			$menus = Menu::where('position', $position)->where('lang', $locale)->first();
+	
     		$data['data'] = json_decode($menus->data ?? '');
     		$data['name'] = $menus->name ?? '';
-    		return $data;
-    	});
+    	// 	return $data;
+    	// });
 
-
+		
     	return view($path . '.main-menu', compact('data'));
     }
 }

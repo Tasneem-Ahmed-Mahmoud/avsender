@@ -28,7 +28,7 @@ class BlogController extends Controller
             $date = Carbon::parse($request->date);
             $blogs = $blogs->whereDate('created_at', $date);
         }
-        $blogs = $blogs->with('shortDescription', 'preview')->where('status', 1)->latest()->paginate(4);
+        $blogs = $blogs->with('shortDescription', 'preview')->where('status', 1)->latest()->paginate(2);
 
         $recent_blogs = Post::where('type', 'blog')->where('lang', app()->getLocale())->with('shortDescription', 'preview')->where('status', 1)->latest()->take(4)->get();
 

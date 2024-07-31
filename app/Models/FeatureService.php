@@ -9,5 +9,15 @@ class FeatureService extends Model
 {
     use HasFactory;
    
-    protected $fillable = ['description', 'photo', 'post_id'];
+    protected $fillable = ['description', 'photo', 'post_id','slug','lang'];
+
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    function post(){
+        return $this->belongsTo(Post::class);
+    }
 }

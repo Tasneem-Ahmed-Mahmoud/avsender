@@ -136,16 +136,17 @@ a {
 
 
 /*  ################################## hero###############################################  */
-/* .hero {
-
+/*  ################################## hero###############################################  */
+.hero {
+    min-height: 27.938rem;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
 
-} */
+}
 
-/* .hero .hero-content {
-    padding-top: 2.438rem;
+.hero .hero-content {
+    padding-top: 2.5rem;
 }
 
 .hero .hero-content h1 {
@@ -153,10 +154,9 @@ a {
     font-size: 60px;
     line-height: 96px;
     color: var(--white-color);
+}
 
-} */
-
-/* .hero .hero-content p {
+.hero .hero-content p {
     font-weight: 600;
     font-size: 20px;
     line-height: 32px;
@@ -164,13 +164,46 @@ a {
     margin: 0.5rem 0 1.5rem 0;
 }
 
+.btn-work-with-us {
+
+    background-color: var(--white-color);
+    padding: 25px, 52px, 26px, 52px;
+    border-radius: 3.125rem;
+    width: auto !important;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    color: #2F2F2F;
+    ;
+
+
+}
+
+@media (max-width: 768px) {
+    .hero .hero-content h1 {
+        font-size: 24px;
+        line-height: 38.4px;
+    }
+
+    .hero .hero-content p {
+
+
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 19.2px;
+
+    }
+}
+
+
 .hero-with-button {
     min-height: 38.888888888888886vh;
 }
 
 .hero-without-button {
     min-height: 34.552845528455286vh;
-} */
+}
 
 
 .btn-work-with-us {
@@ -183,6 +216,7 @@ a {
     border-radius: 50px !important;
     padding: 10px 50px !important;
     width: auto !important;
+    margin-bottom: 1rem;
 
 }
 

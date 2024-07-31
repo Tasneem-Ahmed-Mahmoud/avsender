@@ -152,7 +152,15 @@
 .Schedule-hero{
     margin-top: -130px !important;
 }
-
+.How_to_work_section_h2-caro{
+   
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 64px;
+    text-align: center;
+    color: #29387E;
+    margin-top: 20px;
+}
 @media (max-width: 1350px) {
     .hero-image-Services {
 
@@ -181,7 +189,15 @@
 
 
     }
-
+    .How_to_work_section_h2-caro{
+   
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 38px;
+        text-align: center;
+        color: #29387E;
+        margin-top: 20px;
+    }
     .oval-img-div {
         padding: 0px 12px;
     }

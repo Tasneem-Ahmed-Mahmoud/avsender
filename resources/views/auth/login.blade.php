@@ -24,15 +24,15 @@
                      <div class="input-group email">
                         <img class="reset-icon" src="{{ asset('frontend/assets') }}/images/auth/mailIcon.svg"
                            alt="reset"><label for="email">{{ __('Email Address') }}</label>
-                        <input type="email" id="email" placeholder="example@email.com" required name="email">
+                        <input type="email" id="email" placeholder="example@email.com" required name="email" value="{{ old('email')??'' }}">
                         @error('email')
                         @include('frontend.inc.error',['message' => $message])
                         @enderror
                      </div>
                      <div class="input-group password" style="margin-top: 0;">
-                        <img class="reset-icon" src="{{ asset('frontend/assets') }}/images/auth/resetPass.svg" alt="reset">
+                        <img class="reset-icon" src="{{ asset('frontend/assets') }}/images/auth/resetPass.svg" alt="reset" >
                         <label for="password">{{ __('Password') }}</label>
-                        <input type="password" id="password" placeholder="********" required name="password">
+                        <input type="password" id="password" placeholder="********" required name="password" value="{{ old('password')??'' }}">
                         @error('password')
                         @include('frontend.inc.error',['message' => $message])
    

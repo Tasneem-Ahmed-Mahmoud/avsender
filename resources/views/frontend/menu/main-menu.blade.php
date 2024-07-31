@@ -1,8 +1,6 @@
 
 
 
-
-
 @if(!empty($data))
 
 @foreach ($data['data'] ?? [] as $row)

@@ -35,6 +35,8 @@ class FeaturesController extends Controller
      */
     public function show($slug)
     {
+        $features = Post::where('type', 'feature')->where('status', 1)->where('lang', app()->getLocale())->with('preview', 'excerpt')->latest()->get();
+
        
         $feature = Post::where('type', 'feature')->with('preview', 'excerpt', 'longDescription', 'banner','featureInstructions','featureServices')->where('slug', $slug)->first();
         // dd($feature);
@@ -48,6 +50,6 @@ class FeaturesController extends Controller
 
         $this->pageMetaData($meta);
 
-        return view('frontend.features.show', compact('plans', 'feature'));
+        return view('frontend.features.show', compact('plans', 'feature','features'));
     }
 }

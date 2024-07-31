@@ -29,17 +29,24 @@
           <li class="nav-item dropdown lang-option">
             <a class="nav-link dropdown-toggle text-capitalize  " href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
-             <img src="https://cdn-icons-png.freepik.com/256/412/412828.png?ga=GA1.1.648065521.1707407535&semt=ais" alt="language" class="rounded-circle lang-icon">
-             <span>English</span>
+            
+             <img src="{{ asset('frontend') }}/assets/images/{{ app()->getLocale()=="ar" ? "arabic" : "english" }}.png" alt="language" class="rounded-circle lang-icon">
+             <span>{{ app()->getLocale() =="ar" ? "عربي" : "English"}}</span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item d-flex align-items-center  lang" href="#"> <img src="{{ asset('frontend') }}/assets/images/english.png" alt="" class="me-3"><span>English</span></a></li>
-              <li><a class="dropdown-item d-flex align-items-center  lang" href="#"><img src="{{ asset('frontend') }}/assets/images/arabic.png" alt="" class="me-3"><span>Arabic</span></a></li>
-
-
-              
-             
-                
+              @foreach(get_option('languages', true) as $code => $language)
+              <li class="mb-1 p-1">
+                  <a  class="dropdown-item d-flex align-items-center  lang" href="{{ route('switchLang', $code) }}">
+                      @if($language === 'Arabic')
+                      <img src="{{ asset('frontend') }}/assets/images/arabic.png" alt="Saudi Arabia Flag" class="me-3" >
+                      @else
+                      <img src="{{ asset('frontend') }}/assets/images/english.png" alt="American Flag" class="me-3" >
+                      @endif
+                      
+                      <span>{{ $language }}</span>
+                  </a>
+              </li>
+          @endforeach
             </ul>
           </li>
           

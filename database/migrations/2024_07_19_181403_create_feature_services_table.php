@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('feature_services', function (Blueprint $table) {
             $table->id();
             $table->string('description');
+            $table->string('slug');
             $table->string('photo');
             $table->string('lang')->default('en');
             $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');

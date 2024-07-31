@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin as ADMIN;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin as ADMIN;
+use App\Http\Controllers\Admin\Feature\FeatureServiceController;
+use App\Http\Controllers\Admin\Feature\FeatureInstructionController;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'admin']], function () {
 
@@ -33,7 +35,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'a
     Route::resource('team', ADMIN\TeamController::class);
     Route::resource('about', ADMIN\AboutController::class);
     Route::resource('message-transactions', ADMIN\TransactionController::class);
-    //Route::resource('page-settings',     		ADMIN\PageSettingsController::class);
+    //Route::resource('page-settings',             ADMIN\PageSettingsController::class);
     Route::resource('app-settings', ADMIN\AppSettingsController::class);
     Route::resource('developer-settings', ADMIN\DeveloperSettingsController::class);
     Route::resource('partner', ADMIN\PartnerController::class);
@@ -48,5 +50,22 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'a
     Route::get('dashboard-static-data', [ADMIN\DashboardController::class, 'dashboardData'])->name('dashboard.static');
     Route::get('/wa-server-status', [ADMIN\DashboardController::class, 'waServerStatus']);
     Route::get('/sales-overview', [ADMIN\DashboardController::class, 'salesOverView']);
+
+    Route::controller(FeatureServiceController::class)->name('feature-service.')->prefix('feature-service')->group(function () {
+        Route::get('/{featureSlug}', 'index')->name('index');
+        Route::get('/create/{featureSlug}', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/edit/{featureService}', 'edit')->name('edit');
+        Route::put('/update/{featureService}', 'update')->name('update');
+        Route::delete('/{featureService}', 'destroy')->name('destroy');
+    });
+    Route::controller(FeatureInstructionController::class)->name('feature-instruction.')->prefix('feature-instruction')->group(function () {
+        Route::get('/{featureSlug}', 'index')->name('index');
+        Route::get('/create/{featureSlug}', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/edit/{featureInstruction}', 'edit')->name('edit');
+        Route::put('/update/{featureInstruction}', 'update')->name('update');
+        Route::delete('/{featureInstruction}', 'destroy')->name('destroy');
+    });
 
 });

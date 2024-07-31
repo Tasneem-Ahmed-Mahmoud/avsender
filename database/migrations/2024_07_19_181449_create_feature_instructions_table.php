@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('instruction');
             $table->string('photo');
+            $table->string('slug');
             $table->string('lang')->default('en');
             $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();

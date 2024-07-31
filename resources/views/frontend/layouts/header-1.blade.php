@@ -53,6 +53,7 @@
                             @endif
                         </button>
                         <ul class="dropdown-menu ps-2 " style="direction: {{ app()->isLocale('ar') ? 'ltr' : 'ltr' }}">
+                            @dd($languages )
                             @foreach($languages as $code => $language)
                             <li class="mb-1 p-1">
                                 <a class="text-black p-0 m-0" href="{{ route('switchLang', $code) }}">

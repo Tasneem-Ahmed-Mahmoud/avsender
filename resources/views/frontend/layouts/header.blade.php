@@ -23,6 +23,7 @@
                                     aria-expanded="false">
                                 {{ __('Languages') }}
                             </button>
+                           
                             <ul class="dropdown-menu">
                                 @foreach($languages as $code => $language)
                                     <li>

@@ -27,6 +27,8 @@
 						<tr>
 							<th class="col-3">{{ __('Title') }}</th>
 							<th class="col-6">{{ __('Description') }}</th>
+                     <th class="col-6">Service</th>
+                     <th class="col-6">Instruction</th>
 							<th class="col-1 text-right">{{ __('Language') }}</th>
 							<th class="col-1 text-right">{{ __('Action') }}</th>
 						</tr>
@@ -40,6 +42,8 @@
 							<td class="text-left">
 								{{ Str::limit($post->excerpt->value ?? '',50) }}
 							</td>
+                     <td> <a href="{{ route('admin.feature-service.index',$post->slug) }}" class="btn btn-neutral btn-sm">Services</a></td>
+                     <td> <a href="{{ route('admin.feature-instruction.index',$post->slug) }}" class="btn btn-neutral btn-sm">Instructions</a></td>
 							<td class="text-right">
 								{{ $post->lang }}
 							</td>

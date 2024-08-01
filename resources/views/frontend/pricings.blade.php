@@ -40,39 +40,31 @@
 
 
 <!-- ################################## planing ############################################### -->
-
-
-
-<section class="planing  mt-5 mb-5">
+<section class="planing mt-5 mb-5">
    <div class="container">
        <div class="row">
-           <div class="planing-header text-center ">
+           <div class="planing-header text-center">
               <div class="planing-title">
                <h2>Subscription Prices</h2>
-               <p>Subscribe now with our different plans that suits all business sizes   and enjoy our amazing features .</p>
-               <span>( No extra fees , cancelation any time ).</span>
-
+               <p>Subscribe now with our different plans that suits all business sizes and enjoy our amazing features.</p>
+               <span>(No extra fees, cancel anytime).</span>
               </div>
 
-            
-               <ul class="nav m-auto">
-                   <li class="nav-item">
-                     <a class="nav-link active" href="#">yearly</a>
+              <ul class="nav m-auto">
+                   <li class="nav-item ">
+                     <a class="nav-link plan-link active-plan" href="#">yearly</a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="#">monthly</a>
+                     <a class="nav-link plan-link" href="#">monthly</a>
                    </li>
-                   
-                 </ul>
-
+              </ul>
            </div>
+
            @foreach($plans ?? [] as $plan)
-         
-           <!-- planing left -->
-           <div class="col-xl-4 col-md-6 col-12 mb-3">
-             <div class="planing-content  {{ $plan->is_recommended == 1 ? 'center-plan' : 'left-plan' }} ">
-               <div class="planing-top d-flex" >
-               <figure class="planing-img d-flex justify-content-center align-items-center">   <img src="assets/images/planing/1.svg" alt="" srcset=""></figure>
+           <div class="col-xl-4 col-md-6 col-12 mb-3" data-plan-type="{{ $plan->days == 30 ? 'monthly' : 'yearly' }}">
+             <div class="planing-content {{ $plan->is_recommended == 1 ? 'center-plan' : 'left-plan' }}">
+               <div class="planing-top d-flex">
+                 <figure class="planing-img d-flex justify-content-center align-items-center"><img src="assets/images/planing/1.svg" alt=""></figure>
                  <div class="planing-text">
                    <p>{{ __('Plan '.$plan->title)}}</p>
                    <h3>{{ __('Plan '.$plan->title)}}</h3>
@@ -80,25 +72,76 @@
                </div>
 
                <div class="planing-middle">
-                   <p>Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. </p>
-                   <h6>  <span>{{ amount_format($plan->price,'icon') }}</span> {{ $plan->days == 30 ? __('/month') : __('/year') }}</h6>
+                 <p>Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit.</p>
+                 <h6><span>{{ amount_format($plan->price,'icon') }}</span> {{ $plan->days == 30 ? __('/month') : __('/year') }}</h6>
                </div>
                <div class="planning-bottom">
-                <h4>What’s included</h4>
-                <ul>
-                  @foreach($plan->data ?? [] as $key => $data)
-                   <li > <i class="fa-solid  {{ planData($key,$data)['value'] == false && planData($key,$data)['is_bool'] == true ? 'bg-warning fa-xmark' : 'fa-check' }}" ></i> <span class="{{ planData($key,$data)['value'] == false && planData($key,$data)['is_bool'] == true ? 'text-warning' : '' }}">{{ ucfirst(str_replace('_',' ',planData($key,$data)['title'])) }} </span></li>
+                 <h4>What’s included</h4>
+                 <ul>
+                   @foreach($plan->data ?? [] as $key => $data)
+                   <li><i class="fa-solid {{ planData($key,$data)['value'] == false && planData($key,$data)['is_bool'] == true ? 'bg-warning fa-xmark' : 'fa-check' }}"></i> <span class="{{ planData($key,$data)['value'] == false && planData($key,$data)['is_bool'] == true ? 'text-warning' : '' }}">{{ ucfirst(str_replace('_',' ',planData($key,$data)['title'])) }}</span></li>
                    @endforeach
-                   
-                </ul>
-                 <a  class="btn btn-subscribe text-center w-100" href="{{ url('/register',$plan->id) }}">{{ $plan->is_trial == 1 ? __('Free '.$plan->trial_days.' days trial') : __('Sign Up Now') }}</a> 
+                 </ul>
+             
+
+                 <a  href="{{ route('choose.plan',$plan->id) }}" class="btn btn-subscribe text-center w-100" >{{ $plan->is_trial == 1 ? __('Free '.$plan->trial_days.' days trial') : __('Subsribe Now') }}</a>
+               
+              
+
+               
                </div>
              </div>
            </div>
-
-           
-@endforeach
+           @endforeach
 
        </div>
    </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.plan-link');
+    const planItems = document.querySelectorAll('[data-plan-type]');
+
+    // Set default display to "yearly" plans
+    const defaultType = 'yearly';
+
+    // Initialize display based on the default type
+    planItems.forEach(plan => {
+      if (plan.getAttribute('data-plan-type') === defaultType) {
+        plan.classList.add('visible');
+      } else {
+        plan.classList.remove('visible');
+      }
+    });
+
+    // Set default active link
+    navLinks.forEach(link => {
+      if (link.textContent.toLowerCase() === defaultType) {
+        link.classList.add('active-plan');
+      } else {
+        link.classList.remove('active-plan');
+      }
+    });
+
+    // Add click event listeners
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const selectedType = this.textContent.toLowerCase();
+
+        // Toggle active class on nav links
+        navLinks.forEach(link => link.classList.remove('active-plan'));
+        this.classList.add('active-plan');
+
+        // Show/Hide plans with animation based on the selected type
+        planItems.forEach(plan => {
+          if (plan.getAttribute('data-plan-type') === selectedType) {
+            plan.classList.add('visible');
+          } else {
+            plan.classList.remove('visible');
+          }
+        });
+      });
+    });
+  });
+</script>

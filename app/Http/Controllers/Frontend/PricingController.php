@@ -3,105 +3,148 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Post;
 use App\Models\Plan;
+use App\Models\Post;
 use App\Models\User;
-use Hash;
-use Str;
-use Auth;
 use App\Traits\Seo;
+use Auth;
+use Hash;
+use Illuminate\Http\Request;
 use Session;
+use Str;
+
 class PricingController extends Controller
 {
-
     use Seo;
 
     /**
      * Display a pricing page of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        $faqs = Post::where('type','faq')->where('featured',1)->where('lang',app()->getLocale())->with('excerpt')->latest()->get();
-        $plans = Plan::where('status',1)->latest()->get();
+        // Retrieve FAQs with 'faq' type, featured, in the current language
+        $faqs = Post::where('type', 'faq')
+            ->where('featured', 1)
+            ->where('lang', app()->getLocale())
+            ->with('excerpt')
+            ->latest()
+            ->get();
 
+        // Retrieve active plans
+        $plans = Plan::where('status', 1)
+            ->latest()
+            ->get();
+
+        // Set metadata for SEO
         $this->metadata('seo_pricing');
-// dd($plans);
-        return view('frontend.plans',compact('faqs','plans'));
+
+        // Return the plans view with FAQs and plans data
+        return view('frontend.plans', compact('faqs', 'plans'));
     }
 
     /**
      * Display the specified resource.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  string  $id
-     * @param  Request 
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function register(Request $request, $id)
     {
-        $plan = Plan::where('status',1)->findorFail($id);
+        // Find the active plan by ID or fail
+        $plan = Plan::where('status', 1)->findOrFail($id);
 
+        // Set page metadata
         $meta['title'] = $plan->title ?? '';
         $this->pageMetaData($meta);
 
-
-        return view('frontend.register',compact('plan','request'));
+        // Return the registration view with the plan and request data
+        return view('frontend.plan-steps.register', compact('plan', 'request'));
     }
 
-
     /**
-     * register a user with plan
+     * Register a user with a plan.
      *
-     * @param  integer  $id
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function registerPlan(Request $request, $id)
     {
+        // dd($request->all());
+        // Validate incoming request data
         $request->validate([
-            'name'     => ['required', 'string', 'max:255'],
-            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8'],
+            'fname' => ['required', 'string', 'max:125'],
+            'lname' => ['required', 'string', 'max:125'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+
         ]);
 
-        $plan = Plan::where('status',1)->findorFail($id);
+        // Find the active plan by ID or fail
+        $plan = Plan::where('status', 1)->findOrFail($id);
 
-        $user              = new User;
-        $user->name        = $request->name;
-        $user->email       = $request->email;
-        $user->role        = 'user';
-        $user->status      = 1;
-        $user->plan        = json_encode($plan->data);
-        $user->plan_id     = $plan->id;
-        $user->will_expire = $plan->is_trial == 1 ? now()->addDays($plan->trial_days) : null;
-        $user->authkey     = $this->generateAuthKey();
-        $user->password    = Hash::make($request->password);
-        $user->save();
+        // Create a new user with the provided data
+        $user = User::create([
+            'name' => $request->fname . " " . $request->lname,
+            'email' => $request->email,
+            'role' => 'user',
+            'status' => 1,
+            'plan' => json_encode($plan->data),
+            'plan_id' => $plan->id,
+            'will_expire' => $plan->is_trial == 1 ? now()->addDays($plan->trial_days) : null,
+            'authkey' => $this->generateAuthKey(),
+            'password' => Hash::make($request->password),
+        ]);
 
+        // Log the user in
         Auth::login($user);
+        return redirect()->route('choose.payment.method', $plan->id);
 
-        if ($user->will_expire == null) {
-            return redirect('user/subscription/'.$plan->id);
+    }
+
+    /**
+     * Generate a unique authentication key.
+     *
+     * @return string
+     */
+    public function generateAuthKey()
+    {
+        do {
+            $rend = Str::random(50);
+            $exists = User::where('authkey', $rend)->exists();
+        } while ($exists);
+
+        return $rend;
+    }
+
+    public function choosePlan(Plan $plan)
+    {
+
+        return view('frontend.plan-steps.plan', compact('plan'));
+    }
+
+    public function choosePaymentMethod(Plan $plan)
+    {
+
+        return view('frontend.plan-steps.payment', compact('plan'));
+
+    }
+
+    public function proceedPayment(Request $request)
+    {
+
+        $user = Auth::user();
+        // Redirect based on trial status
+        if ($user->will_expire === null) {
+            return redirect('user/subscription/' . $request->plan_id);
         }
-
-        Session::put('new-user',__('Lets create a whatsapp device'));
+        // Store a session message and redirect to device creation
+        Session::put('new-user', __('Lets create a whatsapp device'));
         return redirect('/user/device/create');
 
     }
 
-    /**
-     * generate auth key
-     */
-    public function generateAuthKey()
-    {
-        $rend = Str::random(50);
-        $check = User::where('authkey', $rend)->first();
-
-        if($check == true){
-            $rend = $this->generateAuthKey();
-        }
-        return $rend;
-    }
 }

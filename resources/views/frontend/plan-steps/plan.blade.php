@@ -1,7 +1,7 @@
 @extends('frontend.inc.master')
 @section('style')
 <link rel="stylesheet" href="{{ asset('frontend/assets/') }}/css/plan.css">
-<link rel="stylesheet" href="{{ asset('frontend/assets/') }}/css/createAccount.css">
+<link rel="stylesheet" href="{{ asset('frontend/assets/') }}/css/register.css">
 
 
 @endsection
@@ -10,12 +10,12 @@
 <section class="plan">
     <div class="faq_hero_container_section">
         <div class="container">
-         
+       
 
             
             <div class="d-flex justify-content-center align-items-center">
                 <div class="Back-arrow">
-                    <a href="#" class="Back-arrow">
+                    <a  href="{{ url()->previous()}}" class="Back-arrow">
                         <img src="{{ asset('frontend/assets/images/payment') }}/arrow-back.svg" alt="arrow" class="mx-2" />Back
                     </a>
                 </div>
@@ -127,7 +127,7 @@
                         </div>
 
                         <div class="plan-every">Billing every month </div>
-                        <a href="./createAccount.html">
+                        <a href="{{ url('/register',$plan->id) }}">
                             <button class="subscribe-btn"> subscribe</button>
                         </a>
 

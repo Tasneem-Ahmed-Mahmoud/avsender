@@ -2,6 +2,8 @@
 @extends('frontend.inc.master')
 @section('style')
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    
 @endsection
 @section('content')
 
@@ -22,12 +24,12 @@
 
 
         </div>
-        <div class="col-10   hero-image-home">
+        <div class="col-12 w-100 text-center  hero-image-home ">
 
-            <img alt="hero-image-Services" src="{{ asset('frontend/assets/images/home') }}/hero-image-statistic.svg" />
+            <img alt="hero-image-Services"  class="w-75" src="{{ asset('frontend/assets/images/home') }}/hero-image-statistic.svg" />
 
         </div>
-        <div class="col-10  d-flex justify-content-center   hero-image-home-Trusted">
+        <div class="col-12  d-flex justify-content-center  hero-image-home-Trusted">
 
             <img alt="hero-image-Services" src="{{ asset('frontend/assets/images/home') }}/Trusted.svg" />
 

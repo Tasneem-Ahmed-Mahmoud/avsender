@@ -14,8 +14,8 @@ Route::get('/tag/{slug}/{id}', [FRONTEND\BlogController::class, 'tag']);
 Route::get('/team', [FRONTEND\HomeController::class, 'team']);
 Route::get('/how-its-work', [FRONTEND\HomeController::class, 'work']);
 Route::get('/faq', [FRONTEND\HomeController::class, 'faq']);
-Route::get('/pricing', [FRONTEND\PricingController::class, 'index']);
-Route::get('/register/{id}', [FRONTEND\PricingController::class, 'register'])->middleware('guest');
+Route::get('/pricing', [FRONTEND\PricingController::class, 'index'])->name('pricing');
+Route::get('/register/{id}', [FRONTEND\PricingController::class, 'register'])->middleware('guest')->name('register-form');
 Route::post('/register-plan/{id}', [FRONTEND\PricingController::class, 'registerPlan'])->middleware('guest');
 Route::get('/contact', [FRONTEND\ContactController::class, 'index']);
 Route::post('/send-mail', [FRONTEND\ContactController::class, 'sendMail'])->name('send.mail');
@@ -26,3 +26,8 @@ Route::get('/page/{slug}', [FRONTEND\HomeController::class, 'page']);
 Route::resource('install', App\Http\Controllers\Installer\InstallerController::class);
 Route::post('install/verify', [App\Http\Controllers\Installer\InstallerController::class, 'verify'])->name('install.verify');
 Route::post('install/migrate', [App\Http\Controllers\Installer\InstallerController::class, 'migrate'])->name('install.migrate');
+
+
+Route::get('/choose-plan/{plan}', [FRONTEND\PricingController::class, 'choosePlan'])->name('choose.plan');
+Route::get('/choose-payment-method/{plan}', [FRONTEND\PricingController::class, 'choosePaymentMethod'])->name('choose.payment.method');
+Route::post('/proceed-payment', [FRONTEND\PricingController::class, 'proceedPayment'])->name('proceed-payment');

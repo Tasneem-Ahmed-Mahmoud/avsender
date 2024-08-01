@@ -61,5 +61,5 @@ Route::group(['middleware' => ['auth', 'web']], function () {
     Route::get('payu/payment', '\App\Gateway\Payu@view')->name('payu.view');
     Route::post('payu/status', '\App\Gateway\Payu@status')->name('payu.status');
 });
-Route::view('/test','frontend/payment/plan');
+Route::view('/test','frontend/plan-steps/register');
 

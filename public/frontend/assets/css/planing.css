@@ -251,16 +251,27 @@ margin-bottom: 5rem !important;
     line-height: 25.6px;
     
 }
-.nav .nav-item:first-child{
+/* .nav .nav-item:first-child{
     background: linear-gradient(90deg, #23316E 0%, #435ED4 100%);
-}
+} */
 .nav .nav-item:last-child{
     background: white;
 }
 .nav .nav-item a{
-    color: red;
-}
+    color: #29387E;
 
+    
+}
+.active-plan{
+    background: linear-gradient(90deg, #23316E 0%, #435ED4 100%);
+    color:  #FFFFFF !important;
+ 
+border-radius: 50px ;
+
+
+    
+
+}
 @media (max-width: 1400px)and (min-width: 299px) {
 
 .planing .planing-content {

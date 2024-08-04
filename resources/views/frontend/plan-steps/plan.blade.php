@@ -2,17 +2,11 @@
 @section('style')
 <link rel="stylesheet" href="{{ asset('frontend/assets/') }}/css/plan.css">
 <link rel="stylesheet" href="{{ asset('frontend/assets/') }}/css/register.css">
-
-
 @endsection
 @section('content')
-
 <section class="plan">
     <div class="faq_hero_container_section">
         <div class="container">
-       
-
-            
             <div class="d-flex justify-content-center align-items-center">
                 <div class="Back-arrow">
                     <a  href="{{ url()->previous()}}" class="Back-arrow">
@@ -88,12 +82,6 @@
 
 
             </div>
-
-
-    
-  
-
-
             <div class="planCards mt-4">
                 <div class="row">
                     @foreach ($plans as $plan )

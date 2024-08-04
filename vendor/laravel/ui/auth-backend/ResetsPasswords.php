@@ -28,9 +28,7 @@ trait ResetsPasswords
     {
         $token = $request->route()->parameter('token');
 
-        return view('auth.passwords.reset')->with(
-            ['token' => $token, 'email' => $request->email]
-        );
+        return view('auth.passwords.reset')->with( ['token' => $token, 'email' => $request->email] );
     }
 
     /**
@@ -41,6 +39,8 @@ trait ResetsPasswords
      */
     public function reset(Request $request)
     {
+       
+        
         $request->validate($this->rules(), $this->validationErrorMessages());
 
         // Here we will attempt to reset the user's password. If it is successful we
@@ -106,6 +106,7 @@ trait ResetsPasswords
      */
     protected function resetPassword($user, $password)
     {
+        
         $this->setUserPassword($user, $password);
 
         $user->setRememberToken(Str::random(60));

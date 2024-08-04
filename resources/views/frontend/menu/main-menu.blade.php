@@ -30,6 +30,6 @@
 @endforeach
 @endif
 
-<li class="nave-item search-icon-container ms-5">
+{{-- <li class="nave-item search-icon-container ms-5">
 	<a href="#" class="nav-link "> <i class="fa-solid fa-magnifying-glass search-icon"></i></a>
-</li>
+</li> --}}

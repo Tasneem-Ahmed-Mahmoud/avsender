@@ -62,19 +62,19 @@ Route::group(['middleware' => ['auth', 'web']], function () {
     Route::get('payu/payment', '\App\Gateway\Payu@view')->name('payu.view');
     Route::post('payu/status', '\App\Gateway\Payu@status')->name('payu.status');
 });
-Route::view('/test','frontend/plan-steps/register');
 
-Route::get('duplicate-plan',function(){
-    // Retrieve the original plan
-    $originalPlans = Plan::get();
+// Route::get('duplicate-plan',function(){
+//     // Retrieve the original plan
+//     $originalPlans = Plan::get();
     
-   foreach($originalPlans as $plan){
-    $newPlan = $plan->replicate(); 
-    $newPlan->days = $plan->days == 30 ? 365 : 30; // Switch days from 30 to 365 or vice versa
-  $newPlan->save();  
-   }
+//    foreach($originalPlans as $plan){
+//     $newPlan = $plan->replicate(); 
+//     $newPlan->days = $plan->days == 30 ? 365 : 30; // Switch days from 30 to 365 or vice versa
+//   $newPlan->save();  
+//    }
   
     
 
 
-});
+// });
+Route::view('/test','auth/passwords/confirm');

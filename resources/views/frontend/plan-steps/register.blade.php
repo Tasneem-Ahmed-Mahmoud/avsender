@@ -160,7 +160,7 @@
                                         Create Account
                                     </button>
                                 </a>
-                                <div class="Login-div">Already have an account ? <a href="#" class="Login-a">
+                                <div class="Login-div">Already have an account ? <a href="{{ url('/login') }}" class="Login-a">
                                         Login
                                     </a></div>
 

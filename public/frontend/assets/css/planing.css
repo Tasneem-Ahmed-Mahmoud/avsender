@@ -103,7 +103,7 @@
 
 .planing .planing-middle h6 span {
     font-weight: 600;
-    font-size:3rem;
+    font-size:2.5rem;
     line-height: 5.6rem;
 }
 
@@ -177,11 +177,11 @@
     color: #170F49;
 }
 
-.planing .planing-content.left-plan .btn-subscribe:hover,
+/* .planing .planing-content.left-plan .btn-subscribe:hover,
 .planing .planing-content.right-plan .btn-subscribe:hover {
     background-color: #29387E;
     color: var(--white-color);
-}
+} */
 
 /* .planing .center-plan {
     background-color: #29387E;

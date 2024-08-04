@@ -25,19 +25,13 @@
                         <img class="reset-icon" src="{{ asset('frontend/assets') }}/images/auth/mailIcon.svg"
                            alt="reset"><label for="email">{{ __('Email Address') }}</label>
                         <input type="email" id="email" placeholder="example@email.com" required name="email" value="{{ old('email')??'' }}">
-                        @error('email')
-                        @include('frontend.inc.error',['message' => $message])
-                        @enderror
+                        @include('frontend.inc.error', ["properity"=> 'email'])
                      </div>
                      <div class="input-group password" style="margin-top: 0;">
                         <img class="reset-icon" src="{{ asset('frontend/assets') }}/images/auth/resetPass.svg" alt="reset" >
                         <label for="password">{{ __('Password') }}</label>
                         <input type="password" id="password" placeholder="********" required name="password" value="{{ old('password')??'' }}">
-                        @error('password')
-                        @include('frontend.inc.error',['message' => $message])
-   
-                        @enderror
-   
+                        @include('frontend.inc.error', ["properity"=> 'password'])
                      </div>
    
    
@@ -70,13 +64,25 @@
 @endsection
 
 @section('script')
+ <script>
+   document.addEventListener('DOMContentLoaded', function() {
+       document.querySelectorAll('a > .col-md-6').forEach(function(element) {
+           const parent = element.parentNode;
+           parent.parentNode.insertBefore(element, parent);
+           parent.remove();
+       });
+   });
+</script> 
 
-<script>
+{{-- <script>
    $(document).ready( function(){
 $('a >.col-md-6 ').each(function(){
    $(this).unwrap()
 })
 });
-</script>
+</script> --}}
+
+
+
    
 @endsection

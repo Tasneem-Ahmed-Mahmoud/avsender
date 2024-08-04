@@ -90,76 +90,42 @@
             </div>
 
 
+    
+  
 
 
-            <div class="plan-center d-flex align-items-center justify-content-center">
-                <div class="plan-center-left">
-                    <img src="{{ asset('frontend/assets/images/payment') }}/planImg.svg" alt="">
-                </div>
-                <div class="plan-center-right mx-2">
-                    <div class="plan-center-right_top">
-                        For big companies
-                    </div>
-                    <div class="plan-center-right_bottom">
-                        Enterprise
-                    </div>
-                </div>
-            </div>
-
-            <div class="planCards">
+            <div class="planCards mt-4">
                 <div class="row">
+                    @foreach ($plans as $plan )
                     <div class="plan-card plan-card-l col-md-6 text-center">
-                        <h3 class="plan-card-h3">Monthly Plan</h3>
+                        <h3 class="plan-card-h3">{{ $plan->days==30 ? 'Monthly Plan' : 'Annual Plan' }}</h3>
                         <div>
-                            <img class="card-line" src="{{ asset('frontend/assets/images/payment') }}/plan-card-line.svg" alt="">
+                            <img class="card-line" src="{{ asset($plan->icon)}}" alt="">
 
                         </div>
 
                         <div class="plan-price d-flex justify-content-center">
                             <div class="plan-price-SAR">
-                                SAR 25
+                                SAR {{ $plan->price }}
 
                             </div>
                             <div class="plan-price-month">
-                                /monthly
+                                /{{ $plan->days==30 ? 'monthly' : 'yearly' }}
 
                             </div>
                         </div>
 
-                        <div class="plan-every">Billing every month </div>
+                        <div class="plan-every">Billing every {{  $plan->days==30 ? 'month' : 'year' }} </div>
                         <a href="{{ url('/register',$plan->id) }}">
                             <button class="subscribe-btn"> subscribe</button>
                         </a>
 
                     </div>
-                    <div class="plan-card plan-card-r col-md-6 text-center">
-                        <div class="Save_pres">
-                            Save 30%
-                        </div>
-                        <h3 class="plan-card-h3">Annual Plan</h3>
-                        <div>
-                            <img class="card-line" src="{{ asset('frontend/assets/images/payment') }}/plan-card-line.svg" alt="">
+                    @endforeach
 
-                        </div>
+          
 
-                        <div class="plan-price d-flex justify-content-center">
-                            <div class="plan-price-SAR">
-                                SAR 115
-
-                            </div>
-                            <div class="plan-price-month">
-                                /yearly
-
-                            </div>
-                        </div>
-
-                        <div class="plan-every">Billing every month </div>
-                        <a href="./createAccount.html">
-                            <button class="subscribe-btn"> subscribe</button>
-                        </a>
-
-                    </div>
-
+                  
 
                 </div>
 

@@ -1381,5 +1381,7 @@
   "SAR" : "SAR",
   "/month" : "/month",
   "/year" : "/year",
-  "You can try send bulk messages by registration for FREE":"يمكنك تجربة إرسال الرسائل بالجملة عن طريق التسجيل مجانًا"
-}
+  "You can try send bulk messages by registration for FREE":"يمكنك تجربة إرسال الرسائل بالجملة عن طريق التسجيل مجانًا",
+  "Plan Business Size":"حجم عمل الخطة",
+  "Plan Description":"وصف الخطة",
+  "Plan Icon":"أيقونة الخطة"

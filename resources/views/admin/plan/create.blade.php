@@ -15,12 +15,12 @@
 @endsection
 @section('content')
 <div class="row ">
-	<div class="col-lg-5 mt-5">
+	<div class="col-12 mt-5">
         <strong>{{ __('Plan') }}</strong>
         <p>{{ __('Create subscription plan for charging from the customer') }}</p>
     </div>
     <div class="col-lg-7 mt-5">
-        <form class="ajaxform_instant_reload" action="{{ route('admin.plan.store') }}">
+        <form class="ajaxform_instant_reload" action="{{ route('admin.plan.store') }}" enctype="multipart/form-data">
         	@csrf
         	<div class="card">
             <div class="card-body">
@@ -28,6 +28,26 @@
                     <label class="col-lg-12">{{ __('Plan Name') }}</label>
                     <div class="col-lg-12">
                         <input type="text" name="title" required="" class="form-control">
+                    </div>
+                </div>
+
+                <div class="from-group row mt-2">
+                    <label class="col-lg-12">{{ __('Plan Description') }}</label>
+                    <div class="col-lg-12">
+                        <input type="text" name="description" required="" class="form-control">
+                    </div>
+                </div>
+                <div class="from-group row mt-2">
+                    <label class="col-lg-12">{{ __('Plan Icon') }}</label>
+                    <div class="col-lg-12">
+                        <input type="file" name="icon" required="" class="form-control">
+                    </div>
+                </div>
+
+                <div class="from-group row mt-2">
+                    <label class="col-lg-12">{{ __('Plan Business Size') }}</label>
+                    <div class="col-lg-12">
+                        <input type="text" name="business_size" required="" class="form-control">
                     </div>
                 </div>
                 <div class="from-group row mt-2">

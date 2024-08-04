@@ -32,6 +32,32 @@
                     </div>
                 </div>
                 <div class="from-group row mt-2">
+                    <label class="col-lg-12">{{ __('Plan Description') }}</label>
+                    <div class="col-lg-12">
+                        <input type="text" name="description" required="" class="form-control" value="{{ $plan->description }}">
+                    </div>
+                </div>
+                <div class="from-group row mt-2">
+                    <label class="col-lg-12">{{ __('Plan Icon') }}</label>
+                    <div class="col-lg-12">
+                        <input type="file" name="icon"  class="form-control">
+                    </div>
+                    @if ($plan->icon)
+
+                    <div class="col-lg-12"></div>
+                        <img src="{{ asset($plan->icon) }}" width="100" height="100" >
+                    </div>
+                        
+                    @endif
+                </div>
+
+                <div class="from-group row mt-2">
+                    <label class="col-lg-12">{{ __('Plan Business Size') }}</label>
+                    <div class="col-lg-12">
+                        <input type="text" name="business_size" required="" class="form-control" value="{{ $plan->business_size }}">
+                    </div>
+                </div>
+                <div class="from-group row mt-2">
                     <label class="col-lg-12">{{ __('Select Duration') }}</label>
                     <div class="col-lg-12">
                         <select class="form-control" name="days">

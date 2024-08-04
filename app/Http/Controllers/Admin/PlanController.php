@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Plan;
+use App\Traits\Uploader;
 use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
+    use Uploader;
     public function __construct()
     {
         $this->middleware('permission:subscriptions');
@@ -48,6 +50,9 @@ class PlanController extends Controller
             'price' => 'required',
             'days' => 'required',
             'plan_data*' => 'required',
+            "description" => 'required|max:200',
+            "business_size" => 'required|max:200',
+            "icon" => "required|mimes:png,jpg,jpeg,svg|max:2048",
         ]);
 
         if (isset($request->is_tria)) {
@@ -57,6 +62,9 @@ class PlanController extends Controller
         }
 
         $plan = new Plan;
+        $plan->description = $request->description;
+        $plan->business_size = $request->business_size;
+        $plan->icon = $this->saveFile($request, 'icon');
         $plan->title = $request->title;
         $plan->price = $request->price;
         $plan->labelcolor = $request->labelcolor;
@@ -108,9 +116,19 @@ class PlanController extends Controller
             'price' => 'required',
             'days' => 'required',
             'plan_data*' => 'required',
+            "description" => 'required|max:200',
+            "business_size" => 'required|max:200',
+            "icon" => "nullable|mimes:png,jpg,jpeg,svg|max:2048",
         ]);
 
         $plan = Plan::findOrFail($id);
+        $plan->description = $request->description;
+        $plan->business_size = $request->business_size;
+        if($request->hasFile('icon')){
+            $plan->icon =  $this->saveFile($request, 'icon') ;
+            ! empty($plan->icon) ? $this->removeFile($plan->icon) : '';
+        }
+       
         $plan->title = $request->title;
         $plan->price = $request->price;
         $plan->labelcolor = $request->labelcolor;
@@ -144,8 +162,10 @@ class PlanController extends Controller
                 'message' => __('You cant delete this plan because this plan already using some users'),
             ], 403);
         }
-        $plan->delete();
 
+        $icon = $plan->icon;
+        $plan->delete();
+        $this->removeFile($icon);
         return response()->json([
             'redirect' => route('admin.plan.index'),
             'message' => __('Plan deleted successfully.'),

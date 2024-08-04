@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Plan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,3 +64,17 @@ Route::group(['middleware' => ['auth', 'web']], function () {
 });
 Route::view('/test','frontend/plan-steps/register');
 
+Route::get('duplicate-plan',function(){
+    // Retrieve the original plan
+    $originalPlans = Plan::get();
+    
+   foreach($originalPlans as $plan){
+    $newPlan = $plan->replicate(); 
+    $newPlan->days = $plan->days == 30 ? 365 : 30; // Switch days from 30 to 365 or vice versa
+  $newPlan->save();  
+   }
+  
+    
+
+
+});

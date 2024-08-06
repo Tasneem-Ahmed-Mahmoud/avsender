@@ -70,12 +70,12 @@ trait SendsPasswordResetEmails
      * @param  string  $response
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
-    protected function sendResetLinkResponse(Request $request, $response)
-    {
-        return $request->wantsJson()
-                    ? new JsonResponse(['message' => trans($response)], 200)
-                    : back()->with('status', trans($response));
-    }
+    // protected function sendResetLinkResponse(Request $request, $response)
+    // {
+    //     return $request->wantsJson()
+    //                 ? new JsonResponse(['message' => trans($response)], 200)
+    //                 : back()->with('status', trans($response));
+    // }
 
     /**
      * Get the response for a failed password reset link.
@@ -86,18 +86,19 @@ trait SendsPasswordResetEmails
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    protected function sendResetLinkFailedResponse(Request $request, $response)
-    {
-        if ($request->wantsJson()) {
-            throw ValidationException::withMessages([
-                'email' => [trans($response)],
-            ]);
-        }
+    // work
+    // protected function sendResetLinkFailedResponse(Request $request, $response)
+    // {
+    //     if ($request->wantsJson()) {
+    //         throw ValidationException::withMessages([
+    //             'email' => [trans($response)],
+    //         ]);
+    //     }
 
-        return back()
-                ->withInput($request->only('email'))
-                ->withErrors(['email' => trans($response)]);
-    }
+    //     return back()
+    //             ->withInput($request->only('email'))
+    //             ->withErrors(['email' => trans($response)]);
+    // }
 
     /**
      * Get the broker to be used during password reset.
@@ -108,4 +109,98 @@ trait SendsPasswordResetEmails
     {
         return Password::broker();
     }
+
+
+
+
+//     protected function sendResetLinkResponse(Request $request, $response)
+// {
+//     return $request->wantsJson()
+//                 ? new JsonResponse(['message' => trans($response)], 200)
+//                 : redirect()->route('password.link')->with('email', $request->only('email'));
+// }
+
+// work
+// protected function sendResetLinkResponse(Request $request, $response)
+// {
+//     $message = $request->route()->getName() === 'password.resend'
+//         ? 'The password reset email has been resent.'
+//         : trans($response);
+
+//     return $request->wantsJson()
+//         ? new JsonResponse(['message' => $message], 200)
+//         : redirect()->route('password.link')->with('email', $request->input('email'));
+// }
+
+
+// /
+
+// protected function sendResetLinkResponse(Request $request, $response)
+// {
+    
+//     $message = $request->route()->getName() === 'password.resend'
+//         ? 'The password reset email has been resent.'
+//         : trans($response);
+
+//     return $request->wantsJson()
+//         ? new JsonResponse(['message' => $message], 200)
+//         : redirect()->route('password.link')->with('email', $request->input('email'));
+// }
+
+// protected function sendResetLinkFailedResponse(Request $request, $response)
+// {
+//     if ($request->wantsJson()) {
+//         return new JsonResponse(['email' => [trans($response)]], 422);
+//     }
+
+//     return back()
+//         ->withInput($request->only('email'))
+//         ->withErrors(['email' => trans($response)]);
+// }
+
+// protected function sendResetLinkResponse(Request $request, $response)
+// {
+//     $message = $request->route()->getName() === 'password.resend'
+//         ? 'The password reset email has been resent.'
+//         : trans($response);
+
+//     return $request->wantsJson()
+//         ? new JsonResponse(['message' => $message], 200)
+//         : redirect()->route('password.link')->with('email', $request->input('email'));
+// }
+
+// protected function sendResetLinkFailedResponse(Request $request, $response)
+// {
+//     if ($request->wantsJson()) {
+//         return new JsonResponse(['email' => [trans($response)]], 422);
+//     }
+
+//     return back()
+//         ->withInput($request->only('email'))
+//         ->withErrors(['email' => trans($response)]);
+// }
+
+protected function sendResetLinkResponse(Request $request, $response)
+{
+    $message = $request->route()->getName() === 'password.resend'
+        ? 'The password reset email has been resent.'
+        : trans($response);
+
+    return $request->wantsJson()
+        ? new JsonResponse(['message' => $message], 200)
+        : redirect()->route('password.link')->with('email', $request->input('email'));
 }
+
+protected function sendResetLinkFailedResponse(Request $request, $response)
+{
+    if ($request->wantsJson()) {
+        return new JsonResponse(['email' => [trans($response)]], 422);
+    }
+
+    return back()
+        ->withInput($request->only('email'))
+        ->withErrors(['email' => trans($response)]);
+}
+
+}
+

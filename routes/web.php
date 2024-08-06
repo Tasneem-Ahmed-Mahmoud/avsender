@@ -2,6 +2,8 @@
 
 use App\Models\Plan;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,3 +80,17 @@ Route::group(['middleware' => ['auth', 'web']], function () {
 
 // });
 // Route::view('/test','auth/passwords/reset');
+
+
+Route::get('/password/link', function () {
+    return view('auth.link');
+})->name('password.link');
+// Route::post('/password/resend', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.resend');
+
+
+Route::post('/password/email/resend', [ForgotPasswordController::class, 'resendResetLink'])->name('password.email.resend');
+
+
+Route::get('password/success', function () {
+    return view('auth.passwords.success');
+})->name('password.success');

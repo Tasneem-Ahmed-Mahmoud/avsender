@@ -28,7 +28,7 @@ trait ResetsPasswords
     {
         $token = $request->route()->parameter('token');
 
-        return view('auth.passwords.reset')->with( ['token' => $token, 'email' => $request->email] );
+        return view('auth.passwords.reset')->with(['token' => $token, 'email' => $request->email]);
     }
 
     /**
@@ -39,8 +39,6 @@ trait ResetsPasswords
      */
     public function reset(Request $request)
     {
-       
-        
         $request->validate($this->rules(), $this->validationErrorMessages());
 
         // Here we will attempt to reset the user's password. If it is successful we
@@ -52,9 +50,7 @@ trait ResetsPasswords
             }
         );
 
-        // If the password was successfully reset, we will redirect the user back to
-        // the application's home authenticated view. If there is an error we can
-        // redirect them back to where they came from with their error message.
+        // If the password was successfully reset, we will redirect the user to the success page.
         return $response == Password::PASSWORD_RESET
                     ? $this->sendResetResponse($request, $response)
                     : $this->sendResetFailedResponse($request, $response);
@@ -106,7 +102,6 @@ trait ResetsPasswords
      */
     protected function resetPassword($user, $password)
     {
-        
         $this->setUserPassword($user, $password);
 
         $user->setRememberToken(Str::random(60));
@@ -115,7 +110,8 @@ trait ResetsPasswords
 
         event(new PasswordReset($user));
 
-        $this->guard()->login($user);
+        // Removed the login line to avoid automatically logging in the user
+        // $this->guard()->login($user);
     }
 
     /**
@@ -143,8 +139,9 @@ trait ResetsPasswords
             return new JsonResponse(['message' => trans($response)], 200);
         }
 
-        return redirect($this->redirectPath())
-                            ->with('status', trans($response));
+        // Redirect to the success view
+        return redirect()->route('password.success')
+                         ->with('status', trans($response));
     }
 
     /**
@@ -163,8 +160,8 @@ trait ResetsPasswords
         }
 
         return redirect()->back()
-                    ->withInput($request->only('email'))
-                    ->withErrors(['email' => trans($response)]);
+                         ->withInput($request->only('email'))
+                         ->withErrors(['email' => trans($response)]);
     }
 
     /**

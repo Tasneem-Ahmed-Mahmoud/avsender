@@ -38,4 +38,8 @@ class ResetPasswordController extends Controller
 
         $this->middleware('guest')->except('logout');
     }
+
+
+    
+    
 }

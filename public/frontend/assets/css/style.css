@@ -167,7 +167,9 @@ a {
     color: #1798D5;
 
 }
-
+.row-mt-topfeature{
+    margin-bottom: 1.5rem !important;
+}
 @media (max-width: 790px) {
     .hero_container {
         background: url('../images/hero-image-sm.svg') center/cover no-repeat;
@@ -256,6 +258,10 @@ a {
     }
     .WhatsApp-Chatbot{
         max-height: 20.625rem!important;
+    }
+
+    .row-mt-topfeature{
+        margin-bottom: 0 !important;
     }
  
 }

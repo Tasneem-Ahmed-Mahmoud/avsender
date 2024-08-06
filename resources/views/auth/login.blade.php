@@ -63,7 +63,7 @@
 @endsection
 
 @section('script')
-{{-- <script>
+<script>
    document.addEventListener('DOMContentLoaded', function() {
        document.querySelectorAll('a > .col-md-6').forEach(function(element) {
            const parent = element.parentNode;
@@ -71,7 +71,7 @@
            parent.remove();
        });
    });
-</script> --}}
+</script>
 
 {{-- <script>
    $(document).ready( function(){

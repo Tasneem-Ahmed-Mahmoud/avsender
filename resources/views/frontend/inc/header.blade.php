@@ -20,7 +20,7 @@
  
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/home.css">
-  <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/service.css">
+  <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/services.css">
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/login.css">
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/main.css">
   @yield('style')

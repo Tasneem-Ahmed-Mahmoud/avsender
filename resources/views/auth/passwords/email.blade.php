@@ -22,9 +22,9 @@
                   <label class="reset-label" for="new-password">{{ __('Email Address') }}</label>
                   <input placeholder="example@email.com" type="email" class="form-control reset-input" id="new-email"
                      name="email" value="{{ old('email') ??''}}">
-                  @error('email')
-                  @include("frontend.inc.error", ['message' => $message] )
-                  @enderror
+                
+                  @include("frontend.inc.error", ['properity' => "email"] )
+             
                </div>
 
                <input style="margin-top: 2rem;" class="reset-btn" type="submit"

@@ -103,7 +103,7 @@
 
 .planing .planing-middle h6 span {
     font-weight: 600;
-    font-size:2.5rem;
+    font-size:2.4rem;
     line-height: 5.6rem;
 }
 
@@ -152,6 +152,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 28.8px;
+    margin-left: 10px;;
 
 }
 
@@ -188,10 +189,8 @@
 } */
 
 
-
-
 .planing .popular-plan span {
-    background-color: var(--primary-color);
+    background-color: #6974A5;
     color: var(--white-color);
     font-weight: 500;
     font-size: 14px;
@@ -202,7 +201,10 @@ DM Sans */
     border: 1px;
     padding: 13px 24px;
     margin-bottom: 8px;
-
+    box-shadow: 0px 4px 10px 0px #FFFFFF61;
+    border: 1px solid #FFFFFF;
+    margin-bottom: 4px;
+    /* box-shadow: 0px 2px 12px 0px #14142B14; */
 }
 
 .planing .planing-content.center-plan {
@@ -335,6 +337,7 @@ border-radius: 50px ;
 .planing .planning-bottom ul li span {
     font-size: 12px;
     line-height: 19.2px;
+  
 }
 .planing .planning-bottom ul li i {
 
@@ -366,3 +369,26 @@ border-radius: 50px ;
  
 }
 }
+
+/* 
+ */
+ [data-plan-type] {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  [data-plan-type].visible {
+    display: block;
+    opacity: 1;
+  }
+
+  .plan-card {
+    display: none; /* Hide all by default */
+  }
+  
+  .plan-card.visible {
+    display: block; /* Show only visible ones */
+  }
+  
+  

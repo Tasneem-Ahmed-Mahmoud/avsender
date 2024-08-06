@@ -111,6 +111,7 @@ class PlanController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $validated = $request->validate([
             'title' => 'required|max:100',
             'price' => 'required',
@@ -128,7 +129,7 @@ class PlanController extends Controller
             $plan->icon =  $this->saveFile($request, 'icon') ;
             ! empty($plan->icon) ? $this->removeFile($plan->icon) : '';
         }
-       
+ 
         $plan->title = $request->title;
         $plan->price = $request->price;
         $plan->labelcolor = $request->labelcolor;

@@ -42,6 +42,7 @@ class SubscriptionController extends Controller
      */
     public function show($id)
     {
+        
         $plan = Plan::where('status', 1)->where('price', '>', 0)->where('id', $id)->first();
 
         if (empty($plan)) {

@@ -3,7 +3,7 @@
 @section('style')
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-    
+   <link rel="stylesheet" href="{{ asset('frontend/assets/css/planing.css') }}"> 
 @endsection
 @section('content')
 
@@ -122,7 +122,7 @@
                             handle multiple requests at once, which means it is always available to help customers,
                             even outside normal business hours.</p>
                         <div class="btn-center-whats">
-                            <button class="btn btn-create-whats-app btn-iphone">Start Using Avsender</button>
+                            <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">Start Using Avsender</a>
                         </div>
                         <div class="row home-box-row">
                             <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-left">
@@ -202,7 +202,9 @@
                 </div>
                     </div>
                 </div>
-                </div>  
+                </div> 
+                
+                
             <div class="row Our_Top_Integrations-row ">
 
                 <div class="col-md-6 ">
@@ -233,6 +235,7 @@
 
 
     </div>
+    @include('frontend.pricings')
 
     @include('frontend.sections.faq', ['faqs' => $faqs])
 
@@ -244,6 +247,7 @@
 
 
 @section('script')
+<script src="{{ asset('frontend/assets/js/planing.js') }}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
        const toggleImages = document.querySelectorAll('.more-info-faq');
@@ -328,5 +332,6 @@
         });
     });
 </script>
+
 @endsection
 

@@ -20,7 +20,7 @@
         <p>{{ __('Edit subscription plan for charging from the customer') }}</p>
     </div>
     <div class="col-lg-7 mt-5">
-        <form class="ajaxform_instant_reload" action="{{ route('admin.plan.update',$plan->id) }}">
+        <form class="ajaxform_instant_reload" action="{{ route('admin.plan.update',$plan->id) }}" method="post" enctype="multipart/form-data">
         	@csrf
         	@method('PUT')
         	<div class="card">

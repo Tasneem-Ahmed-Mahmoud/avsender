@@ -18,44 +18,53 @@
           </li>
         </ul>
       </div>
-
       @php
-        // Convert the Eloquent collection to an array
-        $plansArray = $plans->toArray();
+// Convert the Eloquent collection to an array
+$plansArray = $plans->toArray();
 
-        // Find and remove the "Special Offer" plan
-        $specialOffer = null;
-        foreach ($plansArray as $index => $plan) {
-          if ($plan['title'] === 'Special Offer') {
-            $specialOffer = array_splice($plansArray, $index, 1);
-            break;
-          }
-        }
+// Initialize the "Enterprise" plan as null
+$Enterprise = null;
 
-        // Reorder the plans so that the "Special Offer" plan is in the second position
-        if ($specialOffer) {
-          $plansArray = array_merge(
-            [array_shift($plansArray)], // First plan
-            $specialOffer,               // Special Offer plan
-            $plansArray                  // Remaining plans
-          );
-        }
+// Find and remove the "Enterprise" plan
+foreach ($plansArray as $index => $plan) {
+    if ($plan['title'] === 'Enterprise') {
+        $Enterprise = array_splice($plansArray, $index, 1);
+        break;
+    }
+}
 
-        // Convert the reordered array back to a collection
-        $plans = collect($plansArray);
-      @endphp
+// Ensure that the "Enterprise" plan is placed in the second position
+if ($Enterprise) {
+    // Insert the "Enterprise" plan at the second position if there are other plans
+    if (count($plansArray) > 0) {
+        array_splice($plansArray, 1, 0, $Enterprise);
+    } else {
+        // If no other plans, just set "Enterprise" plan as the only item
+        $plansArray = $Enterprise;
+    }
+}
+
+// Convert the reordered array back to a collection
+$plans = collect($plansArray);
+@endphp
+
 
       @foreach($plans as $plan)
-      <div class="col-xl-4 col-md-6 col-12 mb-3" data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
-        <div class="planing-content {{ $plan['title'] === 'Special Offer' ? 'center-plan' : 'left-plan' }}">
-          <div class="planing-top d-flex">
+      <div class="col-xl-4 col-md-6 col-12 mb-3 plan-card" data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
+        <div class="planing-content {{ $plan['title'] === 'Enterprise' ? 'center-plan' : 'left-plan' }}">
+          <div class="planing-top ">
+           @if ($plan['title'] === 'Enterprise')
+           <div class="popular-plan text-end "> <span>Popular</span> </div>
+           @endif
+          <div class="d-flex">
             <figure class="planing-img d-flex justify-content-center align-items-center">
               <img src="{{ $plan['icon'] }}" alt="">
             </figure>
-            <div class="planing-text">
+            <div class="planing-text @if($plan['title']  =='Enterprise') mt-3 @endif">
               <p>{{ __($plan['business_size']) }}</p>
               <h3>{{ __('Plan '.$plan['title']) }}</h3>
             </div>
+          </div>
           </div>
 
           <div class="planing-middle">
@@ -87,51 +96,3 @@
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.plan-link');
-    const planItems = document.querySelectorAll('[data-plan-type]');
-
-    // Set default display to "yearly" plans
-    const defaultType = 'yearly';
-
-    // Initialize display based on the default type
-    planItems.forEach(plan => {
-      if (plan.getAttribute('data-plan-type') === defaultType) {
-        plan.classList.add('visible');
-      } else {
-        plan.classList.remove('visible');
-      }
-    });
-
-    // Set default active link
-    navLinks.forEach(link => {
-      if (link.textContent.toLowerCase() === defaultType) {
-        link.classList.add('active-plan');
-      } else {
-        link.classList.remove('active-plan');
-      }
-    });
-
-    // Add click event listeners
-    navLinks.forEach(link => {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
-        const selectedType = this.textContent.toLowerCase();
-
-        // Toggle active class on nav links
-        navLinks.forEach(link => link.classList.remove('active-plan'));
-        this.classList.add('active-plan');
-
-        // Show/Hide plans with animation based on the selected type
-        planItems.forEach(plan => {
-          if (plan.getAttribute('data-plan-type') === selectedType) {
-            plan.classList.add('visible');
-          } else {
-            plan.classList.remove('visible');
-          }
-        });
-      });
-    });
-  });
-</script>

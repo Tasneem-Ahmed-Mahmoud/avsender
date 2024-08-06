@@ -11,7 +11,7 @@
       </a>
       {{-- <a class=" light-mode-up text-capitalize d-none" href="#"><img src="{{ asset('frontend') }}/assets/images/lamp.svg" alt="" srcset=""></a> --}}
       <div class="navbar-btn-container  d-flex justify-content-between navbar-btn-mobile  m-auto d-none ">
-        <a class=" navbar-btn-subscribe navbar-btn" href="">Subscribe <a>
+        <a class=" navbar-btn-subscribe navbar-btn" href="{{ url('/pricing') }}">Subscribe <a>
          @guest
          <a class="navbar-btn-login navbar-btn" href="{{ url('/login') }}">Login <a>
          @endguest

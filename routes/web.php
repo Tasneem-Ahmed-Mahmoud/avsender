@@ -77,4 +77,4 @@ Route::group(['middleware' => ['auth', 'web']], function () {
 
 
 // });
-Route::view('/test','auth/passwords/confirm');
+// Route::view('/test','auth/passwords/reset');

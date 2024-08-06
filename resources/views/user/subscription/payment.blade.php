@@ -1,10 +1,11 @@
 @extends('gateways.main')
 @section('content')
 <div class="col-sm-12">
+  
    <table class="header">
       <tr>
          <td width="50%" nowrap>
-            <p><img width="50%" height="50%" src="{{ asset(get_option('primary_data',true)->logo ?? '') }}" title="" /></p>
+            <p><img width="50%" height="50%" src="{{ asset('frontend/assets/images/logo.svg') }}" title="" /></p>
          </td>
          <td width="50%" align="right">
             <font class="unpaid">{{ __('Unpaid') }}</font><br />

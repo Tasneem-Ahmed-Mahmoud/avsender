@@ -121,6 +121,7 @@
 
 
 @section('script')
+<script src="{{ asset('frontend/assets/js/pricing.js') }}"></script> 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper('.swiper-container', {
@@ -150,5 +151,5 @@
         },
     });
 </script>
-    
+ 
 @endsection

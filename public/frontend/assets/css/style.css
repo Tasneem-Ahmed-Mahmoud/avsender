@@ -265,3 +265,48 @@ a {
     }
  
 }
+
+/* ############loader ########### */
+ 
+
+/* Loader styles */
+#loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+}
+
+#loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #29387E; /* Main color */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loaded .content {
+    display: none; /* Hide content initially */
+}
+
+.loaded .content {
+    display: block; /* Show content once loaded */
+}
+
+.loaded #loader-container {
+    display: none; /* Hide loader once loaded */
+}

@@ -34,6 +34,9 @@
 </head>
 
 <body >
+   {{-- <div id="loader-container">
+      <div id="loader"></div>
+  </div> <!-- Loader element --> --}}
 
     @include('frontend.inc.navbar')
 

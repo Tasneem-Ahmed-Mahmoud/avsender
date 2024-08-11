@@ -1,9 +1,8 @@
-
 @extends('frontend.inc.master')
 @section('style')
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-   <link rel="stylesheet" href="{{ asset('frontend/assets/css/planing.css') }}"> 
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/planing.css') }}">
 @endsection
 @section('content')
 
@@ -26,7 +25,8 @@
         </div>
         <div class="col-12 w-100 text-center  hero-image-home ">
 
-            <img alt="hero-image-Services"  class="w-75" src="{{ asset('frontend/assets/images/home') }}/hero-image-statistic.svg" />
+            <img alt="hero-image-Services" class="w-75"
+                src="{{ asset('frontend/assets/images/home') }}/hero-image-statistic.svg" />
 
         </div>
         <div class="col-12  d-flex justify-content-center  hero-image-home-Trusted">
@@ -67,7 +67,8 @@
                     <div>
                         <div class="Our-whats-h3">
                             <div class="WhatsApp-Chatbot-text">
-                                <img alt="text-bg" src="{{ asset('frontend/assets/images/home') }}/WhatsApp-Chatbot.svg" />
+                                <img alt="text-bg"
+                                    src="{{ asset('frontend/assets/images/home') }}/WhatsApp-Chatbot.svg" />
                             </div>
                             <h3 class="Our-whats-h3">WhatsApp Chatbot</h3>
                         </div>
@@ -89,122 +90,129 @@
                     <div class="Our-whats-h3-sm d-flex justify-content-center">
                         <div>
                             <div class="WhatsApp-Chatbot-text WhatsApp-Chatbot-text-sm">
-                                <img alt="text-bg" src="{{ asset('frontend/assets/images/home') }}/WhatsApp-Chatbot.svg" />
+                                <img alt="text-bg"
+                                    src="{{ asset('frontend/assets/images/home') }}/WhatsApp-Chatbot.svg" />
                             </div>
-                           
+
                             <h3 class="Our-whats-h3-sm">WhatsApp Chatbot</h3>
                         </div>
 
                     </div>
                     <div class="d-flex justify-content-center">
-                        <img src="{{ asset('frontend/assets/images/home') }}/whats-section.svg" alt=" whats-section " class="whats-section" />
+                        <img src="{{ asset('frontend/assets/images/home') }}/whats-section.svg" alt=" whats-section "
+                            class="whats-section" />
 
                     </div>
                 </div>
             </div>
 
-          <div class="container">
-            <div class="row iPhone_2-row">
-                <div class="col-md-4 iPhone_2-col">
-                    <div class="iPhone_2_div ">
-                        <img src="{{ asset('frontend/assets/images/home') }}/iPhone_2.svg" alt="iPhone_2" />
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div>
-                        <div class="Our-iphon-h3">
-
-                            <h3 class="Our-iphon-h3">AVSender for the WhatsApp ultimate
-                                marketing tool ! </h3>
-                        </div>
-
-                        <p class="Our-Features-p Our-WhatsApp-p">The WhatsApp bot can work around the clock and can
-                            handle multiple requests at once, which means it is always available to help customers,
-                            even outside normal business hours.</p>
-                        <div class="btn-center-whats">
-                            <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">Start Using Avsender</a>
-                        </div>
-                        <div class="row home-box-row">
-                            <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-left">
-                                <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-left.svg" alt="ChatBot-left" />
-                                <div class="home-box ChatBot-left-box">
-
-                                    <h3 class="Features-box_h3 home-box-h3">Direct activation</h3>
-                                    <p class="Features-box-p Features-box-p-home home-box-p">After payment, the
-                                        platform will be activated immediately for customers, allowing them to
-                                        benefit from the services provided by Avnology Sender.</p>
-
-                                </div>
-
-
-                            </div>
-                            <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-right">
-                                <div class="d-flex justify-content-end">
-                                    <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-right.svg" alt="ChatBot-left" />
-                                </div>
-
-                                <div class="home-box ChatBot-left-right">
-
-                                    <h3 class="Features-box_h3 home-box-h3"> Facing any problem & can’t
-                                        find solution ?</h3>
-                                    <p class="Features-box-p Features-box-p-home home-box-p">Customer service is
-                                        available 24/7. You can send an email to avsender@avnology.com.</p>
-
-                                </div>
-
-
-                            </div>
+            <div class="container">
+                <div class="row iPhone_2-row">
+                    <div class="col-md-4 iPhone_2-col">
+                        <div class="iPhone_2_div ">
+                            <img src="{{ asset('frontend/assets/images/home') }}/iPhone_2.svg" alt="iPhone_2" />
                         </div>
                     </div>
+                    <div class="col-md-8">
+                        <div>
+                            <div class="Our-iphon-h3">
 
+                                <h3 class="Our-iphon-h3">AVSender for the WhatsApp ultimate
+                                    marketing tool ! </h3>
+                            </div>
+
+                            <p class="Our-Features-p Our-WhatsApp-p">The WhatsApp bot can work around the clock and can
+                                handle multiple requests at once, which means it is always available to help customers,
+                                even outside normal business hours.</p>
+                            <div class="btn-center-whats">
+                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">Start Using
+                                    Avsender</a>
+                            </div>
+                            <div class="row home-box-row">
+                                <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-left">
+                                    <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-left.svg"
+                                        alt="ChatBot-left" />
+                                    <div class="home-box ChatBot-left-box">
+
+                                        <h3 class="Features-box_h3 home-box-h3">Direct activation</h3>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">After payment, the
+                                            platform will be activated immediately for customers, allowing them to
+                                            benefit from the services provided by Avnology Sender.</p>
+
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-right">
+                                    <div class="d-flex justify-content-end">
+                                        <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-right.svg"
+                                            alt="ChatBot-left" />
+                                    </div>
+
+                                    <div class="home-box ChatBot-left-right">
+
+                                        <h3 class="Features-box_h3 home-box-h3"> Facing any problem & can’t
+                                            find solution ?</h3>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">Customer service is
+                                            available 24/7. You can send an email to avsender@avnology.com.</p>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-          </div>
-        
+
             <div class="container ">
                 <div class="row d-flex justify-content-center ">
                     <div class="col-md-10 section-white col-sm-10">
-                <div class="div-white-flex">
-                    <div class="div-mb">
-                    <div class="div-white-flex-img">
-                
-                <img src="{{ asset('frontend/assets/images/home') }}/user-icon.svg" alt="icon"/>
-                    </div>
-                    </div>
-                    <div class=" div-white-flex-content">
-                <h2 class="number-icon">76</h2>
-                <p class="para-icon">Active Users</p>
+                        <div class="div-white-flex">
+                            <div class="div-mb">
+                                <div class="div-white-flex-img">
+
+                                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon.svg" alt="icon" />
+                                </div>
+                            </div>
+                            <div class=" div-white-flex-content">
+                                <h2 class="number-icon">76</h2>
+                                <p class="para-icon">Active Users</p>
+                            </div>
+                        </div>
+                        <div class="div-white-flex">
+                            <div class="div-mb">
+                                <div class="div-white-flex-img">
+
+                                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-stars.svg"
+                                        alt="icon" />
+                                </div>
+                            </div>
+
+                            <div class=" div-white-flex-content">
+                                <h2 class="number-icon">109</h2>
+                                <p class="para-icon">Positive Reviews</p>
+                            </div>
+                        </div>
+                        <div class="div-white-flex">
+                            <div class="div-mb">
+                                <div class="div-white-flex-img">
+                                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-starsphone.svg"
+                                        alt="icon" />
+                                </div>
+                            </div>
+                            <div class=" div-white-flex-content div-white-flex-last-child">
+                                <h2 class="number-icon">132</h2>
+                                <p class="para-icon">Total Customers</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="div-white-flex">
-                    <div class="div-mb">
-                      <div class="div-white-flex-img">
-                
-                <img src="{{ asset('frontend/assets/images/home') }}/user-icon-stars.svg" alt="icon"/>
-                    </div>    
-                    </div>
-                  
-                    <div class=" div-white-flex-content">
-                <h2 class="number-icon">109</h2>
-                <p class="para-icon">Positive Reviews</p>
-                    </div>
-                </div>
-                <div class="div-white-flex">
-                    <div class="div-mb">
-                    <div class="div-white-flex-img">
-                <img src="{{ asset('frontend/assets/images/home') }}/user-icon-starsphone.svg" alt="icon"/>
-                    </div>
-                    </div>
-                    <div class=" div-white-flex-content div-white-flex-last-child">
-                <h2 class="number-icon">132</h2>
-                <p class="para-icon">Total Customers</p>
-                    </div>
-                </div>
-                    </div>
-                </div>
-                </div> 
-                
-                
+            </div>
+
+
             <div class="row Our_Top_Integrations-row ">
 
                 <div class="col-md-6 ">
@@ -212,7 +220,8 @@
                         <div class=" Our_Top_Integrations-flex">
                             <div class="">
                                 <div class="WhatsApp-Chatbot-text">
-                                    <img alt="text-bg" src="{{ asset('frontend/assets/images/home') }}/Our_Top_Integrations.svg" />
+                                    <img alt="text-bg"
+                                        src="{{ asset('frontend/assets/images/home') }}/Our_Top_Integrations.svg" />
                                 </div>
                                 <h3 class="Our-whats-h3">Our Top Integrations </h3>
                                 <h3 class="Our-whats-h3-sm Our_Top_Integrations">Our Top Integrations </h3>
@@ -235,7 +244,31 @@
 
 
     </div>
-    @include('frontend.pricings')
+
+    <!-- ################################## planing ############################################### -->
+    <section class="planing mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="planing-header text-center">
+                    <div class="planing-title">
+                        <h2>{{ __('Pricing Plans Title') }}</h2>
+                        <p>{{ (__('Pricing Plans Description')) }}</p>
+                        <span>{{ __("(No extra fees, cancel anytime).") }}</span>
+                    </div>
+
+                    <ul class="nav m-auto">
+                        <li class="nav-item">
+                            <a id="yearly" class="nav-link plan-link active-plan" href="#">{{ __('yearly') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="monthly" class="nav-link plan-link" href="#">{{ __('Monthly') }}</a>
+                        </li>
+                    </ul>
+                </div>
+                @include('frontend.pricings')
+            </div>
+        </div>
+    </section>
 
     @include('frontend.sections.faq', ['faqs' => $faqs])
 
@@ -334,4 +367,3 @@
 </script>
 
 @endsection
-

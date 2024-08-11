@@ -103,7 +103,7 @@
 
 .planing .planing-middle h6 span {
     font-weight: 600;
-    font-size:2.4rem;
+    font-size:2.3rem;
     line-height: 5.6rem;
 }
 
@@ -209,7 +209,8 @@ DM Sans */
 
 .planing .planing-content.center-plan {
     /* transform: translateY(-50px); */
-    transform: scaleY(1.1);
+    transform: scaleY(1.07);
+    
 }
 .planing .planing-title h2{
     font-weight: 600;

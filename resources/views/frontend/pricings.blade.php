@@ -1,23 +1,4 @@
-<!-- ################################## planing ############################################### -->
-<section class="planing mt-5 mb-5">
-  <div class="container">
-    <div class="row">
-      <div class="planing-header text-center">
-        <div class="planing-title">
-          <h2>Subscription Prices</h2>
-          <p>Subscribe now with our different plans that suit all business sizes and enjoy our amazing features.</p>
-          <span>(No extra fees, cancel anytime).</span>
-        </div>
 
-        <ul class="nav m-auto">
-          <li class="nav-item">
-            <a class="nav-link plan-link active-plan" href="#">yearly</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link plan-link" href="#">monthly</a>
-          </li>
-        </ul>
-      </div>
       @php
       // Convert the Eloquent collection to an array
       $plansArray = $plans->toArray();
@@ -94,6 +75,4 @@
       </div>
       @endforeach
 
-    </div>
-  </div>
-</section>
+   

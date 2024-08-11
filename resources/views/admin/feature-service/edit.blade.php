@@ -50,7 +50,7 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                             @if ($featureService->photo)
-                                <img src="{{ asset($featureService->photo) }}" class="img-fluid mt-2" alt="Current Image" width="100">
+                                <img src="{{$featureService->photo }}" class="img-fluid mt-2" alt="Current Image" width="100">
                             @endif
                         </div>
                     </div>

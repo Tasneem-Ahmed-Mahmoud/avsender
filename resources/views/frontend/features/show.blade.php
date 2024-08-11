@@ -77,7 +77,30 @@
             </div>
         </div>
 
-        @include('frontend.pricings')
+<!-- ################################## planing ############################################### -->
+<section class="planing mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="planing-header text-center">
+                <div class="planing-title">
+                    <h2>{{ __('Pricing Plans Title') }}</h2>
+                    <p>{{ (__('Pricing Plans Description')) }}</p>
+                    <span>{{ __("(No extra fees, cancel anytime).") }}</span>
+                </div>
+
+                <ul class="nav m-auto">
+                    <li class="nav-item">
+                        <a id="yearly" class="nav-link plan-link active-plan" href="#">{{ __('yearly') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="monthly" class="nav-link plan-link" href="#">{{ __('Monthly') }}</a>
+                    </li>
+                </ul>
+            </div>
+            @include('frontend.pricings')
+        </div>
+    </div>
+</section>
 
      {{-- features --}}
          <div class="container">
@@ -121,7 +144,7 @@
 
 
 @section('script')
-<script src="{{ asset('frontend/assets/js/pricing.js') }}"></script> 
+<script src="{{ asset('frontend/assets/js/planing.js') }}"></script> 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper('.swiper-container', {

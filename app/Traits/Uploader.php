@@ -23,22 +23,26 @@ trait Uploader
     //     return Storage::url($filePath);
     // }
 
+  
     private function saveFile(Request $request, $input)
 {
     $file = $request->file($input);
     $ext = $file->extension();
     $filename = now()->timestamp . Str::random(20) . '.' . $ext;
 
-    // Ensure the path is inside 'public/uploads' within the storage folder
+    // Store the file in storage/app/public/uploads
     $path = 'uploads/' . date('y') . '/' . date('m') . '/';
     $filePath = $path . $filename;
 
-    // Save the file to the storage disk (local)
-    Storage::put($filePath, file_get_contents($file));
+    // Use the 'public' disk to store the file
+    Storage::disk('public')->put($filePath, file_get_contents($file));
 
     // Return the URL to access the file
     return Storage::url($filePath);
 }
+
+    
+    
 
     //remove file
     public function removeFile($url = null)

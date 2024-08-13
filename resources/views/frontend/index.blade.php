@@ -11,13 +11,11 @@
     <div class="row  hero-image-Services-col social-media-parent">
         <div class="col-12 hero_container   home-hero-section">
             <div class="hero-home-contenet">
-                <h3 class="hero_h3 hero-home-content-h3">Boost your marketing with
-                    <br>
-                    AVSENDER on WhatsApp !
+                <h3 class="hero_h3 hero-home-content-h3">{!! __('Home Title') !!}
                 </h3>
-                <P class="hero_p ">Reach and engage your target audience more effectively.</P>
+                <P class="hero_p ">{{ __("Home Description") }}</P>
                 <a href="#">
-                    <button class="btn btn-button-hero">Work With Us</button>
+                    <button class="btn btn-button-hero">{{ __('Work With Us') }}</button>
                 </a>
             </div>
 
@@ -31,7 +29,8 @@
         </div>
         <div class="col-12  d-flex justify-content-center  hero-image-home-Trusted">
 
-            <img alt="hero-image-Services" src="{{ asset('frontend/assets/images/home') }}/Trusted.svg" />
+            <img alt="hero-image-Services" src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Trusted-ar.svg' : 'Trusted.svg')) }}" />
+
 
         </div>
         <div class="social-media-hero">
@@ -57,9 +56,8 @@
             <div class="Our-Features-h3-text">
                 <img alt="text-bg" src="{{ asset('frontend/assets/images/home') }}/Features-bg-image.svg" />
             </div>
-            <h3 class="Our-Features-h3">Our Features</h3>
-            <p class="Our-Features-p">Avsender is an efficient and effective way to boost customer support and boost
-                your company's performance.</p>
+            <h3 class="Our-Features-h3">{{ __('Feature Title') }}</h3>
+            <p class="Our-Features-p">{{ __('Feature Description') }}</p>
 
             @include('frontend.sections.features')
             <div class="row  whats-app">
@@ -70,16 +68,12 @@
                                 <img alt="text-bg"
                                     src="{{ asset('frontend/assets/images/home') }}/WhatsApp-Chatbot.svg" />
                             </div>
-                            <h3 class="Our-whats-h3">WhatsApp Chatbot</h3>
+                            <h3 class="Our-whats-h3">{{ __('WhatsApp Chatbot Title') }}</h3>
                         </div>
 
-                        <p class="Our-Features-p Our-WhatsApp-p">The WhatsApp bot can work around the clock and can
-                            handle multiple
-                            requests at once, which means it is always available to help customers, even outside
-                            normal
-                            business hours.</p>
+                        <p class="Our-Features-p Our-WhatsApp-p">{{ __('WhatsApp Chatbot Description') }}</p>
                         <div class="btn-center-whats">
-                            <button class="btn btn-create-whats-app">Lets Create WhatsApp Bot</button>
+                            <button class="btn btn-create-whats-app">{{ __('Lets Create WhatsApp Bot') }}</button>
                         </div>
 
                     </div>
@@ -94,7 +88,7 @@
                                     src="{{ asset('frontend/assets/images/home') }}/WhatsApp-Chatbot.svg" />
                             </div>
 
-                            <h3 class="Our-whats-h3-sm">WhatsApp Chatbot</h3>
+                            <h3 class="Our-whats-h3-sm">{{ __('WhatsApp Chatbot Title') }}</h3>
                         </div>
 
                     </div>
@@ -117,16 +111,12 @@
                         <div>
                             <div class="Our-iphon-h3">
 
-                                <h3 class="Our-iphon-h3">AVSender for the WhatsApp ultimate
-                                    marketing tool ! </h3>
+                                <h3 class="Our-iphon-h3">{{__('AVSender for the WhatsApp ultimate marketing tool !')}} </h3>
                             </div>
 
-                            <p class="Our-Features-p Our-WhatsApp-p">The WhatsApp bot can work around the clock and can
-                                handle multiple requests at once, which means it is always available to help customers,
-                                even outside normal business hours.</p>
+                            <p class="Our-Features-p Our-WhatsApp-p">{{ __('AVSender for the WhatsApp ultimate marketing tool Desc') }}</p>
                             <div class="btn-center-whats">
-                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">Start Using
-                                    Avsender</a>
+                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">{{__("Start Using Avsender")}}</a>
                             </div>
                             <div class="row home-box-row">
                                 <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-left">
@@ -134,10 +124,8 @@
                                         alt="ChatBot-left" />
                                     <div class="home-box ChatBot-left-box">
 
-                                        <h3 class="Features-box_h3 home-box-h3">Direct activation</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">After payment, the
-                                            platform will be activated immediately for customers, allowing them to
-                                            benefit from the services provided by Avnology Sender.</p>
+                                        <h3 class="Features-box_h3 home-box-h3">{{ __('Direct activation') }}</h3>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Direct activation Description')}}</p>
 
                                     </div>
 
@@ -151,10 +139,8 @@
 
                                     <div class="home-box ChatBot-left-right">
 
-                                        <h3 class="Features-box_h3 home-box-h3"> Facing any problem & can’t
-                                            find solution ?</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">Customer service is
-                                            available 24/7. You can send an email to avsender@avnology.com.</p>
+                                        <h3 class="Features-box_h3 home-box-h3"> {{__('Facing any problem & can’t find solution ?')}}</h3>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Facing any problem & can’t find solution Description')}}</p>
 
                                     </div>
 
@@ -179,7 +165,7 @@
                             </div>
                             <div class=" div-white-flex-content">
                                 <h2 class="number-icon">76</h2>
-                                <p class="para-icon">Active Users</p>
+                                <p class="para-icon">{{ __('Active Users') }}</p>
                             </div>
                         </div>
                         <div class="div-white-flex">
@@ -193,7 +179,7 @@
 
                             <div class=" div-white-flex-content">
                                 <h2 class="number-icon">109</h2>
-                                <p class="para-icon">Positive Reviews</p>
+                                <p class="para-icon">{{ __('Positive Reviews') }}</p>
                             </div>
                         </div>
                         <div class="div-white-flex">
@@ -205,7 +191,7 @@
                             </div>
                             <div class=" div-white-flex-content div-white-flex-last-child">
                                 <h2 class="number-icon">132</h2>
-                                <p class="para-icon">Total Customers</p>
+                                <p class="para-icon">{{ __('Total Customers') }}</p>
                             </div>
                         </div>
                     </div>
@@ -223,8 +209,8 @@
                                     <img alt="text-bg"
                                         src="{{ asset('frontend/assets/images/home') }}/Our_Top_Integrations.svg" />
                                 </div>
-                                <h3 class="Our-whats-h3">Our Top Integrations </h3>
-                                <h3 class="Our-whats-h3-sm Our_Top_Integrations">Our Top Integrations </h3>
+                                <h3 class="Our-whats-h3">{{ __('Our Top Integrations') }} </h3>
+                                <h3 class="Our-whats-h3-sm Our_Top_Integrations">{{ __('Our Top Integrations') }} </h3>
                             </div>
                         </div>
                         <p class="Our-Features-p Our-WhatsApp-p Our-Ipsum-p">Lorem Ipsum is simply dummy text of the

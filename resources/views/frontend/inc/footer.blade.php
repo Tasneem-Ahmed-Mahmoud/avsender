@@ -38,15 +38,15 @@
            
             <ul class="footer-links">
              
-              <li><a class=" {{ url()->current() == url('/') ? 'active' : '' }} " href="/">Home</a></li>
+              <li><a class=" {{ url()->current() == url('/') ? 'active' : '' }} " href="/">{{__('Home')}}</a></li>
               <li><a class=" {{ url()->current() == url('/features') ? 'active' : '' }} "
                   href="{{ url('/features') }}">{{ __('Features') }}</a></li>
               <li><a class=" {{ url()->current() == url('/about') ? 'active' : '' }} " href="{{ url('/about') }}">{{
-                  __('About Us') }}</a></li>
+                  __('About us') }}</a></li>
               <li><a class=" {{ url()->current() == url('/pricing')  ? 'active' : '' }}" href="{{ url('/pricing') }}">{{
                   __('Pricing') }}</a></li>
               <li><a class=" {{ url()->current() ==  url('/faq')  ? 'active' : '' }} " href="{{ url('/faq') }}">{{
-                  __('FAQ') }}</a></li>
+                  __('Faq') }}</a></li>
               <li><a class=" {{ url()->current() == url('/blogs') ? 'active' : '' }}" href="{{ url('/blogs') }}">{{
                   __('News') }}</a></li>
 

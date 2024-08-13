@@ -191,16 +191,41 @@ protected function sendResetLinkResponse(Request $request, $response)
         : redirect()->route('password.link')->with('email', $request->input('email'));
 }
 
+// protected function sendResetLinkFailedResponse(Request $request, $response)
+// {
+//     if ($request->wantsJson()) {
+//         return new JsonResponse(['email' => [trans($response)]], 422);
+//     }
+
+//     return back()
+//         ->withInput($request->only('email'))
+//         ->withErrors(['email' => trans($response)]);
+// }
+
+
+
 protected function sendResetLinkFailedResponse(Request $request, $response)
 {
+    $invalidTokenMessage = trans('passwords.token');
+  
+    // Check if the response indicates an invalid token
+    if ($response === Password::INVALID_TOKEN || $response === $invalidTokenMessage) {
+        return redirect()->route('password.expired');
+    }
+
+    // Handle JSON response if needed
     if ($request->wantsJson()) {
         return new JsonResponse(['email' => [trans($response)]], 422);
     }
 
+    // Default behavior: show error on the same page
     return back()
         ->withInput($request->only('email'))
         ->withErrors(['email' => trans($response)]);
 }
+
+
+
 
 }
 

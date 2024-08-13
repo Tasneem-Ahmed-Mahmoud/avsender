@@ -53,7 +53,7 @@
               __('/year') }}</h6>
           </div>
           <div class="planning-bottom">
-            <h4>What’s included</h4>
+            <h4>{{ __('What’s included') }}</h4>
             <ul>
               @foreach($plan['data'] ?? [] as $key => $data)
               <li>

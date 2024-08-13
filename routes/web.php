@@ -94,3 +94,8 @@ Route::post('/password/email/resend', [ForgotPasswordController::class, 'resendR
 Route::get('password/success', function () {
     return view('auth.passwords.success');
 })->name('password.success');
+
+
+Route::get('/password/expired', function () {
+    return view('auth.passwords.expired');
+})->name('password.expired');

@@ -27,7 +27,7 @@ class HomeController extends Controller
 
         $faqs = Post::where('type', 'faq')->where('featured', 1)->where('lang', $locale)->with('excerpt')->latest()->get();
 
-        $plans = Plan::where('status', 1)->where('is_featured', 1)->latest()->get();
+        $plans = Plan::where('status', 1)->where("lang",app()->getLocale())->where('is_featured', 1)->latest()->get();
 
         $this->metadata('seo_home');
 

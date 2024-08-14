@@ -15,6 +15,8 @@ return new class extends Migration
             $table->string('icon')->nullable()->after('title');
             $table->string('description')->nullable()->after('icon');
             $table->string('business_size')->nullable()->after('description');
+            $table->string('lang')->default('en')->after('business_size');
+            
         });
     }
 
@@ -27,6 +29,7 @@ return new class extends Migration
          $table->dropColumn('icon');
             $table->dropColumn('description');
             $table->dropColumn('business_size');
+            $table->dropColumn('lang');
            
         });
     }

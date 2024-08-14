@@ -31,26 +31,29 @@
       @foreach($plans as $plan)
       <div class="col-xl-4 col-md-6 col-12 mb-3 plan-card"
         data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
-        <div class="planing-content {{ $plan['title'] === 'Enterprise' ? 'center-plan' : 'left-plan' }}">
+        <div class="planing-content {{ $plan['title'] === 'Enterprise' ||$plan['title'] === 'المؤسسات الكبيرة'? 'center-plan' : 'left-plan' }}">
           <div class="planing-top ">
-            @if ($plan['title'] === 'Enterprise')
-            <div class="popular-plan text-end "> <span>Popular</span> </div>
+            @if ($plan['title'] === 'Enterprise'||$plan['title'] === 'المؤسسات الكبيرة')
+            <div class="popular-plan {{ app()->getLocale() == 'ar' ? 'text-start ' : 'text-end ' }}"> <span>{{ __('Popular') }}</span> </div>
             @endif
-            <div class="d-flex">
-              <figure class="planing-img d-flex justify-content-center align-items-center">
+            <div class="d-flex ">
+              
+
+              <figure class="planing-img {{ app()->getLocale() == 'ar' ? 'planing-img-m-left' : 'planing-img-m-right' }} d-flex justify-content-center align-items-center">
                 <img src="{{ $plan['icon'] }}" alt="">
-              </figure>
-              <div class="planing-text @if($plan['title']  =='Enterprise') mt-3 @endif">
+            </figure>
+            
+              <div class="planing-text @if($plan['title']  =='Enterprise' && app()->getLocale() == 'en' ||$plan['title'] === 'المؤسسات الكبيرة'&& app()->getLocale() == 'en' ) mt-3 @endif">
                 <p>{{ __($plan['business_size']) }}</p>
-                <h3>{{ __('Plan '.$plan['title']) }}</h3>
+                <h3>{{  __($plan['title']) }}</h3>
               </div>
             </div>
           </div>
 
           <div class="planing-middle">
             <p>{{ $plan['description'] }}</p>
-            <h6><span>{{ amount_format($plan['price'], 'icon') }}</span> {{ $plan['days'] == 30 ? __('/month') :
-              __('/year') }}</h6>
+            <h6><span>{{ amount_format($plan['price'], 'icon') .'/'}}</span> {{ $plan['days'] == 30 ? __('Monthly') :
+              __('yearly') }}</h6>
           </div>
           <div class="planning-bottom">
             <h4>{{ __('What’s included') }}</h4>
@@ -58,10 +61,11 @@
               @foreach($plan['data'] ?? [] as $key => $data)
               <li>
                 <i
-                  class="fa-solid {{ planData($key, $data)['value'] == false && planData($key, $data)['is_bool'] == true ? 'bg-warning fa-xmark' : 'fa-check' }}"></i>
+               
+                  class="fa-solid {{$data == false || $data=="false" ? 'bg-warning fa-xmark' : 'fa-check' }}"></i>
                 <span
-                  class="{{ planData($key, $data)['value'] == false && planData($key, $data)['is_bool'] == true ? 'text-warning' : '' }}">
-                  {{ ucfirst(str_replace('_', ' ', planData($key, $data)['title'])) }}
+                  class="{{ $data == false || $data=="false" ? 'text-warning' : '' }}">
+                {{ $data =="false"|| $data=="true" ? $key : $key ." : ($data)" }}
                 </span>
               </li>
               @endforeach

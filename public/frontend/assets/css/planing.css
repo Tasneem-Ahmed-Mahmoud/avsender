@@ -25,11 +25,15 @@
 
 .planing .planing-img {
     border-radius:1rem;
-
-    /* width: 72px;
-    height: 72px; */
     padding: 0.625rem;
-    margin-right: 1.094rem;
+  
+}
+
+.planing .planing-img-m-left{
+    margin-left: 1.094rem;  
+}
+.planing .planing-img-m-right{
+    margin-right: 1.094rem; 
 }
 
 .planing .planing-content.right-plan .planing-img,

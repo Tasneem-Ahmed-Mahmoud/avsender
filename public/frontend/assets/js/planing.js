@@ -73,7 +73,7 @@
     // Function to reorder plans
     function reorderPlans() {
       const visiblePlans = planItems.filter(plan => plan.classList.contains('visible'));
-      const enterprisePlan = visiblePlans.find(plan => plan.querySelector('h3').textContent.includes('Enterprise'));
+      const enterprisePlan = visiblePlans.find(plan => plan.querySelector('h3').textContent.includes('Enterprise'||'المؤسسات الكبيرة'));
       
       if (enterprisePlan) {
         // Remove Enterprise plan from the visible plans

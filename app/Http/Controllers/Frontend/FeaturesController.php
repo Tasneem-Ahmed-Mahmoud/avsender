@@ -42,7 +42,7 @@ class FeaturesController extends Controller
         // dd($feature);
         abort_if(empty($feature), 404);
 
-        $plans = Plan::where('status', 1)->where('is_featured', 1)->latest()->get();
+        $plans = Plan::where('status', 1)->where('lang', app()->getLocale())->where('is_featured', 1)->latest()->get();
 
         $meta['title'] = $feature->title ?? '';
         $meta['description'] = $feature->excerpt->value ?? '';

@@ -118,7 +118,7 @@
                                     <img src="{{ asset($feat->preview->value ?? '') }}" alt="imag-chat" class="features-image" />
                                     <a href="{{ url('feature/'.$feat->slug) }}">      <h3 class="Features-box_h3">{{ Str::limit($feat->title,20) }}</h3></a>
                                           <p class="Features-box-p">{{  Str::limit($feat->excerpt->value ?? '',100) }}.</p>
-                                          <a href="{{ url('feature/'.$feat->slug) }}" class="Read_More">Read More <img src="{{ asset('frontend/assets/images/home') }}/ei_arrow-up.svg"
+                                          <a href="{{ url('feature/'.$feat->slug) }}" class="Read_More">{{ __('READ MORE') }} <img src="{{ asset('frontend/assets/images/home') }}/ei_arrow-up.svg"
                                                   class="mx-1" alt="arrow-up" /></a>
                                 </div>
                             </div>

@@ -8,7 +8,7 @@
    
                 <h1 class=" text-center">{{ $title }}</h1>
                 <p class="text-center">{{ $description }}</p>
-                <button class=" btn btn-work-with-us text-center">Work with us</button>
+                <button class=" btn btn-work-with-us text-center">{{ __('Work With Us') }}</button>
 
             </div>
 

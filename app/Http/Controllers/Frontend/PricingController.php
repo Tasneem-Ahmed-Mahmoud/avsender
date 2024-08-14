@@ -33,7 +33,7 @@ class PricingController extends Controller
             ->get();
 
         // Retrieve active plans
-        $plans = Plan::where('status', 1)
+        $plans = Plan::where('status', 1)->where('lang', app()->getLocale())
             ->latest()
             ->get();
 
@@ -54,7 +54,7 @@ class PricingController extends Controller
     public function register(Request $request, $id)
     {
         // Find the active plan by ID or fail
-        $plan = Plan::where('status', 1)->findOrFail($id);
+        $plan = Plan::where('status', 1)->where('lang', app()->getLocale())->findOrFail($id);
 
         // Set page metadata
         $meta['title'] = $plan->title ?? '';
@@ -122,7 +122,7 @@ class PricingController extends Controller
 
     public function choosePlan(Plan $plan)
     {
-        $plans=Plan::where('title',$plan->title)->get();
+        $plans=Plan::where('title',$plan->title)->where('lang', app()->getLocale())->get();
 
         return view('frontend.plan-steps.plan', compact('plans'));
     }

@@ -14,12 +14,374 @@ class PlanSeeder extends Seeder
      */
     public function run()
     {
+        
+
         $plans = [
-            ['id' => '1', 'title' => 'Starter', 'labelcolor' => 'price-color-1', 'iconname' => 'fas fa-star', 'price' => '10', 'is_featured' => '1', 'is_recommended' => '0', 'is_trial' => '0', 'status' => '1', 'days' => '30', 'trial_days' => '0', 'data' => '{"messages_limit":"1000","contact_limit":"100","device_limit":"3","template_limit":"20","apps_limit":"10","chatbot":"true","bulk_message":"false","schedule_message":"false","access_chat_list":"false","access_group_list":"false"}', 'created_at' => '2023-03-05 18:29:25', 'updated_at' => '2023-03-05 18:31:25'],
+            // yearly plans
+            [
+                "title" => "Pro",
+                "business_size" => "For startups",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/pro-en.svg",
+                "price" => "115",
+                "days" => "365",
+                "lang" => "en",
+                'data' => '{
+                 "Messages limit" : "unlimited",
+                 "Contact limit" : "unlimited",
+                 "Device limit" :"5",
+                "Template limit" : "unlimited",
+                "Apps limit" : "unlimited",
+                "Chatbot":"true",
+                "Bulk message":"true",
+                "Schedule message":"true",
+                "Access chat list":"true",
+                "Access group list":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
 
-            ['id' => '2', 'title' => 'Enterprise', 'labelcolor' => 'price-color-2', 'iconname' => 'far fa-check-circle', 'price' => '50', 'is_featured' => '1', 'is_recommended' => '1', 'is_trial' => '1', 'status' => '1', 'days' => '30', 'trial_days' => '10', 'data' => '{"messages_limit":"-1","contact_limit":"-1","device_limit":"-1","template_limit":"-1","apps_limit":"-1","chatbot":"true","bulk_message":"true","schedule_message":"true","access_chat_list":"true","access_group_list":"true"}', 'created_at' => '2023-03-05 18:30:39', 'updated_at' => '2023-03-05 18:33:59'],
+            ],
+            [
+                "title" => "Enterprise",
+                "business_size" => "For big companies",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/enterprise-en.svg",
+                "price" => "115",
+                "days" => "365",
+                "lang" => "en",
+                'data' => '{
+                 "Messages limit" : "unlimited",
+                 "Contact limit" : "unlimited",
+                 "Device limit" :"unlimited",
+                "Template limit" : "unlimited",
+                "Apps limit" : "unlimited",
+                "Chatbot":"true",
+                "Bulk message":"true",
+                "Schedule message":"true",
+                "Access chat list":"true",
+                "Access group list":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
 
-            ['id' => '3', 'title' => 'Basic', 'labelcolor' => 'price-color-3', 'iconname' => 'fab fa-angellist', 'price' => '20', 'is_featured' => '1', 'is_recommended' => '0', 'is_trial' => '0', 'status' => '1', 'days' => '30', 'trial_days' => '0', 'data' => '{"messages_limit":"-1","contact_limit":"100","device_limit":"100","template_limit":"100","apps_limit":"10","chatbot":"false","bulk_message":"false","schedule_message":"true","access_chat_list":"true","access_group_list":"false"}', 'created_at' => '2023-03-05 18:32:49', 'updated_at' => '2023-03-05 18:32:49'],
+            ],
+
+            [
+                "title" => "Basic",
+                "business_size" => "For individuals",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/basic-en.svg",
+                "price" => "115",
+                "days" => "365",
+                "lang" => "en",
+                'data' => '{
+                 "Messages limit" : "10,000",
+                 "Contact limit" : "8,000",
+                 "Device limit" :"2",
+                "Template limit" : "1",
+                "Apps limit" : "0",
+                "Chatbot":"false",
+                "Bulk message":"true",
+                "Schedule message":"false",
+                "Access chat list":"true",
+                "Access group list":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ],
+
+            [
+                "title" => "محترف",
+                "business_size" => "للشركات الناشئة",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/pro-ar.svg",
+                "price" => "115",
+                "days" => "365",
+                "lang" => "ar",
+                'data' => '{
+                "الحد الاقصي للرسائل" : "لا محدود",
+                 "الحد الأقصى للاتصال" : "لا محدود",
+                 "الحد الأقصى للأجهزة" :"5",
+                "الحد الأقصى للنماذج" : "لا محدود",
+                "الحد الأقصى للتطبيقات" : "لا محدود",
+                "Chatbot":"true",
+                "رسائل جماعية":"true",
+                "رسائل مجدولة":"true",
+                "مدخل الى قائمة الدردشة":"true",
+                "مدخل الى قائمة المجموعة":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ],
+
+            [
+                "title" => "المؤسسات الكبيرة",
+                "business_size" => "للشركات الكبرى",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/enterprise-ar.svg",
+                "price" => "115",
+                "days" => "365",
+                "lang" => "ar",
+                'data' => '{
+                "الحد الاقصي للرسائل" : "لا محدود",
+                 "الحد الأقصى للاتصال" : "لا محدود",
+                 "الحد الأقصى للأجهزة" :"لا محدود",
+                "الحد الأقصى للنماذج" : "لا محدود",
+                "الحد الأقصى للتطبيقات" : "لا محدود",
+                "Chatbot":"true",
+                "رسائل جماعية":"true",
+                "رسائل مجدولة":"true",
+                "مدخل الى قائمة الدردشة":"true",
+                "مدخل الى قائمة المجموعة":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ],
+
+            [
+
+                "title" => "أساسي ",
+                "business_size" => "للأفراد",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/basic-ar.svg",
+                "price" => "115",
+                "days" => "365",
+                "lang" => "ar",
+                'data' => '{
+                "الحد الاقصي للرسائل" : "10.000",
+                "الحد الأقصى للاتصال" :"8.000",
+                 "الحد الأقصى للأجهزة" :"2",
+                "الحد الأقصى للنماذج" : "1",
+                "الحد الأقصى للتطبيقات" : "0",
+                "Chatbot":"false",
+                "رسائل جماعية":"true",
+                "رسائل مجدولة":"false",
+                "مدخل الى قائمة الدردشة":"true",
+                "مدخل الى قائمة المجموعة":"true"
+                }',
+
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ],
+            // monthely plans
+
+
+            [
+                "title" => "Pro",
+                "business_size" => "For startups",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/pro-en.svg",
+                "price" => "35",
+                "days" => "30",
+                "lang" => "en",
+                'data' => '{
+                 "Messages limit" : "unlimited",
+                 "Contact limit" : "unlimited",
+                 "Device limit" :"5",
+                "Template limit" : "unlimited",
+                "Apps limit" : "unlimited",
+                "Chatbot":"true",
+                "Bulk message":"true",
+                "Schedule message":"true",
+                "Access chat list":"true",
+                "Access group list":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ],
+            [
+                "title" => "Enterprise",
+                "business_size" => "For big companies",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/enterprise-en.svg",
+                "price" => "45",
+                "days" => "30",
+                "lang" => "en",
+                'data' => '{
+                 "Messages limit" : "unlimited",
+                 "Contact limit" : "unlimited",
+                 "Device limit" :"unlimited",
+                "Template limit" : "unlimited",
+                "Apps limit" : "unlimited",
+                "Chatbot":"true",
+                "Bulk message":"true",
+                "Schedule message":"true",
+                "Access chat list":"true",
+                "Access group list":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ],
+
+            [
+                "title" => "Basic",
+                "business_size" => "For individuals",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/basic-en.svg",
+                "price" => "55",
+                "days" => "30",
+                "lang" => "en",
+                'data' => '{
+                 "Messages limit" : "10,000",
+                 "Contact limit" : "8,000",
+                 "Device limit" :"2",
+                "Template limit" : "1",
+                "Apps limit" : "0",
+                "Chatbot":"false",
+                "Bulk message":"true",
+                "Schedule message":"false",
+                "Access chat list":"true",
+                "Access group list":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ],
+
+            [
+                "title" => "محترف",
+                "business_size" => "للشركات الناشئة",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/pro-ar.svg",
+                "price" => "35",
+                "days" => "30",
+                "lang" => "ar",
+                'data' => '{
+                "الحد الاقصي للرسائل" : "لا محدود",
+                 "الحد الأقصى للاتصال" : "لا محدود",
+                 "الحد الأقصى للأجهزة" :"5",
+                "الحد الأقصى للنماذج" : "لا محدود",
+                "الحد الأقصى للتطبيقات" : "لا محدود",
+                "Chatbot":"true",
+                "رسائل جماعية":"true",
+                "رسائل مجدولة":"true",
+                "مدخل الى قائمة الدردشة":"true",
+                "مدخل الى قائمة المجموعة":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ],
+
+            [
+                "title" => "المؤسسات الكبيرة",
+                "business_size" => "للشركات الكبرى",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/enterprise-ar.svg",
+                "price" => "45",
+                "days" => "30",
+                "lang" => "ar",
+                'data' => '{
+                "الحد الاقصي للرسائل" : "لا محدود",
+                 "الحد الأقصى للاتصال" : "لا محدود",
+                 "الحد الأقصى للأجهزة" :"لا محدود",
+                "الحد الأقصى للنماذج" : "لا محدود",
+                "الحد الأقصى للتطبيقات" : "لا محدود",
+                "Chatbot":"true",
+                "رسائل جماعية":"true",
+                "رسائل مجدولة":"true",
+                "مدخل الى قائمة الدردشة":"true",
+                "مدخل الى قائمة المجموعة":"true"
+                }',
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ],
+
+            [
+
+                "title" => "أساسي ",
+                "business_size" => "للأفراد",
+                "description" => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit. ",
+                "icon" => "uploads/plans/basic-ar.svg",
+                "price" => "55",
+                "days" => "30",
+                "lang" => "ar",
+                'data' => '{
+                "الحد الاقصي للرسائل" : "10.000",
+                "الحد الأقصى للاتصال" :"8.000",
+                 "الحد الأقصى للأجهزة" :"2",
+                "الحد الأقصى للنماذج" : "1",
+                "الحد الأقصى للتطبيقات" : "0",
+                "Chatbot":"false",
+                "رسائل جماعية":"true",
+                "رسائل مجدولة":"false",
+                "مدخل الى قائمة الدردشة":"true",
+                "مدخل الى قائمة المجموعة":"true"
+                }',
+
+                'iconname' => 'fas fa-star',
+                'is_featured' => '1',
+                'is_recommended' => '0',
+                "labelcolor" => "price-color-1",
+                "is_trial" => "1",
+                "status" => "1",
+                "trial_days" => "1",
+
+            ]
+
         ];
 
         Plan::insert($plans);

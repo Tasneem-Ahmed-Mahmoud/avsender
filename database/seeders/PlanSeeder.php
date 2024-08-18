@@ -26,6 +26,7 @@ class PlanSeeder extends Seeder
                 "price" => "115",
                 "days" => "365",
                 "lang" => "en",
+                "is_popular"=>false,
                 'data' => '{
                  "Messages limit" : "unlimited",
                  "Contact limit" : "unlimited",
@@ -42,7 +43,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -55,6 +56,7 @@ class PlanSeeder extends Seeder
                 "price" => "115",
                 "days" => "365",
                 "lang" => "en",
+                "is_popular"=>true,
                 'data' => '{
                  "Messages limit" : "unlimited",
                  "Contact limit" : "unlimited",
@@ -71,7 +73,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -85,6 +87,7 @@ class PlanSeeder extends Seeder
                 "price" => "115",
                 "days" => "365",
                 "lang" => "en",
+                "is_popular"=>false,
                 'data' => '{
                  "Messages limit" : "10,000",
                  "Contact limit" : "8,000",
@@ -101,7 +104,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -115,6 +118,7 @@ class PlanSeeder extends Seeder
                 "price" => "115",
                 "days" => "365",
                 "lang" => "ar",
+                "is_popular"=>false,
                 'data' => '{
                 "الحد الاقصي للرسائل" : "لا محدود",
                  "الحد الأقصى للاتصال" : "لا محدود",
@@ -131,7 +135,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -145,6 +149,7 @@ class PlanSeeder extends Seeder
                 "price" => "115",
                 "days" => "365",
                 "lang" => "ar",
+                "is_popular"=>true,
                 'data' => '{
                 "الحد الاقصي للرسائل" : "لا محدود",
                  "الحد الأقصى للاتصال" : "لا محدود",
@@ -161,7 +166,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -176,6 +181,7 @@ class PlanSeeder extends Seeder
                 "price" => "115",
                 "days" => "365",
                 "lang" => "ar",
+                "is_popular"=>false,
                 'data' => '{
                 "الحد الاقصي للرسائل" : "10.000",
                 "الحد الأقصى للاتصال" :"8.000",
@@ -193,7 +199,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -209,6 +215,7 @@ class PlanSeeder extends Seeder
                 "price" => "35",
                 "days" => "30",
                 "lang" => "en",
+                "is_popular"=>false,
                 'data' => '{
                  "Messages limit" : "unlimited",
                  "Contact limit" : "unlimited",
@@ -225,7 +232,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -238,6 +245,7 @@ class PlanSeeder extends Seeder
                 "price" => "45",
                 "days" => "30",
                 "lang" => "en",
+                "is_popular"=>true,
                 'data' => '{
                  "Messages limit" : "unlimited",
                  "Contact limit" : "unlimited",
@@ -254,7 +262,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -268,6 +276,7 @@ class PlanSeeder extends Seeder
                 "price" => "55",
                 "days" => "30",
                 "lang" => "en",
+                "is_popular"=>false,
                 'data' => '{
                  "Messages limit" : "10,000",
                  "Contact limit" : "8,000",
@@ -284,7 +293,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -298,6 +307,7 @@ class PlanSeeder extends Seeder
                 "price" => "35",
                 "days" => "30",
                 "lang" => "ar",
+                "is_popular"=>false,
                 'data' => '{
                 "الحد الاقصي للرسائل" : "لا محدود",
                  "الحد الأقصى للاتصال" : "لا محدود",
@@ -314,7 +324,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -328,6 +338,7 @@ class PlanSeeder extends Seeder
                 "price" => "45",
                 "days" => "30",
                 "lang" => "ar",
+                "is_popular"=>true,
                 'data' => '{
                 "الحد الاقصي للرسائل" : "لا محدود",
                  "الحد الأقصى للاتصال" : "لا محدود",
@@ -344,7 +355,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 
@@ -359,6 +370,7 @@ class PlanSeeder extends Seeder
                 "price" => "55",
                 "days" => "30",
                 "lang" => "ar",
+                "is_popular"=>false,
                 'data' => '{
                 "الحد الاقصي للرسائل" : "10.000",
                 "الحد الأقصى للاتصال" :"8.000",
@@ -376,7 +388,7 @@ class PlanSeeder extends Seeder
                 'is_featured' => '1',
                 'is_recommended' => '0',
                 "labelcolor" => "price-color-1",
-                "is_trial" => "1",
+                "is_trial" => 0,
                 "status" => "1",
                 "trial_days" => "1",
 

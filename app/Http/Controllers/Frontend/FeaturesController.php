@@ -38,7 +38,7 @@ class FeaturesController extends Controller
         $features = Post::where('type', 'feature')->where('status', 1)->where('lang', app()->getLocale())->with('preview', 'excerpt')->latest()->get();
 
        
-        $feature = Post::where('type', 'feature')->with('preview', 'excerpt', 'longDescription', 'banner','featureInstructions','featureServices')->where('slug', $slug)->first();
+        $feature = Post::where('type', 'feature')->with('preview', 'excerpt', 'longDescription', 'banner','featureInstructions','featureServices')->where('lang', app()->getLocale())->where('slug', $slug)->first();
         // dd($feature);
         abort_if(empty($feature), 404);
 

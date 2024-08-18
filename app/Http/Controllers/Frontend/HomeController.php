@@ -25,7 +25,7 @@ class HomeController extends Controller
 
         $testimonials = Post::where('type', 'testimonial')->with('preview', 'excerpt')->latest()->get();
 
-        $faqs = Post::where('type', 'faq')->where('featured', 1)->where('lang', $locale)->with('excerpt')->latest()->get();
+        $faqs = Post::where('type', 'faq')->where('featured', 1)->where('lang', $locale)->with('excerpt')->latest()->limit(6)->get();
 
         $plans = Plan::where('status', 1)->where("lang",app()->getLocale())->where('is_featured', 1)->latest()->get();
 

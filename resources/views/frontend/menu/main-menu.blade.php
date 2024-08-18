@@ -8,11 +8,11 @@
 @if (isset($row->children) && count($row->children) > 0)
 
 
-<li class="nav-item dropdown">
+<li class="nav-item dropdown {{ app()->getLocale() =="ar" ? "me-5" : "" }}">
 	<a class="nav-link dropdown-toggle text-capitalize{{ collect($row->children)->contains(function($child) {  return Request::is(ltrim($child->href, '/')); }) ? 'active' : '' }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 		{{ $row->text }}
 	</a>
-	<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+	<ul class="dropdown-menu {{ app()->getLocale() =="ar" ? "text-end" : "" }} " aria-labelledby="navbarDropdown">
 
 		@foreach($row->children as $childrens)
 		@include('frontend.menu.submenu', ['childrens' => $childrens])

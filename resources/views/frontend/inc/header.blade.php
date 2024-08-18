@@ -35,6 +35,7 @@
       body {
          direction: rtl;
       }
+      
    </style>
    @endif
    <script type="text/javascript">

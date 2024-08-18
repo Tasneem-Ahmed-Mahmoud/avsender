@@ -8,7 +8,7 @@
 
       // Find and remove the "Enterprise" plan
       foreach ($plansArray as $index => $plan) {
-      if ($plan['title'] === 'Enterprise') {
+      if ($plan['is_popular']) {
       $Enterprise = array_splice($plansArray, $index, 1);
       break;
       }
@@ -31,16 +31,16 @@
       @foreach($plans as $plan)
       <div class="col-xl-4 col-md-6 col-12 mb-3 plan-card"
         data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
-        <div class="planing-content {{ $plan['title'] === 'Enterprise' ||$plan['title'] === 'المؤسسات الكبيرة'? 'center-plan' : 'left-plan' }}">
+        <div class="planing-content {{ $plan['is_popular']? 'center-plan' : 'left-plan' }}">
           <div class="planing-top ">
-            @if ($plan['title'] === 'Enterprise'||$plan['title'] === 'المؤسسات الكبيرة')
+            @if ($plan['is_popular'])
             <div class="popular-plan {{ app()->getLocale() == 'ar' ? 'text-start ' : 'text-end ' }}"> <span>{{ __('Popular') }}</span> </div>
             @endif
             <div class="d-flex ">
               
 
               <figure class="planing-img {{ app()->getLocale() == 'ar' ? 'planing-img-m-left' : 'planing-img-m-right' }} d-flex justify-content-center align-items-center">
-                <img src="{{ $plan['icon'] }}" alt="">
+                <img src="{{asset( $plan['icon']) }}" alt="">
             </figure>
             
               <div class="planing-text @if($plan['title']  =='Enterprise' && app()->getLocale() == 'en' ||$plan['title'] === 'المؤسسات الكبيرة'&& app()->getLocale() == 'en' ) mt-3 @endif">
@@ -72,7 +72,7 @@
             </ul>
 
             <a href="{{ route('choose.plan', $plan['id']) }}" class="btn btn-subscribe text-center w-100">
-              {{ $plan['is_trial'] == 1 ? __('Free '.$plan['trial_days'].' days trial') : __('Subscribe Now') }}
+              {{ $plan['is_trial']  ? __('Free '.$plan['trial_days'].' days trial') : __('Subscribe Now') }}
             </a>
           </div>
         </div>

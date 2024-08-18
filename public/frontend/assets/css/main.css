@@ -1,27 +1,23 @@
 /* global style ---------- */
 :root {
     /* --primary-color :#F7FBFE; */
-    --primary-color: #EDF1FE;
-    --secondary-color: #29387E;
-    ;
+    --primary-color: #edf1fe;
+    --secondary-color: #29387e;
     --white-color: #fff;
     --links-color: #292929;
-
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
     scroll-behavior: smooth;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
 
     background: radial-gradient(circle at bottom left, rgb(255, 255, 255) 0%, rgb(215, 234, 251) 100%);
-
 }
 
 ul {
@@ -50,23 +46,19 @@ a {
     color: var(--links-color);
 }
 
-.navbar .navbar-brand img {
+/* .navbar .navbar-brand img {
     width: 10.563rem;
 }
 
 .navbar .nav-item {
-
     font-size: 18px;
     font-weight: 500;
     line-height: 28.8px;
-
-
 }
 
 .navbar .nav-item.search-icon {
     padding: 18.75px;
     color: #374957;
-    ;
 }
 
 .navbar .lang-option.nav-link.dropdown-toggle {
@@ -75,16 +67,11 @@ a {
 
 .navbar .lang-option .lang-icon {
     width: 20px;
-
-
-
 }
 
 .navbar .mode img {
     width: 39px;
     height: 39px;
-
-
 }
 
 .navbar .navbar-toggler,
@@ -99,28 +86,109 @@ a {
     background-color: var(--white-color);
     color: var(--links-color);
     border: none !important;
-
 }
 
 .navbar .dropdown-menu .dropdown-item:focus,
 .navbar .dropdown-menu .dropdown-item:hover {
-    background-color: #F1F1F1 !important;
-    ;
+    background-color: #f1f1f1 !important;
 }
 
 .navbar .dropdown-menu .lang img {
     width: 20px;
     height: 20px;
+} */
+
+.navbar .navbar-btn-subscribe {
+    background: linear-gradient(90deg, #374ba8 5.25%, #2fb7f0 77.6%);
+  
+    margin-right: 8px;
+
 }
 
+.navbar .navbar-btn {
+    border-radius: 50px;
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25.6px;
+    text-align: center;
+    padding: 12px 42px;
+}
 
-@media (max-width:992px) {
+ .navbar .navbar-btn-login {
+    background-color: var(--white-color);
+    color: #29387e;
+    border: 2px solid linear-gradient(90deg, #374ba8 5.25%, #2fb7f0 77.6%);
+    margin-right: 8px;
+    border: 2px solid #2b74cc; 
+    /* border-image: linear-gradient(to right, #00c6ff, #0072ff) 1; */
 
-    .navbar>.container {
+} 
+/* .navbar .navbar-btn-login {
+    position: relative;
+    background-color: var(--white-color);
+    color: #29387e;
+    margin-right: 8px;
+    border-radius: 50px;
+    padding: 10px 20px;
+    z-index: 1;
+    overflow: hidden; 
+}
+
+.navbar .navbar-btn-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50px; 
+    padding: 2px; 
+    background: linear-gradient(90deg, #374ba8 5.25%, #2fb7f0 77.6%);
+} */
+
+
+@media (max-width: 1300px) and (min-width: 992px) {
+    .navbar .navbar-btn-subscribe {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .navbar .navbar-btn {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+
+    .navbar .nav-item {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20.8px;
+    }
+
+    .active {
+        color: var(--secondary-color) !important;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20.8px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-btn {
+        margin-top: 24px;
+        margin-bottom: 32px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 19.2px;
+        padding: 5px 32px 6px 32px;
+    }
+}
+@media (max-width: 992px) {
+    .navbar > .container {
         max-width: 100%;
         padding-left: 0;
         padding-right: 0;
-
     }
 
     .navbar .nav-item {
@@ -130,10 +198,9 @@ a {
 
     .navbar .nav-item:not(.dropdown):hover,
     .navbar .nav-item:not(.dropdown):focus {
-        background-color: #F1F1F1 !important;
+        background-color: #f1f1f1 !important;
     }
 }
-
 
 /*  ################################## hero###############################################  */
 /*  ################################## hero###############################################  */
@@ -142,7 +209,6 @@ a {
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 .hero .hero-content {
@@ -165,7 +231,6 @@ a {
 }
 
 .btn-work-with-us {
-
     background-color: var(--white-color);
     padding: 25px, 52px, 26px, 52px;
     border-radius: 3.125rem;
@@ -174,10 +239,7 @@ a {
     font-size: 20px;
     line-height: 32px;
     text-align: center;
-    color: #2F2F2F;
-    ;
-
-
+    color: #2f2f2f;
 }
 
 @media (max-width: 768px) {
@@ -187,15 +249,11 @@ a {
     }
 
     .hero .hero-content p {
-
-
         font-weight: 500;
         font-size: 12px;
         line-height: 19.2px;
-
     }
 }
-
 
 .hero-with-button {
     min-height: 38.888888888888886vh;
@@ -205,125 +263,22 @@ a {
     min-height: 34.552845528455286vh;
 }
 
-
 .btn-work-with-us {
     font-size: 1.25rem !important;
     font-weight: 600 !important;
     line-height: 2rem;
     margin-top: 10px;
-    color: #2F2F2F !important;
-    background-color: #FFFFFF !important;
+    color: #2f2f2f !important;
+    background-color: #ffffff !important;
     border-radius: 50px !important;
     padding: 10px 50px !important;
     width: auto !important;
     margin-bottom: 1rem;
-
 }
-
-.navbar .navbar-btn-subscribe {
-    background: linear-gradient(90deg, #374BA8 5.25%, #2FB7F0 77.6%);
-
-
-    margin-right: 8px;
-    /* margin-left: 34px; */
-
-}
-
-.navbar .navbar-btn {
-    border-radius: 50px;
-    color: var(--white-color);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 25.6px;
-    text-align: center;
-
-    /* padding: 25px 52px 26px 52px; */
-    padding: 15px 42px 16px 42px;
-}
-
-.navbar .navbar-btn-login {
-
-    background-color: var(--white-color);
-    color: #29387E;
-    border: 2px solid linear-gradient(90deg, #374BA8 5.25%, #2FB7F0 77.6%);
-
-    margin-right: 8px;
-
-
-}
-
-/* 
-@media (max-width: 768px) {
-    .hero .hero-content h1 {
-        font-size: 24px;
-        line-height: 38.4px;
-    }
-
-    .hero .hero-content p {
-
-
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 19.2px;
-
-    }
-} */
-
-@media (max-width:1300px) and (min-width: 992px) {
-
-    .navbar .navbar-btn-subscribe {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
-    .navbar .navbar-btn {
-
-        font-size: 12px;
-        padding: 5px 15px 6px 15px;
-
-
-    }
-
-    .navbar .nav-item {
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 20.8px;
-    }
-
-    .active {
-        color: var(--secondary-color) !important;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 20.8px;
-    }
-}
-
-@media (max-width: 992px) {
-
-    .navbar .navbar-btn {
-        margin-top: 24px;
-        margin-bottom: 32px;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 19.2px;
-
-        /* padding: 25px 52px 26px 52px; */
-        padding: 5px 32px 6px 32px;
-
-
-
-
-    }
-
-
-
-
-}
-
 
 /* error */
-.login-error{
-    color: #E81010;
+.login-error {
+    color: #e81010;
     font-weight: 400;
     font-size: 16px;
     line-height: 25.6px;
@@ -331,7 +286,7 @@ a {
     margin-top: 10px;
 }
 
-.error-img{
+.error-img {
     margin-right: 7px;
     margin-top: -3px;
 }
@@ -342,7 +297,6 @@ a {
     padding: 42px 0 12px 0;
     background-color: var(--white-color);
 }
-
 
 .footer .left-content p {
     font-size: 14px;
@@ -356,13 +310,10 @@ a {
 }
 
 .footer .social-icons i {
-
     border-radius: 22.5px;
-    Padding: 10px;
+    padding: 10px;
     color: var(--secondary-color);
     background-color: var(--primary-color);
-
-
 }
 
 .footer .footer-links li {
@@ -387,25 +338,20 @@ a {
     height: 15.73px;
     top: 1.13px;
     margin-right: 16px;
-    color: #3A3A3A;
-    ;
-
-
+    color: #3a3a3a;
 }
 
 .footer .copyright {
     font-size: 14px;
     font-weight: 400;
     line-height: 22.4px;
-    color: #29387E !important;
+    color: #29387e !important;
     margin-top: 11px;
 }
 
-.footer .copyright img{
+.footer .copyright img {
     width: 94px;
-margin: 0 8px;
-
-
+    margin: 0 8px;
 }
 @media (max-width: 768px) {
     .footer .social-icons {
@@ -416,10 +362,10 @@ margin: 0 8px;
         height: 24.875rem;
     }
 
-    .footer .social-icons i {}
+    .footer .social-icons i {
+    }
 
     .footer .footer-links li a {
-
         font-size: 14px;
         font-weight: 500;
         line-height: 22.4px;
@@ -429,11 +375,5 @@ margin: 0 8px;
         font-size: 16px;
         font-weight: 700;
         line-height: 25.6px;
-
-
     }
-
-    
-
-
 }

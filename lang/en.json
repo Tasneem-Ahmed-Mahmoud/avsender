@@ -1366,7 +1366,7 @@
     "Let's Login to your account":"Let's Login to your account",
     "Forget password ?":"Forget password ?",
     "please enter your E-mail below":"please enter your E-mail below",
-    "How to work on the services ?":"How to work on the services ?",
+    "How to work on the services":"How to work on the services ?",
     "Subscribe Now":"Subscribe Now",
     "You can try send bulk messages by registration for FREE":"You can try send bulk messages by registration for FREE",
     "Work With Us":"Work With Us",
@@ -1401,7 +1401,8 @@
    "Our Top Integrations":"Our Top Integrations",
    "Home":"Home",
    "Top Features":"Top Features",
-   "Popular":"Popular"
+   "Popular":"Popular",
+   "Browse other services of AVSENDER":"Browse other services of AVSENDER"
 
 
   

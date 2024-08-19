@@ -69,8 +69,8 @@ class FeatureSeeder extends Seeder
             ],
             // Fourth feature
             [
-                'title_en' => 'Auto Responder / WhatsApp Chatbot',
-                'title_ar' => 'الرد الآلي - WhatsApp Chatbot',
+                'title_en' => 'Auto Responder (BOT)',
+                'title_ar' => 'الرد الآلي (Chat bot)',
                 'metadata_en' => [
                     ['key' => 'excerpt', 'value' => 'If you are looking for how to set auto-reply in WhatsApp business and WhatsApp auto-reply message sample, you are at the right place. In this post, we’ll help you understand the nitty-gritty of WhatsApp Chatbots. To start off with, let’s talk about how auto-response for WhatsApp works.'],
                     ['key' => 'preview', 'value' => '/uploads/features/icons/Auto Responder.svg'],
@@ -86,19 +86,19 @@ class FeatureSeeder extends Seeder
             ],
             // Fifth feature
             [
-                'title_en' => 'WhatsApp Automation with API',
-                'title_ar' => 'الأتمتة في WhatsApp عبر API',
+                'title_en' => 'Reset API for app',
+                'title_ar' => 'تعيين واجهة برمجة التطبيقات للتطبيق',
                 'metadata_en' => [
-                    ['key' => 'excerpt', 'value' => 'The WhatsApp API is a powerful tool that allows businesses to connect with customers in a seamless and automated manner. Learn how to use it for your business.'],
-                    ['key' => 'preview', 'value' => '/uploads/features/icons/WhatsApp Automation with API.svg'],
-                    ['key' => 'banner', 'value' => '/uploads/features/banners/WhatsApp Automation with API.svg'],
-                    ['key' => 'main_description', 'value' => 'WhatsApp Automation is a revolutionary feature for businesses, allowing them to automate customer engagement with ease. By leveraging the WhatsApp API, businesses can send automated messages, provide real-time customer support, and integrate with other business tools for a cohesive customer experience. Whether you’re confirming appointments, sending shipping updates, or nurturing leads, WhatsApp Automation with API simplifies these processes, making your business more efficient and customer-friendly. Explore how to integrate WhatsApp API into your business workflow and start automating your customer communications today.'],
+                    ['key' => 'excerpt', 'value' => 'Representational state transfer is a software architectural style that describes the architecture of the Web.'],
+                    ['key' => 'preview', 'value' => '/uploads/features/icons/Reset API for app.svg'],
+                    ['key' => 'banner', 'value' => '/uploads/features/banners/Reset API for app.svg'],
+                    ['key' => 'main_description', 'value' => "An API is a set of definitions and protocols for building and integrating application software. It’s sometimes referred to as a contract between an information provider and an information user—establishing the content required from the consumer (the call) and the content required by the producer (the response). For example, the API design for a weather service could specify that the user supply a zip code and that the producer reply with a 2-part answer, the first being the high temperature, and the second being the low."],
                 ],
                 'metadata_ar' => [
-                    ['key' => 'excerpt', 'value' => 'API هو أداة قوية تمكن الشركات من التواصل مع العملاء بطريقة سلسة وآلية. تعرف على كيفية استخدامه لعملك.'],
-                    ['key' => 'preview', 'value' => '/uploads/features/icons/WhatsApp Automation with API-ar.svg'],
-                    ['key' => 'banner', 'value' => '/uploads/features/banners/WhatsApp Automation with API-ar.svg'],
-                    ['key' => 'main_description', 'value' => 'الأتمتة في WhatsApp هي ميزة ثورية للشركات، حيث تتيح لهم أتمتة التفاعل مع العملاء بسهولة. من خلال الاستفادة من API لـ WhatsApp، يمكن للشركات إرسال رسائل آلية، وتوفير دعم العملاء في الوقت الفعلي، والتكامل مع أدوات الأعمال الأخرى لتوفير تجربة عملاء متماسكة. سواء كنت تؤكد المواعيد، أو ترسل تحديثات الشحن، أو ترعى العملاء المحتملين، فإن الأتمتة عبر WhatsApp API تبسط هذه العمليات، مما يجعل عملك أكثر كفاءة وملائمة للعملاء. استكشف كيفية دمج API WhatsApp في سير عمل عملك وابدأ في أتمتة اتصالاتك مع العملاء اليوم.'],
+                    ['key' => 'excerpt', 'value' => "تعيين واجهة برمجة التطبيقات للتطبيق هي مجموعة من التعريفات والبروتوكولات لبناية دمج برامج التطبيق"],
+                    ['key' => 'preview', 'value' => '/uploads/features/icons/Reset API for app-ar.svg'],
+                    ['key' => 'banner', 'value' => '/uploads/features/banners/Reset API for app-ar.svg'],
+                    ['key' => 'main_description', 'value' => "تعيين واجهة برمجة التطبيقات للتطبيق هي مجموعة من التعريفات والبروتوكولات لبناية دمج برامج التطبيق. مما يشار اليه احياناً على انه عقد بين مقدم المعلومات ومستخدم المعلومات. لتحديد المحتوى المطلوب من المستهلك (المكالمة) والمحتوى المطلوب (الاستجابة). مثلا، تحديد تصميم تعيين واجهة برمجة التطبيقات (API) لخدمة الطقس ان المستخدم يقدم رمزاً بريدياً وان يرد المنتج بإجابة مكونة من جزئين، الأولى هي درجة الحرارة المرتفعة، والثانية هي درجة الحرارة المنخفضة."],
                 ],
             ],
         ];

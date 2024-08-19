@@ -1382,7 +1382,7 @@
   "SAR": "SAR",
   "/month": "/month",
   "/year": "/year",
-  "You can try send bulk messages by registration for FREE": "يمكنك تجربة إرسال الرسائل بالجملة عن طريق التسجيل مجانًا",
+  "You can try send bulk messages by registration for FREE": "يمكنك محاولة إرسال رسائل مجمعة عن طريق التسجيل مجانًا",
   "Plan Business Size": "حجم عمل الخطة",
   "Plan Description": "وصف الخطة",
   "Plan Icon": "أيقونة الخطة",
@@ -1411,7 +1411,10 @@
   "Our Top Integrations":"افضل التكاملات",
   "Home":"الصفحة الرئيسية",
   "Top Features":"المميزات",
-  "Popular":"شائع"
+  "Popular":"شائع",
+  "Browse other services of AVSENDER":"تصفح الخدمات الأخرى لـ AVSENDER",
+  "Subscribe Now":"اشترك الآن",
+   "How to work on the services":"كيف يمكنك العمل على الخدمات؟"
 
   
 

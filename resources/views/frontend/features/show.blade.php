@@ -61,8 +61,7 @@
             <div class="container">
                 <div class="row container-Subscribe">
                     <div class="col-md-9 d-flex align-items-center">
-                        <h3 class="container-Subscribe-h3">{{ __('You can try send bulk messages by registration for
-                            FREE') }}</h3>
+                        <h3 class="container-Subscribe-h3">{{ __('You can try send bulk messages by registration for FREE') }}</h3>
                     </div>
                     <div class="col-md-3">
                         <a  href="{{ url('/pricing') }}" class="Subscribe-btn btn">{{ __('Subscribe Now') }}</a>
@@ -79,7 +78,7 @@
         {{-- instructions --}}
         <div class="container">
             <div class="How_to_work_section">
-                <h2 class="How_to_work_section_h2">{{ __('How to work on the services ?') }}</h2>
+                <h2 class="How_to_work_section_h2">{{ __('How to work on the services') }}</h2>
                 @foreach ($feature->featureInstructions as $instruction)
                 <div>
                     <p class="How_to_work_section_p">{{ $loop->iteration . '-' . $instruction->instruction }}</p>
@@ -116,7 +115,7 @@
         </section>
         {{-- features --}}
         <div class="container">
-            <h2 class="How_to_work_section_h2-caro ">Browse other services of AVSENDER</h2>
+            <h2 class="How_to_work_section_h2-caro ">{{ __('Browse other services of AVSENDER') }}</h2>
 
             <div class="faq__content_container" id="box-home">
                 <div class="container">
@@ -140,7 +139,12 @@
                             </div>
                             @endforeach
                         </div>
-
+                        <div class="swiper-button-div">
+                            <div class="btn-swiper-button-next">
+                                <img src="{{ asset('frontend/assets/images/features')}}/next.svg" alt="nex" />
+                            </div>
+                            <div class="btn-swiper-button-prev"> <img src="{{ asset('frontend/assets/images/features') }}/prev.svg" alt="nex" /></div>
+                        </div>
 
                     </div>
                 </div>

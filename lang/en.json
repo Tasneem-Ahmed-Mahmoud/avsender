@@ -1402,7 +1402,26 @@
    "Home":"Home",
    "Top Features":"Top Features",
    "Popular":"Popular",
-   "Browse other services of AVSENDER":"Browse other services of AVSENDER"
+   "Browse other services of AVSENDER":"Browse other services of AVSENDER",
+   "Contact":"Contact" ,
+   "Monthly Plan":"Monthly Plan",
+   "Annual Plan":"Annual Plan" ,
+   "Billing every Year":"Billing every Year",
+   "Billing every Month":"Billing every Month",
+   "Save":"Save",
+   "Package Selection":"Package Selection",
+   "Plan Selection":"Plan Selection",
+   "Create account":"Create account",
+   "Payment":"Payment ",
+   "Back":"Back",
+   "Proceed":"Proceed",
+   "Register your Account":"Register your Account",
+   "Re-enter Password":"Re-enter Password",
+   "Already have an account":  "Already have an account",
+   "Password":" Password",
+   "Last name":"Last name",
+   "First name":"First name"
+
 
 
   

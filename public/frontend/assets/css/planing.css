@@ -392,11 +392,11 @@ border-radius: 50px ;
     opacity: 1;
   }
 
-  .plan-card {
+  .planning-card {
     display: none; /* Hide all by default */
   }
   
-  .plan-card.visible {
+  .planning-card.visible {
     display: block; /* Show only visible ones */
   }
   

@@ -59,7 +59,7 @@
           <div class="content">
             <ul class="footer-links contact-icons ">
 
-              <li><a href="#" class="active">Contact</a></li>
+              <li><a href="#" class="active">{{ __('Contact') }}</a></li>
               <li><a href="maito:{{ get_option('primary_data',true)->contact_email ?? '' }}" class="d-flex  gap-3   "> <i
                     class="fa-solid fa-paper-plane "></i> <span>{{ get_option('primary_data',true)->contact_email ??
                     'info@avnology.com' }}</span></a></li>

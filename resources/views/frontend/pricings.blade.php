@@ -28,7 +28,7 @@ $plansArray = $Enterprise;
 $plans = collect($plansArray);
 @endphp
 @foreach($plans as $plan)
-<div class="col-xl-4 col-md-6 col-12 mb-3 plan-card" data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
+<div class="col-xl-4 col-md-6 col-12 mb-3 planning-card" data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
   <div class="planing-content {{ $plan['is_popular']? 'center-plan' : 'left-plan' }}">
     <div class="planing-top ">
       @if ($plan['is_popular'])

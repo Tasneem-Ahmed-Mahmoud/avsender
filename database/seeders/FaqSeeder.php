@@ -38,29 +38,7 @@ class FaqSeeder extends Seeder
 
             ['title' => 'Is it possible to send group messages to the sync group ?', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'en', 'key' => 'excerpt', 'value' => 'Yes, you can send group messages after exporting the sync group to an Excel file and then uploading the file to the Avsender platform.'],
 
-// arabic afq
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
 
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            // ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
 
         ];
 

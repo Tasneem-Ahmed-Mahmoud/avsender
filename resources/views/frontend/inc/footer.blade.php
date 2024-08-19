@@ -8,7 +8,7 @@
             <img src="{{ asset('frontend') }}/assets/images/logo.svg" alt="" srcset="">
           </figure>
           <p>Unlock Your Brand’s Potential</p>
-          <div class="social-icons d-flex justify-content-between align-items-center">
+          <div class="social-icons d-flex  gap-3 align-items-center">
 
             @if(!empty(get_option('primary_data',true)->socials->twitter))
             <li> <a href="{{ get_option('primary_data',true)->socials->twitter }}"><i
@@ -60,13 +60,13 @@
             <ul class="footer-links contact-icons ">
 
               <li><a href="#" class="active">Contact</a></li>
-              <li><a href="maito:{{ get_option('primary_data',true)->contact_email ?? '' }}" class="d-flex  g-2  "> <i
+              <li><a href="maito:{{ get_option('primary_data',true)->contact_email ?? '' }}" class="d-flex  gap-3   "> <i
                     class="fa-solid fa-paper-plane "></i> <span>{{ get_option('primary_data',true)->contact_email ??
                     'info@avnology.com' }}</span></a></li>
-              <li><a href="tel:{{ get_option('primary_data',true)->contact_phone ?? '' }}" class="d-flex g-2 "> <i
+              <li><a href="tel:{{ get_option('primary_data',true)->contact_phone ?? '' }}" class="d-flex  gap-3    "> <i
                     class="fa-solid fa-phone"></i> <span> {{ get_option('primary_data',true)->contact_phone ?? ''
                     }}</span></a></li>
-              <li><a href="" class="d-flex  g-2  "><i class="fa-solid fa-location-dot"></i> <span>{{
+              <li><a href="" class="d-flex  gap-3    "><i class="fa-solid fa-location-dot"></i> <span>{{
                     get_option('primary_data',true)->address ?? '' }}</span></a></li>
             </ul>
           </div>

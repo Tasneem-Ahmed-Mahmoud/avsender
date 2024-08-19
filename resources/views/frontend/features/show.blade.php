@@ -1,8 +1,6 @@
 @extends('frontend.inc.master')
 @section('style')
-<link rel="stylesheet" href="{{ asset('frontend/assets/css/planing.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/services.css') }}">
-
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 @endsection
 
@@ -61,10 +59,11 @@
             <div class="container">
                 <div class="row container-Subscribe">
                     <div class="col-md-9 d-flex align-items-center">
-                        <h3 class="container-Subscribe-h3">{{ __('You can try send bulk messages by registration for FREE') }}</h3>
+                        <h3 class="container-Subscribe-h3">{{ __('You can try send bulk messages by registration for
+                            FREE') }}</h3>
                     </div>
                     <div class="col-md-3">
-                        <a  href="{{ url('/pricing') }}" class="Subscribe-btn btn">{{ __('Subscribe Now') }}</a>
+                        <a href="{{ url('/pricing') }}" class="Subscribe-btn btn">{{ __('Subscribe Now') }}</a>
                     </div>
                 </div>
             </div>
@@ -143,7 +142,8 @@
                             <div class="btn-swiper-button-next">
                                 <img src="{{ asset('frontend/assets/images/features')}}/next.svg" alt="nex" />
                             </div>
-                            <div class="btn-swiper-button-prev"> <img src="{{ asset('frontend/assets/images/features') }}/prev.svg" alt="nex" /></div>
+                            <div class="btn-swiper-button-prev"> <img
+                                    src="{{ asset('frontend/assets/images/features') }}/prev.svg" alt="nex" /></div>
                         </div>
 
                     </div>

@@ -29,6 +29,7 @@
    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/services.css">
    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/login.css">
    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/main.css">
+   <link rel="stylesheet" href="{{ asset('frontend/assets/css/planing.css') }}">
    @yield('style')
    @if(app()->getLocale() == 'ar')
    <style>
@@ -37,6 +38,8 @@
       }
       
    </style>
+
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/planning-ar.css') }}">
    @endif
    <script type="text/javascript">
       $('.language-switch').on('change',function(){

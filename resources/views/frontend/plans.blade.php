@@ -1,6 +1,6 @@
 @extends('frontend.inc.master')
 @section('style')
-<link rel="stylesheet" href="{{ asset('frontend/assets/css/planing.css') }}">
+
 <style>
       .hero{
             background-image: url('{{ asset('frontend/assets/images/chatbot-background.svg') }}');

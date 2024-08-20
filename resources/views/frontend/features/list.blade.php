@@ -1,7 +1,4 @@
 @extends('frontend.inc.master')
-@section('style')
-<link rel="stylesheet" href="{{ asset('frontend/assets/css/faq.css') }}">
-@endsection
 
 @section('content')
 @include('frontend.inc.head-2', ['title' => __('Top Features') ,'description' => __('Feature Description')])
@@ -10,7 +7,7 @@
 
 <div class="faq__content_container">
     <div class="container">
-        <div class="row faq__content_container_row mt-2 mb-4">
+        <div class="row faq__content_container_row mt-2 mb-4 justify-content-start">
             @foreach($features as $feature)
             <div class="col-md-4 col-sm-12 mt-4 Features-box-col-sm">
                 <a href="{{ url('feature/'.$feature->slug) }}">

@@ -55,7 +55,7 @@
 		<div class="Back_top-div">
 			<a href="#top">
 				<div class="Back_top">
-					Back to top <img src="{{ asset('frontend/assets/images/blogs') }}/top.svg" alt="Back to top"
+					 <img src="{{ asset('frontend/assets/images/blogs') }}/top.svg" alt="Back to top"
 						class="mx-2" />
 				</div>
 			</a>

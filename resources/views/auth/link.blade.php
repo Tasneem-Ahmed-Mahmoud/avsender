@@ -5,17 +5,17 @@
 <div class="faq_hero_container_section" style="height: 100%;">
     <div style="text-align: center; padding-top: 9%;" class="container pb-5">
         <img style="max-width: 100%;" src="{{ asset('frontend/assets/images/forget.svg') }}" alt="not found" />
-        <h3 class="forget-h3">Forget password?</h3>
-        <p class="forget-p">Please check the sent email at your inbox to change password.</p>
+        <h3 class="forget-h3">{{ __('Forget password ?') }}</h3>
+        <p class="forget-p">{{ __('Please check the sent email at your inbox to change password ') }}</p>
         <p class="forget-mail">{{ session('email') }}</p>
-        <div class="forget-span">Didn't receive an Email?</div>
+        <div class="forget-span">{{ __("Didn't receive an Email ?") }}</div>
 
        @if (session('email'))
        <form id="resend-form" method="POST" action="{{ route('password.email') }}">
         @csrf
         <input type="hidden" name="email" value="{{ session('email') }}">
         
-        <button class="linkExpired-btn">Resend email</button>
+        <button class="linkExpired-btn">{{ __('Resend email') }}</button>
         <img src="{{ asset('frontend/assets/images/reload.svg') }}" alt="Reload" class="loading" style="display:none;" />
     </form>   
        @endif

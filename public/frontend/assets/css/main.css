@@ -289,20 +289,7 @@ rtl{
 
 
 
-/* error */
-.login-error{
-    color: #E81010;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 25.6px;
-    margin-left: 10px;
-    margin-top: 10px;
-}
 
-.error-img {
-    margin-right: 7px;
-    margin-top: -3px;
-}
 
 /*  ################################## footer###############################################  */
 
@@ -396,9 +383,9 @@ margin: 0 8px;
 
 
 /*  ################################## wrapper###############################################  */
-/* .wrapper {
-    margin-top: 38.75rem;
-} */
+.wrapper {
+    margin-top: 7rem;
+}
 
 .wrapper .wrapper-content h2 {
     font-weight: 600;

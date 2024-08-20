@@ -13,12 +13,12 @@
       <div class="row ">
          <div class="col-md-6">
             <img class="login-img" style="max-width: 100%;"
-               src="{{ asset('frontend/assets') }}/images/auth/loginImg.svg" alt="login" />
+               src="{{ asset('frontend/assets') }}/images/auth/{{ app()->getLocale()=='ar' ? 'login-ar.svg' : 'loginImg.svg' }}" alt="login" />
             <img class="login-img-sm" style="max-width: 100%;" src="./images/auth/loginImg-sm.svg" alt="login" />
          </div>
          <div class="col-md-6  ">
             <div class="login-container">
-               <h1>{{ __("Let's Login to your account") }}</h1>
+               <h1>{{ __("Let’s Login to your account ") }}</h1>
                <form class="login-form" method="POST" action="{{ route('login') }}">
                   @csrf
                   <div class="input-group email">
@@ -39,7 +39,7 @@
 
 
 
-                  <p style="text-align: right;"> <img src="{{ asset('frontend/assets') }}/images/auth/i.svg" alt="i"> <a
+                  <p  class="login-forget-password"> <img src="{{ asset('frontend/assets') }}/images/auth/i.svg" alt="i"> <a
                         class="forgetPass-a" href="{{ route('password.request') }}">{{ __('Forgot password?') }}</a></p>
                   <div class="remember-me">
                      <input type="checkbox" id="remember-me">
@@ -50,8 +50,7 @@
                   <button class="login-button">{{ __('Sign In') }}</button>
                </form>
 
-               <p class="signup-link">{{ __('Dont have an account?') }} <a href="{{  url('/pricing') }} ">{{ __('Sign up
-                     now') }}</a></p>
+               <p class="signup-link">{{ __('Dont have an account?') }} <a href="{{  url('/pricing') }} ">{{ __('Sign up now') }}</a></p>
 
             </div>
          </div>

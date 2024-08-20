@@ -28,7 +28,7 @@
                </div>
 
                <input style="margin-top: 2rem;" class="reset-btn" type="submit"
-                  value="{{ __('Send Password Reset Link') }}" />
+                  value="{{ __('Reset Password') }}" />
 
             </div>
          </form>

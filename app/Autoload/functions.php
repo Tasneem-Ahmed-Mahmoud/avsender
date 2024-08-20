@@ -1,13 +1,14 @@
 <?php 
-use App\Models\Option;
+use Carbon\Carbon;
+use App\Models\App;
 use App\Models\Menu;
 use App\Models\User;
 use App\Models\Device;
-use App\Models\App;
+use App\Models\Option;
+use App\Models\Contact;
 use App\Models\Template;
 use App\Models\Smstransaction;
-use App\Models\Contact;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 if (!function_exists('transactionCharge')) {
     /**
@@ -277,7 +278,7 @@ if (!function_exists('get_option')) {
             $cacheKey = $key;
         }
 
-        $cacheKey = 
+	
     	$option = cache_remember($cacheKey, function () use ($key, $locale) {
     		$row= Option::query();
     		if ($locale != false) {

@@ -21,10 +21,11 @@
 
                   <div class="form-group col-12">
                      <img class="reset-icon" src="{{ asset('frontend/assets') }}/images/auth/mailIcon.svg"
-                     alt="reset"><label for="email" class="reset-label">{{ __('Email Address') }}</label>
+                        alt="reset">
+                        <label for="email" class="reset-label">{{ __('Email Address') }}</label>
                      <input type="email" class="form-control reset-input" id="email" name="email">
                      @include( "frontend.inc.error", ['properity' => "email"] )
-                     
+
 
 
                   </div>
@@ -34,10 +35,10 @@
                      <label class="reset-label" for="password">{{ __('Password') }}</label>
                      <input type="password" class="form-control reset-input" id="password" name="password"
                         name="password">
-                     
+
 
                      @include( "frontend.inc.error", ['properity' => "password"] )
-                     
+
 
 
                   </div>
@@ -45,14 +46,14 @@
                      <img class="reset-icon" src="{{ asset('frontend/assets/images/auth') }}/resetPass.svg" alt="reset">
                      <label class="reset-label" for="reenter-new-password">{{ __('Confirm Password') }}</label>
                      <input type="password" class="form-control reset-input" id="reenter-new-password"
-                   name="password_confirmation">
-                        @include( "frontend.inc.error", ['properity' => "password"] )
-                     
+                        name="password_confirmation">
+                     @include( "frontend.inc.error", ['properity' => "password"] )
+
 
                   </div>
                </div>
 
-               <input class="reset-btn" type="submit" value="{{ __('Reset Password') }}" />
+               <input class="reset-btn" type="submit" value="{{ __('Change Password') }}" />
 
             </div>
          </form>

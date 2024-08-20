@@ -71,7 +71,7 @@
 
                         <p class="Our-Features-p Our-WhatsApp-p">{{ __('WhatsApp Chatbot Description') }}</p>
                         <div class="btn-center-whats">
-                            <button class="btn btn-create-whats-app">{{ __('Lets Create WhatsApp Bot') }}</button>
+                            <a href="{{ url('feature/auto-responder-bot') }}" class="btn btn-create-whats-app">{{ __('Lets Create WhatsApp Bot') }}</a>
                         </div>
 
                     </div>
@@ -254,7 +254,7 @@
         </div>
     </section>
 
-    @include('frontend.sections.faq', ['faqs' => $faqs])
+    {{-- @include('frontend.sections.faq', ['faqs' => $faqs]) --}}
 
 
 

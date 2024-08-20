@@ -24,14 +24,16 @@ body {
     color: #1D4FA0;
     /* margin-bottom: 30px; */
     font-weight: 700;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 76.8px;
+    text-align: left;
 }
 
 .input-group {
     margin-bottom: 20px;
     text-align: left;
     position: relative;
+    gap: 8px;
 }
 
 .input-group label {
@@ -83,7 +85,10 @@ body {
     margin-right: 10px;
 }
 
-
+.login-forget-password{
+    text-align: right;
+    
+}
 .forgetPass-a{
     color: #838383;
     font-weight: 400;
@@ -136,7 +141,7 @@ body {
 }
 
 .error-img{
-    margin-right: 7px;
+    margin-right: 8px;
     margin-top: -3px;
 }
 
@@ -166,6 +171,7 @@ body {
         font-weight: 600;
         font-size: 24px;
         line-height: 38.4px;
+        text-align: left !important;
     }
   
 }
@@ -257,7 +263,7 @@ body {
 
 .reset-icon{
     margin-top: -8px;
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 

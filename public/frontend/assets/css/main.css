@@ -52,7 +52,6 @@ rtl{
 .navbar {
     background-color: var(--primary-color);
     color:var(--links-color);
-   background-color: aquamarine ;
 
 }
 .navbar .container-fluid{
@@ -197,6 +196,7 @@ rtl{
    .navbar  .navbar-nav  {
     /* flex-direction: column-reverse !important; */
     margin-inline-start: 10px !important;
+    margin-inline-end: 10px !important;
    }
    .navbar .dropdown{
     width: 100% !important;

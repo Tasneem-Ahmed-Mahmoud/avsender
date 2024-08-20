@@ -41,3 +41,51 @@
     background-color: #838383;
     cursor: not-allowed;
 }
+
+
+
+/* pagination */
+
+
+.pagination .page-item {
+  
+    padding: 5px 4px 5px 4px !important;
+    
+    border-radius: 4px !important;
+    
+    background: #FFFFFF !important ;
+    border: 1px solid #E4E6EE !important;
+    margin: 0 6px
+    
+    
+    
+    
+       }
+    
+       .pagination .page-item .page-link {
+          font-size: 14px;
+    font-weight: 700;
+    line-height: 22.4px;
+    text-align: center;
+    color: #29387E;
+    border: none;
+       }
+    
+       .pagination .page-item.active {
+          background: #29387E !important;
+    
+       }
+       .pagination .page-item.active  .page-link {
+          color:#FFFFFF !important;
+          background: #29387E !important;
+       }
+      
+       .pagination .page-item.disabled{
+        background: #C8C8C8 !important;
+    
+       }
+       .pagination .page-item.disabled .page-link {
+          background: #C8C8C8 !important;
+          color: #FFFFFF;
+          font-size: 15px;
+       }

@@ -7,7 +7,7 @@
           <figure>
             <img src="{{ asset('frontend') }}/assets/images/logo.svg" alt="" srcset="">
           </figure>
-          <p>Unlock Your Brand’s Potential</p>
+          <p>{{__('Unlock Your Brand’s Potential')}}</p>
           <div class="social-icons d-flex  gap-3 align-items-center">
 
             @if(!empty(get_option('primary_data',true)->socials->twitter))

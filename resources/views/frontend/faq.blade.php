@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-@include('frontend.inc.head-2', ['title' => __('Faq') ,'description' => 'We are here to help you'])
+@include('frontend.inc.head-2', ['title' => __('Faq') ,'description' => ''])
 <div class="faq_hero_container_section">
 <div class="container">
    <div class="faq__content_container">

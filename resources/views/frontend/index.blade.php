@@ -254,7 +254,7 @@
         </div>
     </section>
 
-    {{-- @include('frontend.sections.faq', ['faqs' => $faqs]) --}}
+    @include('frontend.sections.faq', ['faqs' => $faqs])
 
 
 

@@ -26,21 +26,18 @@
 @section('content')
 <div class="faq_hero_container_section">
 	<div class="container">
-		<nav id="top"
-			style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34; );"
-			aria-label="breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item breadcrumb-item-home"><a href="{{ url('/') }}"
-						class=" breadcrumb-item-home"><img
-							src="{{ asset('frontend/assets/images/blogs') }}/Shape-home.svg" alt="Shape-home" />
-						Home</a></li>
-				<li class="breadcrumb-item breadcrumb-item-active active" aria-current="page">Blog</li>
-			</ol>
-		</nav>
 
+
+
+		<div class="blog-details-top bg-info">
+			<i class="fa-solid fa-home"></i>
+			<a href="{{ url('/') }}" >{{ __('Home') }}</a>
+			<i class="fa-solid fa-angle-right"></i>
+			<a href="{{ url('/blogs') }}">{{ __('Blog') }}</a>
+		</div>
 		<a href="{{ url('/blogs') }}">
 			<div class="Blog-btn">
-				Blog
+				{{ __('Blog') }}
 			</div>
 		</a>
 		<h2 class="Blog-h2-detaiels">{{ $blog->title }}</h2>
@@ -55,7 +52,7 @@
 		<div class="Back_top-div">
 			<a href="#top">
 				<div class="Back_top">
-					 <img src="{{ asset('frontend/assets/images/blogs') }}/top.svg" alt="Back to top"
+					{{ __('Back to top') }} <img src="{{ asset('frontend/assets/images/blogs') }}/top.svg" alt="Back to top"
 						class="mx-2" />
 				</div>
 			</a>

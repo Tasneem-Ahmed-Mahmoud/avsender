@@ -76,9 +76,9 @@
     </div>
 
     <div class="row justify-content-center align-center ">
-      <p class="copyright text-center"><span class="copyright-text-left">Ⓒ Designed by </span><img
+      <p class="copyright text-center"><span class="copyright-text-left">Ⓒ {{__('Designed by')}} </span><img
           src="{{ asset('frontend') }}/assets/images/avnology.svg" class="copyright-logo" alt="avnology"> <span
-          class="copyright-text-left">ALL RIGHTS RESERVED</span></p>
+          class="copyright-text-left">{{ __('ALL RIGHTS RESERVED') }}</span></p>
     </div>
 
   </div>

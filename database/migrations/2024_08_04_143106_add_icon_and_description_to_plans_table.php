@@ -13,9 +13,6 @@ return new class extends Migration
     {
         Schema::table('plans', function (Blueprint $table) {
             $table->string('icon')->nullable()->after('title');
-            $table->string('description')->nullable()->after('icon');
-            $table->string('business_size')->nullable()->after('description');
-            $table->string('lang')->default('en')->after('business_size');
             $table->boolean('is_popular')->default(false)->after('lang');
             
         });

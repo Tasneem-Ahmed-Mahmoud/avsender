@@ -5,34 +5,22 @@
 @endsection
 
 @section('content')
-<div class="faq_hero_container_section">
-    <div class="row hero-image-Services-col">
-        <div class="col-12 hero_container Services_container-feature">
-            <div class="d-flex flex-column align-items-center">
-                <h3 class="hero_h3">{{ $feature->title }}</h3>
-                <p class="hero_p w-75">{{ $feature->excerpt->value ?? '' }}</p>
-                <a href="#">
-                    <button class="btn btn-button-hero">{{ __('Work With Us') }}</button>
-                </a>
-            </div>
-        </div>
-        <div class="col-10 hero-image-Services-rest hero-image-Services">
-            <img alt="hero-image-Services" src="{{ asset($feature->banner->value ?? '') }}" />
-        </div>
-    </div>
 
-    <!-- ################################## wrapper ############################################### -->
-    <div class="wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 wrapper-content">
-                    <h2>{{ $feature->title }}</h2>
-                    <p>
-                        {{ $feature->longDescription->value }}
-                </div>
+<!-- ################################## header ############################################### -->
+@include('frontend.inc.head-3',['title'=> $feature->title,"description"=>$feature->excerpt->value ??'','image'=>asset($feature->banner->value ?? '')])
+<!-- ################################## wrapper ############################################### -->
+<section class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 wrapper-content">
+                <h2>{{ $feature->title }}</h2>
+                <p>
+          {{ $feature->longDescription->value }}
             </div>
         </div>
     </div>
+</section>
+<div class="faq_hero_container_section continer">
 
     <!-- ################################## services ############################################### -->
 
@@ -59,7 +47,8 @@
             <div class="container">
                 <div class="row container-Subscribe">
                     <div class="col-md-9 d-flex align-items-center">
-                        <h3 class="container-Subscribe-h3">{{ __('You can try send bulk messages by registration for FREE') }}</h3>
+                        <h3 class="container-Subscribe-h3">{{ __('You can try send bulk messages by registration for
+                            FREE') }}</h3>
                     </div>
                     <div class="col-md-3">
                         <a href="{{ url('/pricing') }}" class="Subscribe-btn btn">{{ __('Subscribe Now') }}</a>

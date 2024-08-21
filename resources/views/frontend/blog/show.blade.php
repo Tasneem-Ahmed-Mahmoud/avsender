@@ -16,10 +16,31 @@
 		line-height: 44.8px;
 		color: #29387E;
 	}
-	.blog-a{
+
+	.blog-a {
 		color: #29387E;
 		text-decoration: none;
 		font-weight: bold;
+	}
+	.blog-details-top {
+		margin-top: 24px;
+	}
+	.blog-details-top a {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 22.4px;
+		color: #737373;
+
+	}
+	.blog-details-top-home , .blog-details-top i{
+		color: #737373;
+	}
+	.blog-details-top i{
+		font-size: 16px;
+	}
+	.blog-details-top-blog{
+		color: #29387E !important;
+
 	}
 </style>
 @endsection
@@ -29,13 +50,13 @@
 
 
 
-		<div class="blog-details-top bg-info">
+		<div class="blog-details-top d-flex gap-2 align-items-center ">
 			<i class="fa-solid fa-home"></i>
-			<a href="{{ url('/') }}" >{{ __('Home') }}</a>
+			<a href="{{ url('/') }}" class="blog-details-top-home">{{ __('Home') }}</a>
 			<i class="fa-solid fa-angle-right"></i>
-			<a href="{{ url('/blogs') }}">{{ __('Blog') }}</a>
+			<a href="{{ url('/blogs') }}" class="blog-details-top-blog">{{ __('Blog') }}</a>
 		</div>
-		<a href="{{ url('/blogs') }}">
+		<a href="{{ url('/blogs') }}" >
 			<div class="Blog-btn">
 				{{ __('Blog') }}
 			</div>
@@ -52,8 +73,8 @@
 		<div class="Back_top-div">
 			<a href="#top">
 				<div class="Back_top">
-					{{ __('Back to top') }} <img src="{{ asset('frontend/assets/images/blogs') }}/top.svg" alt="Back to top"
-						class="mx-2" />
+					{{ __('Back to top') }} <img src="{{ asset('frontend/assets/images/blogs') }}/top.svg"
+						alt="Back to top" class="mx-2" />
 				</div>
 			</a>
 		</div>

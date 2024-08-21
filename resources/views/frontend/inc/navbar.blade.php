@@ -8,7 +8,7 @@
 </style>
 @endif
 <!-- new navbar ------------------------------------------------------------- -->
-<nav class="navbar navbar-expand-lg shadow ">
+<nav class="navbar navbar-expand-lg  ">
   <div class="container-fluid  d-flex   justify-content-between align-items center">
     <a class="navbar-brand " href="#"> <img src="{{ asset('frontend') }}/assets/images/logo.svg" alt="av-sender"></a>
     <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
           <a class=" navbar-btn-subscribe navbar-btn" href="">{{ __('Subscribe') }} <a>
               <a class="navbar-btn-login navbar-btn" href="{{ route('login') }}">{{ __('Login') }} <a>
         </div>
-  
+
       <ul class="navbar-nav  justify-content-evenly m-auto  {{ app()->getLocale() == 'ar' ? 'flex-lg-row-reverse ' : '' }}">
       @if(app()->getLocale() =="ar")
       <li class="nav-item dropdown lang-option {{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }} " >
@@ -47,6 +47,7 @@
               @endforeach
             </ul>
           </li>
+     
       {{ PrintMenu('main-menu') }}
 
       @else 

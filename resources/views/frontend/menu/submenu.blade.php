@@ -5,7 +5,7 @@
 
 @if ($childrens)
     @if (isset($childrens->children) && count($childrens->children) > 0)
-        <li class="nav-item dropdown  b">
+        <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle text-capitalize" href="#" id="navbarDropdown-sub" role="button"
                data-bs-toggle="dropdown" aria-expanded="false"
                href="{{ url($childrens->href) }}"

@@ -20,6 +20,7 @@ body {
     background: radial-gradient(circle at bottom left, rgb(255, 255, 255) 0%, rgb(215, 234, 251) 100%);
 }
 
+
 ul {
     margin: 0;
     padding: 0;
@@ -32,6 +33,14 @@ li {
 a {
     text-decoration: none;
 }
+.rtl{
+    direction: rtl !important;
+    text-align:start !important;
+}
+.ltr{
+    direction: ltr !important;
+    text-align: start !important;
+}
 
 .active {
     color: var(--secondary-color) !important;
@@ -43,35 +52,22 @@ a {
 /*  ################################## navbar ###############################################  */
 .navbar {
     background-color: var(--primary-color);
-    color: var(--links-color);
-}
+    color:var(--links-color);
 
-/* .navbar .navbar-brand img {
-    width: 10.563rem;
 }
-
+.navbar .container-fluid{
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.navbar .navbar-nav{
+    width:60%;
+}
 .navbar .nav-item {
     font-size: 18px;
     font-weight: 500;
     line-height: 28.8px;
-}
+   
 
-.navbar .nav-item.search-icon {
-    padding: 18.75px;
-    color: #374957;
-}
-
-.navbar .lang-option.nav-link.dropdown-toggle {
-    height: 20px;
-}
-
-.navbar .lang-option .lang-icon {
-    width: 20px;
-}
-
-.navbar .mode img {
-    width: 39px;
-    height: 39px;
 }
 
 .navbar .navbar-toggler,
@@ -93,15 +89,11 @@ a {
     background-color: #f1f1f1 !important;
 }
 
-.navbar .dropdown-menu .lang img {
-    width: 20px;
-    height: 20px;
-} */
+
 
 .navbar .navbar-btn-subscribe {
     background: linear-gradient(90deg, #374ba8 5.25%, #2fb7f0 77.6%);
   
-    margin-right: 8px;
 
 }
 
@@ -110,44 +102,30 @@ a {
     color: var(--white-color);
     font-size: 16px;
     font-weight: 600;
-    line-height: 25.6px;
+    /* line-height: 25.6px; */
     text-align: center;
-    padding: 12px 42px;
+    padding: 12px 32px;
+    min-width: 150px;
 }
 
  .navbar .navbar-btn-login {
     background-color: var(--white-color);
     color: #29387e;
     border: 2px solid linear-gradient(90deg, #374ba8 5.25%, #2fb7f0 77.6%);
-    margin-right: 8px;
+    /* margin-right: 8px; */
     border: 2px solid #2b74cc; 
     /* border-image: linear-gradient(to right, #00c6ff, #0072ff) 1; */
 
 } 
-/* .navbar .navbar-btn-login {
-    position: relative;
-    background-color: var(--white-color);
-    color: #29387e;
-    margin-right: 8px;
-    border-radius: 50px;
-    padding: 10px 20px;
-    z-index: 1;
-    overflow: hidden; 
+
+
+.navbar .action-btns {
+    gap: 8px;
 }
-
-.navbar .navbar-btn-login::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    border-radius: 50px; 
-    padding: 2px; 
-    background: linear-gradient(90deg, #374ba8 5.25%, #2fb7f0 77.6%);
-} */
-
+.navbar i {
+    font-size: 22px;
+    color:#29387E;
+}
 
 @media (max-width: 1300px) and (min-width: 992px) {
     .navbar .navbar-btn-subscribe {
@@ -168,39 +146,71 @@ a {
 
     .active {
         color: var(--secondary-color) !important;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 20.8px;
+        font-weight: 700;
     }
 }
-
+@media(min-width:992px){
+   
+    .navbar .action-btns-desktop {
+        display: block;
+    }
+    .navbar .action-btns-mobile {
+        display: none !important;
+    }
+}
 @media (max-width: 992px) {
+    .navbar .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .navbar .navbar-btn{
+        min-width: auto;
+    }
+    .navbar .navbar-nav {
+        width: 100%;
+    }
+    .navbar .action-btns-mobile {
+        display: block;
+        justify-content: center;
+    }
+    .navbar .action-btns-desktop {
+        display:none !important ;
+    }
+
+    .navbar .action-btns-desktop {
+        display: none;
+    }
     .navbar .navbar-btn {
         margin-top: 24px;
         margin-bottom: 32px;
         font-size: 12px;
         font-weight: 600;
         line-height: 19.2px;
-        padding: 5px 32px 6px 32px;
+        padding: 5px 32px 5px 32px;
     }
-}
-@media (max-width: 992px) {
-    .navbar > .container {
-        max-width: 100%;
-        padding-left: 0;
-        padding-right: 0;
-    }
+
 
     .navbar .nav-item {
         width: 100% !important;
-        padding-left: 61px;
+        /* padding-left: 61px; */
     }
+   .navbar  .navbar-nav  {
+    /* flex-direction: column-reverse !important; */
+    margin-inline-start: 10px !important;
+    margin-inline-end: 10px !important;
+   }
+   .navbar .dropdown{
+    width: 100% !important;
+    padding: 0 !important;
+   }
 
     .navbar .nav-item:not(.dropdown):hover,
     .navbar .nav-item:not(.dropdown):focus {
         background-color: #f1f1f1 !important;
     }
+
 }
+
 
 /*  ################################## hero###############################################  */
 /*  ################################## hero###############################################  */
@@ -277,105 +287,6 @@ a {
 
 }
 
-.navbar .navbar-btn-subscribe {
-    background: linear-gradient(90deg, #374BA8 5.25%, #2FB7F0 77.6%);
-
-
-    margin-right: 8px;
-    /* margin-left: 34px; */
-
-}
-
-.navbar .navbar-btn {
-    border-radius: 50px;
-    color: var(--white-color);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 25.6px;
-    text-align: center;
-
-    /* padding: 25px 52px 26px 52px; */
-    padding: 15px 42px 16px 42px;
-}
-
-.navbar .navbar-btn-login {
-
-    background-color: var(--white-color);
-    color: #29387E;
-    border: 2px solid linear-gradient(90deg, #374BA8 5.25%, #2FB7F0 77.6%);
-
-    margin-right: 8px;
-
-
-}
-
-/* 
-@media (max-width: 768px) {
-    .hero .hero-content h1 {
-        font-size: 24px;
-        line-height: 38.4px;
-    }
-
-    .hero .hero-content p {
-
-
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 19.2px;
-
-    }
-} */
-
-@media (max-width:1300px) and (min-width: 992px) {
-
-    .navbar .navbar-btn-subscribe {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
-    .navbar .navbar-btn {
-
-        font-size: 12px;
-        padding: 5px 15px 6px 15px;
-
-
-    }
-
-    .navbar .nav-item {
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 20.8px;
-    }
-
-    .active {
-        color: var(--secondary-color) !important;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 20.8px;
-    }
-}
-
-@media (max-width: 992px) {
-
-    .navbar .navbar-btn {
-        margin-top: 24px;
-        margin-bottom: 32px;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 19.2px;
-
-        /* padding: 25px 52px 26px 52px; */
-        padding: 5px 32px 6px 32px;
-
-
-
-
-    }
-
-
-
-
-}
 
 
 

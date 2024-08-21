@@ -48,11 +48,11 @@
         </div>
     </div>
 
-
+   
     <div class="content_container_cards  pb-5 ">
         <div class="container">
             <div class="Our-Features-h3-text">
-                <img alt="text-bg" src="{{ asset('frontend/assets/images/home') }}/Features-bg-image.svg" />
+                <img alt="text-bg"  src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Features-bg-image-ar.svg' : 'Features-bg-image.svg')) }}" />
             </div>
             <h3 class="Our-Features-h3">{{ __('Feature Title') }}</h3>
             <p class="Our-Features-p">{{ __('Feature Description') }}</p>
@@ -154,8 +154,8 @@
             <div class="container ">
                 <div class="row d-flex justify-content-center ">
                     <div class="col-md-10 section-white col-sm-10">
-                        <div class="div-white-flex">
-                            <div class="div-mb">
+                        <div class="div-white-flex ">
+                            <div class="div-mb ">
                                 <div class="div-white-flex-img">
 
                                     <img src="{{ asset('frontend/assets/images/home') }}/user-icon.svg" alt="icon" />
@@ -205,7 +205,7 @@
                             <div class="">
                                 <div class="WhatsApp-Chatbot-text">
                                     <img alt="text-bg"
-                                        src="{{ asset('frontend/assets/images/home') }}/Our_Top_Integrations.svg" />
+                                    src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Our_Top_Integrations_ar.svg' : 'Our_Top_Integrations.svg')) }}" />
                                 </div>
                                 <h3 class="Our-whats-h3">{{ __('Our Top Integrations') }} </h3>
                                 <h3 class="Our-whats-h3-sm Our_Top_Integrations">{{ __('Our Top Integrations') }} </h3>

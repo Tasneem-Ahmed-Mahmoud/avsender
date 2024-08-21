@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse  w-100  " id="navbarSupportedContent">
 
     <div class="  d-flex     action-btns action-btns-mobile ">
-          <a class=" navbar-btn-subscribe navbar-btn" href="">{{ __('Subscribe') }} <a>
+          <a class=" navbar-btn-subscribe navbar-btn" href="{{ url('/pricing') }}">{{ __('Subscribe') }} <a>
               <a class="navbar-btn-login navbar-btn" href="{{ route('login') }}">{{ __('Login') }} <a>
         </div>
 
@@ -87,7 +87,7 @@
    
 
       <div class="  d-flex  justify-content-end   action-btns action-btns-desktop">
-          <a class=" navbar-btn-subscribe navbar-btn" href="">{{ __('Subscribe') }} <a>
+          <a class=" navbar-btn-subscribe navbar-btn" href="{{ url('/pricing') }}">{{ __('Subscribe') }} <a>
               <a class="navbar-btn-login navbar-btn" href="{{ route('login') }}">{{ __('Login') }} <a>
         </div>
   

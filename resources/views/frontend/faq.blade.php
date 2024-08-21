@@ -50,30 +50,6 @@
 @endsection
 
 @section('script')
-<script>
-   document.addEventListener('DOMContentLoaded', function () {
-       const toggleImages = document.querySelectorAll('.more-info-faq');
-
-       toggleImages.forEach(toggleImage => {
-           const targetId = toggleImage.getAttribute('href').substring(1);
-           const faqQuestionId = document.getElementById(targetId).getAttribute('data-faq-target');
-           const collapseExample = document.getElementById(targetId);
-           const moreinfofaqdiv = document.getElementById('more-info-faq-div');
-
-           collapseExample.addEventListener('shown.bs.collapse', function () {
-               toggleImage.src = "frontend/assets/images/faq/less-info-faq.svg";
-               document.getElementById(faqQuestionId).style.color = '#29387E';
-               document.getElementById(faqQuestionId).style.fontWeight = '500px';
-               document.getElementById(moreinfofaqdiv).style.alignItems = 'start';
-           });
-
-           collapseExample.addEventListener('hidden.bs.collapse', function () {
-               toggleImage.src = "frontend/assets/images/faq/more-info-faq.svg";
-               document.getElementById(faqQuestionId).style.color = '';
-               document.getElementById(faqQuestionId).style.fontWeight = '400px';
-           });
-       });
-   });
-</script>
+<script src="{{ asset('frontend/assets/js/faq.js') }}"></script>
    
 @endsection

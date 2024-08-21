@@ -126,6 +126,9 @@ a {
     font-size: 22px;
     color:#29387E;
 }
+.dropdown-item {
+    gap:8px;
+}
 
 @media (max-width: 1300px) and (min-width: 992px) {
     .navbar .navbar-btn-subscribe {
@@ -133,6 +136,7 @@ a {
         margin-right: 5px;
     }
 
+    
     .navbar .navbar-btn {
         font-size: 12px;
         padding: 6px 15px;

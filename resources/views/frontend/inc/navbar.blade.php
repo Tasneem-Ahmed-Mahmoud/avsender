@@ -65,9 +65,9 @@
               <li class="mb-1 p-1">
                 <a class="dropdown-item d-flex align-items-center  lang" href="{{ route('switchLang', $code) }}">
                   @if($language === 'Arabic')
-                  <img src="{{ asset('frontend') }}/assets/images/arabic.png" alt="Saudi Arabia Flag" class="me-3">
+                  <img src="{{ asset('frontend') }}/assets/images/arabic.png" alt="Saudi Arabia Flag" >
                   @else
-                  <img src="{{ asset('frontend') }}/assets/images/english.png" alt="American Flag" class="me-3">
+                  <img src="{{ asset('frontend') }}/assets/images/english.png" alt="American Flag" >
                   @endif
 
                   <span>{{ $language }}</span>

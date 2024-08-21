@@ -50,7 +50,6 @@ $plans = collect($plansArray);
         </div>
       </div>
     </div>
-
     <div class="planing-middle">
       <p>{{ $plan['description'] }}</p>
       <h6><span>{{ amount_format($plan['price'], 'icon') .'/'}}</span> {{ $plan['days'] == 30 ? __('Monthly') :
@@ -61,14 +60,14 @@ $plans = collect($plansArray);
       <ul>
         @foreach($plan['data'] ?? [] as $key => $data)
         <li>
-          <i class="fa-solid {{$data == false || $data==" false" ? 'bg-warning fa-xmark' : 'fa-check' }}"></i>
-          <span class="{{ $data == false || $data==" false" ? 'text-warning' : '' }}">
-            {{ $data =="false"|| $data=="true" ? $key : $key ." : ($data)" }}
+          <i class="fa-solid {{$data == false || $data  == "false" ? 'bg-warning fa-xmark' : 'fa-check' }}"></i>
+          <span class="{{ $data == false || $data=="false" ? 'text-warning' : '' }}">
+            {{  $data=="false" ||$data=="true" ? $key : $key ." : ($data)" }}
+         
           </span>
         </li>
         @endforeach
       </ul>
-
       <a href="{{ route('choose.plan', $plan['id']) }}" class="btn btn-subscribe text-center w-100">
         {{ $plan['is_trial'] ? __('Free '.$plan['trial_days'].' days trial') : __('Subscribe Now') }}
       </a>

@@ -107,7 +107,7 @@
                     <div class="plan-card  {{ $plan->days==30 ? 'plan-card-l' : 'plan-card-r' }} col-md-6 text-center">
                         @if($plan->days !=30)
                         <div class="Save_pres">
-                            {{ __('Save') }} 30%
+                            {{ __('Save Plan') }} 30%
                         </div>
                         @endif
                         <h3 class="plan-card-h3">{{ $plan->days==30 ?__( 'Monthly Plan') : __('Annual Plan') }}</h3>

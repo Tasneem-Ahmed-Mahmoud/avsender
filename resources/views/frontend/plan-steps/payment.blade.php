@@ -107,7 +107,7 @@
                     <div class="createAccount col-md-10">
                         <div class="row pay-row">
                             <div class="col-md-6">
-                                <h2 class="pay-h2">Choose your payment method to subscribe :</h2>
+                                <h2 class="pay-h2">{{ __('Choose your payment method to subscribe') }}</h2>
 
                                 <div class="my-fatoorah-div">
                                     <img src="{{ asset('frontend/assets/images/payment') }}/choose-pay.svg"
@@ -142,8 +142,8 @@
 
 
 
-                                    <p><span class="monthly-sar">SAR {{ $plan->price }}</span> {{ $plan->days == 30 ?
-                                        __('/month') : __('/year') }}</p>
+                                    <p><span class="monthly-sar">SAR {{ $plan->price }}</span> /{{ $plan->days == 30 ?
+                                        __('Monthly') : __('Yearly') }}</p>
 
                                     <p class="Billing_every ">{{ $plan->days == 30 ? __('Billing every Month') : __('Billing every Year') }}
                                     </p>

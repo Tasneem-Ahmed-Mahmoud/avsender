@@ -99,3 +99,6 @@ Route::get('password/success', function () {
 Route::get('/password/expired', function () {
     return view('auth.passwords.expired');
 })->name('password.expired');
+
+
+Route::view('/test','frontend.inc.head-3');

@@ -1296,7 +1296,7 @@
     "Enter your Mail": "Enter your Mail",
     "Enter your Name": "Enter your Name",
     "Send us a Message :": "Send us a Message :",
-    "Contact Us": "Contact Us",
+    "Contact Us": "Contact",
     "Join our Team": "Join our Team",
     "All Team Member": "All Team Member",
     "team": "team",
@@ -1399,6 +1399,7 @@
    "Positive Reviews":"Positive Reviews",
    "Total Customers":"Total Customers",
    "Our Top Integrations":"Our Top Integrations",
+   "Our Top Integrations Description":"Integration of application connections, platforms, and systems such as Customer Relationship Management (CRM) and customer support facilitates data exchange, helping companies streamline processes and enhance communication.",
    "Home":"Home",
    "Top Features":"Top Features",
    "Popular":"Popular",
@@ -1432,8 +1433,10 @@
 "We are here to help you":"We are here to help you",
 "Unlock Your Brand’s Potential":"Unlock Your Brand’s Potential",
 "ALL RIGHTS RESERVED":"ALL RIGHTS RESERVED",
-"Designed by":"Designed by"
-
+"Designed by":"Designed by",
+"Save Plan":"Save",
+"Choose your payment method to subscribe":"Choose your payment method to subscribe :",
+"Contact us Description":"Subscribe now with our different plans that suits all business sizes and enjoy our amazing features ."
 
   
 }

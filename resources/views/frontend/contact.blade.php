@@ -1,7 +1,5 @@
 @extends('frontend.inc.master')
-@section('style')
-<link rel="stylesheet" href="{{ asset('frontend/assets/css/contact-us.css') }}">
-@endsection
+
 @section('content')
 
 
@@ -9,11 +7,10 @@
    <div class="row ">
       <div class="col-12 hero_container hero_container-feature hero_container-feature-contact">
          <div>
-            <h3 class="hero_h3">Contact</h3>
-            <p class="hero_p">Subscribe now with our different plans that suits all business sizes and enjoy our
-               amazing features .</p>
+            <h3 class="hero_h3">{{ __('Contact us') }}</h3>
+            <p class="hero_p">{{ __('Contact us Description') }}</p>
             <a href="#">
-               <button class="btn btn-button-hero">Work With Us</button>
+               <a href="{{ url('/about') }}" class="btn btn-button-hero">{{ __('Work With Us') }}</a>
             </a>
          </div>
       </div>

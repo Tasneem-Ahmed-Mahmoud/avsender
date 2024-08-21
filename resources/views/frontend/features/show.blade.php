@@ -164,33 +164,6 @@
 @section('script')
 <script src="{{ asset('frontend/assets/js/planing.js') }}"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.btn-swiper-button-next',
-            prevEl: '.btn-swiper-button-prev',
-        },
-        breakpoints: {
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-            },
-        },
-    });
-</script>
+<script src="{{ asset('frontend/assets/js/service.js') }}"></script>
 
 @endsection

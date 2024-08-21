@@ -107,7 +107,7 @@ class HomeController extends Controller
     public function faq()
     {
         // $faqs = Post::where('type', 'faq')->where('lang', app()->getLocale())->with('excerpt')->latest()->get();
-        $faqs = Post::where('type', 'faq')->with('excerpt')->latest()->get();
+        $faqs = Post::where('type', 'faq')->where("lang",app()->getLocale())->with('excerpt')->latest()->get();
 
         $this->metadata('seo_faq');
 

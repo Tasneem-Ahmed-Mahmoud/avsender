@@ -334,7 +334,7 @@ if (!function_exists('PrintMenu')) {
 			
 			
     		// $menus = Menu::where('position', $position)->first();
-			$menus = Menu::where('position', $position)->first();
+			$menus = Menu::where('position', $position)->where('lang',$locale)->first();
 			// dd($menus);
 	
     		$data['data'] = json_decode($menus->data ?? '');

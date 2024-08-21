@@ -12,24 +12,16 @@
                 <h3 class="hero_h3 hero-home-content-h3">{!! __('Home Title') !!}
                 </h3>
                 <P class="hero_p ">{{ __("Home Description") }}</P>
-                <a href="#">
-                    <button class="btn btn-button-hero">{{ __('Work With Us') }}</button>
-                </a>
+                <a href="{{ url('/about') }}" class=" btn btn-work-with-us text-center">{{ __('Work With Us') }}</a>
             </div>
-
-
         </div>
         <div class="col-12 w-100 text-center  hero-image-home ">
-
             <img alt="hero-image-Services" class="w-75"
                 src="{{ asset('frontend/assets/images/home') }}/hero-image-statistic.svg" />
-
         </div>
         <div class="col-12  d-flex justify-content-center  hero-image-home-Trusted">
 
             <img alt="hero-image-Services" src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Trusted-ar.svg' : 'Trusted.svg')) }}" />
-
-
         </div>
         <div class="social-media-hero">
             <div class="social-media-icon">
@@ -211,8 +203,7 @@
                                 <h3 class="Our-whats-h3-sm Our_Top_Integrations">{{ __('Our Top Integrations') }} </h3>
                             </div>
                         </div>
-                        <p class="Our-Features-p Our-WhatsApp-p Our-Ipsum-p">Lorem Ipsum is simply dummy text of the
-                            printing and typesetting industry.</p>
+                        <p class="Our-Features-p Our-WhatsApp-p Our-Ipsum-p">{{__('Our Top Integrations Description')}}</p>
                     </div>
                 </div>
                 <div class="col-md-6 iPhone_2-col Image-section-col">
@@ -260,90 +251,9 @@
 
 
 @section('script')
-<script src="{{ asset('frontend/assets/js/planing.js') }}"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-       const toggleImages = document.querySelectorAll('.more-info-faq');
 
-       toggleImages.forEach(toggleImage => {
-           const targetId = toggleImage.getAttribute('href').substring(1);
-           const faqQuestionId = document.getElementById(targetId).getAttribute('data-faq-target');
-           const collapseExample = document.getElementById(targetId);
-           const moreinfofaqdiv = document.getElementById('more-info-faq-div');
-
-           collapseExample.addEventListener('shown.bs.collapse', function () {
-               toggleImage.src = 'frontend/assets/images/faq/less-info-faq.svg';
-               document.getElementById(faqQuestionId).style.color = '#29387E';
-               document.getElementById(faqQuestionId).style.fontWeight = '500px';
-               document.getElementById(moreinfofaqdiv).style.alignItems = 'start';
-           });
-
-           collapseExample.addEventListener('hidden.bs.collapse', function () {
-               toggleImage.src = 'frontend/assets/images/faq/more-info-faq.svg';
-               document.getElementById(faqQuestionId).style.color = '';
-               document.getElementById(faqQuestionId).style.fontWeight = '400px';
-           });
-       });
-   });
-</script>
+<script src="{{ asset('frontend/assets/js/faq.js') }}"></script>
+ <script src="{{ asset('frontend/assets/js/planing.js') }}"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-       slidesPerView: 1,
-       spaceBetween: 10,
-       pagination: {
-           el: '.swiper-pagination',
-           clickable: true,
-       },
-       navigation: {
-           nextEl: '.swiper-button-next',
-           prevEl: '.swiper-button-prev',
-       },
-       breakpoints: {
-           640: {
-               slidesPerView: 1,
-               spaceBetween: 20,
-           },
-           768: {
-               slidesPerView: 2,
-               spaceBetween: 30,
-           },
-           1024: {
-               slidesPerView: 3,
-               spaceBetween: 40,
-           },
-       },
-   });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
-            },
-        });
-    });
-</script>
-
+<script src="{{ asset('frontend/assets/js/service.js') }}"></script>
 @endsection

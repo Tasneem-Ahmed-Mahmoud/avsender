@@ -31,6 +31,7 @@
    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/main.css">
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/faq.css') }}">
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/planing.css') }}">
+   <link rel="stylesheet" href="{{ asset('frontend/assets/css/contact-us.css') }}">
    @yield('style')
    @if(app()->getLocale() == 'ar')
    <style>
@@ -38,11 +39,12 @@
          direction: rtl;
       }
    </style>
-
+   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/main-ar.css">
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/login-ar.css') }}">
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/planning-ar.css') }}">
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/faq-ar.css') }}">
    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/home-ar.css">
+   <link rel="stylesheet" href="{{ asset('frontend/assets/css/contact-us-ar.css') }}">
    @endif
    <script type="text/javascript">
       $('.language-switch').on('change',function(){

@@ -38,19 +38,115 @@ class FaqSeeder extends Seeder
 
             ['title' => 'Is it possible to send group messages to the sync group ?', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'en', 'key' => 'excerpt', 'value' => 'Yes, you can send group messages after exporting the sync group to an Excel file and then uploading the file to the Avsender platform.'],
 
-<!-- arabic -->
-            ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-            ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-            ['title' => '', 'type' => 'faq', 'status' => '1', 'featured' => '1', 'lang' => 'ar', 'key' => 'excerpt', 'value' => ''],
-
-
+// arabic
+            [
+                'title' => 'هل الموقع مخصص للأجهزة الكومبيوتر والجوالات؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'خدمة الإرسال يعمل على أي جهاز',
+            ],
+            [
+                'title' => 'هل من الممكن ارسال اكثر من رسالة مرة واحدة؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'من الممكن، لكن يجب أن تكون حذرًا لأن إرسال الرسائل إلى أرقام ليس لديك اتصال سابق بها أو إلى أرقام غير مهتمة بما ترسله قد يؤدي إلى حظر رقمك من قبل واتساب. تعتبر هذه الخدمة وسيلة للتواصل مع عملائك، ويمكنك من خلالها إرسال أخبار عملك وعروضك حتى لو كانت الأرقام كبيرة.',
+            ],
+            [
+                'title' => 'هل ممكن ارسال اكثر من رقم واتساب باشتراك واحد؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'نعم، يمكنك الإرسال من أي رقم واتساب تريد استخدامه، ولكن يتم الإرسال من رقم واحد فقط في كل عملية. أي أن الموقع لا يسمح بفتح وإرسال الرسائل من رقمين مختلفين في نفس الوقت.',
+            ],
+            [
+                'title' => 'ما هي الخدمات الموجودة في Avsender؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'وهي عبارة عن مجموعة من الخدمات: خدمة إرسال الرسائل عبر الموقع، خدمة الرد الآلي (chatbot)، خدمة واجهة برمجة التطبيقات (API).',
+            ],
+            [
+                'title' => 'كيفية التواصل بواجهة برمجة التطبيقات (API)؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'عندما تقوم بالاشتراك في الخدمة، ستجد الإرشادات بالكامل. من خلال الإعدادات، يمكنك ربط النظام عبر مبرمج موقعك.',
+            ],
+            [
+                'title' => 'هل الخدمة مفعلة على الفيسبوك؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'نعم، خدمة التحقق من الأرقام تتم عبر الفيسبوك، ونحن نعتبر وسيط يساعد في عملية الربط.',
+            ],
+            [
+                'title' => 'هل من الشروط توثيق الحساب في فيسبوك لاستخدام خدمات Avsender؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'لا، يمكنك أن تستفيد من جميع الخدمات عبر الواتساب دون حاجة إلى التحقق من الحساب على الفيسبوك.',
+            ],
+            [
+                'title' => 'ماهي اللغات المدعومة على Avsender؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'المنصة تدعم اللغة العربية والإنجليزية.',
+            ],
+            [
+                'title' => 'هل تظهر رسائل API عبر الواتساب؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'نعم، تظهر رسائل API عبر الواتساب.',
+            ],
+            [
+                'title' => 'بعد اشتراكي في الباقة الشاملة هل من الممكن أن أرسل 5000 رسالة يومياً؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'عدد الرسائل المسموح بها في جميع الباقات هو 5000 رسالة يومياً.',
+            ],
+            [
+                'title' => 'ما المقصود بالمجموعة المزامنة (Sync Group)؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'هي الأرقام الموجودة في محادثات الواتساب.',
+            ],
+            [
+                'title' => 'هل من الممكن إرسال رسائل جماعية إلى المجموعة المزامنة؟',
+                'type' => 'faq',
+                'status' => '1',
+                'featured' => '1',
+                'lang' => 'ar',
+                'key' => 'excerpt',
+                'value' => 'نعم، يمكنك إرسال رسائل جماعية بعد تصدير مجموعة المزامنة إلى ملف Excel ثم تحميل الملف على منصة Avsender.',
+            ],
 
         ];
 

@@ -45,7 +45,7 @@
 					<div class="from-group row mt-3">
 						<label  class="col-lg-12">{{ __('Main Description') }}</label>
 						<div class="col-lg-12">
-							<textarea name="main_description" required="" class="summernote form-control"></textarea>
+							<textarea name="main_description" rows="40" required="" class="summernote form-control"></textarea>
 						</div>
 					</div>
 					<div class="from-group row  mt-2">

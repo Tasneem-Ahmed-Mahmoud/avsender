@@ -97,7 +97,7 @@ class BlogController extends Controller
      */
     public function show($slug)
     {
-        $blog = Post::where('type', 'blog')->with('shortDescription', 'longDescription', 'tags', 'preview', 'seo')->where('status', 1)->where('slug', $slug)->first();
+        $blog = Post::where('type', 'blog')->with('shortDescription', 'longDescription', 'tags', 'preview', 'seo')->where('lang', app()->getLocale())->where('status', 1)->where('slug', $slug)->first();
         abort_if(empty($blog), 404);
 
         $categories = Category::where('type', 'blog_category')->whereHas('postcategories')->withCount('postcategories')->where('status', 1)->where('lang', app()->getLocale())->get();

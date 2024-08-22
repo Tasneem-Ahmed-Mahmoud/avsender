@@ -3,48 +3,33 @@
 namespace App\Traits;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Str;
 
 trait Uploader
 {
-    //upload file
-    // private function saveFile(Request $request, $input)
-    // {
-    //     $file = $request->file($input);
-    //     $ext = $file->extension();
-    //     $filename = now()->timestamp.Str::random(20).'.'.$ext;
-
-    //     $path = 'public/uploads'.date('/y').'/'.date('m').'/';
-    //     $filePath = $path.$filename;
-
-    //     Storage::put($filePath, file_get_contents($file));
-
-    //     return Storage::url($filePath);
-    // }
-
-  
+    // Save file using File facade
     private function saveFile(Request $request, $input)
-{
-    $file = $request->file($input);
-    $ext = $file->extension();
-    $filename = now()->timestamp . Str::random(20) . '.' . $ext;
+    {
+        $file = $request->file($input);
+        $ext = $file->extension();
+        $filename = now()->timestamp . Str::random(20) . '.' . $ext;
 
-    // Store the file in storage/app/public/uploads
-    $path = 'uploads/' . date('y') . '/' . date('m') . '/';
-    $filePath = $path . $filename;
+        // Define the file path
+        $path = 'uploads/' . date('y') . '/' . date('m') . '/';
+        $filePath = public_path($path) . $filename;
 
-    // Use the 'public' disk to store the file
-    Storage::disk('public')->put($filePath, file_get_contents($file));
+        // Ensure the directory exists
+        File::ensureDirectoryExists(public_path($path));
 
-    // Return the URL to access the file
-    return Storage::url($filePath);
-}
+        // Move the file to the destination
+        $file->move(public_path($path), $filename);
 
-    
-    
+        // Return the relative URL to access the file
+        return url($path . $filename);
+    }
 
-    //remove file
+    // Remove file using File facade
     public function removeFile($url = null)
     {
         if (empty($url)) {
@@ -53,9 +38,9 @@ trait Uploader
 
         $fileName = explode('uploads', $url);
         if (isset($fileName[1])) {
-            $exists_file = 'uploads'.$fileName[1];
-            if (Storage::exists($exists_file)) {
-                Storage::delete($exists_file);
+            $filePath = public_path('uploads' . $fileName[1]);
+            if (File::exists($filePath)) {
+                File::delete($filePath);
             }
 
             return true;

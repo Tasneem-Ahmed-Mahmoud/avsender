@@ -27,7 +27,7 @@
             <a class="nav-link dropdown-toggle text-capitalize  " href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
 
-              <img src="{{ asset('frontend') }}/assets/images/{{ app()->getLocale()==' ar' ? 'arabic' : 'english'
+              <img src="{{ asset('frontend') }}/assets/images/{{ app()->getLocale()=='ar' ? 'arabic' : 'english'
                 }}.png" alt="language" class="rounded-circle lang-icon">
               <span>{{ app()->getLocale() =="ar" ? "العربية" : "English"}}</span>
             </a>

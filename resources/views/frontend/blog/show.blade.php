@@ -1,93 +1,63 @@
 @extends('frontend.inc.master')
 @section('style')
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/blog-details.css') }}">
-<style>
-	.blog-p {
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 28.8px;
-		color: #000;
-	}
 
-	.blog-h2,
-	.blog-h3 {
-		font-size: 28px;
-		font-weight: 600;
-		line-height: 44.8px;
-		color: #29387E;
-	}
-
-	.blog-a {
-		color: #29387E;
-		text-decoration: none;
-		font-weight: bold;
-	}
-	.blog-details-top {
-		margin-top: 24px;
-	}
-	.blog-details-top a {
-		font-size: 16px;
-		font-weight: 600;
-		line-height: 22.4px;
-		color: #737373;
-
-	}
-	.blog-details-top-home , .blog-details-top i{
-		color: #737373;
-	}
-	.blog-details-top i{
-		font-size: 16px;
-	}
-	.blog-details-top-blog{
-		color: #29387E !important;
-
-	}
-</style>
 @endsection
 @section('content')
-<div class="faq_hero_container_section">
+
+
+
+<section class="blog-details">
+
 	<div class="container">
-
-
-
-		<div class="blog-details-top d-flex gap-2 align-items-center ">
-			<i class="fa-solid fa-home"></i>
-			<a href="{{ url('/') }}" class="blog-details-top-home">{{ __('Home') }}</a>
-			<i class="fa-solid fa-angle-right"></i>
-			<a href="{{ url('/blogs') }}" class="blog-details-top-blog">{{ __('Blog') }}</a>
-		</div>
-		<a href="{{ url('/blogs') }}" >
-			<div class="Blog-btn">
-				{{ __('Blog') }}
-			</div>
-		</a>
-		<h2 class="Blog-h2-detaiels">{{ $blog->title }}</h2>
-
 		<div class="row">
-			<div class="col-md-12 col-imge-blog-detaiels">
-				<img src="{{ asset($blog->preview->value ?? '') }}" alt="blog-detailes" />
-			</div>
-			<p class="p-imge-blog-detaiels">{{ $blog->shortDescription->value ?? '' }}</p>
-			<div class="blog-content">{!! filterXss($blog->longDescription->value ?? '') !!}</div>
-		</div>
-		<div class="Back_top-div">
-			<a href="#top">
-				<div class="Back_top">
-					{{ __('Back to top') }} <img src="{{ asset('frontend/assets/images/blogs') }}/top.svg"
-						alt="Back to top" class="mx-2" />
+			<header class="blog-details-header">
+				<div class="blog-details-top d-flex gap-2 align-items-center ">
+					<i class="fa-solid fa-home"></i>
+					<a href="{{ url('/') }}" class="blog-details-top-home">{{ __('Home') }}</a>
+					<i class="fa-solid {{ app()->getLocale() == 'en' ? 'fa-angle-right' : 'fa-angle-left' }}"></i>
+					<a href="{{ url('/blogs') }}" class="blog-details-top-blog">{{ __('Blog') }}</a>
 				</div>
-			</a>
+
+				<div class="col-12 blog-details-top-btn">
+					<a href="{{ url('/blogs') }}">{{ __('Blog') }}</a>
+				</div>
+
+				<h1>{{ $blog->title }}</h1>
+			</header>
+			<div class="blog-details-body">
+				<div class="col-md-12 ">
+					<img src="{{ asset($blog->preview->value ?? '') }}" alt="blog-detailes" />
+				</div>
+				<p class="blog-deatils-description">{{ $blog->shortDescription->value ?? '' }}</p>
+				<div class="blog-details-content">{!! filterXss($blog->longDescription->value ?? '') !!}</div>
+
+				<button clss="blog-details-top-btn"></button>
+
+
+
+				<div class="d-flex justify-content-center align-items-center">
+					<button class="blog-details-bottom-btn">
+						<span>{{ __('Back to top') }}</span>
+						<img src="{{ asset('frontend/assets/images/blogs') }}/top.svg"
+							alt="Back to top" />
+					</button>
+				</div>
+
+			</div>
+
 		</div>
+
 
 	</div>
-</div>
+</section>
 @endsection
 
 @section('script')
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
         // Select all elements within .blog-content
-        const blogContent = document.querySelector('.blog-content');
+        const blogContent = document.querySelector('.blog-details-content');
         
         if (blogContent) {
             // Remove all inline styles
@@ -121,5 +91,13 @@
            aElements.forEach(a => a.classList.add('blog-a'));
         }
     });
+
+	$(document).ready(function() {
+    $('.blog-details-bottom-btn').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+        return false;
+    });
+});
+
 </script>
 @endsection

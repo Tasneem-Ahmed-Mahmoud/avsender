@@ -21,7 +21,8 @@
         </div>
         <div class="col-12  d-flex justify-content-center  hero-image-home-Trusted">
 
-            <img alt="hero-image-Services" src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Trusted-ar.svg' : 'Trusted.svg')) }}" />
+            <img alt="hero-image-Services"
+                src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Trusted-ar.svg' : 'Trusted.svg')) }}" />
         </div>
         <div class="social-media-hero">
             <div class="social-media-icon">
@@ -40,11 +41,12 @@
         </div>
     </div>
 
-   
+
     <div class="content_container_cards  pb-5 ">
         <div class="container">
             <div class="Our-Features-h3-text">
-                <img alt="text-bg"  src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Features-bg-image-ar.svg' : 'Features-bg-image.svg')) }}" />
+                <img alt="text-bg"
+                    src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Features-bg-image-ar.svg' : 'Features-bg-image.svg')) }}" />
             </div>
             <h3 class="Our-Features-h3">{{ __('Feature Title') }}</h3>
             <p class="Our-Features-p">{{ __('Feature Description') }}</p>
@@ -63,7 +65,8 @@
 
                         <p class="Our-Features-p Our-WhatsApp-p">{{ __('WhatsApp Chatbot Description') }}</p>
                         <div class="btn-center-whats">
-                            <a href="{{ url('feature/auto-responder-bot') }}" class="btn btn-create-whats-app">{{ __('Lets Create WhatsApp Bot') }}</a>
+                            <a href="{{ url('feature/auto-responder-bot') }}" class="btn btn-create-whats-app">{{
+                                __('Lets Create WhatsApp Bot') }}</a>
                         </div>
 
                     </div>
@@ -101,12 +104,15 @@
                         <div>
                             <div class="Our-iphon-h3">
 
-                                <h3 class="Our-iphon-h3">{{__('AVSender for the WhatsApp ultimate marketing tool !')}} </h3>
+                                <h3 class="Our-iphon-h3">{{__('AVSender for the WhatsApp ultimate marketing tool !')}}
+                                </h3>
                             </div>
 
-                            <p class="Our-Features-p Our-WhatsApp-p">{{ __('AVSender for the WhatsApp ultimate marketing tool Desc') }}</p>
+                            <p class="Our-Features-p Our-WhatsApp-p">{{ __('AVSender for the WhatsApp ultimate marketing
+                                tool Desc') }}</p>
                             <div class="btn-center-whats">
-                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">{{__("Start Using Avsender")}}</a>
+                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">{{__("Start
+                                    Using Avsender")}}</a>
                             </div>
                             <div class="row home-box-row">
                                 <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-left">
@@ -115,7 +121,8 @@
                                     <div class="home-box ChatBot-left-box">
 
                                         <h3 class="Features-box_h3 home-box-h3">{{ __('Direct activation') }}</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Direct activation Description')}}</p>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Direct activation
+                                            Description')}}</p>
 
                                     </div>
 
@@ -129,8 +136,10 @@
 
                                     <div class="home-box ChatBot-left-right">
 
-                                        <h3 class="Features-box_h3 home-box-h3"> {{__('Facing any problem & can’t find solution ?')}}</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Facing any problem & can’t find solution Description')}}</p>
+                                        <h3 class="Features-box_h3 home-box-h3"> {{__('Facing any problem & can’t find
+                                            solution ?')}}</h3>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Facing any
+                                            problem & can’t find solution Description')}}</p>
 
                                     </div>
 
@@ -197,13 +206,14 @@
                             <div class="">
                                 <div class="WhatsApp-Chatbot-text">
                                     <img alt="text-bg"
-                                    src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Our_Top_Integrations_ar.svg' : 'Our_Top_Integrations.svg')) }}" />
+                                        src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Our_Top_Integrations_ar.svg' : 'Our_Top_Integrations.svg')) }}" />
                                 </div>
                                 <h3 class="Our-whats-h3">{{ __('Our Top Integrations') }} </h3>
                                 <h3 class="Our-whats-h3-sm Our_Top_Integrations">{{ __('Our Top Integrations') }} </h3>
                             </div>
                         </div>
-                        <p class="Our-Features-p Our-WhatsApp-p Our-Ipsum-p">{{__('Our Top Integrations Description')}}</p>
+                        <p class="Our-Features-p Our-WhatsApp-p Our-Ipsum-p">{{__('Our Top Integrations Description')}}
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-6 iPhone_2-col Image-section-col">
@@ -253,7 +263,7 @@
 @section('script')
 
 <script src="{{ asset('frontend/assets/js/faq.js') }}"></script>
- <script src="{{ asset('frontend/assets/js/planing.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/planing.js') }}"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="{{ asset('frontend/assets/js/service.js') }}"></script>
 @endsection

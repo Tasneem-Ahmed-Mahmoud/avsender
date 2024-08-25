@@ -522,3 +522,37 @@ a {
         padding: 15px 32px 16px 32px !important;
     }
 }
+
+
+/*  ################################## general style ###############################################  */
+.title{
+
+font-size: 40px;
+font-weight: 600;
+line-height: 64px;
+color: #29387E;
+margin-bottom: 14px;
+
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .title {
+
+        font-size: 24px;
+
+        line-height: 38.4px;
+        margin-bottom: 8px;
+   
+        
+    }
+}
+
+
+body{
+    overflow-x: hidden;
+}
+
+

@@ -20,9 +20,11 @@ line-height: 28.8px;
 
     
 }
-
-
-
+/*  */
+.about .about-content {
+    margin-top: 50px;
+}
+/* 
 .about .about-box {
     padding: 30px;
     background:#29387E;
@@ -36,20 +38,19 @@ line-height: 28.8px;
 
 .about .about-box span{
 
- 
-    font-size: 46px;
-    font-weight: 600;
-    line-height: 57.6px;
- 
-    
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 1.1; 
 
 
 }
 .about .about-box p{
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 57.6px;
-}
+
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 0;
+} */
 
 
 .about .about-inner-content p{
@@ -66,10 +67,10 @@ line-height: 28.8px;
 }
 .about .about-inner__list li span{
  
-    font-size: 18px;
+   font-size: 18px;
     font-weight: 400;
-    line-height: 28.8px;
-   color: #211F54;
+    line-height: 28.8px; 
+ 
     
 }
 
@@ -81,3 +82,150 @@ line-height: 28.8px;
    color: #211F54;
 
 }
+
+.about-inner__btn  .btn-work-with-us{
+    background-color: #211F54 !important;
+    color: var(--white-color) !important;
+}
+
+@media(max-width:1200px){
+
+    .about{
+        margin-top: 11px;
+    }
+
+
+    .about .about-header h2{
+        font-size: 25px;
+        font-weight: 300;
+        line-height: 40px;
+        color: #29387E; 
+        margin-top: 10px;  
+    }
+    
+    
+    .about .about-header span{
+    color: #29387E; 
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18.8px;
+    
+    
+        
+    }
+
+    .about .about-content {
+        margin-top: 10px;
+    }
+
+
+
+    
+
+}
+
+
+/* @media((max-width:1200px )and (min-width:992px)){
+    .about .about-box {
+        padding: 10px;
+        margin-bottom: 10px;
+        gap: 20px;
+    }
+    
+    .about .about-box span{
+    
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 1.1; 
+    
+    
+    }
+    .about .about-box p{
+    
+        font-weight: 400;
+        font-size: 15px;
+
+    }
+
+} */
+
+
+
+.about .about-box {
+
+    padding: 40px;
+    border-radius: 10px;
+    background:#29387E;
+    color: var(--white-color);
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .about .about-box {
+      flex-wrap: wrap;
+    }
+  }
+  @media (max-width: 767px) {
+    .about .about-box {
+      margin-bottom: 20px;
+    }
+  }
+  .about .about-box span {
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 1.1;
+    color: var(--tp-common-white);
+    margin-right: 10px;
+    display: inline-block;
+  }
+  .about .about-box p {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--tp-common-white);
+    margin-bottom: 0;
+  }
+
+
+/* ####################################### about-faq section ################################################# */
+ 
+  .about-faq .about-faq-right{
+
+background-color: #00000014;
+    border-radius: 1rem;
+    padding: 70px 40px;
+  }
+
+
+  .about-faq-right__content h4{
+  color: #211F54;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  padding-bottom: 15px;
+  }
+  .about-faq-right__content p{
+    color: var(--white-color);
+    padding: 0px 25px;
+    padding-bottom: 45px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+    letter-spacing: -0.02em;
+ ;
+
+  }
+  .about-faq-right__icon{
+    background-color: var(--white-color);
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+  .about-faq-right__content .btn-work-with-us{
+    background-color: #211F54 !important;
+    color: var(--white-color) !important;
+  }

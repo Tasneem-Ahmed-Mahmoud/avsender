@@ -12,6 +12,7 @@
 	]
 ]
 ])
+
 @endsection
 @section('content')
 <form class="ajaxform_instant_reload" method="post" action="{{ route('admin.page.update',$info->id) }}">
@@ -29,6 +30,16 @@
 					<div class="form-group">
 						<label>{{ __('Page Title') }}</label>
 						<input type="text" name="title" required="" value="{{ $info->title ?? '' }}" class="form-control">
+					</div>
+					<div class="from-group row  my-2">
+						<label  class="col-lg-12">{{ __('Select Language') }}</label>
+						<div class="col-lg-12">
+							<select name="language" class="form-control" >
+								@foreach (get_option('languages', true)?? [] as $languagesKey => $language)
+								<option value="{{ $languagesKey }}" {{ $languagesKey == $info->lang ? 'selected' : '' }}> {{ $language }} </option>
+								@endforeach
+							</select>
+						</div>
 					</div>
 					<div class="form-group">
 						<label>{{ __('Page Description') }}</label>

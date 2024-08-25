@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
   const navLinks = document.querySelectorAll('.plan-link');
   const planItems = Array.from(document.querySelectorAll('.planning-card'));
 

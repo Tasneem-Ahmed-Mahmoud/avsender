@@ -9,9 +9,7 @@
    <meta name="meta_keywords" content="@yield('meta_keywords')">
 
    <!-- font awesome -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <!-- font-family -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +30,7 @@
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/faq.css') }}">
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/planing.css') }}">
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/contact-us.css') }}">
+   <link rel="stylesheet" href="{{ asset('frontend/assets/css/feature.css') }}">
    @yield('style')
    @if(app()->getLocale() == 'ar')
    <style>
@@ -45,6 +44,7 @@
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/faq-ar.css') }}">
    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/home-ar.css">
    <link rel="stylesheet" href="{{ asset('frontend/assets/css/contact-us-ar.css') }}">
+ 
    @endif
    <script type="text/javascript">
       $('.language-switch').on('change',function(){

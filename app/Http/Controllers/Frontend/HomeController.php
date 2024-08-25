@@ -92,7 +92,7 @@ class HomeController extends Controller
 
         $faqs = Post::where('type', 'faq')->where('featured', 1)->where('lang', app()->getLocale())->with('excerpt')->latest()->get();
 
-        $plans = Plan::where('status', 1)->where('is_featured', 1)->latest()->get();
+        $plans = Plan::where('status', 1)->where('is_featured', 1)->where('lang',current_locale())->latest()->get();
 
         $this->metadata('seo_about');
 
@@ -122,7 +122,9 @@ class HomeController extends Controller
      */
     public function page($slug)
     {
+
         $page = Post::where('status', 1)->where('type', 'page')->with('seo', 'description')->where('slug', $slug)->first();
+   
         abort_if(empty($page), 404);
 
         $seo = json_decode($page->seo->value ?? '');

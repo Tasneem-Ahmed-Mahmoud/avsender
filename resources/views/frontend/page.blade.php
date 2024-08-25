@@ -1,4 +1,4 @@
-@extends('frontend.layouts.main')
+{{-- @extends('frontend.layouts.main')
 @section('content')
 @include('frontend.layouts.header-2')
 <main>
@@ -49,4 +49,60 @@
    </div>
 </div>
 </main>
+@endsection --}}
+
+
+
+
+@extends('frontend.inc.master')
+@section('style')
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/terms-and-conditions.css') }}">
+@endsection
+@section('content')
+@include('frontend.inc.head',["title"=>$page->title ,"description"=> ''])
+
+<section class="terms-and-conditions" >
+   <div class="container">
+      <div class="row">
+         <header class="col-12">
+            <h3 class="terms-and-conditions__title text-center">
+               {{ $page->title }}
+            </h3>  
+         </header>
+         <div class="terms-and-conditions__body">
+            {!!  filterXss($page->description->value ?? '') !!}
+         </div>
+
+      </div>
+   </div>
+</section>
+
+
+@endsection
+
+@section('script')
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+        // Select all elements within .blog-content
+        const blogContent = document.querySelector('.terms-and-conditions__body');
+        
+        if (blogContent) {
+            // Remove all inline styles
+            const elementsWithStyle = blogContent.querySelectorAll('[style]');
+            elementsWithStyle.forEach(el => el.removeAttribute('style'));
+ // Remove all class and color attributes
+ const allElements = blogContent.querySelectorAll('*');
+            allElements.forEach(el => {
+               //  el.removeAttribute('class');
+                el.removeAttribute('color');
+            });
+           
+            
+        }
+    });
+
+	
+
+
+</script>
 @endsection

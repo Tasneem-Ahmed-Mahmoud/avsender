@@ -10,7 +10,7 @@
 
 }
 .login-forget-password{
-    text-align: right !important;
+    text-align: left !important;
 
 }
 .form-group{
@@ -20,4 +20,8 @@
 .reset-icon {
   margin-right: 0 !important;
     margin-left: 8px;
+}
+
+.login-container h1 {
+    text-align: right !important;
 }

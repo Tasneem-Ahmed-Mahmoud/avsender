@@ -14,7 +14,7 @@
          <div class="col-md-6">
             <img class="login-img" style="max-width: 100%;"
                src="{{ asset('frontend/assets') }}/images/auth/{{ app()->getLocale()=='ar' ? 'login-ar.svg' : 'loginImg.svg' }}" alt="login" />
-            <img class="login-img-sm" style="max-width: 100%;" src="./images/auth/loginImg-sm.svg" alt="login" />
+            <img class="login-img-sm" style="max-width: 100%;" src="{{ asset('frontend/assets') }}/images/auth/{{ app()->getLocale()=='ar' ? 'login-ar.svg' : 'loginImg.svg' }}" alt="login" />
          </div>
          <div class="col-md-6  ">
             <div class="login-container">

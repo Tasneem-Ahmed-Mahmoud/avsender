@@ -6,40 +6,7 @@
 
 <div class="faq_hero_container_section ">
 
-    <div class="row  hero-image-Services-col social-media-parent">
-        <div class="col-12 hero_container   home-hero-section">
-            <div class="hero-home-contenet">
-                <h3 class="hero_h3 hero-home-content-h3">{!! __('Home Title') !!}
-                </h3>
-                <P class="hero_p ">{{ __("Home Description") }}</P>
-                <a href="{{ url('/about') }}" class=" btn btn-work-with-us text-center">{{ __('Work With Us') }}</a>
-            </div>
-        </div>
-        <div class="col-12 w-100 text-center  hero-image-home ">
-            <img alt="hero-image-Services" class="w-75"
-                src="{{ asset('frontend/assets/images/home') }}/hero-image-statistic.svg" />
-        </div>
-        <div class="col-12  d-flex justify-content-center  hero-image-home-Trusted">
-
-            <img alt="hero-image-Services"
-                src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Trusted-ar.svg' : 'Trusted.svg')) }}" />
-        </div>
-        <div class="social-media-hero">
-            <div class="social-media-icon">
-                <a href="https://wa.me/966555466532" target="_blank">
-                    <img src="{{ asset('frontend/assets/images/home') }}/whats-app-hero.svg" alt="WhatsApp Icon" />
-                </a>
-            </div>
-            <div class="social-media-icon">
-                <a href="https://avnology.com" target="_blank"><img
-                        src="{{ asset('frontend/assets/images/home') }}/google-hero.svg" alt="google" /></a>
-            </div>
-            <div class="social-media-icon">
-                <a href="https://www.instagram.com/avnologysender/" target="_blank"> <img
-                        src="{{ asset('frontend/assets/images/home') }}/insta-hero.svg" alt="insta" /></a>
-            </div>
-        </div>
-    </div>
+  @include('frontend.inc.head-1')
 
 
     <div class="content_container_cards  pb-5 ">
@@ -108,11 +75,9 @@
                                 </h3>
                             </div>
 
-                            <p class="Our-Features-p Our-WhatsApp-p">{{ __('AVSender for the WhatsApp ultimate marketing
-                                tool Desc') }}</p>
+                            <p class="Our-Features-p Our-WhatsApp-p">{{ __('AVSender for the WhatsApp ultimate marketing tool Desc') }}</p>
                             <div class="btn-center-whats">
-                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">{{__("Start
-                                    Using Avsender")}}</a>
+                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">{{__("Start Using Avsender")}}</a>
                             </div>
                             <div class="row home-box-row">
                                 <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-left">
@@ -121,8 +86,7 @@
                                     <div class="home-box ChatBot-left-box">
 
                                         <h3 class="Features-box_h3 home-box-h3">{{ __('Direct activation') }}</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Direct activation
-                                            Description')}}</p>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Direct activation Description')}}</p>
 
                                     </div>
 
@@ -136,10 +100,8 @@
 
                                     <div class="home-box ChatBot-left-right">
 
-                                        <h3 class="Features-box_h3 home-box-h3"> {{__('Facing any problem & can’t find
-                                            solution ?')}}</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Facing any
-                                            problem & can’t find solution Description')}}</p>
+                                        <h3 class="Features-box_h3 home-box-h3"> {{__('Facing any problem & can’t find solution ?')}}</h3>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Facing any problem & can’t find solution Description')}}</p>
 
                                     </div>
 
@@ -152,50 +114,7 @@
                 </div>
             </div>
 
-            <div class="container ">
-                <div class="row d-flex justify-content-center ">
-                    <div class="col-md-10 section-white col-sm-10">
-                        <div class="div-white-flex ">
-                            <div class="div-mb ">
-                                <div class="div-white-flex-img">
-
-                                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon.svg" alt="icon" />
-                                </div>
-                            </div>
-                            <div class=" div-white-flex-content">
-                                <h2 class="number-icon">76</h2>
-                                <p class="para-icon">{{ __('Active Users') }}</p>
-                            </div>
-                        </div>
-                        <div class="div-white-flex">
-                            <div class="div-mb">
-                                <div class="div-white-flex-img">
-
-                                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-stars.svg"
-                                        alt="icon" />
-                                </div>
-                            </div>
-
-                            <div class=" div-white-flex-content">
-                                <h2 class="number-icon">109</h2>
-                                <p class="para-icon">{{ __('Positive Reviews') }}</p>
-                            </div>
-                        </div>
-                        <div class="div-white-flex">
-                            <div class="div-mb">
-                                <div class="div-white-flex-img">
-                                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-starsphone.svg"
-                                        alt="icon" />
-                                </div>
-                            </div>
-                            <div class=" div-white-flex-content div-white-flex-last-child">
-                                <h2 class="number-icon">132</h2>
-                                <p class="para-icon">{{ __('Total Customers') }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          @include('frontend.sections.statistic')
 
 
             <div class="row Our_Top_Integrations-row ">

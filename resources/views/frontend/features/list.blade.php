@@ -1,7 +1,7 @@
 @extends('frontend.inc.master')
 
 @section('content')
-@include('frontend.inc.head-2', ['title' => __('Top Features') ,'description' => __('Feature Description')])
+@include('frontend.inc.head', ['title' => __('Top Features') ,'description' => __('Feature Description')])
 
 
 

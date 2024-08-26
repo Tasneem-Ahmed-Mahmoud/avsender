@@ -96,7 +96,7 @@
                <img src="{{ asset('frontend/assets/images/contact') }}/Jeddah-location.svg" alt="file-icons_telegram"
                   class="mx-2" />{{ __('Jeddah , Saudi Arabia') }}
             </div>
-            <img src="{{ asset('frontend/assets/images/contact') }}/maps.svg" alt="maps" class="maps" />
+            <img src="{{ asset('frontend/assets/images/contact') }}/maps.svg" alt="maps" class="maps " />
          </div>
       </div>
    </div>

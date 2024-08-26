@@ -2,7 +2,7 @@
     <div class="container">
        <div class="row">
           <div class="col-4">
-             <div class="content d-flex  ">
+             <div class="content">
                 <figure class="statistic__top">
                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon.svg" alt="icon" />
                 </figure>
@@ -13,7 +13,6 @@
              </div>
           </div>
           <div class="col-4">
- 
              <div class="content reviews__border">
                 <figure class="statistic__top">
                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-stars.svg" alt="icon" />
@@ -26,7 +25,6 @@
           </div>
  
           <div class="col-4">
- 
              <div class="content ">
                 <figure class="statistic__top">
                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-starsphone.svg" alt="icon" />

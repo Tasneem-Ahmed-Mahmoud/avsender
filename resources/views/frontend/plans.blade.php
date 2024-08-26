@@ -10,7 +10,7 @@
 @endsection
 @section('content')
 
-@include('frontend.inc.head',[   "title"=>__('Pricing Plans Title'),"description"=>__('Pricing Plans Description')])
+@include('frontend.inc.head-2',[   "title"=>__('Pricing Plans Title'),"description"=>__('Pricing Plans Description')])
      
 <!-- ################################## planing ############################################### -->
 <section class="planing mt-5 mb-5">

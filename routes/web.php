@@ -101,4 +101,4 @@ Route::get('/password/expired', function () {
 })->name('password.expired');
 
 
-Route::view('/test','frontend.inc.head-3');
+Route::view('/test','frontend.inc.head-1');

@@ -6,7 +6,7 @@
         <div class="row justify-content-center align-items-center hero-content"">
    
             <h1 class=" text-center">{{ $title }}</h1>
-            <p class="text-center">{{ $description }}</p>
+            <p class="text-center ">{{ $description }}</p>
 
 
         </div>

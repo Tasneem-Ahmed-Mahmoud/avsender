@@ -4,8 +4,6 @@
 @section('style')
 <link rel="stylesheet" href="{{ asset('frontend/assets/') }}/css/plan.css">
 <link rel="stylesheet" href="{{ asset('frontend/assets/') }}/css/register.css">
-
-
 @endsection
 @section('content')
 

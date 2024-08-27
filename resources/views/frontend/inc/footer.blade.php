@@ -61,8 +61,7 @@
 
               <li><a href="#" class="active">{{ __('Contact') }}</a></li>
               <li><a href="maito:{{ get_option('primary_data',true)->contact_email ?? '' }}" class="d-flex  gap-3   "> <i
-                    class="fa-solid fa-paper-plane "></i> <span>{{ get_option('primary_data',true)->contact_email ??
-                    'info@avnology.com' }}</span></a></li>
+                    class="fa-solid fa-paper-plane "></i> <span>{{ get_option('primary_data',true)->contact_email ??'info@avnology.com' }}</span></a></li>
               <li><a href="tel:{{ get_option('primary_data',true)->contact_phone ?? '' }}" class="d-flex  gap-3    "> <i
                     class="fa-solid fa-phone"></i> <span> {{ get_option('primary_data',true)->contact_phone ?? ''
                     }}</span></a></li>

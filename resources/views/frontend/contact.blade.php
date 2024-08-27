@@ -2,103 +2,93 @@
 
 @section('content')
 
-
-<div class="faq_hero_container_section">
-   <div class="row ">
-      <div class="col-12 hero_container hero_container-feature hero_container-feature-contact">
-         <div>
-            <h3 class="hero_h3">{{ __('Contact us') }}</h3>
-            <p class="hero_p">{{ __('Contact us Description') }}</p>
-            <a href="#">
-               <a href="{{ url('/about') }}" class="btn btn-button-hero">{{ __('Work With Us') }}</a>
-            </a>
-         </div>
-      </div>
-   </div>
+@include('frontend.inc.head',['title' => __('Contact us'),'description' => __('Contact us Description')])
+<section class="contact">
    <div class="container">
-      <div class="row contact-us-row">
+      <div class="row justify-content-between">
+         <header class="contact__header col-12">
+            <h2>{{ __('Have a ideas ? let’s Work Together') }}</h2>
+         </header>
          <div class="col-md-6">
-            <h2 class="contact_h2">{{ __('Have a ideas ? let’s Work Together') }}</h2>
-            <form action="{{ route('send.mail') }}" method="post">
+            <div class="ontact__content">
+               <form action="{{ route('send.mail') }}" method="post">
+                  @if(Session::has('success'))
+                  <div class="alert alert-success" role="alert">
+                     {{ Session::get('success') }}
+                  </div>
+                  @endif
+                  @if(Session::has('error'))
+                  <div class="alert alert-danger" role="alert">
+                     {{ Session::get('error') }}
+                  </div>
+                  @endif
+                  @csrf
+                  <div class="form-group">
+                     <label for="exampleInputEmail1" class="label"> {{__('Email Address')}}</label>
+                     <input type="email" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        value="{{ old('email')??'' }}" name="email">
+                     @include("frontend.inc.error", ['properity' => "email"])
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleFormControlInput1" class="label"> {{__('Name')}}</label>
+                     <input type="text" class="form-control input" id="exampleFormControlInput1"
+                        value="{{ old('name')??'' }}" name="name">
+                     @include("frontend.inc.error", ['properity' => "name"])
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleFormControlInput1" class="label"> {{__('Subject')}}</label>
+                     <input type="text" class="form-control input" id="exampleFormControlInput1"
+                        value="{{ old('subject')??'' }}" name="subject">
+                     @include("frontend.inc.error", ['properity' => "subject"])
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleFormControlInput1" class="label"> {{__('Phone')}}</label>
+                     <input type="text" class="form-control input" id="exampleFormControlInput1"
+                        value="{{ old('phone')??'' }}" name="phone">
+                     @include("frontend.inc.error", ['properity' => "phone"])
+                  </div>
 
-               @if(Session::has('success'))
-               <div class="alert alert-success" role="alert">
-                  {{ Session::get('success') }}
-               </div>
-               @endif
-               @if(Session::has('error'))
-               <div class="alert alert-danger" role="alert">
-                  {{ Session::get('error') }}
-               </div>
-               @endif
-               @csrf
-               <label for="email" class="input_contact">
-                  {{__('Email Address')}}
-               </label>
-               <input type="email" name="email" id="email" class="form-control form-control-contact "
-                  value="{{ old('email')??'' }}" />
-
-               @include("frontend.inc.error", ['properity' => "email"])
-
-               <label for="Name" class="input_contact input_contact-p">
-                  {{__('Your Name')}}
-               </label>
-               <input type="text" name="name" id="Name" class="form-control form-control-contact "
-                  value="{{ old('name')??'' }}" />
-
-               @include("frontend.inc.error", ['properity' =>"name"])
-
-               <label for="subject" class="input_contact input_contact-p">
-                  {{ __('Subject') }}
-               </label>
-               <input type="text" name="subject" id="subject" class="form-control form-control-contact "
-                  value="{{ old('subject')??'' }}" />
-
-               @include("frontend.inc.error", ['properity' => "subject"])
-
-
-               <label for="Phone" class="input_contact input_contact-p">
-                  {{__('Phone')}}
-               </label>
-               <input type="tel" name="phone" id="Phone" class="form-control form-control-contact "
-                  value="{{ old('phone')??'' }}" />
-
-               @include("frontend.inc.error", ['properity' => "phone"])
-
-
-               <label for="Describe" class="input_contact input_contact-p">
-                  {{__('Describe your idea')}}
-               </label>
-
-               <textarea cols="8" rows="5" class="form-control " name="message">{{ old('message') ?? '' }}</textarea>
-
-               @include("frontend.inc.error", ['properity' => "message"])
-
-
-               <button type="submit" class="btn btn-submit col-12">
-                  {{ __('Send Message') }}
-               </button>
-            </form>
+                  <div class="form-group">
+                     <label for="exampleFormControlTextarea1" class="label"> {{__('Describe your idea')}}</label>
+                     <textarea class="form-control input" id="exampleFormControlTextarea1" rows="3"
+                        name="message">{{ old('message')??'' }}</textarea>
+                  </div>
+                  <button type="submit" class="btn contact__btn"> {{ __('Send Message') }}</button>
+               </form>
+            </div>
          </div>
-         <div class="col-md-5 maps-contact">
-            <div class="info-contact">
-               <img src="{{ asset('frontend/assets/images/contact') }}/file-icons_telegram.svg"
-                  alt="file-icons_telegram" class="mx-2" />{{ $contact_page->email1 ?? '' }}
 
+         <div class="col-md-4">
+            <div class="contact__content">
+               <div class="contact__top">
+                  <ul class="d-flex flex-column">
 
-            </div>
-            <div class="info-contact">
-               <img src="{{ asset('frontend/assets/images/contact') }}/basil_phone-solid.svg" alt="file-icons_telegram"
-                  class="mx-2" />{{ $contact_page->contact1 ?? '' }}
+                     <li class="d-flex aligen-items-center"><a
+                           href="maito:{{ get_option('primary_data',true)->contact_email ?? '' }}"
+                           class="d-flex  gap-3   "> <i class="fa-solid fa-paper-plane "></i> <span>{{
+                              get_option('primary_data',true)->contact_email ??'info@avnology.com' }}</span></a></li>
+                     <li class="d-flex aligen-items-center"><a
+                           href="tel:{{ get_option('primary_data',true)->contact_phone ?? '' }}"
+                           class="d-flex  gap-3    "> <i class="fa-solid fa-phone"></i> <span> {{
+                              get_option('primary_data',true)->contact_phone ?? '' }}</span></a></li>
+                     <li class="d-flex aligen-items-center"><a href="" class="d-flex  gap-3    "><i
+                              class="fa-solid fa-location-dot"></i> <span>{{
+                              get_option('primary_data',true)->address ?? '' }}</span></a></li>
 
+                  </ul>
+               </div>
+
+               <div class="contact__bottom">
+                  <figure>
+                     <img src="{{ asset('frontend/assets/images/contact') }}/maps.svg" alt="maps" class="w-100" />
+                  </figure>
+               </div>
             </div>
-            <div class="info-contact  info-contact-margin">
-               <img src="{{ asset('frontend/assets/images/contact') }}/Jeddah-location.svg" alt="file-icons_telegram"
-                  class="mx-2" />{{ __('Jeddah , Saudi Arabia') }}
-            </div>
-            <img src="{{ asset('frontend/assets/images/contact') }}/maps.svg" alt="maps" class="maps " />
          </div>
       </div>
    </div>
-</div>
+</section>
+
 @endsection
+
+

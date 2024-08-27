@@ -312,3 +312,8 @@ a {
 .loaded #loader-container {
     display: none; /* Hide loader once loaded */
 }
+
+
+body{
+    overflow-x: hidden !important;
+}

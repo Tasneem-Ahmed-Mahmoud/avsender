@@ -77,7 +77,7 @@ line-height: 28.8px;
 
 .about .about-inner__list li i{
     font-size: 16px;
-    font-weight: 400;
+    /* font-weight: 400; */
     line-height: 28.8px;
    color: #211F54;
 

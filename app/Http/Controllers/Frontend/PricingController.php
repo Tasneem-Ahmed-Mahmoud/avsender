@@ -123,7 +123,7 @@ class PricingController extends Controller
     public function choosePlan(Plan $plan)
     {
       
-        $plans=Plan::where('title',$plan->title)->where('lang', app()->getLocale())->get();
+        $plans=Plan::where('title',$plan->title)->get();
        
         return view('frontend.plan-steps.plan', compact('plans'));
     }

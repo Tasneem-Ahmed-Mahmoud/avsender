@@ -1,7 +1,7 @@
 <!-- ################################## header ############################################### -->
 
 
-<header class="hero hero-without-button">
+<header class="hero hero-without-button d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="row justify-content-center align-items-center hero-content"">
    

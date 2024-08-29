@@ -242,9 +242,9 @@ a {
     background-size: cover;
 }
 
-.hero .hero-content {
+/* .hero .hero-content {
     padding-top: 2.5rem;
-}
+} */
 
 .hero .hero-content h1 {
     font-weight: 700;
@@ -284,9 +284,9 @@ a {
         font-size: 12px;
         line-height: 19.2px;
     }
-    .hero .hero-content {
+    /* .hero .hero-content {
         padding-top: 26px !important;
-    }
+    } */
 }
 
 .hero-with-button {
@@ -406,41 +406,7 @@ a {
 }
 
 
-/*  ################################## wrapper###############################################  */
-.wrapper {
-    margin-top: 7rem;
-}
 
-.wrapper .wrapper-content h2 {
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 64px;
-    color: var(--secondary-color);
-
-
-}
-
-.wrapper .wrapper-content p {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 38.4px;
-    color: #3A3A3A;
-}
-
-@media (max-width:1200px) {
-    .wrapper {
-        margin-top: 3rem;
-    }
-    .wrapper .wrapper-content h2 {
-        font-size: 24px;
-        line-height: 38.4px;
-    }
-
-    .wrapper .wrapper-content p {
-        font-size: 12px;
-        line-height: 19.2px;
-    }
-}
 
 /*  ################################## Head-3###############################################  */
 .hero-image-header-up {

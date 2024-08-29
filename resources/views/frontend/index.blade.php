@@ -6,7 +6,7 @@
 
 <div class="faq_hero_container_section ">
 
-  @include('frontend.inc.head-1')
+    @include('frontend.inc.head-1')
 
 
     <div class="content_container_cards  pb-5 ">
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="container">
+            {{-- <div class="container">
                 <div class="row iPhone_2-row">
                     <div class="col-md-4 iPhone_2-col">
                         <div class="iPhone_2_div ">
@@ -75,9 +75,11 @@
                                 </h3>
                             </div>
 
-                            <p class="Our-Features-p Our-WhatsApp-p">{{ __('AVSender for the WhatsApp ultimate marketing tool Desc') }}</p>
+                            <p class="Our-Features-p Our-WhatsApp-p">{{ __('AVSender for the WhatsApp ultimate marketing
+                                tool Desc') }}</p>
                             <div class="btn-center-whats">
-                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">{{__("Start Using Avsender")}}</a>
+                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">{{__("Start
+                                    Using Avsender")}}</a>
                             </div>
                             <div class="row home-box-row">
                                 <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-left">
@@ -86,7 +88,8 @@
                                     <div class="home-box ChatBot-left-box">
 
                                         <h3 class="Features-box_h3 home-box-h3">{{ __('Direct activation') }}</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Direct activation Description')}}</p>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Direct activation
+                                            Description')}}</p>
 
                                     </div>
 
@@ -100,8 +103,10 @@
 
                                     <div class="home-box ChatBot-left-right">
 
-                                        <h3 class="Features-box_h3 home-box-h3"> {{__('Facing any problem & can’t find solution ?')}}</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Facing any problem & can’t find solution Description')}}</p>
+                                        <h3 class="Features-box_h3 home-box-h3"> {{__('Facing any problem & can’t find
+                                            solution ?')}}</h3>
+                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Facing any
+                                            problem & can’t find solution Description')}}</p>
 
                                     </div>
 
@@ -112,35 +117,88 @@
 
                     </div>
                 </div>
-            </div>
-
-          @include('frontend.sections.statistic')
+            </div> --}}
 
 
-            <div class="row Our_Top_Integrations-row ">
+            <section class="av-sender">
+                <div class="container">
+                    <div class="row ">
+                        {{-- left--}}
+                        <div class="col-lg-4">
+                            <figure class="av-sender__left">
+                                <img src="{{ asset('frontend/assets/images/home') }}/iPhone_2.svg" alt="iPhone_2" />
+                            </figure>
+                        </div>
+                        {{-- right --}}
 
-                <div class="col-md-6 ">
-                    <div>
-                        <div class=" Our_Top_Integrations-flex">
-                            <div class="">
-                                <div class="WhatsApp-Chatbot-text">
-                                    <img alt="text-bg"
-                                        src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Our_Top_Integrations_ar.svg' : 'Our_Top_Integrations.svg')) }}" />
+                        <div class="col-lg-8 ">
+                            <div class="av-sender__right">
+                                {{-- top --}}
+                                <div class="av-sender__top ">
+                                    <h3>{{__('AVSender for the WhatsApp ultimate marketing tool !')}}</h3>
+                                    <p>{{ __('AVSender for the WhatsApp ultimate marketing tool Desc') }}</p>
+                                    <a class="btn " href="{{ url('pricing') }}">{{__("Start Using Avsender")}}</a>
+
                                 </div>
-                                <h3 class="Our-whats-h3">{{ __('Our Top Integrations') }} </h3>
-                                <h3 class="Our-whats-h3-sm Our_Top_Integrations">{{ __('Our Top Integrations') }} </h3>
+
+                                {{-- bottom --}}
+                                <div class="av-sender__bottom row  justify-content-between">
+                                    <div class="col-md-6 position-relative av-sender_card_container">
+                                    <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-left.svg" class="start"/>
+                                        <div class="av-sender__content position-relative">
+                                            <div class="av-sender__card relative">
+                                                <h3>{{ __('Direct activation') }}</h3>
+                                                <p>{{__('Direct activation Description')}}</p>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 position-relative  av-sender_card_container">
+                                    <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-right.svg" alt="ChatBot-left" class="end"/>
+                                        <div class="av-sender__content position-relative">
+                                            <div class="av-sender__card">
+                                                <h3> {{__('Facing any problem & can’t find solution ?')}}</h3>
+                                                <p>{{__('Facing any problem & can’t find solution Description')}}</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
-                        <p class="Our-Features-p Our-WhatsApp-p Our-Ipsum-p">{{__('Our Top Integrations Description')}}
-                        </p>
+            </section>
+
+
+
+            @include('frontend.sections.statistic')
+
+            <section class="top-integration">
+                <div class="conatiner row">
+                    <div class="col-md-6">
+                        <div class="top-integration__content">
+                            <div class="top-integration__title-container">
+                                <h3 class="top-integration__title" data-text="{{ __('Our Top Integrations') }}">
+                                    {{ __('Our Top Integrations') }}
+                                </h3>
+
+                            </div>
+                            <p>{{__('Our Top Integrations Description')}}
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <figure>
+                            <img src="{{ asset('frontend/assets/images/home') }}/Image-section.svg" alt="iPhone_2"
+                                class="w-100" />
+                        </figure>
                     </div>
                 </div>
-                <div class="col-md-6 iPhone_2-col Image-section-col">
-                    <div class="Image-section ">
-                        <img src="{{ asset('frontend/assets/images/home') }}/Image-section.svg" alt="iPhone_2" />
-                    </div>
-                </div>
-            </div>
+            </section>
+          
 
         </div>
     </div>

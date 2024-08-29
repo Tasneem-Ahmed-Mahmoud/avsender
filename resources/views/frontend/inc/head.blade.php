@@ -1,8 +1,8 @@
 <!-- ################################## header ############################################### -->
 
-<header class="hero  hero-with-button" style="padding-top: 70px">
-    <div class="container">
-        <div class="row justify-content-center align-items-center hero-content"">
+<header class="hero  hero-with-button  d-flex justify-content-center align-items-center" >
+    <div class="container ">
+        <div class="row justify-content-center align-items-center hero-content">
    
             <h1 class=" text-center">{{ $title }}</h1>
             <p class="text-center">{{ $description }}</p>

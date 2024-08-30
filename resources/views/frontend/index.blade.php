@@ -19,105 +19,48 @@
             <p class="Our-Features-p">{{ __('Feature Description') }}</p>
 
             @include('frontend.sections.features')
-            <div class="row  whats-app">
-                <div class="col-md-7 d-flex align-items-center  whats-app-col-7">
-                    <div>
-                        <div class="Our-whats-h3">
-                            <div class="WhatsApp-Chatbot-text">
-                                <img alt="text-bg"
-                                    src="{{ asset('frontend/assets/images/home') }}/WhatsApp-Chatbot.svg" />
-                            </div>
-                            <h3 class="Our-whats-h3">{{ __('WhatsApp Chatbot Title') }}</h3>
-                        </div>
 
-                        <p class="Our-Features-p Our-WhatsApp-p">{{ __('WhatsApp Chatbot Description') }}</p>
-                        <div class="btn-center-whats">
-                            <a href="{{ url('feature/auto-responder-bot') }}" class="btn btn-create-whats-app">{{
-                                __('Lets Create WhatsApp Bot') }}</a>
-                        </div>
+            <section class="chatbot">
+                <div class="ccontiner">
+                    <div class="row justify-content-between">
+                        <div class="col-md-7">
+                            <div class="chatbot__content">
+                                <h2 class="title-layer" data-text="{{ __('WhatsApp Chatbot Title') }}">
+                                    {{ __('WhatsApp Chatbot Title') }}</h2>
 
-                    </div>
-
-
-                </div>
-                <div class="col-md-4">
-                    <div class="Our-whats-h3-sm d-flex justify-content-center">
-                        <div>
-                            <div class="WhatsApp-Chatbot-text WhatsApp-Chatbot-text-sm">
-                                <img alt="text-bg"
-                                    src="{{ asset('frontend/assets/images/home') }}/WhatsApp-Chatbot.svg" />
-                            </div>
-
-                            <h3 class="Our-whats-h3-sm">{{ __('WhatsApp Chatbot Title') }}</h3>
-                        </div>
-
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <img src="{{ asset('frontend/assets/images/home') }}/whats-section.svg" alt=" whats-section "
-                            class="whats-section" />
-
-                    </div>
-                </div>
-            </div>
-
-            {{-- <div class="container">
-                <div class="row iPhone_2-row">
-                    <div class="col-md-4 iPhone_2-col">
-                        <div class="iPhone_2_div ">
-                            <img src="{{ asset('frontend/assets/images/home') }}/iPhone_2.svg" alt="iPhone_2" />
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div>
-                            <div class="Our-iphon-h3">
-
-                                <h3 class="Our-iphon-h3">{{__('AVSender for the WhatsApp ultimate marketing tool !')}}
-                                </h3>
-                            </div>
-
-                            <p class="Our-Features-p Our-WhatsApp-p">{{ __('AVSender for the WhatsApp ultimate marketing
-                                tool Desc') }}</p>
-                            <div class="btn-center-whats">
-                                <a class="btn btn-create-whats-app btn-iphone" href="{{ url('pricing') }}">{{__("Start
-                                    Using Avsender")}}</a>
-                            </div>
-                            <div class="row home-box-row">
-                                <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-left">
-                                    <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-left.svg"
-                                        alt="ChatBot-left" />
-                                    <div class="home-box ChatBot-left-box">
-
-                                        <h3 class="Features-box_h3 home-box-h3">{{ __('Direct activation') }}</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Direct activation
-                                            Description')}}</p>
-
-                                    </div>
-
-
-                                </div>
-                                <div class="col-md-6 col-sm-12 mt-4 Features-box-col-sm ChatBot-right">
-                                    <div class="d-flex justify-content-end">
-                                        <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-right.svg"
-                                            alt="ChatBot-left" />
-                                    </div>
-
-                                    <div class="home-box ChatBot-left-right">
-
-                                        <h3 class="Features-box_h3 home-box-h3"> {{__('Facing any problem & can’t find
-                                            solution ?')}}</h3>
-                                        <p class="Features-box-p Features-box-p-home home-box-p">{{__('Facing any
-                                            problem & can’t find solution Description')}}</p>
-
-                                    </div>
-
-
-                                </div>
+                                    <div class="chatbot__img-container-phone">
+                                        <figure class="chatbot-top-img">
+                                           <img src="{{ asset('frontend/assets/images/home') }}/chatbot-top.svg" alt="chatbot-top "
+                                            />
+                                        </figure>
+                                         <figure  class="chatbot-bottom-img">
+                                           <img src="{{ asset('frontend/assets/images/home') }}/chatbot-botom.svg" alt=" chatbot-botom"
+                                            />
+                                         </figure>
+                                       </div>
+                                <p>{{ __('WhatsApp Chatbot Description') }}</p>
+                                <a href="{{ url('feature/auto-responder-bot') }}" class="btn ">
+                                    {{ __('Lets Create WhatsApp Bot') }}</a>
                             </div>
                         </div>
-
+                        <div class="col-md-3">
+                            <div class="chatbot__img-container-desktop">
+                             <figure class="chatbot-top-img">
+                                <img src="{{ asset('frontend/assets/images/home') }}/chatbot-top.svg" alt="chatbot-top "
+                                 />
+                             </figure>
+                              <figure  class="chatbot-bottom-img">
+                                <img src="{{ asset('frontend/assets/images/home') }}/chatbot-botom.svg" alt=" chatbot-botom"
+                                 />
+                              </figure>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div> --}}
+            </section>
+
+
+          
 
 
             <section class="av-sender">
@@ -146,7 +89,7 @@
                                     <div class="col-md-6 position-relative av-sender_card_container">
                                     <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-left.svg" class="start"/>
                                         <div class="av-sender__content position-relative">
-                                            <div class="av-sender__card relative">
+                                            <div class="av-sender__card ">
                                                 <h3>{{ __('Direct activation') }}</h3>
                                                 <p>{{__('Direct activation Description')}}</p>
                                             </div>
@@ -157,7 +100,7 @@
 
                                     <div class="col-md-6 position-relative  av-sender_card_container">
                                     <img src="{{ asset('frontend/assets/images/home') }}/ChatBot-right.svg" alt="ChatBot-left" class="end"/>
-                                        <div class="av-sender__content position-relative">
+                                        <div class="av-sender__content position-relative ">
                                             <div class="av-sender__card">
                                                 <h3> {{__('Facing any problem & can’t find solution ?')}}</h3>
                                                 <p>{{__('Facing any problem & can’t find solution Description')}}</p>

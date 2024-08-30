@@ -4,28 +4,28 @@
 @endsection
 @section('content')
 
-<div class="faq_hero_container_section ">
 
     @include('frontend.inc.head-1')
 
 
-    <div class="content_container_cards  pb-5 ">
-        <div class="container">
-            <div class="Our-Features-h3-text">
-                <img alt="text-bg"
-                    src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Features-bg-image-ar.svg' : 'Features-bg-image.svg')) }}" />
-            </div>
-            <h3 class="Our-Features-h3">{{ __('Feature Title') }}</h3>
-            <p class="Our-Features-p">{{ __('Feature Description') }}</p>
+   
+           <section class="features">
+         <div class="container">
+           <header class="features__header">
+            <h2 data-text="{{ __('Feature Title') }}">{{ __('Feature Title') }}</h2>
+            <p>{{ __('Feature Description') }}</p>
 
+           </header>
             @include('frontend.sections.features')
+         </div>
+           </section>
 
             <section class="chatbot">
-                <div class="ccontiner">
+                <div class="container">
                     <div class="row justify-content-between">
                         <div class="col-md-7">
                             <div class="chatbot__content">
-                                <h2 class="title-layer" data-text="{{ __('WhatsApp Chatbot Title') }}">
+                                <h2 class="title-layer" data-text="{{ __('WhatsApp Chatbot Title Layer') }}">
                                     {{ __('WhatsApp Chatbot Title') }}</h2>
 
                                     <div class="chatbot__img-container-phone">
@@ -113,6 +113,8 @@
 
                             </div>
                         </div>
+                    </div>
+                </div>
             </section>
 
 
@@ -120,7 +122,8 @@
             @include('frontend.sections.statistic')
 
             <section class="top-integration">
-                <div class="conatiner row">
+                <div class="container">
+                   <div class="row">
                     <div class="col-md-6">
                         <div class="top-integration__content">
                             <div class="top-integration__title-container">
@@ -139,12 +142,12 @@
                                 class="w-100" />
                         </figure>
                     </div>
+                   </div>
                 </div>
             </section>
           
 
-        </div>
-    </div>
+      
 
     <!-- ################################## planing ############################################### -->
     <section class="planing mt-5 mb-5">

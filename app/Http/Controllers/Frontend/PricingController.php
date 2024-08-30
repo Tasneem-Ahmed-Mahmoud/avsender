@@ -54,7 +54,7 @@ class PricingController extends Controller
     public function register(Request $request, $id)
     {
         // Find the active plan by ID or fail
-        $plan = Plan::where('status', 1)->where('lang', app()->getLocale())->findOrFail($id);
+        $plan = Plan::where('status', 1)->findOrFail($id);
 
         // Set page metadata
         $meta['title'] = $plan->title ?? '';

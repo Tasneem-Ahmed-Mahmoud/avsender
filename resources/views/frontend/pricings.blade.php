@@ -1,3 +1,4 @@
+
 @php
 // Convert the Eloquent collection to an array
 $plansArray = $plans->toArray();
@@ -28,7 +29,8 @@ $plansArray = $Enterprise;
 $plans = collect($plansArray);
 @endphp
 @foreach($plans as $plan)
-<div class="col-xl-4 col-md-6 col-12 mb-3 planning-card" data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
+<div class="col-xl-4 col-md-6 col-12 mb-3 planning-card"
+  data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
   <div class="planing-content {{ $plan['is_popular']? 'center-plan' : 'left-plan' }}">
     <div class="planing-top ">
       @if ($plan['is_popular'])
@@ -38,32 +40,31 @@ $plans = collect($plansArray);
       <div class="d-flex ">
 
 
-        <figure
-          class="planing-img  d-flex justify-content-center align-items-center">
+        <figure class="planing-img  d-flex justify-content-center align-items-center">
           <img src="{{asset( $plan['icon']) }}" alt="">
         </figure>
 
-        <div
-          class="planing-text ">
-          <p>{{ __($plan['business_size']) }}</p>
-          <h3>{{ __($plan['title']) }}</h3>
+        <div class="planing-text ">
+          <p>{{ __($plan['business_size'][app()->getLocale()]) }}</p>
+          <h3>{{ __($plan['title'][app()->getLocale()]) }}</h3>
         </div>
       </div>
     </div>
     <div class="planing-middle">
-      <p>{{ $plan['description'] }}</p>
+      <p>{{ $plan['description'][app()->getLocale()] }}</p>
       <h6><span>{{ amount_format($plan['price'], 'icon') .'/'}}</span> {{ $plan['days'] == 30 ? __('Monthly') :
         __('yearly') }}</h6>
     </div>
     <div class="planning-bottom">
       <h4>{{ __('What’s included') }}</h4>
       <ul>
-        @foreach($plan['data'] ?? [] as $key => $data)
+        @foreach($plan['limits'] ?? [] as $key => $data)
         <li>
-          <i class="fa-solid {{$data == false || $data  == "false" ? 'bg-warning fa-xmark' : 'fa-check' }}"></i>
-          <span class="{{ $data == false || $data=="false" ? 'text-warning' : '' }}">
-            {{  $data=="false" ||$data=="true" ? $key : $key ." : ($data)" }}
-         
+          <i class="fa-solid {{ $data  == "no" ||$data =='0' ? 'bg-warning fa-xmark' : 'fa-check' }}"></i>
+          <span class="{{$data == "no"|| $data =='0'? 'text-warning' : '' }}">
+            {{ $data=="no" ||$data=="yes"  ? __($key) : __($key) . " : (".( $data == 'unlimited' ? __($data) .')' : $data.')') }}
+
+            
           </span>
         </li>
         @endforeach

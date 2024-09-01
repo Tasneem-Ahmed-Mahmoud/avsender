@@ -30,7 +30,7 @@
                             <img src="{{ asset($blog->preview->value ?? '') }}" alt="imag-chat" class="features-image-blog" alt="{{ $blog->title }}" height="200"/>
                             <div class="blog-content">
                                 <h3 class="Features-box_h3">{{  Str::limit($blog->title ?? '',50) }}</h3>
-                                <p class="Features-box-p">{{ Str::limit($blog->shortDescription->value ?? '',150) }}
+                                <p class="Features-box-p">{{ Str::limit($blog->shortDescription->value ?? '',120) }}
                                     </p>
                                 <a href="{{ url('/blog',$blog->slug) }}" class="Read_More">{{ __('Read More') }}<img
                                         src="{{ asset('frontend/assets/images/blogs') }}/ei_arrow-up.svg" class="mx-1" alt="arrow-up" /></a>

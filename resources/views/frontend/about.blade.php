@@ -316,6 +316,10 @@
                </div>
             </div>
             @endforeach
+
+            <div class="about__reade-more">
+               <a href="{{ url('/faq') }}" class="btn btn-work-with-us">{{ __('Read More') }}</a>
+            </div>
          </div>
 
 

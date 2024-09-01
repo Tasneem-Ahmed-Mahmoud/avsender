@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
-
+         
             $table->string('title')->nullable();
             $table->string('labelcolor')->nullable();
             $table->string('iconname')->nullable();
@@ -27,7 +27,6 @@ return new class extends Migration
             $table->integer('days')->default(0);
             $table->integer('trial_days')->nullable();
             $table->text('data')->nullable();
-
             $table->timestamps();
         });
     }

@@ -33,7 +33,7 @@ class PricingController extends Controller
             ->get();
 
         // Retrieve active plans
-        $plans = Plan::where('status', 1)->where('lang', app()->getLocale())
+        $plans = Plan::where('status', 1)
             ->latest()
             ->get();
 
@@ -123,8 +123,10 @@ class PricingController extends Controller
     public function choosePlan(Plan $plan)
     {
       
-        $plans=Plan::where('title',$plan->title)->get();
-       
+      
+    
+        $plans = Plan::whereRaw("JSON_EXTRACT(title, '$.en') = ?", [$plan->getTranslation('title', 'en')])->get();
+
         return view('frontend.plan-steps.plan', compact('plans'));
     }
 

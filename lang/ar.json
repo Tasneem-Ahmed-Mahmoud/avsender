@@ -1453,7 +1453,19 @@
    "Contact us Description":"اشترك الآن بخططنا المختلفة التي تناسب جميع أحجام الأعمال وتمتع بمميزاتنا الرائعة.",
    "Describe your idea":"وصف فكرتك ",
    "Have a ideas ? let’s Work Together":"هل لديك أفكار؟ شاركها معنا الأن",
-   "Error":"خطأ"
+   "Error":"خطأ",
+   "Is Popular?":"Is Popular?",
+"messages_limit" : "الحد الأقصى للرسائل",
+"contact_limit" : "الحد الأقصى للاتصال",
+"device_limit" : "الحد الأقصى للأجهزة",
+"template_limit" : "الحد الأقصى للنماذج",
+"apps_limit" : "الحد الأقصى للتطبيقات",
+"chatbot" : "Chatbot",
+"bulk_message" : "رسائل جماعية",
+"schedule_message" : "رسائل مجدولة",
+"access_chat_list" : "مدخل الى قائمة الدردشة",
+"access_group_list" : "مدخل الى قائمة المجموعة",
+"unlimited" : "غير محدود"
 
   
 

@@ -229,3 +229,9 @@ background-color: #00000014;
     background-color: #211F54 !important;
     color: var(--white-color) !important;
   }
+
+  .about__reade-more .btn-work-with-us{
+    background-color: #211F54 !important;
+    color: var(--white-color) !important;
+
+  }

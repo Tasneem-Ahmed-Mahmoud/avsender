@@ -27,7 +27,7 @@ class HomeController extends Controller
 
         $faqs = Post::where('type', 'faq')->where('featured', 1)->where('lang', $locale)->with('excerpt')->latest()->limit(6)->get();
 
-        $plans = Plan::where('status', 1)->where("lang",app()->getLocale())->where('is_featured', 1)->latest()->get();
+        $plans = Plan::where('status', 1)->where('is_featured', 1)->latest()->get();
 
         $this->metadata('seo_home');
 
@@ -90,9 +90,9 @@ class HomeController extends Controller
             return $data;
         });
 
-        $faqs = Post::where('type', 'faq')->where('featured', 1)->where('lang', app()->getLocale())->with('excerpt')->latest()->get();
+        $faqs = Post::where('type', 'faq')->where('featured', 1)->where('lang', app()->getLocale())->with('excerpt')->limit(6)->latest()->get();
 
-        $plans = Plan::where('status', 1)->where('is_featured', 1)->where('lang',current_locale())->latest()->get();
+        $plans = Plan::where('status', 1)->where('is_featured', 1)->latest()->get();
 
         $this->metadata('seo_about');
 

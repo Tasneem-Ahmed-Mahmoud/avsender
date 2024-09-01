@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Plan;
 use App\Traits\Uploader;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Plan\StorePlanRequest;
+use App\Http\Requests\Admin\Plan\UpdatePlanRequest;
 
 class PlanController extends Controller
 {
@@ -15,11 +17,7 @@ class PlanController extends Controller
         $this->middleware('permission:subscriptions');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         $plans = Plan::latest()->withCount('activeuser')->paginate(20);
@@ -27,126 +25,126 @@ class PlanController extends Controller
         return view('admin.plan.index', compact('plans'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('admin.plan.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    
+    public function store(StorePlanRequest $request)
     {
-
-        $validated = $request->validate([
-            'title' => 'required|max:100',
-            'price' => 'required',
-            'days' => 'required',
-            'plan_data*' => 'required',
-            "description" => 'required|max:200',
-            "business_size" => 'required|max:200',
-            "icon" => "required|mimes:png,jpg,jpeg,svg|max:2048",
-        ]);
-
-        if (isset($request->is_tria)) {
-            $validated = $request->validate([
-                'trial_days' => 'required',
+        try {
+            // Retrieve validated data from the request
+            $validatedData = $request->validated();
+    
+            // Prepare the data for the 'limits' JSON field
+            $limits = [
+                'messages_limit' => $validatedData['limits']['messages_limit'] ?? null,
+                'contact_limit' => $validatedData['limits']['contact_limit'] ?? null,
+                'device_limit' => $validatedData['limits']['device_limit'] ?? null,
+                'template_limit' => $validatedData['limits']['template_limit'] ?? null,
+                'apps_limit' => $validatedData['limits']['apps_limit'] ?? null,
+                'chatbot' => $validatedData['limits']['chatbot'] ?"yes": "no",
+                'bulk_message' => $validatedData['limits']['bulk_message']?"yes":"no",
+                'schedule_message' => $validatedData['limits']['schedule_message']? "yes": "no",
+                'access_chat_list' => $validatedData['limits']['access_chat_list'] ?"yes": "no",
+                'access_group_list' => $validatedData['limits']['access_group_list'] ?"yes": "no",
+            ];
+    
+            // Create a new plan record in the database
+            $plan = Plan::create([
+                'title' => $validatedData['title'],
+                'description' => $validatedData['description'],
+                'business_size' => $validatedData['business_size'],
+                'trial_days' => $request->is_trial?$request->trial_days :null,
+                'is_trial' => $request->is_trial ? true: false,
+                'icon' => $this->saveFile($request, 'icon'),
+                'limits' => $limits, // No need to manually encode to JSON
+                'is_popular' => $request->is_popular ? true: false,
+                'is_recommended' => $request->is_recommended? true: false,
+                'is_featured' => $request->is_featured ? true: false,
+                'status' => $request->status ? true: false,
+                'days' => $request->days,
+                'price' => $request->price,
             ]);
+    
+            return redirect()->route('admin.plan.index')->with('success', 'Plan created successfully!');
+        } catch (\Exception $e) {
+
+            return redirect()->back()->withInput()->withErrors(['error' => 'Plan creation failed: '.$e->getMessage()]);
         }
-
-        $plan = new Plan;
-        $plan->description = $request->description;
-        $plan->business_size = $request->business_size;
-        $plan->icon = $this->saveFile($request, 'icon');
-        $plan->title = $request->title;
-        $plan->price = $request->price;
-        $plan->labelcolor = $request->labelcolor;
-        $plan->iconname = $request->iconname;
-        $plan->is_featured = isset($request->is_featured) ? 1 : 0;
-        $plan->is_recommended = isset($request->is_recommended) ? 1 : 0;
-        $plan->is_trial = isset($request->is_trial) ? 1 : 0;
-        $plan->status = isset($request->status) ? 1 : 0;
-        $plan->days = $request->days ?? 0;
-        $plan->trial_days = $request->trial_days ?? 0;
-        $plan->data = $request->plan_data ?? [];
-        $plan->save();
-
-        return response()->json([
-            'redirect' => route('admin.plan.index'),
-            'message' => __('Plan created successfully.'),
-        ]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
+    
     public function edit($id)
     {
         $plan = Plan::findOrFail($id);
-        $chatbot = $plan->data['chatbot'] ?? false;
-        $bulk_message = $plan->data['bulk_message'] ?? false;
-        $schedule_message = $plan->data['schedule_message'] ?? false;
-        $template_message = $plan->data['template_message'] ?? false;
-        $access_chat_list = $plan->data['access_chat_list'] ?? false;
-        $access_group_list = $plan->data['access_group_list'] ?? false;
-
-        return view('admin.plan.edit', compact('plan', 'chatbot', 'bulk_message', 'schedule_message', 'template_message', 'access_chat_list', 'access_group_list'));
+        return view('admin.plan.edit', compact('plan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+   
+    public function update(UpdatePlanRequest $request, $id)
     {
-        
-        $validated = $request->validate([
-            'title' => 'required|max:100',
-            'price' => 'required',
-            'days' => 'required',
-            'plan_data*' => 'required',
-            "description" => 'required|max:200',
-            "business_size" => 'required|max:200',
-            "icon" => "nullable|mimes:png,jpg,jpeg,svg|max:2048",
-        ]);
+
 
         $plan = Plan::findOrFail($id);
-        $plan->description = $request->description;
-        $plan->business_size = $request->business_size;
-        if($request->hasFile('icon')){
-            $plan->icon =  $this->saveFile($request, 'icon') ;
-            ! empty($plan->icon) ? $this->removeFile($plan->icon) : '';
-        }
- 
-        $plan->title = $request->title;
-        $plan->price = $request->price;
-        $plan->labelcolor = $request->labelcolor;
-        $plan->iconname = $request->iconname;
-        $plan->is_featured = isset($request->is_featured) ? 1 : 0;
-        $plan->is_recommended = isset($request->is_recommended) ? 1 : 0;
-        $plan->is_trial = isset($request->is_trial) ? 1 : 0;
-        $plan->status = isset($request->status) ? 1 : 0;
-        $plan->days = $request->days ?? 0;
-        $plan->trial_days = $request->trial_days ?? 0;
-        $plan->data = $request->plan_data ?? [];
-        $plan->save();
+        try {
+            // Retrieve validated data from the request
+            $validatedData = $request->validated();
 
-        return response()->json([
-            'redirect' => route('admin.plan.index'),
-            'message' => __('Plan updated successfully.'),
-        ]);
+            if($request->hasFile('icon')){
+                $plan->icon =  $this->saveFile($request, 'icon') ;
+               ! empty($plan->icon) ? $this->removeFile($plan->icon) : '';
+            }
+           
+            // Prepare the data for the 'limits' JSON field
+            $limits = [
+                'messages_limit' => $validatedData['limits']['messages_limit'] ?? null,
+                'contact_limit' => $validatedData['limits']['contact_limit'] ?? null,
+                'device_limit' => $validatedData['limits']['device_limit'] ?? null,
+                'template_limit' => $validatedData['limits']['template_limit'] ?? null,
+                'apps_limit' => $validatedData['limits']['apps_limit'] ?? null,
+                'chatbot' => $validatedData['limits']['chatbot'] ?"yes": "no",
+                'bulk_message' => $validatedData['limits']['bulk_message']?"yes":"no",
+                'schedule_message' => $validatedData['limits']['schedule_message']? "yes": "no",
+                'access_chat_list' => $validatedData['limits']['access_chat_list'] ?"yes": "no",
+                'access_group_list' => $validatedData['limits']['access_group_list'] ?"yes": "no",
+            ];
+    
+       
+            // Create a new plan record in the database
+       $plan->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'business_size' => $request->business_size,
+                'trial_days' => $request->is_trial?$request->trial_days :null,
+                'is_trial' => $request->is_trial ? true: false,
+                'icon' => $plan->icon,
+                'limits' => $limits, // No need to manually encode to JSON
+                'is_popular' => $request->is_popular ? true: false,
+                'is_recommended' => $request->is_recommended? true: false,
+                'is_featured' => $request->is_featured ? true: false,
+                'status' => $request->status ? true: false,
+                'days' => $request->days,
+                'price' => $request->price,
+            ]);
+   
+            // return redirect()->back()->with('success', 'Plan updated successfully!');
+
+            return response()->json([
+                'message' => __('Plan updated successfully!'),
+                'redirect' => route('admin.plan.index')],200);
+
+        } catch (\Exception $e) {
+
+            // return redirect()->back()->withInput()->withErrors(['error' => 'Plan update failed: '.$e->getMessage()]);
+
+            return response()->json([
+                'message' => __('Plan update failed: '.$e->getMessage()),
+            ], 403);
+        }
+       
     }
 
     /**

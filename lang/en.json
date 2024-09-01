@@ -1438,7 +1438,19 @@
 "Save Plan":"Save",
 "Choose your payment method to subscribe":"Choose your payment method to subscribe :",
 "Contact us Description":"Subscribe now with our different plans that suits all business sizes and enjoy our amazing features .",
-"Error":"Error"
+"Error":"Error",
+"Is Popular?":"Is Popular?",
+"messages_limit" : "Messages limit",
+"contact_limit" : "Contact limit",
+"device_limit" : "Device limit",
+"template_limit" : "Template limit",
+"apps_limit" : "Apps limit",
+"chatbot" : "Chatbot",
+"bulk_message" : "Bulk message",
+"schedule_message" : "Schedule message",
+"access_chat_list" : "Access chat list",
+"access_group_list" : "Access group list",
+"unlimited" : "unlimited"
 
   
 }

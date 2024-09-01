@@ -6,7 +6,6 @@ use App\Http\Controllers\Admin\Feature\FeatureServiceController;
 use App\Http\Controllers\Admin\Feature\FeatureInstructionController;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'admin']], function () {
-
     Route::resource('plan', ADMIN\PlanController::class);
     Route::resource('role', ADMIN\RoleController::class);
     Route::resource('admin', ADMIN\AdminController::class);

@@ -11,7 +11,11 @@ trait Uploader
     // Save file using File facade
     private function saveFile(Request $request, $input)
     {
+        if (!$request->hasFile($input)) {
+            return '';
+        }
         $file = $request->file($input);
+        
         $ext = $file->extension();
         $filename = now()->timestamp . Str::random(20) . '.' . $ext;
 
@@ -40,6 +44,7 @@ trait Uploader
         if (isset($fileName[1])) {
             $filePath = public_path('uploads' . $fileName[1]);
             if (File::exists($filePath)) {
+                
                 File::delete($filePath);
             }
 

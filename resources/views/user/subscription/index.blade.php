@@ -34,19 +34,14 @@
 				{{ $plan->days == 30 ? 'Per month' : 'Per year' }}
 
 				<hr>
-				@foreach($plan->data ?? [] as $key => $data)
+				@foreach($plan->limits ?? [] as $key => $data)
 				<div class="mt-2 text-left">
-					@if(planData($key,$data)['is_bool'] == true)
-					@if(planData($key,$data)['value'] == true)
-					<i class="{{ planData($key,$data)['value'] == true ? 'far text-success fa-check-circle' : 'fas text-danger fa-times-circle' }}"></i>
-					@else
-					<i class="fas text-danger fa-times-circle"></i>
-					@endif
-
-					@else
-					<i class="far text-success fa-check-circle"></i>
-					@endif
-					{{ str_replace('_',' ',planData($key,$data)['title']) }}
+					<i class="far {{$data=="no" || $data==false ? 'text-danger' : 'text-success' }} fa-check-circle"></i>
+					<span class="{{$data == "no"|| $data =='0'? 'text-warning' : '' }}">
+						{{ $data=="no" ||$data=="yes"  ? __($key) : __($key) . " : (".( $data == 'unlimited' ? __($data) .')' : $data.')') }}
+			
+						
+					  </span>
 				</div>
 				@endforeach
 				<hr>

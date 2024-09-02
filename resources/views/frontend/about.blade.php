@@ -48,12 +48,12 @@
         }
 
         /* @media (max-width: 1400px) {
-       .about-statistic .row {
-            margin-top: 70px !important;
+           .about-statistic .row {
+                margin-top: 70px !important;
 
 
-        }
-    } */
+            }
+        } */
     </style>
 
     <script>
@@ -83,9 +83,9 @@
             // Animate the counters after setting them to 0
             counters.forEach(counter => {
                 const targetNumber = parseInt(counter.getAttribute(
-                "data-count")); // Get the target number from a data attribute
+                    "data-count")); // Get the target number from a data attribute
                 animateCounter(counter, 0, targetNumber,
-                2000); // Animate from 0 to targetNumber in 2000ms (2 seconds)
+                    2000); // Animate from 0 to targetNumber in 2000ms (2 seconds)
             });
         });
     </script>
@@ -166,8 +166,6 @@
                                             class="fas fa-play"></i></a>
                                 @endif
                             </div>
-
-
                         </div>
                     </div>
                 </div>

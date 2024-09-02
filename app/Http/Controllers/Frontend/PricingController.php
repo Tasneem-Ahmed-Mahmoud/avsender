@@ -53,6 +53,14 @@ class PricingController extends Controller
      */
     public function register(Request $request, $id)
     {
+       if(Auth::check()){
+        if (Auth::user()->role == 'user') {
+            return $this->redirectTo = '/user/dashboard';
+        } elseif (Auth::user()->role == 'admin') {
+            $this->redirectTo = '/admin/dashboard';
+            return $this->redirectTo;
+        }
+       }
         // Find the active plan by ID or fail
         $plan = Plan::where('status', 1)->findOrFail($id);
 

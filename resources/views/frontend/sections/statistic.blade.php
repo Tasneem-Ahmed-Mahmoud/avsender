@@ -3,39 +3,39 @@
        <div class="row">
           <div class="col-4">
              <div class="content">
-                <figure class="statistic__top">
+                <div class="statistic__top">
                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon.svg" alt="icon" />
-                </figure>
+                </div>
                 <div class="statistic__bottom">
                    <h2>76</h2>
-                   <p>{{ __('Active Users') }}</p>
+                   <span>{{ __('Active Users') }}</span>
                 </div>
              </div>
           </div>
           <div class="col-4">
              <div class="content reviews__border">
-                <figure class="statistic__top">
+                <div class="statistic__top">
                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-stars.svg" alt="icon" />
-                </figure>
+                </div>
                 <div class="statistic__bottom">
                    <h2>109</h2>
-                   <p>{{ __('Positive Reviews') }}</p>
+                   <span>{{ __('Positive Reviews') }}</span>
                 </div>
              </div>
           </div>
- 
-          <div class="col-4">
+
+          <div class="col-4 content">
              <div class="content ">
-                <figure class="statistic__top">
+                <div class="statistic__top">
                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-starsphone.svg" alt="icon" />
-                </figure>
+                </div>
                 <div class="statistic__bottom">
                    <h2 >132</h2>
-                   <p>{{ __('Total Customers') }}</p>
+                   <span>{{ __('Total Customers') }}</span>
                 </div>
              </div>
           </div>
- 
+
        </div>
     </div>
  </section>

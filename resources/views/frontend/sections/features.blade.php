@@ -15,7 +15,7 @@ $features = \App\Models\Post::where('type','feature')
 
 
 
-<div class="swiper-container feature-slider">
+<div class="swiper-container feature-slider" style="overflow:hidden">
     <div class="swiper-wrapper">
 
         @foreach($features as $feature)
@@ -45,13 +45,13 @@ $features = \App\Models\Post::where('type','feature')
     </div> --}}
     <div class="swiper-slider-button">
         <div class="btn-swiper-button-next">
-           
+
             <i class="fa-solid fa-chevron-right"></i>
 
     </div>
 
     <div class="btn-swiper-button-prev">
-        
+
         <i class="fa-solid fa-chevron-left"></i>
 
 </div>

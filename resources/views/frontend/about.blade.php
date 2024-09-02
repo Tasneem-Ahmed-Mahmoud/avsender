@@ -43,14 +43,14 @@
 
 
 
-   
+
 
 }
 
 /* @media (max-width: 1400px) {
    .about-statistic .row {
         margin-top: 70px !important;
-     
+
 
     }
 } */
@@ -62,7 +62,7 @@
    document.addEventListener("DOMContentLoaded", function() {
     // Select all counter elements
     const counters = document.querySelectorAll(".counter");
-    
+
     // Set all counters to 0 initially
     counters.forEach(counter => {
         counter.textContent = '0';
@@ -145,7 +145,7 @@
                      <ul>
                         @foreach($facilities as $facility)
                         <li class="d-flex align-items-center  ">
-                           <i class="fa-solid fa-check"></i>
+                           <i class="fa-solid fa-check" style="width: 26px; height: 26px"></i>
                            <span>{{ $facility }}</span>
                         </li>
                         @endforeach
@@ -201,7 +201,7 @@
                   <img src="{{ asset('assets/frontend/img/counter/counter-7.png') }}" alt="">
                </figure>
                <div class="about-statistic-right d-flex flex-column">
-                
+
                   <h4><span class="counter" data-count="{{ $counter->experience ?? '' }}">0</span>+</h4>
 
                   <p>{{ __('Years of Experience') }}</p>
@@ -216,7 +216,7 @@
                   <img src="{{ asset('assets/frontend/img/counter/counter-6.png') }}" alt="">
                </figure>
                <div class="about-statistic-right d-flex flex-column">
-                
+
                   <h4><span class="counter" data-count="{{$counter->active_customers  ?? '' }}">0</span>+</h4>
 
                   <p>{{ __('Active Customers') }}</p>
@@ -245,7 +245,7 @@
                   <img src="{{ asset('assets/frontend/img/counter/counter-8.png') }}" alt="">
                </figure>
                <div class="about-statistic-right d-flex flex-column">
-                
+
                   <h4><span class="counter" data-count="{{ $counter->satisfied_customers  ?? '' }}">0</span>+</h4>
 
                   <p>{{ __('Satisfied customers') }}</p>
@@ -295,24 +295,30 @@
             @foreach($faqs as $key => $faq)
             <div class="col-md-12 mb-4">
                <div class="faq_box_content faq_box_content-home">
-                  <div class="d-flex justify-content-between">
-                     <div>
-                        <p class="faq_box_content-p" id="faq-{{ $loop->iteration }}"> {{ $faq->title }}</p>
-                        <div class="collapse" id="collapse-{{ $loop->iteration }}"
-                           data-faq-target="faq-{{ $loop->iteration }}">
-                           <div class="faq_box_content-p">
-                              <hr class="faq_box_content-hr" />
-                              {{ $faq->excerpt->value ?? '' }}
+                   <div class="w-100 d-flex flex-column justify-content-between">
+
+                       <div class="d-flex justify-content-between align-items-center w-100">
+
+                              <span class="faq_box_content-p" id="faqQuestion{{ $loop->iteration }}"> {{ $faq->title }}
+                              </span>
+                           <div class="more-info-faq-div" id="more-info-faq-div">
+                               <img src="{{ asset('frontend/assets/images/faq')}}/more-info-faq.svg"
+                                    alt="more-info-faq" class="more-info-faq"
+                                    data-bs-toggle="collapse"
+                                    href="#collapseExample{{ $loop->iteration }}" role="button"
+                                    aria-expanded="false"
+                                    aria-controls="collapseExample{{ $loop->iteration }}"
+                                    id="toggleImage" />
                            </div>
-                        </div>
-                     </div>
-                     <div class="more-info-faq-div" id="more-info-faq-div">
-                        <img src="{{ asset('frontend/assets/images/faq')}}/more-info-faq.svg" alt="more-info-faq"
-                           class="more-info-faq" data-bs-toggle="collapse" href="#collapse-{{ $loop->iteration }}"
-                           role="button" aria-expanded="false" aria-controls="collapse-{{ $loop->iteration }}"
-                           id="toggleImage-{{ $loop->iteration }}" />
-                     </div>
-                  </div>
+                       </div>
+                       <div class="collapse" id="collapseExample{{ $loop->iteration }}"
+                            data-faq-target="faqQuestion{{ $loop->iteration }}">
+                           <div class="faq_box_content-p">
+                               <hr class="faq_box_content-hr" />
+                               {{ $faq->excerpt->value ?? '' }}
+                           </div>
+                       </div>
+                   </div>
                </div>
             </div>
             @endforeach

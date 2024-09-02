@@ -6,25 +6,25 @@
     font-size: 40px;
     font-weight: 600;
     line-height: 64px;
-    color: #29387E; 
-    margin-top: 16px;  
+    color: #29387E;
+    margin-top: 16px;
 }
 
 
 .about .about-header span{
-color: #29387E; 
+color: #29387E;
 font-size: 20px;
 font-weight: 500;
 line-height: 28.8px;
 
 
-    
+
 }
 /*  */
 .about .about-content {
     margin-top: 50px;
 }
-/* 
+/*
 .about .about-box {
     padding: 30px;
     background:#29387E;
@@ -40,7 +40,7 @@ line-height: 28.8px;
 
     font-weight: 700;
     font-size: 90px;
-    line-height: 1.1; 
+    line-height: 1.1;
 
 
 }
@@ -59,19 +59,19 @@ line-height: 28.8px;
     font-weight: 400;
     line-height: 38.4px;
    color:#525252
-    
+
 }
 .about .about-inner__list li{
     margin-bottom: 16px;
     gap: 14px;
 }
 .about .about-inner__list li span{
- 
+
    font-size: 18px;
     font-weight: 400;
-    line-height: 28.8px; 
- 
-    
+    line-height: 28.8px;
+
+
 }
 
 
@@ -99,19 +99,19 @@ line-height: 28.8px;
         font-size: 25px;
         font-weight: 300;
         line-height: 40px;
-        color: #29387E; 
-        margin-top: 10px;  
+        color: #29387E;
+        margin-top: 10px;
     }
-    
-    
+
+
     .about .about-header span{
-    color: #29387E; 
+    color: #29387E;
     font-size: 20px;
     font-weight: 400;
     line-height: 18.8px;
-    
-    
-        
+
+
+
     }
 
     .about .about-content {
@@ -120,7 +120,7 @@ line-height: 28.8px;
 
 
 
-    
+
 
 }
 
@@ -131,17 +131,17 @@ line-height: 28.8px;
         margin-bottom: 10px;
         gap: 20px;
     }
-    
+
     .about .about-box span{
-    
+
         font-weight: 400;
         font-size: 30px;
-        line-height: 1.1; 
-    
-    
+        line-height: 1.1;
+
+
     }
     .about .about-box p{
-    
+
         font-weight: 400;
         font-size: 15px;
 
@@ -186,7 +186,7 @@ line-height: 28.8px;
 
 
 /* ####################################### about-faq section ################################################# */
- 
+
   .about-faq .about-faq-right{
 
 background-color: #00000014;
@@ -208,15 +208,15 @@ background-color: #00000014;
     padding: 0px 25px;
     padding-bottom: 45px;
     font-weight: 400;
+
     font-size: 16px;
     line-height: 1.8;
     text-align: center;
     letter-spacing: -0.02em;
- ;
 
   }
   .about-faq-right__icon{
-    background-color: var(--white-color);
+    background-color: #2c2c2c;
     border-radius: 50%;
     height: 80px;
     width: 80px;

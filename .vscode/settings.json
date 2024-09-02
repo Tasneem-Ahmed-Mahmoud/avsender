@@ -1,3 +1,8 @@
 {
-    "liveServer.settings.port": 5501
+	"liveServer.settings.port": 5501,
+	"i18n-ally.localesPaths": [
+		"lang",
+		"resources/views/admin/language",
+		"resources/views3/admin/language"
+	]
 }

@@ -8,10 +8,10 @@
     @include('frontend.inc.head-1')
 
 
-   
+
            <section class="features">
-         <div class="container">
-           <header class="features__header">
+         <div >
+           <header class="features__header container">
             <h2 data-text="{{ __('Feature Title') }}">{{ __('Feature Title') }}</h2>
             <p>{{ __('Feature Description') }}</p>
 
@@ -60,7 +60,7 @@
             </section>
 
 
-          
+
 
 
             <section class="av-sender">
@@ -145,9 +145,9 @@
                    </div>
                 </div>
             </section>
-          
 
-      
+
+
 
     <!-- ################################## planing ############################################### -->
     <section class="planing mt-5 mb-5">

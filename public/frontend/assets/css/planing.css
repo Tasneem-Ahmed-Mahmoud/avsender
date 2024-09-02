@@ -28,7 +28,7 @@
     padding: 0.625rem;
     margin-right: 17.5px;
 
-  
+
 }
 
 
@@ -94,7 +94,7 @@
     font-weight: 500;
     font-size: 1.25rem;
     line-height: 2rem;
-    
+
 }
 
 .planing .planing-content.left-plan .planing-middle h6,
@@ -131,11 +131,12 @@
 }
 
 .planing .planning-bottom ul li i {
-
-    padding: 6px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
 }
+
 
 .planing .planing-content.left-plan .planning-bottom ul li i,
 .planing .planing-content.right-plan .planning-bottom ul li i {
@@ -215,7 +216,7 @@ DM Sans */
 .planing .planing-content.center-plan {
     /* transform: translateY(-50px); */
     transform: scaleY(1.07);
-    
+
 }
 .planing .planing-title h2{
     font-weight: 600;
@@ -235,8 +236,8 @@ DM Sans */
     font-size: 16px;
     line-height: 25.6px;
     color: #6B6B6B;
-   
- 
+
+
 }
 
 .nav{
@@ -252,12 +253,12 @@ margin-bottom: 5rem !important;
     border-radius: 50px;
     padding:25px, 52px, 26px, 52px;
     width: 50%;
-    
+
 
    font-family: 600;
    font-size: 16px;
     line-height: 25.6px;
-    
+
 }
 /* .nav .nav-item:first-child{
     background: linear-gradient(90deg, #23316E 0%, #435ED4 100%);
@@ -268,22 +269,22 @@ margin-bottom: 5rem !important;
 .nav .nav-item a{
     color: #29387E;
 
-    
+
 }
 .active-plan{
     background: linear-gradient(90deg, #23316E 0%, #435ED4 100%);
     color:  #FFFFFF !important;
- 
+
 border-radius: 50px ;
 
 
-    
+
 
 }
 @media (max-width: 1400px)and (min-width: 299px) {
 
 .planing .planing-content {
-  
+
     padding: 12px 23px;
 }
 .popular-plan{
@@ -295,7 +296,7 @@ border-radius: 50px ;
     font-size:2.5rem;
     line-height: 3.6rem;
 }
-    
+
 
 
 
@@ -316,7 +317,7 @@ border-radius: 50px ;
         font-weight: 500;
         font-size:12px;
         line-height: 19.2px;
-    
+
     }
 
     .planing .planing-text h3 {
@@ -324,17 +325,17 @@ border-radius: 50px ;
         font-weight: 600;
         font-size:1rem;
         line-height: 25.6px;
-    
+
     }
 
-    
+
 .planing .planing-middle h6 {
     margin-bottom: 0;
     font-weight: 500;
     font-size: 18px;
     line-height: 28.8px;
 
- 
+
 }
 .planing .planing-middle h6 span {
     font-weight: 600;
@@ -346,7 +347,7 @@ border-radius: 50px ;
 .planing .planning-bottom ul li span {
     font-size: 14px;
     line-height: 19.2px;
-  
+
 }
 .planing .planning-bottom ul li i {
 
@@ -359,34 +360,34 @@ border-radius: 50px ;
     font-weight: 700;
     font-size: 24px;
     line-height: 38.4px;
-   
+
 
 
 }
 .planing .planing-title p{
     font-size: 12px;
     line-height: 19.2px;
-  
+
 
 }
 .planing .planing-title span{
- 
+
     font-size: 12px;
     line-height: 19.2px;
 
-   
- 
+
+
 }
 }
 
-/* 
+/*
  */
  [data-plan-type] {
     display: none;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
   }
-  
+
   [data-plan-type].visible {
     display: block;
     opacity: 1;
@@ -395,9 +396,8 @@ border-radius: 50px ;
   .planning-card {
     display: none; /* Hide all by default */
   }
-  
+
   .planning-card.visible {
     display: block; /* Show only visible ones */
   }
-  
-  
+

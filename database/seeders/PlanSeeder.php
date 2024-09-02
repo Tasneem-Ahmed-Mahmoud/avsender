@@ -176,7 +176,68 @@ class PlanSeeder extends Seeder
                     "access_chat_list" => "yes",
                     "access_group_list" => "yes",
                 ]
-            ]
+                ],
+
+
+            //old
+
+            [
+                "title" => ['en' => "Special offer", 'ar' => " عرض خاص"],
+                "business_size" => ["en" => "For individuals", "ar" => "للأفراد"],
+                "description" => ['en' => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit.", 'ar' => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit."],
+                "icon" => "uploads/plans/basic-en.svg",
+                "price" => 155,
+                "days" => 30,
+                "is_popular" =>0,
+                "is_featured" => 1,
+                'is_recommended' =>0,
+                "is_trial" =>0,
+                "status" => 1,
+                "trial_days" => 1,
+                "limits" => [
+                    "messages_limit" => "unlimited",
+                    "contact_limit" => "unlimited",
+                    "device_limit" => "5",
+                    "template_limit" => "unlimited",
+                    "apps_limit" => "unlimited",
+                    "chatbot" => "yes",
+                    "bulk_message" => "yes",
+                    "schedule_message" => "yes",
+                    "access_chat_list" => "yes",
+                    "access_group_list" => "yes",
+                ]
+                ],
+
+
+                [
+                    "title" => ['en' => "Starter", 'ar' => " Starter"],
+                    "business_size" => ["en" => "For individuals", "ar" => "للأفراد"],
+                    "description" => ['en' => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit.", 'ar' => "Lorem ipsum dolor sit amet doloroli sitiol conse ctetur adipiscing elit."],
+                    "icon" => "uploads/plans/basic-en.svg",
+                    "price" => 225,
+                    "days" => 30,
+                    "is_popular" =>0,
+                    "is_featured" => 1,
+                    'is_recommended' =>0,
+                    "is_trial" =>0,
+                    "status" => 1,
+                    "trial_days" => 1,
+                    "limits" => [
+                        "messages_limit" => "100000",
+                        "contact_limit" => "8000",
+                        "device_limit" => "2",
+                        "template_limit" => "1",
+                        "apps_limit" => "0",
+                        "chatbot" => "yes",
+                        "bulk_message" => "yes",
+                        "schedule_message" => "yes",
+                        "access_chat_list" => "yes",
+                        "access_group_list" => "yes",
+                    ]
+                    ],
+
+
+               
         ];
 
         foreach ($plans as $plan) {

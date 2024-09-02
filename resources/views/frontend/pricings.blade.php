@@ -28,7 +28,13 @@ $plansArray = $Enterprise;
 // Convert the reordered array back to a collection
 $plans = collect($plansArray);
 @endphp
+
 @foreach($plans as $plan)
+@php
+  
+  $plan=collect($plan);
+@endphp
+
 <div class="col-xl-4 col-md-6 col-12 mb-3 planning-card"
   data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
   <div class="planing-content {{ $plan['is_popular']? 'center-plan' : 'left-plan' }}">
@@ -45,8 +51,8 @@ $plans = collect($plansArray);
         </figure>
 
         <div class="planing-text ">
-          <p>{{ __($plan['business_size'][app()->getLocale()]) }}</p>
-          <h3>{{ __($plan['title'][app()->getLocale()]) }}</h3>
+          <p>{{ $plan['business_size'][app()->getLocale()]}}</p>
+          <h3>{{$plan['title'][app()->getLocale()]}}</h3>
         </div>
       </div>
     </div>
@@ -59,12 +65,12 @@ $plans = collect($plansArray);
       <h4>{{ __('What’s included') }}</h4>
       <ul>
         @foreach($plan['limits'] ?? [] as $key => $data)
-        <li>
-          <i class="fa-solid {{ $data  == "no" ||$data =='0' ? 'bg-warning fa-xmark' : 'fa-check' }}"></i>
+        <li style="display: flex">
+          <i class="fa-solid icon {{ $data  == "no" ||$data =='0' ? 'bg-warning fa-xmark' : 'fa-check' }}"  style="width: 26px; height: 26px"></i>
           <span class="{{$data == "no"|| $data =='0'? 'text-warning' : '' }}">
             {{ $data=="no" ||$data=="yes"  ? __($key) : __($key) . " : (".( $data == 'unlimited' ? __($data) .')' : $data.')') }}
 
-            
+
           </span>
         </li>
         @endforeach

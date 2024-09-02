@@ -59,12 +59,12 @@ $plans = collect($plansArray);
       <h4>{{ __('What’s included') }}</h4>
       <ul>
         @foreach($plan['limits'] ?? [] as $key => $data)
-        <li>
-          <i class="fa-solid {{ $data  == "no" ||$data =='0' ? 'bg-warning fa-xmark' : 'fa-check' }}"></i>
+        <li style="display: flex">
+          <i class="fa-solid icon {{ $data  == "no" ||$data =='0' ? 'bg-warning fa-xmark' : 'fa-check' }}"  style="width: 26px; height: 26px"></i>
           <span class="{{$data == "no"|| $data =='0'? 'text-warning' : '' }}">
             {{ $data=="no" ||$data=="yes"  ? __($key) : __($key) . " : (".( $data == 'unlimited' ? __($data) .')' : $data.')') }}
 
-            
+
           </span>
         </li>
         @endforeach

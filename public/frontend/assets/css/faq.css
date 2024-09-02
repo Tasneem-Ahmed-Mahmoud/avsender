@@ -80,6 +80,9 @@
 
     border-radius: 8px;
     border: 1px solid #CDCDCD;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     /* min-width: 600px; */
     min-height: 130px;
     align-items: center;
@@ -91,10 +94,12 @@
 
 }
 
+
+
 .faq_box_content-p {
     font-size: 1.125rem;
     /* 18px */
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.8rem;
     /* 28.8px */
     color: #525252;
@@ -154,6 +159,9 @@
 }
 
 @media (max-width: 790px) {
+
+
+
     .hero_container {
         background: url('../images/hero-image-sm.svg') center/cover no-repeat;
         height: 9.6875rem;
@@ -180,6 +188,7 @@
 
     .more-info-faq-div {
         display: flex;
+
         /* align-items: center; */
     }
 
@@ -203,9 +212,9 @@
 
     .faq_box_content {
         min-width: 290px;
-        min-height: 29px !important;
+        min-height: 70px !important;
         height: 100% !important;
-        padding: 20px;
+        padding: 10px 14px;
     }
 
     .faq__content_container_row {
@@ -239,10 +248,10 @@
         max-height: 15.625rem!important;
         align-items: start !important;
        padding-top:1rem !important;
-    
+
     }
     .WhatsApp-Chatbot{
         max-height: 20.625rem!important;
     }
- 
+
 }

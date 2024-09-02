@@ -757,9 +757,10 @@ height: 100%; */
 }
 
 .statistic .content {
-    gap: 8px;
+    gap: 16px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .statistic .reviews__top img {
@@ -771,7 +772,7 @@ height: 100%; */
 /* .statistic .reviews__border {
     border-right: 1px solid #CDCDCD;
     border-left: 1px solid #CDCDCD;
-   
+
   justify-content: center;
 } */
 .statistic .reviews__border {
@@ -1514,8 +1515,8 @@ height: 100%; */
         text-align: center;
     }
 
-  
 
 
-  
+
+
 }

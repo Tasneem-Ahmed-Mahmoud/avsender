@@ -7,7 +7,7 @@
                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon.svg" alt="icon" />
                 </figure>
                 <div class="statistic__bottom">
-                   <h2>76</h2>
+                   <h2>{{$counter->active_customers  ?? '' }}</h2>
                    <p>{{ __('Active Users') }}</p>
                 </div>
              </div>
@@ -18,7 +18,7 @@
                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-stars.svg" alt="icon" />
                 </figure>
                 <div class="statistic__bottom">
-                   <h2>109</h2>
+                   <h2>{{ $counter->positive_reviews ?? '' }}</h2>
                    <p>{{ __('Positive Reviews') }}</p>
                 </div>
              </div>
@@ -30,7 +30,7 @@
                    <img src="{{ asset('frontend/assets/images/home') }}/user-icon-starsphone.svg" alt="icon" />
                 </figure>
                 <div class="statistic__bottom">
-                   <h2 >132</h2>
+                   <h2 >{{ $userCount }}</h2>
                    <p>{{ __('Total Customers') }}</p>
                 </div>
              </div>

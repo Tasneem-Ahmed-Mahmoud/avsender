@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Traits\Seo;
 use App\Models\Plan;
 use App\Models\Post;
-use App\Traits\Seo;
+use App\Models\User;
+use App\Models\Category;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -41,8 +42,9 @@ class HomeController extends Controller
 
         $theme_path = get_option('theme_path');
         $theme_path = empty($theme_path) ? 'frontend.index' : $theme_path;
-
-        return view($theme_path, compact('brands', 'testimonials', 'faqs', 'plans', 'home', 'features_area', 'brand_area', 'account_area', 'heading'));
+        $counter = get_option('counter', true, true, false, current_locale());
+        $userCount=User::count();
+        return view($theme_path, compact('userCount','counter','brands', 'testimonials', 'faqs', 'plans', 'home', 'features_area', 'brand_area', 'account_area', 'heading'));
     }
 
     /**

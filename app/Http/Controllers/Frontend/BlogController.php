@@ -30,6 +30,8 @@ class BlogController extends Controller
         }
         $blogs = $blogs->with('shortDescription', 'preview')->where('status', 1)->latest()->paginate(9);
 
+        // dd($blogs);
+
         $recent_blogs = Post::where('type', 'blog')->where('lang', app()->getLocale())->with('shortDescription', 'preview')->where('status', 1)->latest()->take(4)->get();
 
         $categories = Category::where('type', 'blog_category')->whereHas('postcategories')->where('lang', app()->getLocale())->get();

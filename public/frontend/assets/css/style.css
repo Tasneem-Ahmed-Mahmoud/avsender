@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
     /* overflow: hidden; */
 }
 
@@ -113,9 +113,9 @@ a {
     font-weight: 400;
     line-height: 1.8rem;
     /* 28.8px */
-    
-    
-    
+
+
+
     /* width: 100%; */
 }
 
@@ -257,7 +257,7 @@ a {
         max-height: 15.625rem!important;
         align-items: start !important;
        padding-top:1rem !important;
-    
+
     }
     .WhatsApp-Chatbot{
         max-height: 20.625rem!important;
@@ -266,11 +266,11 @@ a {
     .row-mt-topfeature{
         margin-bottom: 0 !important;
     }
- 
+
 }
 
 /* ############loader ########### */
- 
+
 
 /* Loader styles */
 #loader-container {

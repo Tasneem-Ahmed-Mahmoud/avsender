@@ -135,7 +135,14 @@
 
 .btn-swiper-button-prev:not(.swiper-button-disabled), .btn-swiper-button-next:not(.swiper-button-disabled) {
     background: #002F87 !important;
+}
 
+html[dir="rtl"] .btn-swiper-button-prev {
+    transform: rotate(180deg);
+}
+
+html[dir="rtl"] .btn-swiper-button-next {
+    transform: rotate(180deg);
 }
 
 .swiper-slider-button i {

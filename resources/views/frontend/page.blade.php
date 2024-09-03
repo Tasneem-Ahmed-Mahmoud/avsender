@@ -1,88 +1,111 @@
-{{-- @extends('frontend.layouts.main')
-@section('content')
-@include('frontend.layouts.header-2')
-<main>
-   <!-- breadcrumb area start -->
-   <div class="breadcrumb__area breadcrumb-height p-relative grey-bg"
-   data-background="{{ asset('assets/frontend/img/breadcrumb/breadcrumb.jpg') }}">
-   <div class="breadcrumb__scroll-bottom smooth">
-      <a href="#faq">
-         <i class="far fa-arrow-down"></i>
-      </a>
-   </div>
-   <div class="container">
-      <div class="row">
-         <div class="col-xxl-12">
-            <div class="breadcrumb__content text-center">
-               <h3 class="breadcrumb__title">{{ $page->title }}</h3>
-               <div class="breadcrumb__list">
-                  <span><a href="{{ url('/') }}">{{ __('Home') }}</a></span>
-                  <span class="dvdr"><i class="fa fa-angle-right"></i></span>
-                  <span>{{ $page->title }}</span>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- breadcrumb area end -->
-<div class="postbox__area pt-120 pb-120">
-   <div class="container">
-      <div class="row">
-         <div class="col-xxl-12 col-xl-12 col-lg-12 col-12">
-            <div id="Blog-Details" class="postbox__wrapper postbox__p-right">
-               <article class="postbox__item format-image transition-3">
-                  <div class="postbox__content">                    
-                     <h3 class="postbox__title text-center">
-                        {{ $page->title }}
-                     </h3>                    
-                     <div class="postbox__thumb2 mb-60">
-                        <div class="postbox__text text-justify">
-                           <p class="text-justify">{!!  filterXss($page->description->value ?? '') !!}</p>
-                        </div>
-                     </div>                     
-                  </div>
-               </article>              
-            </div>
-         </div>        
-      </div>
-   </div>
-</div>
-</main>
-@endsection --}}
-
-
-
-
 @extends('frontend.inc.master')
 @section('style')
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/terms-and-conditions.css') }}">
+<style>
+   .payment-method {
+      /* margin-top: 50px; */
+      margin-bottom: 50px;
+   }
+
+   .payment-method__accept-for {
+      color: #29387E;
+
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 44.8px;
+
+
+   }
+
+   .payment-method figure img {
+      height: 200px;
+      width: 200px;
+
+   }
+
+   @media (max-width: 992px) {
+      .payment-method {
+      /* margin-top: 50px; */
+      margin-bottom: 20px;
+   }
+
+   .payment-method__accept-for {
+      color: #29387E;
+
+
+font-size: 20px;
+
+line-height: 32px;
+
+
+   }
+   .payment-method figure img {
+      height: 150px;
+      width: 150px;
+
+   }
+
+   }
+
+   @media (max-width: 767px) {
+      .payment-method figure img {
+      height: 100px;
+      width: 100px;
+
+   }
+   }
+</style>
 @endsection
 @section('content')
 @include('frontend.inc.head',["title"=>$page->title ,"description"=> ''])
 
-<section class="terms-and-conditions" >
+<section class="terms-and-conditions">
    <div class="container">
       <div class="row">
          <header class="col-12">
             <h3 class="terms-and-conditions__title text-center">
                {{ $page->title }}
-            </h3>  
+            </h3>
          </header>
          <div class="terms-and-conditions__body">
-            {!!  filterXss($page->description->value ?? '') !!}
+            {!! filterXss($page->description->value ?? '') !!}
          </div>
 
       </div>
    </div>
 </section>
+<section class="payment-method">
+   <div class="container">
+      <div class="row  align-items-center">
+         <div class="col-md-3 col-12">
+            <h2 class="payment-method__accept-for"> {{ __('Accept For') }}</h2>
+         </div>
+         <div class="col-md-3 col-4">
+            <figure>
+               <img src="{{ asset('frontend/assets/images/payment-method/Mada Logo .svg') }}" alt="Mada Logo ">
+            </figure>
+         </div>
+         <div class="col-md-3 col-4">
+            <figure>
+               <img src="{{ asset('frontend/assets/images/payment-method/Mastercard Logo.svg') }}"
+                  alt="Mastercard Logo ">
+            </figure>
+         </div>
+         <div class="col-md-3 col-4">
+            <figure>
+               <img src="{{ asset('frontend/assets/images/payment-method/Visa Logo.svg') }}" alt="Visa Logo">
+            </figure>
+         </div>
+      </div>
+   </div>
 
+</section>
 
 @endsection
 
 @section('script')
 <script>
-	document.addEventListener('DOMContentLoaded', function() {
+   document.addEventListener('DOMContentLoaded', function() {
         // Select all elements within .blog-content
         const blogContent = document.querySelector('.terms-and-conditions__body');
         

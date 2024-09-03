@@ -30,3 +30,5 @@ return new class extends Migration
         Schema::dropIfExists('feature_instructions');
     }
 };
+
+// php artisan migrate --path=/database/migrations/2024_07_19_181449_create_feature_instructions_table.php

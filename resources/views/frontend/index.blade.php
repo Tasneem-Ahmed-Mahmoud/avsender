@@ -6,7 +6,7 @@
 
 @include('frontend.inc.head-1')
 
-<section class="features">
+<section class="features ">
     <div>
         <header class="features__header container">
             <h2 data-text="{{ __('Feature Title') }}">{{ __('Feature Title') }}</h2>
@@ -18,7 +18,7 @@
 
 <section class="chatbot">
     <div class="container">
-        <div class="row justify-content-between">
+        <div class="row justify-content-between align-items-center">
             <div class="col-md-7">
                 <div class="chatbot__content">
                     <h2 class="title-layer" data-text="{{ __('WhatsApp Chatbot Title Layer') }}">
@@ -32,7 +32,7 @@
                         </figure>
                     </div>
                     <p>{{ __('WhatsApp Chatbot Description') }}</p>
-                    <a href="{{ url('feature/auto-responder-bot') }}" class="btn">
+                    <a href="{{ url('feature/auto-responder-bot') }}" class="btn blue-btn">
                         {{ __('Lets Create WhatsApp Bot') }}</a>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                     <div class="av-sender__top">
                         <h3>{{__('AVSender for the WhatsApp ultimate marketing tool !')}}</h3>
                         <p>{{ __('AVSender for the WhatsApp ultimate marketing tool Desc') }}</p>
-                        <a class="btn" href="{{ url('pricing') }}">{{__("Start Using Avsender")}}</a>
+                        <a class="btn blue-btn" href="{{ url('pricing') }}">{{__("Start Using Avsender")}}</a>
                     </div>
                     {{-- bottom --}}
                     <div class="av-sender__bottom row justify-content-between">
@@ -120,7 +120,7 @@
 </section>
 
 <!-- ################################## planing ############################################### -->
-<section class="planing mt-5 mb-5">
+<section class="planing ">
     <div class="container">
         <div class="row">
             <div class="planing-header text-center">

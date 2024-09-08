@@ -75,7 +75,7 @@ $plans = collect($plansArray);
         </li>
         @endforeach
       </ul>
-      <a href="{{ route('choose.plan', $plan['id']) }}" class="btn btn-subscribe text-center w-100">
+      <a href="{{ route('choose.plan', $plan['id']) }}" class="btn btn-subscribe text-center w-100 white-btn">
         {{ $plan['is_trial'] ? __('Free '.$plan['trial_days'].' days trial') : __('Subscribe Now') }}
       </a>
     </div>

@@ -9,7 +9,6 @@
 
    .payment-method__accept-for {
       color: #29387E;
-
       font-size: 28px;
       font-weight: 600;
       line-height: 44.8px;
@@ -22,6 +21,33 @@
       width: 200px;
 
    }
+   .animate-image {
+    display: inline-block;
+    animation: alternateMove 4s ease-in-out infinite;
+}
+
+.animate-img {
+    display: inline-block;
+    animation: moveX 4s ease-in-out infinite alternate;
+}
+
+/* Keyframes for moving along the x-axis */
+@keyframes moveX {
+    0% {
+        transform: translateX(0); /* Starting point */
+    }
+    25%{
+      transform: translateX(10px);
+    }
+    50%{
+      transform: translateX(30);
+    }
+    100% {
+        transform: translateX(50px); /* Move to the right */
+    }
+}
+
+/* Different delays to make the images move alternately */
 
    @media (max-width: 992px) {
       .payment-method {
@@ -76,23 +102,24 @@ line-height: 32px;
 </section>
 <section class="payment-method">
    <div class="container">
-      <div class="row  align-items-center">
-         <div class="col-md-3 col-12">
+   <div class="heading text-center w-50 m-auto">
             <h2 class="payment-method__accept-for"> {{ __('Accept For') }}</h2>
          </div>
+      <div class="row justify-content-center align-items-center">
+       
          <div class="col-md-3 col-4">
-            <figure>
+            <figure class="animate-img">
                <img src="{{ asset('frontend/assets/images/payment-method/Mada Logo .svg') }}" alt="Mada Logo ">
             </figure>
          </div>
          <div class="col-md-3 col-4">
-            <figure>
+            <figure class="animate-img">
                <img src="{{ asset('frontend/assets/images/payment-method/Mastercard Logo.svg') }}"
                   alt="Mastercard Logo ">
             </figure>
          </div>
          <div class="col-md-3 col-4">
-            <figure>
+            <figure class="animate-img">
                <img src="{{ asset('frontend/assets/images/payment-method/Visa Logo.svg') }}" alt="Visa Logo">
             </figure>
          </div>

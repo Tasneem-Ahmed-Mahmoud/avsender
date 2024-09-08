@@ -1,17 +1,17 @@
 <header class="header">
     <div class="container-fluid header__top   ">
         <div class="container">
-            <div class="d-flex flex-column justify-content-center align-items-between" style="min-height: 100vh">
+            <div class="d-flex flex-column justify-content-center align-items-between" >
                 <div class="header__content">
                     <h1>{!! __('Home Title') !!}</h1>
                     <p>{{ __('Home Description') }}</p>
-                    <a href="{{ url('/about') }}" class=" btn btn-work-with-us">{{ __('Work With Us') }}</a>
+                    <a   href="{{ url('/about') }}" class=" btn btn-work-with-us">{{ __('Work With Us') }}</a>
                 </div>
                 <div class="header__image  ">
-                    <figure class="justify-content-center  d-flex header__img-container">
+                    <figure class=" header__img-container  d-flex justify-content-center flex-column align-items-center ">
                         <img src="{{ asset('frontend/assets/images/home') }}/hero-image-statistic.svg" alt="hero-image"
                             class="w-75 big-img" />
-                        <div class="header__square">
+                        <div class="header__square ">
                             <img
                                 src="{{ asset('frontend/assets/images/home/' . (app()->getLocale() == 'ar' ? 'Trusted-ar.svg' : 'Trusted.svg')) }}" />
                         </div>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="header__social  d-flex justify-content-center align-items-center flex-column">
-            <div>
+            <div >
                 <a href="https://wa.me/966555466532" target="_blank">
                     <img src="{{ asset('frontend/assets/images/home') }}/whats-app-hero.svg" alt="WhatsApp Icon"
                         class="w-100" />

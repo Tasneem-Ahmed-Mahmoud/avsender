@@ -70,19 +70,17 @@
     text-align: center !important;
     border-radius: 3.125rem !important;
     padding: 10px 40px !important;
+    transition: 0.5s all;
 }
 
 .Subscribe-btn:hover {
-    color: #29387E;
-    background-color: #FFFFFF;
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 2rem;
-    text-align: center;
+    background: linear-gradient(103.82deg, #332FFF -0.68%, #FF3880 102.15%) !important;
+    color: #fff !important;
 }
 
 .How_to_work_section {
     padding-top: 3.5rem;
+    
     ;
 }
 
@@ -159,7 +157,12 @@
     line-height: 64px;
     text-align: center;
     color: #29387E;
-    margin-top: 20px;
+    margin-bottom: 24px;
+}
+
+/* features section at the end of the page  */
+.service-container{
+    margin-top:128px ;
 }
 @media (max-width: 1350px) {
     .hero-image-Services {
@@ -184,6 +187,9 @@
 }
 
 @media (max-width: 990px) {
+    .service-container{
+        margin-top:50px ;
+    }
     .Services-box {
         height: 10.625rem !important;
 

@@ -40,7 +40,10 @@
     height: 100%;
 
 }
-
+.feature-slider{
+    overflow: hidden;
+    margin-inline-start: 85px;
+}
 
 .feature-slider .swiper-slide__content img {
     width: 82px;
@@ -150,7 +153,16 @@ html[dir="rtl"] .btn-swiper-button-next {
     font-size: 10px;
 
 }
-
+@media(max-width:800px){
+    .feature-slider{
+        margin-inline-start: 0 !important;
+    }
+}
+@media(max-width:650px){
+    .feature-slider .swiper-slide__content {
+        margin: 0 20px;
+    }
+}
 @media (max-width: 1200px) {
     .feature-slider .swiper-slide__content {
         padding: 24px 14px 24px 15px;

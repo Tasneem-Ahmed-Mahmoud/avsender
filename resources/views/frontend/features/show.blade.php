@@ -107,7 +107,7 @@
                 </div>
             </section>
             {{-- features --}}
-            <div class="container">
+            <div class="container service-container">
                 <h2 class="How_to_work_section_h2-caro ">{{ __('Browse other services of AVSENDER') }}</h2>
 
                 <div class="faq__content_container" id="box-home">

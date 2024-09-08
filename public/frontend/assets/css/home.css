@@ -21,7 +21,20 @@
     height: 31.69rem;
 
 }
-
+.blue-btn{
+    transition: 0.5s all !important;
+}
+.blue-btn:hover{
+    background: linear-gradient(45deg, #7e91e5,  #384fb3 ,#515e98 ) !important ;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3) !important ;
+    transform: translateY(-5px) !important;
+    /* color: #23316E !important; */
+    
+} 
+.white-btn:hover{
+        background: linear-gradient(45deg, #fff, #adb6e1); 
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
 .hero-image-home img {
     width: 100%;
     height: 100%;
@@ -682,7 +695,17 @@ height: 100%; */
 .header__content .btn {
     margin-bottom: 57px;
 }
+.header__image{
+    position: relative;
+    
+}
 
+.header__square img {
+    position: absolute;
+    left: 50%;
+    bottom:-100px;
+    transform: translateX(-50%);
+}
 .header__social {
     gap: 24px;
     position: absolute;
@@ -694,20 +717,29 @@ height: 100%; */
 .header__social div {
     width: 45px;
     height: 45px;
+    transition: 1s all;
 }
-
-.header__img-container {
+.header__social div :hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
+}
+/* .header__image-container{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+/* .header__img-container {
     position: relative;
 }
 
-.header__img-container .header__square {
+.header_img-container .header_square {
     position: absolute;
     bottom: -76px;
 }
 
 .header__img-container {
     margin-bottom: -56px;
-}
+} */
 
 @media (max-width: 992px) {
     .header__content {
@@ -742,7 +774,33 @@ height: 100%; */
     }
 }
 
-/*################################################## statistic ##################################*/
+@media (max-width: 576px) {
+    .header{
+        min-height:231.47px !important;
+    }
+    .header__top{
+       height:250.47px !important;
+       border-bottom-left-radius: 20px;
+       border-bottom-right-radius: 20px;
+    }
+
+    .header__content .btn {
+        margin-bottom: 20px!important;
+    }
+
+    .header__img-container {
+        margin-bottom: 0 !important;
+        /* margin-top: -40px; */
+    }
+
+}
+@media(max-width:768px){
+    .header{
+        margin-bottom: 140px;
+    }
+}
+
+/* /################################################## statistic ################################## */
 
 .statistic .row {
     width: 90%;
@@ -1037,7 +1095,7 @@ height: 100%; */
         text-align: center;
     }
 
-    .av-sender .av-sender__bottom .av-sender__card {
+    .av-sender .av-sender_bottom .av-sender_card {
         padding-left: 8px;
         padding-top: 38.5px;
         padding-right: 7px;
@@ -1051,9 +1109,20 @@ height: 100%; */
         justify-items: center;
         gap: 86px;
     }
+
+
+    .av-sender .av-sender__left img{
+        width: 122.93px;
+        height: 262.95px;
+     
+        
+    }
 }
 
 /* ############### ######### top integration ############################### */
+.top-integration{
+    margin-bottom: 100px;
+}
 .top-integration .top-integration__title {
 
     font-size: 40px;
@@ -1094,7 +1163,8 @@ height: 100%; */
         0 0 3px rgba(131, 131, 131, .1);
     font-size: 48px;
     z-index: -1;
-    color: rgba(233 242 250);
+    /* color: rgba(233 242 250); */
+    color: #D7EAFB;
 
 }
 
@@ -1111,7 +1181,9 @@ height: 100%; */
 
 
 @media (max-width: 992px) {
-
+    .top-integration{
+        margin-bottom: 50px;
+    }
     .top-integration .top-integration__title::before {
         -webkit-text-stroke: 1px rgba(131, 131, 131, .1);
         inset-inline: auto;
@@ -1204,7 +1276,8 @@ height: 100%; */
         0 0 3px rgba(131, 131, 131, .1);
 
     z-index: -1;
-    color: rgba(233 242 250);
+    /* color: rgba(233 242 250); */
+    color: #D7EAFB;
     font-size: 64px;
     font-weight: 600;
     line-height: 102.4px;
@@ -1249,13 +1322,13 @@ height: 100%; */
 
 }
 
-.chatbot__img-container-desktop .chatbot-top-img {
+/* .chatbot__img-container-desktop .chatbot-top-img {
     position: absolute;
     top: -140px;
 
     z-index: 1;
 
-}
+} */
 
 .chatbot__img-container-desktop .chatbot-top-img img {
     width: 237px;
@@ -1282,7 +1355,8 @@ height: 100%; */
 @media (max-width: 992px) {
 
     .chatbot {
-        margin-top: 30px;
+        margin-top: 100px;
+        
     }
 
     .chatbot .chatbot__content h2 {
@@ -1321,21 +1395,18 @@ height: 100%; */
         line-height: 19.2px;
 
     }
-
+/* 
     .chatbot__img-container-desktop .chatbot-top-img {
 
         top: -37.77px;
 
 
 
-    }
+    } */
 
     .chatbot__img-container-desktop .chatbot-top-img img {
         width: 94.7px;
         height: 98.09px;
-
-
-
 
     }
 
@@ -1344,14 +1415,8 @@ height: 100%; */
     }
 
     .chatbot__img-container-desktop .chatbot-bottom-img img {
-
-
         width: 123.87px;
         height: 158.23px;
-
-
-
-
     }
 
 }
@@ -1360,6 +1425,7 @@ height: 100%; */
 @media (max-width: 768px) {
     .chatbot {
         text-align: center;
+        margin-top: 48px!important;
     }
 
     .chatbot .chatbot__content h2 {
@@ -1409,7 +1475,8 @@ height: 100%; */
 
 /*  ################################## features###############################################  */
 .features {
-    margin-top: 71.14px;
+    margin-top: 100px;
+    padding-top: 100px;
 }
 
 .features .features__header h2 {
@@ -1449,7 +1516,9 @@ height: 100%; */
         0 0 3px rgba(131, 131, 131, .1);
     font-size: 48px;
     z-index: -1;
-    color: rgba(233 242 250);
+    /* color: rgba(233 242 250); */
+    /* color: rgba(233 242 250); */
+    color: #D7EAFB;
 
 }
 
@@ -1468,6 +1537,11 @@ height: 100%; */
 
 
 @media (max-width: 992px) {
+    .features {
+        margin-top: 0;
+        padding-top: 0px;
+        text-align: center;
+    }
 
     .features .features__header h2::before {
         -webkit-text-stroke: 1px rgba(131, 131, 131, .1);
@@ -1481,9 +1555,6 @@ height: 100%; */
     .features .features__header h2 {
         font-size: 24px;
         line-height: 38.4px;
-
-
-
 
     }
 
@@ -1502,11 +1573,7 @@ height: 100%; */
 
 
 @media (max-width: 768px) {
-    .features  {
-        text-align: center;
-        margin-top: 49.61;
-    }
-
+ 
     .features .features__header h2 {
         text-align: center;
     }

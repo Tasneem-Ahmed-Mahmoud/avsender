@@ -1,5 +1,8 @@
 
 /*  ################################## planing###############################################  */
+.planing{
+    margin-bottom: 100px;
+}
 .bg-warning{
     background-color: #E11E1E !important;
 }
@@ -8,10 +11,11 @@
 }
 .planing .planing-content {
     margin: 1rem;
-
     padding: 2rem 2.688rem;
     border-radius: 1.5rem;
     border: solid 1px #EFF0F6;
+    transition: all 0.5s;
+    cursor: pointer;
 }
 
 .planing .planing-content.left-plan,
@@ -173,22 +177,17 @@
 .planing .planing-content.right-plan .btn-subscribe {
     border: solid 2px #29387E;
 }
-
+.planing .planing-content.left-plan .btn-subscribe:hover,
+.planing .planing-content.right-plan .btn-subscribe:hover {
+    border: none;
+}
 .planing .planing-content.center-plan .btn-subscribe {
     border: var(--white-color);
     background-color: var(--white-color);
     color: #170F49;
 }
 
-/* .planing .planing-content.left-plan .btn-subscribe:hover,
-.planing .planing-content.right-plan .btn-subscribe:hover {
-    background-color: #29387E;
-    color: var(--white-color);
-} */
 
-/* .planing .center-plan {
-    background-color: #29387E;
-} */
 
 .planing .popular-plan{
     text-align: end;
@@ -216,8 +215,8 @@ DM Sans */
 .planing .planing-content.center-plan {
     /* transform: translateY(-50px); */
     transform: scaleY(1.07);
-
 }
+
 .planing .planing-title h2{
     font-weight: 600;
     font-size: 40px;
@@ -307,6 +306,9 @@ border-radius: 50px ;
     }
 }
 @media (max-width: 992px) {
+    .planing{
+        margin-bottom: 40px;
+    }
     .planing .planing-content.center-plan {
         transform: none !important;
     }

@@ -15,7 +15,7 @@
 
 
 
-<div class="swiper-container feature-slider" style="overflow:hidden">
+<div class="swiper-container feature-slider" >
     <div class="swiper-wrapper">
 
         @foreach ($features as $feature)

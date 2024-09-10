@@ -13,7 +13,8 @@
     ])
 
     <!-- ################################## planing ############################################### -->
-    <section class="planing mt-5 mb-5">
+    <section class="planing mt-5 mb-5" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450" 
+    data-aos-easing="linear">
         <div class="container">
             <div class="row">
                 <div class="planing-header text-center">

@@ -2,7 +2,7 @@
 <footer class="footer ">
   <div class="container h-100">
     <div class="row h-100 justify-content-between  ">
-      <div class=" col-md-6 col-xl-8 col-12 ">
+      <div class=" col-md-6 col-xl-8 col-12  ">
         <div class="left-content">
           <figure>
             <img src="{{ asset('frontend') }}/assets/images/logo.svg" alt="" srcset="">
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <div class=" col-xl-4 col-md-6 row mt-md-0 mt-4 justify-content-md-between  ">
+      <div class=" col-xl-4 col-md-6 row mt-md-0 mt-4 justify-content-md-between ">
         <div class="col-lg-6 col-md-4  col-sm-5 col-4 ">
 
           <div class="content ">
@@ -55,9 +55,10 @@
         </div>
 
 
-        <div class="col-lg-6  col-md-8 col-sm-7 col-8   d-flex justify-content-end ">
-          <div class="content">
-            <ul class="footer-links contact-icons ">
+        <div class="col-lg-6  col-md-8 col-sm-7 col-8   d-flex justify-content-end"
+       > 
+          <div class="content  ">
+            <ul class="footer-links contact-icons  ">
 
               <li><a href="#" class="active">{{ __('Contact') }}</a></li>
               <li><a href="maito:{{ get_option('primary_data',true)->contact_email ?? '' }}" class="d-flex  gap-3   "> <i
@@ -82,6 +83,32 @@
 
   </div>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- <script>
+    AOS.init();
+</script> -->
+
+<script>
+      // Function to hide the spinner and show the content
+      function hideSpinner() {
+          document.getElementById('spinner').style.display = 'none';
+          document.querySelector('.body-content').style.display = 'block';
+          AOS.init({
+              offset: 0,
+              delay: 0,
+              duration: 400,
+              easing: 'ease',
+              once: false,
+              mirror: false,
+              anchorPlacement: 'top-bottom',
+          });
+      }
+
+      // Event listener for page load
+      window.addEventListener('load', function() {
+          setTimeout(hideSpinner, 1000); // Adding a slight delay for demonstration
+      });
+  </script>
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="

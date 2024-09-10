@@ -2,6 +2,9 @@
 @section('style')
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/terms-and-conditions.css') }}">
 <style>
+   .terms-and-conditions{
+      overflow:hidden;
+   }
    .payment-method {
       /* margin-top: 50px; */
       margin-bottom: 50px;
@@ -28,22 +31,16 @@
 
 .animate-img {
     display: inline-block;
-    animation: moveX 4s ease-in-out infinite alternate;
+    /* animation: moveX 4s ease-in-out infinite alternate; */
 }
 
 /* Keyframes for moving along the x-axis */
 @keyframes moveX {
-    0% {
-        transform: translateX(0); /* Starting point */
+   from {
+      transform: translateX(0);
     }
-    25%{
-      transform: translateX(10px);
-    }
-    50%{
-      transform: translateX(30);
-    }
-    100% {
-        transform: translateX(50px); /* Move to the right */
+    to {
+      transform: translateX(-100%);
     }
 }
 
@@ -85,22 +82,25 @@ line-height: 32px;
 @section('content')
 @include('frontend.inc.head',["title"=>$page->title ,"description"=> ''])
 
-<section class="terms-and-conditions">
+<section class="terms-and-conditions" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450" 
+data-aos-easing="linear">
    <div class="container">
       <div class="row">
          <header class="col-12">
-            <h3 class="terms-and-conditions__title text-center">
+            <h3 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+            data-aos-easing="linear" class="terms-and-conditions__title text-center">
                {{ $page->title }}
             </h3>
          </header>
-         <div class="terms-and-conditions__body">
+         <div class="terms-and-conditions__body " >
             {!! filterXss($page->description->value ?? '') !!}
          </div>
 
       </div>
    </div>
 </section>
-<section class="payment-method">
+<section class="payment-method" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150" 
+data-aos-easing="linear">
    <div class="container">
    <div class="heading text-center w-50 m-auto">
             <h2 class="payment-method__accept-for"> {{ __('Accept For') }}</h2>

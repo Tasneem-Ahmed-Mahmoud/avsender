@@ -6,7 +6,8 @@
 
 @endsection
 @section('content')
-<section class="plan">
+<section class="plan" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450" 
+         data-aos-easing="linear">
     <div class="faq_hero_container_section">
         <div class="container">
 

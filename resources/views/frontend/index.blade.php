@@ -6,51 +6,54 @@
 
 @include('frontend.inc.head-1')
 
-<section class="features ">
+<section class="features " data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" 
+data-aos-easing="linear">
     <div>
         <header class="features__header container">
-            <h2 data-text="{{ __('Feature Title') }}">{{ __('Feature Title') }}</h2>
-            <p>{{ __('Feature Description') }}</p>
+            <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+            data-aos-easing="linear"  data-text="{{ __('Feature Title') }}">{{ __('Feature Title') }}</h2>
+            <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+            data-aos-easing="linear">{{ __('Feature Description') }}</p>
         </header>
         @include('frontend.sections.features')
     </div>
 </section>
 
-<section class="chatbot">
+<section class="chatbot" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" 
+data-aos-easing="linear">
     <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-md-7">
+        <div class="row justify-content-between align-items-center ">
+            <div class="col-sm-7 ">
                 <div class="chatbot__content">
-                    <h2 class="title-layer" data-text="{{ __('WhatsApp Chatbot Title Layer') }}">
+                    <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+                    data-aos-easing="linear" class="title-layer desktop-title" data-text="{{ __('WhatsApp Chatbot Title Layer') }}">
                         {{ __('WhatsApp Chatbot Title') }}</h2>
-                    <div class="chatbot__img-container-phone">
-                        <figure class="chatbot-top-img">
-                            <img src="{{ asset('frontend/assets/images/home') }}/chatbot-top.svg" alt="chatbot-top" />
-                        </figure>
-                        <figure class="chatbot-bottom-img">
-                            <img src="{{ asset('frontend/assets/images/home') }}/chatbot-botom.svg" alt="chatbot-botom" />
-                        </figure>
-                    </div>
-                    <p>{{ __('WhatsApp Chatbot Description') }}</p>
+                 
+                    <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+                    data-aos-easing="linear">{{ __('WhatsApp Chatbot Description') }}</p>
                     <a href="{{ url('feature/auto-responder-bot') }}" class="btn blue-btn">
                         {{ __('Lets Create WhatsApp Bot') }}</a>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="chatbot__img-container-desktop">
-                    <figure class="chatbot-top-img">
-                        <img src="{{ asset('frontend/assets/images/home') }}/chatbot-top.svg" alt="chatbot-top" />
-                    </figure>
-                    <figure class="chatbot-bottom-img">
-                        <img src="{{ asset('frontend/assets/images/home') }}/chatbot-botom.svg" alt="chatbot-botom" />
-                    </figure>
+
+
+            <div class="col-sm-4 " >
+            <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+            data-aos-easing="linear" class="title-layer mob-title " data-text="{{ __('WhatsApp Chatbot Title Layer') }}">
+            {{ __('WhatsApp Chatbot Title') }}</h2>
+                <img src="{{ asset('frontend/assets/images/home') }}/robot.svg" alt="" class="img-fluid  mob-img" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="100" 
+                data-aos-easing="linear">
+                <img src="{{ asset('frontend/assets/images/home') }}/robot-lg.svg" alt="" class="img-fluid  desktop-img" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+                data-aos-easing="linear" >
+                
                 </div>
             </div>
         </div>
-    </div>
+    
 </section>
 
-<section class="av-sender">
+<section class="av-sender"  data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" 
+data-aos-easing="linear">
     <div class="container">
         <div class="row">
             {{-- left --}}
@@ -64,8 +67,10 @@
                 <div class="av-sender__right">
                     {{-- top --}}
                     <div class="av-sender__top">
-                        <h3>{{__('AVSender for the WhatsApp ultimate marketing tool !')}}</h3>
-                        <p>{{ __('AVSender for the WhatsApp ultimate marketing tool Desc') }}</p>
+                        <h3 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+                        data-aos-easing="linear">{{__('AVSender for the WhatsApp ultimate marketing tool !')}}</h3>
+                        <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+                        data-aos-easing="linear">{{ __('AVSender for the WhatsApp ultimate marketing tool Desc') }}</p>
                         <a class="btn blue-btn" href="{{ url('pricing') }}">{{__("Start Using Avsender")}}</a>
                     </div>
                     {{-- bottom --}}
@@ -97,17 +102,20 @@
 
 @include('frontend.sections.statistic')
 
-<section class="top-integration">
+<section class="top-integration" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" 
+data-aos-easing="linear">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="top-integration__content">
                     <div class="top-integration__title-container">
-                        <h3 class="top-integration__title" data-text="{{ __('Our Top Integrations') }}">
+                        <h3 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+                        data-aos-easing="linear" class="top-integration__title" data-text="{{ __('Our Top Integrations') }}">
                             {{ __('Our Top Integrations') }}
                         </h3>
                     </div>
-                    <p>{{__('Our Top Integrations Description')}}</p>
+                    <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+                    data-aos-easing="linear">{{__('Our Top Integrations Description')}}</p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -120,13 +128,16 @@
 </section>
 
 <!-- ################################## planing ############################################### -->
-<section class="planing ">
+<section class="planing " data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" 
+data-aos-easing="linear">
     <div class="container">
         <div class="row">
             <div class="planing-header text-center">
                 <div class="planing-title">
-                    <h2>{{ __('Pricing Plans Title') }}</h2>
-                    <p>{{ __('Pricing Plans Description') }}</p>
+                    <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+                    data-aos-easing="linear">{{ __('Pricing Plans Title') }}</h2>
+                    <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+                    data-aos-easing="linear">{{ __('Pricing Plans Description') }}</p>
                     <span>{{ __("(No extra fees, cancel anytime).") }}</span>
                 </div>
                 <ul class="nav m-auto">

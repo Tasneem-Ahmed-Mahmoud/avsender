@@ -3,11 +3,13 @@
 @section('content')
 
 @include('frontend.inc.head',['title' => __('Contact us'),'description' => __('Contact us Description')])
-<section class="contact">
+<section class="contact" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450" 
+data-aos-easing="linear">
    <div class="container">
       <div class="row justify-content-between">
          <header class="contact__header col-12">
-            <h2>{{ __('Have a ideas ? let’s Work Together') }}</h2>
+            <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+            data-aos-easing="linear">{{ __('Have a ideas ? let’s Work Together') }}</h2>
          </header>
          <div class="col-md-6">
             <div class="ontact__content">

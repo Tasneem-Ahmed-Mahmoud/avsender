@@ -1,4 +1,5 @@
-<section class="statistic">
+<section class="statistic"  data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300" 
+data-aos-easing="linear">
     <div class="container">
        <div class="row">
           <div class="col-4">

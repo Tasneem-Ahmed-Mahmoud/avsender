@@ -49,7 +49,7 @@
    }
    .contact .contact__btn:hover{
       background: linear-gradient(45deg, #7e91e5,  #384fb3 ,#515e98 ) !important ;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3) !important ;
+      /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3) !important ; */
       /* transform: translateY(-5px) !important; */
       color: #fff !important;
       border: none !important;

@@ -59,9 +59,12 @@
     border-radius: 96px !important;
     margin-top: 32px !important;
     margin-bottom: 24px !important;
+    transition: 0.5s all;
 
 }
-
+.Create_Account_btn:hover{
+    opacity: 0.9;
+}
 .Login-div {
 
     font-size: 20px;

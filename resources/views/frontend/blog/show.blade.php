@@ -7,7 +7,8 @@
 
 
 
-<section class="blog-details">
+<section class="blog-details" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150" 
+data-aos-easing="linear">
 
 	<div class="container">
 		<div class="row">

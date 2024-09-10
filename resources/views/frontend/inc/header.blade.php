@@ -24,6 +24,10 @@
 
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/bootstrap.min.css">
 
+    <!-- aos liberary --- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+
     <!-- custom css -->
 
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
@@ -61,8 +65,8 @@
 </head>
 
 <body>
-    {{-- <div id="loader-container">
-      <div id="loader"></div>
-   </div> <!-- Loader element --> --}}
+<div id="spinner" class="spinner-overlay">
+        <div class="lds-ripple"><div></div><div></div></div>
+  </div>
 
     @include('frontend.inc.navbar')

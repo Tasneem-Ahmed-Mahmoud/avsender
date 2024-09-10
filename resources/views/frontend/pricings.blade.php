@@ -35,7 +35,7 @@ $plans = collect($plansArray);
   $plan=collect($plan);
 @endphp
 
-<div class="col-xl-4 col-md-6 col-12 mb-3 planning-card"
+<div data-aos="fade-up"  class="col-xl-4 col-md-6 col-12 mb-3 planning-card"
   data-plan-type="{{ $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
   <div class="planing-content {{ $plan['is_popular']? 'center-plan' : 'left-plan' }}">
     <div class="planing-top ">

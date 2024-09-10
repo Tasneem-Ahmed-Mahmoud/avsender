@@ -8,7 +8,8 @@
 
 
 
-    <div class="faq__content_container">
+    <div class="faq__content_container" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150" 
+    data-aos-easing="linear">
         <div class="container">
             <div class="row faq__content_container_row mt-2 mb-4 justify-content-start">
                 @foreach ($features as $feature)
@@ -21,7 +22,7 @@
                                 <h3 class="Features-box_h3"> {{ Str::limit($feature->title, 20) }}</h3>
                                 <p class="Features-box-p">{{ Str::limit($feature->excerpt->value ?? '', 100) }}</p>
                                 <a href="{{ url('feature/' . $feature->slug) }}" class="Read_More"
-                                    style="margin-top:100%;">{{ __('READ MORE') }}
+                                    >{{ __('READ MORE') }}
                                     <img src="{{ asset('frontend/assets') }}/images/ei_arrow-up.svg" class="mx-1"
                                         alt="arrow-up" />
                                 </a>

@@ -97,8 +97,9 @@ class HomeController extends Controller
         $plans = Plan::where('status', 1)->where('is_featured', 1)->latest()->get();
 
         $this->metadata('seo_about');
+         $userCount=User::count();
 
-        return view('frontend.about', compact('about', 'counter', 'descriptions', 'facilities', 'features', 'teams', 'faqs', 'plans'));
+       return view('frontend.about', compact('about', 'counter', 'descriptions', 'facilities', 'features', 'teams', 'faqs', 'plans'  , 'userCount'));
     }
 
     /**

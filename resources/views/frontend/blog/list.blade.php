@@ -7,17 +7,21 @@
         <div class="row">
             <div class="col-12 hero_container hero_container-feature">
                 <div>
-                    <h3 class="hero_h3">{{ __('Blog') }}</h3>
-                    <p class="hero_p">
+                    <h3 class="hero_h3" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+                    data-aos-easing="linear">{{ __('Blog') }}</h3>
+                    <p class="hero_p" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" 
+                    data-aos-easing="linear">
                         {{ __('Subscribe now with our different plans that suits all business sizes and enjoy our amazing features .') }}
                     </p>
-                    <a href="{{ url('/about') }}">
+                    <a data-aos="zoom-in" data-aos-duration="500" data-aos-delay="350" 
+                    data-aos-easing="linear" href="{{ url('/about') }}">
                         <button class="btn btn-button-hero">{{ __('Work With Us') }}</button>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="faq__content_container">
+        <div class="faq__content_container" data-aos="fade-up" data-aos-duration="500" data-aos-delay="450" 
+        data-aos-easing="linear">
             <div class="container">
                 <div id="blog-container" class="row faq__content_container_row mt-2 mb-4 justify-content-start">
                     {{-- start --}}

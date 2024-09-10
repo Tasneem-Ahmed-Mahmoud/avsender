@@ -8,7 +8,8 @@
 
 
 
-<div class="faq_hero_container_section" style="height: 100%;">
+<div class="faq_hero_container_section" style="height: 100%;" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="350" 
+data-aos-easing="linear">
    <div class="container">
       <div class="row ">
          <div class="col-md-6">

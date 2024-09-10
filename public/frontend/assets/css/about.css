@@ -1,5 +1,5 @@
 section{
-  margin-bottom: 70px;
+  margin-bottom: 100px;
 }
 .about{
     margin-top: 72px;
@@ -15,8 +15,8 @@ section{
 
 .about .about-header span{
 color: #29387E;
-font-size: 20px;
-font-weight: 500;
+font-size: 30px;
+font-weight: 600;
 line-height: 28.8px;
 
 
@@ -191,12 +191,18 @@ line-height: 28.8px;
 
   .about-faq .about-faq-right{
 
-background-color: #00000014;
+    background: #00000014;
     border-radius: 1rem;
     padding: 70px 40px;
   }
-
-
+  .about-faq-right i {
+   color: #29387E;
+   font-size: 30px;
+  }
+  .about-faq-right__icon{
+    background: #03030314 !important;
+    margin-bottom: 10px;
+  }
   .about-faq-right__content h4{
   color: #211F54;
   font-weight: 600;
@@ -204,6 +210,7 @@ background-color: #00000014;
   line-height: 22px;
   letter-spacing: -0.02em;
   padding-bottom: 15px;
+  
   }
   .about-faq-right__content p{
     color: #211F54;

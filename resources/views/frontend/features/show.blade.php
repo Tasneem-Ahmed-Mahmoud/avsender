@@ -12,12 +12,15 @@
         'image' => asset($feature->banner->value ?? ''),
     ])
     <!-- ################################## wrapper ############################################### -->
-    <section class="wrapper">
+    <section class="wrapper" data-aos="fade-up" data-aos-duration="600" data-aos-delay="350" 
+    data-aos-easing="linear">
         <div class="container">
             <div class="row">
                 <div class="col-12 wrapper-content">
-                    <h2>{{ $feature->title }}</h2>
-                    <p>
+                    <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+                    data-aos-easing="linear">{{ $feature->title }}</h2>
+                    <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" 
+                    data-aos-easing="linear">
                         {{ $feature->longDescription->value }}
                 </div>
             </div>
@@ -28,13 +31,15 @@
         <!-- ################################## services ############################################### -->
 
 
-        <div class="content_container_cards pt-5 pb-5">
+        <div class="content_container_cards pt-5 pb-5" data-aos="fade-up" data-aos-duration="600" data-aos-delay="350" 
+        data-aos-easing="linear">
             <div class="container">
                 <div class="row mt-2 ">
                     {{-- services --}}
                     @foreach ($feature->featureServices as $service)
                         <div class="col-lg-4 col-6 mt-4">
-                            <div class="Services-box">
+                            <div class="Services-box" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" 
+                            data-aos-easing="linear">
                                 <div>
                                     <img src="{{ asset($service->photo) }}" alt="imag-chat"
                                         class="features-image Services-image-card" />
@@ -46,7 +51,8 @@
                 </div>
             </div>
             {{-- subscribe now --}}
-            <div class="oval-img-div">
+            <div class="oval-img-div" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="450" 
+            data-aos-easing="linear">
                 <div class="container">
                     <div class="row container-Subscribe">
                         <div class="col-md-9 d-flex align-items-center">
@@ -68,8 +74,10 @@
                 </div>
             </div>
             {{-- instructions --}}
-            <div class="container">
-                <div class="How_to_work_section">
+            <div class="container" data-aos="fade-up" data-aos-duration="500" data-aos-delay="550" 
+            data-aos-easing="linear">
+                <div class="How_to_work_section" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150" 
+                data-aos-easing="linear">
                     <h2 class="How_to_work_section_h2">{{ __('How to work on the services') }}</h2>
                     @foreach ($feature->featureInstructions as $instruction)
                         <div>
@@ -82,14 +90,18 @@
                 </div>
             </div>
             <!-- ################################## planing ############################################### -->
-            <section class="planing mt-5 mb-5">
+            <section class="planing mt-5 mb-5" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150" 
+            data-aos-easing="linear">
                 <div class="container">
                     <div class="row">
                         <div class="planing-header text-center">
                             <div class="planing-title">
-                                <h2>{{ __('Pricing Plans Title') }}</h2>
-                                <p>{{ __('Pricing Plans Description') }}</p>
-                                <span>{{ __('(No extra fees, cancel anytime).') }}</span>
+                                <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+                                data-aos-easing="linear">{{ __('Pricing Plans Title') }}</h2>
+                                <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" 
+                                data-aos-easing="linear">{{ __('Pricing Plans Description') }}</p>
+                                <span data-aos="zoom-in" data-aos-duration="500" data-aos-delay="350" 
+                                data-aos-easing="linear">{{ __('(No extra fees, cancel anytime).') }}</span>
                             </div>
 
                             <ul class="nav m-auto">
@@ -107,7 +119,8 @@
                 </div>
             </section>
             {{-- features --}}
-            <div class="container service-container">
+            <div class="container service-container" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150" 
+            data-aos-easing="linear">
                 <h2 class="How_to_work_section_h2-caro ">{{ __('Browse other services of AVSENDER') }}</h2>
 
                 <div class="faq__content_container" id="box-home">

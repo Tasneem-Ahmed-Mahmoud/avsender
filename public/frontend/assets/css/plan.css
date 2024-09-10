@@ -72,7 +72,9 @@
         } */
 
         
-        
+        .plan .subscribe-btn:hover {
+            background: linear-gradient(45deg, #fff, #adb6e1); 
+        }
         .step-cont{
             /* width: 748px; */
             display: flex;

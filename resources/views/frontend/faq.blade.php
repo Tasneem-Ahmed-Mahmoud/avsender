@@ -5,7 +5,8 @@
 
 @section('content')
     @include('frontend.inc.head-2', ['title' => __('FAQ') ,'description' => __('We are here to help you')])
-    <div class="faq_hero_container_section">
+    <div class="faq_hero_container_section" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150" 
+    data-aos-easing="linear">
         <div class="container">
             <div class="faq__content_container">
                 <div class="container">

@@ -105,11 +105,12 @@ body {
     border-radius: 96px;
     font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
 }
 
 .login-button:hover {
-    background-color: #29387E;
+    /* background-color: #29387E; */
+    opacity: 0.9;
 }
 
 .signup-link {

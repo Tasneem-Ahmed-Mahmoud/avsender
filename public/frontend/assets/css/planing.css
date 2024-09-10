@@ -169,7 +169,6 @@
 
 .planing .btn-subscribe {
     border-radius: 96px;
-
     transition: all 1s ease-in-out;
 }
 
@@ -280,10 +279,14 @@ border-radius: 50px ;
 
 
 }
+/* @media(min-width:767px) and (max-width:1200px){
+    .planing .planing-content {
+        min-height: 818px !important;
+    }
+} */
 @media (max-width: 1400px)and (min-width: 299px) {
 
 .planing .planing-content {
-
     padding: 12px 23px;
 }
 .popular-plan{
@@ -310,7 +313,7 @@ border-radius: 50px ;
         margin-bottom: 40px;
     }
     .planing .planing-content.center-plan {
-        transform: none !important;
+        transform: scaleY(1) !important;
     }
 
 

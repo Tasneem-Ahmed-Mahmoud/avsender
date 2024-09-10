@@ -1,6 +1,9 @@
-<div class="faq-text-home">
-   <h3 class="FAQ-h3-home">{{ __('FAQ') }}</h3>
-   <p class="FAQ-p-home">{{ __('We are here to help you') }}</p>
+<div class="faq-text-home" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" 
+data-aos-easing="linear">
+   <h3 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" 
+   data-aos-easing="linear" class="FAQ-h3-home">{{ __('FAQ') }}</h3>
+   <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+   data-aos-easing="linear" class="FAQ-p-home">{{ __('We are here to help you') }}</p>
    <div class="faq__content_container">
        <div class="container">
            <div class="row faq__content_container_row mt-2 mb-4 d-flex justify-content-center">

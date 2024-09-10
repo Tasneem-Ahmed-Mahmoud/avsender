@@ -103,13 +103,16 @@
 
 
 
-    <section class="about">
+    <section class="about" data-aos="fade-up" data-aos-duration="500" data-aos-delay="450" 
+    data-aos-easing="linear">
 
         <div class="container">
             <div class="row">
                 <header class="about-header d-flex flex-column  justify-content-center align-items-center  ">
-                    <span>{{ __('About Company') }}</span>
-                    <h2 class="w-75">{{ $about->section_title ?? '' }}</h2>
+                    <span data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+                    data-aos-easing="linear" class="about-txt">{{ __('About Company') }}</span>
+                    <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" 
+                    data-aos-easing="linear" class="w-75">{{ $about->section_title ?? '' }}</h2>
                 </header>
                 <div class="about-content row justify-content-center ">
                     {{-- left --}}
@@ -156,7 +159,7 @@
 
                             <div class="about-inner__btn d-flex align-items-center justify-content-between ">
                                 @if (!empty($about->button_title))
-                                    <a class="btn btn-work-with-us text-center"
+                                    <a class="btn blue-btn text-center"
                                         href="{{ $about->button_link }}"><span>{{ $about->button_title }}</span></a>
                                 @endif
 
@@ -177,7 +180,8 @@
     <!-- ################################## featrures############################################### -->
 
 
-    <section>
+    <section data-aos="fade-up" data-aos-duration="500" data-aos-delay="450" 
+    data-aos-easing="linear">
         <div class="container">
             <div class="row">
                 <header>
@@ -189,7 +193,7 @@
     </section>
 
     <!-- ################################## statistic ############################################### -->
-    <section class="about-statistic">
+    <!-- <section class="about-statistic">
         <div class="container">
             <div class="row justify-content-between bg-white">
 
@@ -197,6 +201,7 @@
                 <div class="col-md-3 col-6">
                     <div class="about-statistic__conten d-flex ">
                         <figure class="about-statistic__icon ">
+                        <i class="fa-solid fa-medal"></i>
                             <img src="{{ asset('assets/frontend/img/counter/counter-7.png') }}" alt="">
                         </figure>
                         <div class="about-statistic-right d-flex flex-column">
@@ -212,6 +217,7 @@
                 <div class="col-md-3 col-6">
                     <div class="about-statistic__conten d-flex ">
                         <figure class="about-statistic__icon ">
+                        <i class="fa-solid fa-check"></i>
                             <img src="{{ asset('assets/frontend/img/counter/counter-6.png') }}" alt="">
                         </figure>
                         <div class="about-statistic-right d-flex flex-column">
@@ -227,6 +233,7 @@
                 <div class="col-md-3 col-6">
                     <div class="about-statistic__conten d-flex ">
                         <figure class="about-statistic__icon ">
+                        <i class="fa-solid fa-star"></i>
                             <img src="{{ asset('assets/frontend/img/counter/counter-5.png') }}" alt="">
                         </figure>
                         <div class="about-statistic-right d-flex flex-column">
@@ -257,18 +264,22 @@
 
             </div>
         </div>
-    </section>
-
+    </section> -->
+    @include('frontend.sections.statistic')
 
     <!-- ################################## planing ############################################### -->
-    <section class="planing  mb-5">
+    <section class="planing  " data-aos="fade-up" data-aos-duration="500" data-aos-delay="450" 
+    data-aos-easing="linear">
         <div class="container">
             <div class="row">
                 <div class="planing-header text-center">
                     <div class="planing-title">
-                        <h2>{{ __('Pricing Plans Title') }}</h2>
-                        <p>{{ __('Pricing Plans Description') }}</p>
-                        <span>{{ __('(No extra fees, cancel anytime).') }}</span>
+                        <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
+                        data-aos-easing="linear">{{ __('Pricing Plans Title') }}</h2>
+                        <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" 
+                        data-aos-easing="linear">{{ __('Pricing Plans Description') }}</p>
+                        <span data-aos="zoom-in" data-aos-duration="500" data-aos-delay="350" 
+                        data-aos-easing="linear">{{ __('(No extra fees, cancel anytime).') }}</span>
                     </div>
 
                     <ul class="nav m-auto">
@@ -287,7 +298,8 @@
 
 
 
-    <section class="about-faq">
+    <section class="about-faq" data-aos="fade-up" data-aos-duration="500" data-aos-delay="450" 
+    data-aos-easing="linear">
 
         <div class="container">
             <div class="row justify-content-between ">
@@ -323,25 +335,26 @@
                     @endforeach
 
                     <div class="about__reade-more">
-                        <a href="{{ url('/faq') }}" class="btn btn-work-with-us">{{ __('Read More') }}</a>
+                        <a href="{{ url('/faq') }}" class="btn blue-btn mb-5">{{ __('READ MORE') }}</a>
                     </div>
                 </div>
 
 
                 <div class="col-md-6 col-lg-5 ">
                     <div class="about-faq-right d-flex align-items-center justify-content-center flex-column gap-2">
-                        <div class="about-faq-right__icon">
-                            <svg width="30" height="29" viewBox="0 0 30 29" fill="none"
+                        <div class="about-faq-right__icon  shadow">
+                        <i class="fa-solid fa-comment"></i>
+                            <!-- <svg width="30" height="29" viewBox="0 0 30 29" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.9542 23.9764L0 29V0H30V23.9764H5.9542Z" fill="#017EFA" />
-                            </svg>
+                            </svg> -->
                         </div>
 
                         <div class="about-faq-right__content text-center">
-                            <h4 class="tp-faq__faq-sm-title text-center">{{ __('Do you have more questions?') }}</h4>
+                            <h4  class="tp-faq__faq-sm-title text-center">{{ __('Do you have more questions?') }}</h4>
                             <p class="text-center">{{ __('faq_description') }}</p>
                             <a href="{{ url('/contact') }}"
-                                class="btn btn-work-with-us">{{ __('Shoot a Direct Mail') }}</a>
+                                class="btn blue-btn">{{ __('Shoot a Direct Mail') }}</a>
                         </div>
                     </div>
 

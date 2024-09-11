@@ -15,7 +15,6 @@
                      <a href="{{ get_option('header_footer',true,true)->footer->right_image_link ?? '' }}"><img src="{{ asset(get_option('header_footer',true,true)->footer_left_button_image ?? '' ) }}" alt=""></a>
                   </div>
                   @endisset
-                  
                </div>
             </div>
          </div>

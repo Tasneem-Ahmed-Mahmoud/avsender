@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Feature\FeatureServiceController;
 use App\Http\Controllers\Admin\Feature\FeatureInstructionController;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'admin']], function () {
+    Route::resource('page', ADMIN\Page\PageController::class);
     Route::resource('plan', ADMIN\PlanController::class);
     Route::resource('role', ADMIN\RoleController::class);
     Route::resource('admin', ADMIN\AdminController::class);
@@ -13,10 +14,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'a
     Route::resource('customer', ADMIN\CustomerController::class);
     Route::resource('gateways', ADMIN\GatewayController::class);
     Route::resource('cron-job', ADMIN\CronjobController::class);
-    Route::resource('page', ADMIN\PageController::class);
-    Route::resource('blog', ADMIN\BlogController::class);
-    Route::resource('category', ADMIN\CategoryController::class);
-    Route::resource('tag', ADMIN\TagController::class);
+    // Route::resource('page', ADMIN\PageController::class);
+    Route::resource('blog', ADMIN\Blog\BlogController::class);
+    Route::resource('category', ADMIN\Category\CategoryController::class);
+    Route::resource('tag', ADMIN\Tag\TagController::class);
     Route::resource('language', ADMIN\LanguageController::class);
     Route::resource('menu', ADMIN\MenuController::class);
     Route::resource('page-settings', ADMIN\SettingsController::class);
@@ -28,7 +29,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'a
     Route::resource('contacts', ADMIN\ContactsController::class);
     Route::resource('template', ADMIN\TemplateController::class);
     Route::resource('schedules', ADMIN\ScheduleController::class);
-    Route::resource('features', ADMIN\FeaturesController::class);
+    Route::resource('features', ADMIN\Feature\FeatureController::class);
     Route::resource('testimonials', ADMIN\TestimonialsController::class);
     Route::resource('faq', ADMIN\FaqController::class);
     Route::resource('team', ADMIN\TeamController::class);

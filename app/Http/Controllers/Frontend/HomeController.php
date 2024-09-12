@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
         $locale = current_locale();
 
-        $brands = Category::where('type', 'brand')->where('status', 1)->latest()->get();
+        // $brands = Category::where('type', 'brand')->where('status', 1)->latest()->get();
 
         $testimonials = Post::where('type', 'testimonial')->with('preview', 'excerpt')->latest()->get();
 

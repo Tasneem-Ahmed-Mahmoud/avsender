@@ -20,7 +20,7 @@
 						<div class="row">
 							<div class="col">
 								<span class="h2 font-weight-bold mb-0 total-transfers" id="total-device">
-									{{ $totalPosts }}
+									{{ $count->total_page }}
 								</span>
 							</div>
 							<div class="col-auto">
@@ -41,7 +41,7 @@
 						<div class="row">
 							<div class="col">
 								<span class="h2 font-weight-bold mb-0 total-transfers" id="total-active">
-									{{ $totalActivePosts }}
+									{{ $count->active_page }}
 								</span>
 							</div>
 							<div class="col-auto">
@@ -62,7 +62,7 @@
 						<div class="row">
 							<div class="col">
 								<span class="h2 font-weight-bold mb-0 completed-transfers" id="total-inactive">
-									{{ $totalInActivePosts }}
+									{{ $count->total_page -$count->active_page }}
 								</span>
 							</div>
 							<div class="col-auto">
@@ -94,7 +94,7 @@
 				<table class="table align-items-center table-flush">
 					<thead class="thead-light">
 						<tr>
-							<th class="col-2">{{ __('Title') }}</th>
+							<th class="col-2">{{ __('Name') }}</th>
 							<th class="col-4">{{ __('Url') }}</th>
 							<th class="col-1">{{ __('Status') }}</th>
 							<th class="col-2">{{ __('Created At') }}</th>
@@ -103,9 +103,10 @@
 					</thead>
 						@foreach($pages ?? [] as $page)
 						<tr>
-							<td class="text-left">
-								{{ Str::limit($page->title,50) }}
+							<td class="text-left text-capitalize text-info">
+								{{ $page->type }}
 							</td>
+							
 							<td class="text-left">
 								<a href="{{ url('page/'.$page->slug) }}" target="_blank">{{ Str::limit(url('page/'.$page->slug),100) }}</a>
 							</td>
@@ -124,10 +125,10 @@
 										{{ __('Action') }}
 									</button>
 									<div class="dropdown-menu">
-										<a class="dropdown-item has-icon" href="{{ route('admin.page.edit',$page->id) }}"><i class="fi fi-rs-edit"></i>{{ __('Edit') }}</a>
+										<a class="dropdown-item has-icon" href="{{ route('admin.page.edit',$page->slug) }}"><i class="fi fi-rs-edit"></i>{{ __('Edit') }}</a>
 
 
-										<a class="dropdown-item has-icon delete-confirm" href="javascript:void(0)" data-action="{{ route('admin.page.destroy',$page->id) }}"><i class="fas fa-trash"></i>{{ __('Remove Page') }}</a>
+										<a class="dropdown-item has-icon delete-confirm" href="javascript:void(0)" data-action="{{ route('admin.page.destroy',$page->slug) }}"><i class="fas fa-trash"></i>{{ __('Remove Page') }}</a>
 									</div>
 								</div>
 							</td>

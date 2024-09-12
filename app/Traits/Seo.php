@@ -63,4 +63,22 @@ trait Seo
         SEOTools::twitter()->setTitle($data['title'] ?? env('APP_NAME'));
         SEOTools::jsonLd()->addImage($data['preview'] ?? null);
     }
+
+    public function pageMeta($meta)
+    {
+        JsonLdMulti::setTitle($meta->title?? env('APP_NAME'));
+        JsonLdMulti::setDescription($meta->description ?? null);
+        JsonLdMulti::addImage($meta->image ?? null);
+
+        SEOMeta::setTitle($meta->title ?? env('APP_NAME'));
+        SEOMeta::setDescription($meta->description ?? null);
+        SEOTools::setTitle($meta->title ?? env('APP_NAME'));
+        SEOTools::setDescription($meta->description ?? null);
+        SEOMeta::addKeyword($meta->keywords ?? null);
+
+        SEOTools::opengraph()->addProperty('keywords', $meta->keywords ?? null);
+        SEOTools::opengraph()->addProperty('image', $meta->image ?? null);
+        SEOTools::twitter()->setTitle($meta->title ?? env('APP_NAME'));
+        SEOTools::jsonLd()->addImage($meta->image ?? null);
+}
 }

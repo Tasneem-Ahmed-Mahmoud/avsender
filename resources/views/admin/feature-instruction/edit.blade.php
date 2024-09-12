@@ -31,15 +31,28 @@
                    <input type="text" name="featureSlug" value="{{ $featureSlug }}" hidden>
 
                     <!-- instruction Field -->
-                    <div class="form-group row mt-2">
-                        <label class="col-lg-12">Instruction</label>
+                   <div class="row mt-2">
+                    <div class="form-group row col-6">
+                        <label class="col-lg-12">Instruction (EN)</label>
                         <div class="col-lg-12">
-                            <textarea name="instruction" required class="form-control h-100" maxlength="500">{{ old('instruction', $featureInstruction->instruction) }}</textarea>
-                            @error('instruction')
+                            <textarea name="instruction[en]" required class="form-control h-100" maxlength="500">{{ old('instruction.en')?? $featureInstruction->getTranslation( 'instruction','en') }}</textarea>
+                            @error('instruction.en')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
+
+                    <div class="form-group row col-6">
+                        <label class="col-lg-12">Instruction (AR)</label>
+                        <div class="col-lg-12">
+                            <textarea name="instruction[ar]" required class="form-control h-100" maxlength="500">{{ old('instruction.ar')?? $featureInstruction->getTranslation( 'instruction','ar') }}</textarea>
+                            @error('instruction.ar')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+
+                   </div>
                     
                     <!-- Preview Image Field -->
                     <div class="form-group row mt-2">
@@ -55,20 +68,7 @@
                         </div>
                     </div>
                     
-                    <!-- Language Selection Field -->
-                    <div class="form-group row mt-2">
-                        <label class="col-lg-12">{{ __('Select Language') }}</label>
-                        <div class="col-lg-12">
-                            <select name="lang" class="form-control">
-                                @foreach ($languages ?? [] as $languagesKey => $language)
-                                    <option value="{{ $languagesKey }}" {{ $languagesKey == $featureInstruction->lang ? 'selected' : '' }}> {{ $language }} </option>
-                                @endforeach
-                            </select>
-                            @error('lang')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
+                   
 
                     <!-- Submit Button -->
                     <div class="form-group row mt-2 d-flex justify-content-end mx-2">

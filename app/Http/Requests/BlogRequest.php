@@ -25,8 +25,8 @@ class BlogRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:150'],
-            'preview' => ['image', 'max:3000'],
-            'meta_image' => ['image', 'max:1024'],
+            'preview' => ['image'],
+            'meta_image' => ['image'],
             'short_description' => ['required', 'max:1000'],
             'main_description' => ['required', 'max:10000000'],
             'meta_title' => ['required', 'max:200'],

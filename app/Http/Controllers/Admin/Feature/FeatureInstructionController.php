@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin\Feature;
 
-use App\Models\Post;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Feature\FeatureInstructionRequest;
+use App\Models\Feature;
+use App\Models\FeatureInstruction;
 use App\Traits\Slug;
 use App\Traits\Uploader;
 use Illuminate\Http\Request;
-use App\Models\FeatureInstruction;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Feature\FeatureInstructionRequest;
 
 class FeatureInstructionController extends Controller
 {
@@ -21,9 +21,9 @@ class FeatureInstructionController extends Controller
 
         $featureSlug = request()->featureSlug;
 
-        $feature = Post::where('slug', $featureSlug)->first()->id;
-        $featureInstructions = FeatureInstruction::where('post_id', $feature)->paginate();
-
+        $feature = Feature::where('slug', $featureSlug)->first()->id;
+        $featureInstructions = FeatureInstruction::where('feature_id', $feature)->paginate();
+        // dd($featureInstructions);
         return view('admin.feature-instruction.index', compact('featureInstructions', 'featureSlug'));
     }
 
@@ -43,13 +43,12 @@ class FeatureInstructionController extends Controller
     {
 
         $preview = $this->saveFile($request, 'photo');
-        $feature = Post::where('slug', $request->featureSlug)->first()->id;
+        $feature = Feature::where('slug', $request->featureSlug)->first()->id;
         FeatureInstruction::create([
             "instruction" => $request->instruction,
-            "post_id" => $feature,
+            "feature_id" => $feature,
             "photo" => $preview,
-            "lang" => $request->lang ?? 'en',
-            "slug" => $this->slugValue($request->instruction),
+            "slug" => $this->slugValue($request->instruction['en']),
         ]);
 
         return redirect()->route('admin.feature-instruction.index', ['featureSlug' => $request->featureSlug])->with('message', 'Feature instruction created successfully');
@@ -58,24 +57,22 @@ class FeatureInstructionController extends Controller
 
     public function edit(FeatureInstruction $featureInstruction)
     {
-$featureSlug=$featureInstruction->post->slug;
-       
-        return view('admin.feature-instruction.edit', compact('featureInstruction','featureSlug'));
+        $featureSlug = $featureInstruction->feature->slug;
+        return view('admin.feature-instruction.edit', compact('featureInstruction', 'featureSlug'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(FeatureInstructionRequest $request,FeatureInstruction $featureInstruction)
+    public function update(FeatureInstructionRequest $request, FeatureInstruction $featureInstruction)
     {
         $preview = $request->hasFile("photo") ? $this->saveFile($request, 'photo') : $featureInstruction->photo;
         $featureInstruction->update([
             "instruction" => $request->instruction,
             "photo" => $preview,
-            "lang" => $request->lang ?? $featureInstruction->lang,
-            "slug" => $this->slugValue($request->instruction),
+            "slug" => $this->slugValue($request->instruction['en']),
         ]);
-  
+
         return redirect()->route('admin.feature-instruction.edit', ['featureSlug' => $request->featureSlug, 'featureInstruction' => $featureInstruction->slug])->with('message', 'Feature instruction updated successfully');
     }
 

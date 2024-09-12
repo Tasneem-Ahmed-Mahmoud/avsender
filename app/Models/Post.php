@@ -84,14 +84,5 @@ class Post extends Model
         return $this->hasOne(Postmeta::class)->where('key', 'seo');
     }
 
-    public function featureServices()
-    {
-        return $this->hasMany(FeatureService::class);
-    }
     
-    public function featureInstructions()
-    {
-        return $this->hasMany(FeatureInstruction::class);
-
-    }
 }

@@ -21,14 +21,15 @@
                 </div>
                 <div class="step-cont">
 
+                   <a href="{{ url('/pricing') }}">
                     <div class="step-item  active">
                         <img src="{{ asset('frontend/assets/images/payment') }}/step.svg" alt="">
                         <h5 class="step-cont-h5">{{ __('Package Selection') }}</h5>
-                    </div>
+                    </div></a>
                     <div>
                         <img src="{{ asset('frontend/assets/images/payment') }}/line1-stepper.svg" alt="">
                     </div>
-                    <a href="./plan.html">
+                    <a href="{{ url('choose-plan/'.$plan->id) }}">
                         <div class="step-item active">
 
                             <img src="{{ asset('frontend/assets/images/payment') }}/Step-Numbertwo-bold.svg" alt="">
@@ -40,7 +41,7 @@
                     <div>
                         <img src="{{ asset('frontend/assets/images/payment') }}/linear-two.svg" alt="">
                     </div>
-                    <a href="./createAccount.html">
+                    <a href="{{ url('/register/'.$plan->id) }}">
                         <div class="step-item active">
 
                             <img src="{{ asset('frontend/assets/images/payment') }}/payment-num-right.svg" alt="">

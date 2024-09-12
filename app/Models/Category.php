@@ -2,39 +2,43 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
-    use HasFactory;
+    use HasFactory,HasTranslations;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    public $translatable = ['title'];
     protected $fillable = [
         'title',
         'slug',
         'status',
-        'type',
         'is_featured',
-        'lang',
     ];
+ function getRouteKeyName(){
+    return 'slug';
+}
 
-    public function postcategory()
-    {
-        return $this->belongsTo(Postcategory::class);
+    // public function postcategory()
+    // {
+    //     return $this->belongsTo(Postcategory::class);
+    // }
+
+    // public function postcategories()
+    // {
+    //     return $this->hasMany(Postcategory::class);
+    // }
+
+    // public function posts()
+    // {
+    //     return $this->belongsToMany('App\Models\Post', 'postcategories', 'post_id', 'category_id');
+    // }
+
+    function blogs(){
+        return $this->morphedByMany(Blog::class,'categorizable');
     }
 
-    public function postcategories()
-    {
-        return $this->hasMany(Postcategory::class);
-    }
 
-    public function posts()
-    {
-        return $this->belongsToMany('App\Models\Post', 'postcategories', 'post_id', 'category_id');
-    }
 }

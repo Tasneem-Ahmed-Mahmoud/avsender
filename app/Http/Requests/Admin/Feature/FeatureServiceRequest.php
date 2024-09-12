@@ -23,9 +23,8 @@ class FeatureServiceRequest extends FormRequest
     {
 
         $rule=[
-            "description" => "required|max:255",
-            "photo"=>"required|image|mimes:jpeg,png,jpg,gif,svg|max:20480",
-            "lang"=>"nullable|in:en,ar",
+            "description.en" => "required|max:255",
+            "description.ar" => "required|max:255",
         ];
 
         if(request()->isMethod('PUT') || request()->isMethod('PATCH')){

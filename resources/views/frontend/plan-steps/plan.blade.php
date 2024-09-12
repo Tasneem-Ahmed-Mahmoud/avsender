@@ -15,10 +15,12 @@
                     </a>
                 </div>
                 <div class="step-cont">
+                   <a href="{{ url('/pricing')}}">
                     <div class="step-item  active">
                         <img src="{{ asset('frontend/assets/images/payment') }}/step.svg" alt="">
                         <h5 class="step-cont-h5">{{ __('Package Selection') }}</h5>
                     </div>
+                   </a>
                     <div>
                         <img src="{{ asset('frontend/assets/images/payment') }}/line1-stepper.svg" alt="">
                     </div>
@@ -50,10 +52,11 @@
                 </div>
             </div>
             <div class="step-cont-sm">
+              <a href="{{ url('/pricing') }}">
                 <div class="step-item  active">
                     <img src="{{ asset('frontend/assets/images/payment') }}/step-sm.svg" alt="">
                     <h5 class="step-cont-h5">{{ __('Package Selection') }}</h5>
-                </div>
+                </div></a>
                 <div>
                     <img src="{{ asset('frontend/assets/images/payment') }}/line1-stepper-sm.svg" alt="">
                 </div>

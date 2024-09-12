@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin\Feature;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Feature\FeatureServiceRequest;
-use App\Models\FeatureService;
-use App\Models\Post;
 use App\Traits\Slug;
+use App\Models\Feature;
 use App\Traits\Uploader;
 use Illuminate\Http\Request;
+use App\Models\FeatureService;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Feature\FeatureServiceRequest;
 
 class FeatureServiceController extends Controller
 {
@@ -21,35 +21,30 @@ class FeatureServiceController extends Controller
 
         $featureSlug = request()->featureSlug;
 
-        $feature = Post::where('slug', $featureSlug)->first()->id;
-        $featureServices = FeatureService::where('post_id', $feature)->paginate();
+        $feature = Feature::where('slug', $featureSlug)->first()->id;
+        $featureServices = FeatureService::where('feature_id', $feature)->paginate();
 
         return view('admin.feature-service.index', compact('featureServices', 'featureSlug'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+  
     public function create()
     {
         $featureSlug = request()->featureSlug;
         return view('admin.feature-service.create', compact('featureSlug'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(FeatureServiceRequest $request)
     {
 
         $preview = $this->saveFile($request, 'photo');
-        $feature = Post::where('slug', $request->featureSlug)->first()->id;
+        $feature = Feature::where('slug', $request->featureSlug)->first()->id;
         FeatureService::create([
             "description" => $request->description,
-            "post_id" => $feature,
+            "feature_id" => $feature,
             "photo" => $preview,
-            "lang" => $request->lang ?? 'en',
-            "slug" => $this->slugValue($request->description),
+            "slug" => $this->slugValue($request->description['en']),
         ]);
 
         return redirect()->route('admin.feature-service.index', ['featureSlug' => $request->featureSlug])->with('message', 'Feature service created successfully');
@@ -58,7 +53,7 @@ class FeatureServiceController extends Controller
 
     public function edit(FeatureService $featureService)
     {
-$featureSlug=$featureService->post->slug;
+     $featureSlug=$featureService->feature->slug;
        
         return view('admin.feature-service.edit', compact('featureService','featureSlug'));
     }
@@ -72,8 +67,7 @@ $featureSlug=$featureService->post->slug;
         $featureService->update([
             "description" => $request->description,
             "photo" => $preview,
-            "lang" => $request->lang ?? $featureService->lang,
-            "slug" => $this->slugValue($request->description),
+            "slug" => $this->slugValue($request->description['en']),
         ]);
   
         return redirect()->route('admin.feature-service.edit', ['featureSlug' => $request->featureSlug, 'featureService' => $featureService->slug])->with('message', 'Feature service updated successfully');

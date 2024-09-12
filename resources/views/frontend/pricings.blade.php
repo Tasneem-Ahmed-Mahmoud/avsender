@@ -57,7 +57,7 @@ $plans = collect($plansArray);
       </div>
     </div>
     <div class="planing-middle">
-      <p>{{ $plan['description'][app()->getLocale()] }}</p>
+      <!-- <p>{{ $plan['description'][app()->getLocale()] }}</p> -->
       <h6><span>{{ amount_format($plan['price'], 'icon') .'/'}}</span> {{ $plan['days'] == 30 ? __('Monthly') :
         __('yearly') }}</h6>
     </div>

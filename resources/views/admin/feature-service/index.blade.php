@@ -28,7 +28,6 @@
                         <tr>
                             <th class="col-3">{{ __('Title') }}</th>
                             <th class="col-6">{{ __('Description') }}</th>
-                            <th class="col-1 text-right">{{ __('Language') }}</th>
                             <th class="col-1 text-right">{{ __('Action') }}</th>
                         </tr>
                     </thead>
@@ -41,9 +40,7 @@
                             <td class="text-left">
                                 {{ $service->description }}
                             </td>
-                            <td class="text-right">
-                                {{ $service->lang }}
-                            </td>
+                           
                             <td class="text-right">
                                 <div class="btn-group mb-2 float-right">
                                     <button class="btn btn-neutral btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

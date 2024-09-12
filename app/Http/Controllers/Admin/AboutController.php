@@ -17,11 +17,7 @@ class AboutController extends Controller
         $this->middleware('permission:about');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index(Request $request)
     {
         $locale = $request->input('language');

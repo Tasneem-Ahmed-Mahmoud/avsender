@@ -20,7 +20,7 @@
     </div>
 
     <figure class="hero-image-header-down d-flex justify-content-center align-items-center">
-        <img src="{{ $image }}" alt="${ $title }">
+        <img src="{{ $image }}" alt="{{ $title }}">
     </figure>
 </header>
 

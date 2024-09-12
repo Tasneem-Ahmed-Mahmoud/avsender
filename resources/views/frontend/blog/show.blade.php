@@ -17,21 +17,21 @@ data-aos-easing="linear">
 					<i class="fa-solid fa-home"></i>
 					<a href="{{ url('/') }}" class="blog-details-top-home">{{ __('Home') }}</a>
 					<i class="fa-solid {{ app()->getLocale() == 'en' ? 'fa-angle-right' : 'fa-angle-left' }}"></i>
-					<a href="{{ url('/blogs') }}" class="blog-details-top-blog">{{ __('Blog') }}</a>
+					<a href="{{ route('frontend.blogs.index') }}" class="blog-details-top-blog">{{ __('Blog') }}</a>
 				</div>
 
 				<div class="col-12 blog-details-top-btn">
-					<a href="{{ url('/blogs') }}">{{ __('Blog') }}</a>
+					<a href="{{ route('frontend.blogs.index') }}">{{ __('Blog') }}</a>
 				</div>
 
 				<h1>{{ $blog->title }}</h1>
 			</header>
 			<div class="blog-details-body">
 				<div class="col-md-12 ">
-					<img src="{{ asset($blog->preview->value ?? '') }}" alt="blog-detailes" />
+					<img src="{{ asset($blog->photo ?? '') }}" alt="blog-detailes" />
 				</div>
-				<p class="blog-deatils-description">{{ $blog->shortDescription->value ?? '' }}</p>
-				<div class="blog-details-content">{!! filterXss($blog->longDescription->value ?? '') !!}</div>
+				<p class="blog-deatils-description">{{$blog->description ?? '' }}</p>
+				<div class="blog-details-content">{!! filterXss($blog->content ?? '') !!}</div>
 
 				<button clss="blog-details-top-btn"></button>
 

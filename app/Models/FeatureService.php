@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class FeatureService extends Model
 {
-    use HasFactory;
-   
-    protected $fillable = ['description', 'photo', 'post_id','slug','lang'];
+    use HasFactory,HasTranslations;
+    public $translatable = ['description'];
+    protected $fillable = ['description', 'photo', 'feature_id','slug','lang'];
 
 
     public function getRouteKeyName()
@@ -17,7 +18,7 @@ class FeatureService extends Model
         return 'slug';
     }
 
-    function post(){
-        return $this->belongsTo(Post::class);
+    function feature(){
+        return $this->belongsTo(Feature::class);
     }
 }

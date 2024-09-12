@@ -24,10 +24,11 @@
       width: 200px;
 
    }
+
    .animate-image {
-    display: inline-block;
-    animation: alternateMove 4s ease-in-out infinite;
-}
+      display: inline-block;
+      animation: alternateMove 4s ease-in-out infinite;
+   }
 
 .animate-img {
     display: inline-block;
@@ -44,38 +45,53 @@
     }
 }
 
-/* Different delays to make the images move alternately */
+      25% {
+         transform: translateX(10px);
+      }
+
+      50% {
+         transform: translateX(30);
+      }
+
+      100% {
+         transform: translateX(50px);
+         /* Move to the right */
+      }
+   }
+
+   /* Different delays to make the images move alternately */
 
    @media (max-width: 992px) {
       .payment-method {
-      /* margin-top: 50px; */
-      margin-bottom: 20px;
-   }
+         /* margin-top: 50px; */
+         margin-bottom: 20px;
+      }
 
-   .payment-method__accept-for {
-      color: #29387E;
-
-
-font-size: 20px;
-
-line-height: 32px;
+      .payment-method__accept-for {
+         color: #29387E;
 
 
-   }
-   .payment-method figure img {
-      height: 150px;
-      width: 150px;
+         font-size: 20px;
 
-   }
+         line-height: 32px;
+
+
+      }
+
+      .payment-method figure img {
+         height: 150px;
+         width: 150px;
+
+      }
 
    }
 
    @media (max-width: 767px) {
       .payment-method figure img {
-      height: 100px;
-      width: 100px;
+         height: 100px;
+         width: 100px;
 
-   }
+      }
    }
 </style>
 @endsection
@@ -92,8 +108,8 @@ data-aos-easing="linear">
                {{ $page->title }}
             </h3>
          </header>
-         <div class="terms-and-conditions__body " >
-            {!! filterXss($page->description->value ?? '') !!}
+         <div class="terms-and-conditions__body">
+            {!! filterXss($page->content?? '') !!}
          </div>
 
       </div>
@@ -102,11 +118,11 @@ data-aos-easing="linear">
 <section class="payment-method" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150" 
 data-aos-easing="linear">
    <div class="container">
-   <div class="heading text-center w-50 m-auto">
-            <h2 class="payment-method__accept-for"> {{ __('Accept For') }}</h2>
-         </div>
+      <div class="heading text-center w-50 m-auto">
+         <h2 class="payment-method__accept-for"> {{ __('Accept For') }}</h2>
+      </div>
       <div class="row justify-content-center align-items-center">
-       
+
          <div class="col-md-3 col-4">
             <figure class="animate-img">
                <img src="{{ asset('frontend/assets/images/payment-method/Mada Logo .svg') }}" alt="Mada Logo ">

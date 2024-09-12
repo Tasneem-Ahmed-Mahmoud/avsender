@@ -3,58 +3,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/about.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/services.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <style>
-        .about-statistic__conten {
-            gap: 35px;
-        }
-
-        .about-statistic__conten h4 {
-            font-weight: 600;
-            font-size: 40px;
-            color: #29387E;
-        }
-
-        .about-statistic__conten p {
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 26px;
-            color: #525252;
-        }
-
-        .about-statistic .row {
-            margin-top: 70px !important;
-            margin-bottom: 41px;
-            padding: 8px 12px 8px 12px;
-            border-radius: 16px;
-
-        }
-
-        @media (min-width: 792px) and (max-width: 1119px) {
-            .about-statistic__conten {
-                gap: 10px;
-            }
-
-
-            .about-statistic__conten h4 {
-                font-weight: 500;
-                font-size: 30px;
-
-            }
-
-
-
-
-
-        }
-
-        /* @media (max-width: 1400px) {
-           .about-statistic .row {
-                margin-top: 70px !important;
-
-
-            }
-        } */
-    </style>
+   
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -199,7 +148,7 @@
 
                 {{-- first --}}
                 <div class="col-md-3 col-6">
-                    <div class="about-statistic__conten d-flex ">
+                    <div class="about-statistic__content d-flex ">
                         <figure class="about-statistic__icon ">
                         <i class="fa-solid fa-medal"></i>
                             <img src="{{ asset('assets/frontend/img/counter/counter-7.png') }}" alt="">
@@ -215,7 +164,7 @@
                 {{-- second --}}
 
                 <div class="col-md-3 col-6">
-                    <div class="about-statistic__conten d-flex ">
+                    <div class="about-statistic__content d-flex ">
                         <figure class="about-statistic__icon ">
                         <i class="fa-solid fa-check"></i>
                             <img src="{{ asset('assets/frontend/img/counter/counter-6.png') }}" alt="">
@@ -231,7 +180,7 @@
                 {{-- third --}}
 
                 <div class="col-md-3 col-6">
-                    <div class="about-statistic__conten d-flex ">
+                    <div class="about-statistic__content d-flex ">
                         <figure class="about-statistic__icon ">
                         <i class="fa-solid fa-star"></i>
                             <img src="{{ asset('assets/frontend/img/counter/counter-5.png') }}" alt="">
@@ -246,7 +195,7 @@
 
 
                 <div class="col-md-3 col-6">
-                    <div class="about-statistic__conten d-flex ">
+                    <div class="about-statistic__content d-flex ">
                         <figure class="about-statistic__icon ">
                             <img src="{{ asset('assets/frontend/img/counter/counter-8.png') }}" alt="">
                         </figure>

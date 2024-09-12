@@ -23,18 +23,32 @@
                     <form action="{{ route('admin.feature-instruction.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="text" name="featureSlug" id="" hidden value="{{ $featureSlug }}">
-                        <div class="from-group row mt-2">
-                            <label class="col-lg-12">Instruction</label>
+                       <div class="row mt-2">
+                        <div class="from-group row">
+                            <label class="col-lg-12">Instruction(EN)</label>
                             <div class="col-lg-12">
-                                <textarea name="instruction" required="" class="form-control h-100"
-                                    maxlength="500"></textarea>
+                                <textarea name="instruction[en]" required="" class="form-control h-100"
+                                    maxlength="500">{{ old('instruction.en') ?? '' }}</textarea>
 
-                                  @error('instruction')
+                                  @error('instruction.en')
                                       <span class="text-danger">{{ $message }}</span>
                                       
                                   @enderror
                             </div>
                         </div>
+                        <div class="from-group row">
+                            <label class="col-lg-12">Instruction(AR)</label>
+                            <div class="col-lg-12">
+                                <textarea name="instruction[ar]" required="" class="form-control h-100"
+                                    maxlength="500">{{ old('instruction.ar') ?? '' }}</textarea>
+
+                                  @error('instruction.ar')
+                                      <span class="text-danger">{{ $message }}</span>
+                                      
+                                  @enderror
+                            </div>
+                        </div>
+                       </div>
                         <div class="from-group row  mt-2">
                             <label class="col-lg-12">{{ __('Preview Image') }}</label>
                             <div class="col-lg-12">
@@ -47,20 +61,7 @@
 
                             </div>
                         </div>
-                        <div class="from-group row  mt-2">
-                            <label class="col-lg-12">{{ __('Select Language') }}</label>
-                            <div class="col-lg-12">
-                                <select name="lang" class="form-control">
-                                    @foreach ($languages ?? [] as $languagesKey => $language)
-                                    <option value="{{ $languagesKey }}"> {{ $language }} </option>
-                                    @endforeach
-                                </select>
-                                @error('lang')
-                                    <span class="text-danger">{{ $message }}</span>
-                                    
-                                @enderror
-                            </div>
-                        </div>
+                        
 
                         <div class="from-group row mt-2 d-flex justify-content-end mx-2">
 

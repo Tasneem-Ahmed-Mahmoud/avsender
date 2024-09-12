@@ -22,7 +22,7 @@
 						<div class="row">
 							<div class="col">
 								<span class="h2 font-weight-bold mb-0 total-transfers" id="total-device">
-									{{ $totalCategories }}
+									{{ $count->total_category }}
 								</span>
 							</div>
 							<div class="col-auto">
@@ -43,7 +43,7 @@
 						<div class="row">
 							<div class="col">
 								<span class="h2 font-weight-bold mb-0 total-transfers" id="total-active">
-									{{ $activeCategories }}
+									{{  $count->active_category }}
 								</span>
 							</div>
 							<div class="col-auto">
@@ -64,7 +64,7 @@
 						<div class="row">
 							<div class="col">
 								<span class="h2 font-weight-bold mb-0 completed-transfers" id="total-inactive">
-									{{ $inActiveCategories }}
+									{{ $count->total_category -$count->active_category }}
 								</span>
 							</div>
 							<div class="col-auto">
@@ -98,7 +98,6 @@
 						<tr>
 							<th class="col-2">{{ __('Name') }}</th>
 							<th class="col-2">{{ __('Slug') }}</th>
-							<th class="col-2 text-center">{{ __('Language') }}</th>
 							<th class="col-2">{{ __('Status') }}</th>
 							<th class="col-2">{{ __('Created At') }}</th>
 							<th class="col-2 text-right">{{ __('Action') }}</th>
@@ -112,16 +111,14 @@
 							<td class="text-left">
 								{{ $category->slug }}
 							</td>
-							<td class="text-center">
-								{{ $category->lang }}
-							</td>
+						
 							<td class="text-left">
 								<span class="badge badge-{{ $category->status == 1 ? 'success' : 'danger' }}">
 									{{ $category->status == 1 ? __('Active') : __('Draft') }}
 								</span>
 							</td>
 							<td>
-								{{ $category->created_at->format('F-d-Y') }}
+								{{ $category->created_at }}
 							</td>
 							<td class="text-right">
 								<div class="btn-group mb-2 float-right">
@@ -130,18 +127,17 @@
 									</button>
 									<div class="dropdown-menu">
 										<a class="dropdown-item has-icon edit-row" href="#"
-										data-action="{{ route('admin.category.update',$category->id) }}"
-										data-title="{{ $category->title }}"
+										data-action="{{ route('admin.category.update',$category->slug) }}"
+										data-titleen="{{ $category->getTranslation('title','en') }}"
+										data-titlear="{{ $category->getTranslation('title','ar') }}"
 										data-slug="{{ $category->slug }}"
-										data-lang="{{ $category->lang }}"
 										data-status="{{ $category->status }}"
 										data-toggle="modal"
 										data-target="#editModal"
 										>
 										<i class="fi fi-rs-edit"></i>{{ __('Edit') }}</a>
-
-
-										<a class="dropdown-item has-icon delete-confirm" href="javascript:void(0)" data-action="{{ route('admin.category.destroy',$category->id) }}"><i class="fas fa-trash"></i>{{ __('Remove Category') }}</a>
+										<a class="dropdown-item has-icon delete-confirm" href="javascript:void(0)" data-action="{{ route('admin.category.destroy',$category->slug) }}"><i class="fas fa-trash"></i>{{ __('Remove Category') }}</a>
+									
 									</div>
 								</div>
 							</td>
@@ -172,24 +168,21 @@
             </div>
             <div class="modal-body">
                <div class="form-group">
-                  <label>{{ __('Title') }}</label>
-                  <input type="text" name="title" class="form-control" required="">
+                  <label>{{ __('Title') }} (EN)</label>
+                  <input type="text" name="title[en]" class="form-control" required="" value="{{ old('title.en') }}">
                </div>
+			   <div class="form-group">
+				<label>{{ __('Title') }} (AR)</label>
+				<input type="text" name="title[ar]" class="form-control" required="" value="{{ old('title.ar') }}">
+			 </div>
                <div class="form-group">
                   <label>{{ __('Status') }}</label>
                   <select class="form-control" name="status">
-                  	<option value="1">{{ __('Active') }}</option>
-                  	<option value="0">{{ __('InActive') }}</option>
+                  	<option value="1"  @checked(old('status')==1)>{{ __('Active') }}</option>
+                  	<option value="0"  @checked(old('status')==0)>{{ __('InActive') }}</option>
                   </select>
                </div>
-               <div class="form-group">
-                  <label>{{ __('Status') }}</label>
-                  <select class="form-control" name="language">
-                  	@foreach($languages as $languageKey => $language)
-                  	<option value="{{ $languageKey }}">{{ $language }}</option>
-                  	@endforeach
-                  </select>
-               </div>
+               
 
             </div>
             <div class="modal-footer">
@@ -211,9 +204,13 @@
             </div>
             <div class="modal-body">
                <div class="form-group">
-                  <label>{{ __('Title') }}</label>
-                  <input type="text" name="title" id="title" class="form-control" required="">
+                  <label>{{ __('Title') }} (EN)</label>
+                  <input type="text" name="title[en]" id="titleen" class="form-control" required="">
                </div>
+			   <div class="form-group">
+				<label>{{ __('Title') }} (AR)</label>
+				<input type="text" name="title[ar]" id="titlear" class="form-control" required="">
+			 </div>
 
                <div class="form-group">
                   <label>{{ __('Status') }}</label>
@@ -222,15 +219,6 @@
                   	<option value="0">{{ __('InActive') }}</option>
                   </select>
                </div>
-               <div class="form-group">
-                  <label>{{ __('Status') }}</label>
-                  <select class="form-control" name="language" id="language">
-                  	@foreach($languages as $languageKey => $language)
-                  	<option value="{{ $languageKey }}">{{ $language }}</option>
-                  	@endforeach
-                  </select>
-               </div>
-
             </div>
             <div class="modal-footer">
                <button type="submit" class="btn btn-outline-primary col-12 submit-button" >{{ __('Update Now') }}</button>

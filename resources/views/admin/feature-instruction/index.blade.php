@@ -28,7 +28,7 @@
                         <tr>
                             <th class="col-3">{{ __('Title') }}</th>
                             <th class="col-6">Instruction</th>
-                            <th class="col-1 text-right">{{ __('Language') }}</th>
+                          
                             <th class="col-1 text-right">{{ __('Action') }}</th>
                         </tr>
                     </thead>
@@ -39,11 +39,9 @@
                                 <img src="{{ asset($instruction->photo) }}" class="avatar rounded-circle mr-3">
                             </td>
                             <td class="text-left">
-                                {{ $instruction->description }}
+                                {{ $instruction->instruction}}
                             </td>
-                            <td class="text-right">
-                                {{ $instruction->lang }}
-                            </td>
+                           
                             <td class="text-right">
                                 <div class="btn-group mb-2 float-right">
                                     <button class="btn btn-neutral btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

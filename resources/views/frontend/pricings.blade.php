@@ -53,7 +53,7 @@ $plans = collect($plansArray);
             </div>
         </div>
         <div class="planing-middle">
-            <p>{{ isset($plan['description'][app()->getLocale()]) ? $plan['description'][app()->getLocale()] : '' }}</p>
+<!--             <p>{{ isset($plan['description'][app()->getLocale()]) ? $plan['description'][app()->getLocale()] : '' }}</p> -->
             <h6><span>{{ isset($plan['price']) ? amount_format($plan['price'], 'icon') . '/' : '' }}</span> {{ isset($plan['days']) && $plan['days'] == 30 ? __('Monthly') : __('yearly') }}</h6>
         </div>
         <div class="planning-bottom">

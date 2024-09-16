@@ -1457,7 +1457,7 @@
    "Error":"خطأ",
    "Is Popular?":"Is Popular?",
 "messages_limit" : "الحد الأقصى للرسائل",
-"contact_limit" : "الحد الأقصى للاتصال",
+"contact_limit" : "عدد جهات الاتصال",
 "device_limit" : "الحد الأقصى للأجهزة",
 "template_limit" : "الحد الأقصى للنماذج",
 "apps_limit" : "الحد الأقصى للتطبيقات",

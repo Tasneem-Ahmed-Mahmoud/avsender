@@ -5,39 +5,6 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
    
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Select all counter elements
-            const counters = document.querySelectorAll(".counter");
-
-            // Set all counters to 0 initially
-            counters.forEach(counter => {
-                counter.textContent = '0';
-            });
-
-            // Function to animate the counter
-            function animateCounter(element, start, end, duration) {
-                let startTimestamp = null;
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    element.textContent = Math.floor(progress * (end - start) + start);
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    }
-                };
-                window.requestAnimationFrame(step);
-            }
-
-            // Animate the counters after setting them to 0
-            counters.forEach(counter => {
-                const targetNumber = parseInt(counter.getAttribute(
-                    "data-count")); // Get the target number from a data attribute
-                animateCounter(counter, 0, targetNumber,
-                    2000); // Animate from 0 to targetNumber in 2000ms (2 seconds)
-            });
-        });
-    </script>
 @endsection
 @section('content')
     @include('frontend.inc.head-2', [
@@ -220,25 +187,25 @@
     <section class="planing  " data-aos="fade-up" data-aos-duration="500" data-aos-delay="450" 
     data-aos-easing="linear">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="planing-header text-center">
                     <div class="planing-title">
                         <h2 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" 
                         data-aos-easing="linear">{{ __('Pricing Plans Title') }}</h2>
                         <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" 
                         data-aos-easing="linear">{{ __('Pricing Plans Description') }}</p>
-                        <span data-aos="zoom-in" data-aos-duration="500" data-aos-delay="350" 
-                        data-aos-easing="linear">{{ __('(No extra fees, cancel anytime).') }}</span>
+                        {{-- <span data-aos="zoom-in" data-aos-duration="500" data-aos-delay="350" 
+                        data-aos-easing="linear">{{ __('(No extra fees, cancel anytime).') }}</span> --}}
                     </div>
 
-                    <ul class="nav m-auto">
+                    {{-- <ul class="nav m-auto">
                         <li class="nav-item">
                             <a id="yearly" class="nav-link plan-link active-plan" href="#">{{ __('yearly') }}</a>
                         </li>
                         <li class="nav-item">
                             <a id="monthly" class="nav-link plan-link" href="#">{{ __('Monthly') }}</a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
                 @include('frontend.pricings')
             </div>

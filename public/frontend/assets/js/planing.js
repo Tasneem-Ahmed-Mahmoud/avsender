@@ -22,12 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Set default display to "yearly" plans
   const defaultType = 'yearly';
   planItems.forEach(plan => {
-    if (plan.getAttribute('data-plan-type') === defaultType) {
-      plan.classList.add('visible');
-    } else {
-      plan.classList.remove('visible');
-    }
+    // if (plan.getAttribute('data-plan-type') === defaultType) {
+    //   plan.classList.add('visible');
+    // } else {
+    //   plan.classList.remove('visible');
+    // }
+    plan.classList.add('visible');
   });
+
 
   // Set default active link
   navLinks.forEach(link => {

@@ -87,23 +87,23 @@
 
                     <!-- Plan Description in English and Arabic -->
                     <div class="row">
-                        <div class="form-group col-6">
-                            <label for="plan_description_en">{{ __('Plan Description (EN)') }}</label>
-                            <input type="text" class="form-control" id="plan_description_en"
-                                value="{{ old('description.en')??$plan->getTranslation('description', 'en') }}"
-                                name="description[en]" required>
-                            @error('description.en')
-                            <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                        
+                        <div class="from-group row col-6">
+                            <label class="col-lg-12">{{ __('Plan Description (EN)') }}</label>
+                            <div class="col-lg-12">
+                                <textarea name="description[en]" class="form-control "
+                                    cols="100" rows="6">{{ old('description.en')??$plan->getTranslation('description', 'en') }}</textarea>
+                            </div>
+                            @include('admin.includes.error', ['property' => 'description.en'])
                         </div>
-                        <div class="form-group col-6">
-                            <label for="plan_description_ar">{{ __('Plan Description (AR)') }}</label>
-                            <input type="text" class="form-control" id="plan_description_ar"
-                                value="{{ old('description.ar') ??$plan->getTranslation('description', 'en')}}"
-                                name="description[ar]" required>
-                            @error('description.ar')
-                            <span class="text-danger">{{ $message }}</span>
-                            @enderror
+
+                        <div class="from-group row col-6">
+                            <label class="col-lg-12">{{ __('Plan Description (AR)') }}</label>
+                            <div class="col-lg-12">
+                                <textarea name="description[ar]" class="form-control "
+                                    cols="100" rows="6">{{ old('description.en')??$plan->getTranslation('description', 'ar') }}</textarea>
+                            </div>
+                            @include('admin.includes.error', ['property' => 'description.ar'])
                         </div>
                     </div>
 

@@ -42,15 +42,18 @@
 }
 .feature-slider{
     overflow: hidden;
-    margin-inline-start: 85px;
+    
 }
-
+@media(min-width:767px){
+    .feature-slider{
+        margin-inline-start: 85px;
+        margin-inline-end: 85px;
+    }
+}
 .feature-slider .swiper-slide__content img {
     width: 82px;
     height: 82px;
     padding: 7.35px 8.43px 8.35px 9.43px;
-
-
 }
 
 .feature-slider .swiper-slide__content h3 {
@@ -135,6 +138,11 @@
     align-items: center;
 }
 
+@media(min-width:767px){
+    .swiper-slider-button>div{
+        margin-top: 30px;
+    }
+}
 
 .btn-swiper-button-prev:not(.swiper-button-disabled), .btn-swiper-button-next:not(.swiper-button-disabled) {
     background: #002F87 !important;

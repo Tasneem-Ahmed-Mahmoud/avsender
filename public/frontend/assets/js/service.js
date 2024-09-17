@@ -36,23 +36,7 @@
     });
 
 
-    $(document).ready(function() {
-        function toggleSwiperButtons() {
-            if ($(window).width() <= 1200) {
-                $('.swiper-slider-button').show();
-            } else {
-                $('.swiper-slider-button').hide();
-            }
-        }
-    
-        // Run the function on page load
-        toggleSwiperButtons();
-    
-        // Run the function when the window is resized
-        $(window).resize(function() {
-            toggleSwiperButtons();
-        });
-    });
+  
     
 
     // $(function() {

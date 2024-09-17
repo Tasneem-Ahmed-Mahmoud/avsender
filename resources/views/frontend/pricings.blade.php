@@ -36,7 +36,7 @@ $plans = collect($plansArray);
 
 <div data-aos="fade-up" class="col-xl-4 col-md-6 col-12 mb-3 planning-card"
      data-plan-type="{{ isset($plan['days']) && $plan['days'] == 30 ? 'monthly' : 'yearly' }}">
-    <div style="min-height: 300px;height: 100%;"  class="planing-content {{ isset($plan['is_popular']) && $plan['is_popular'] ? 'center-plan' : 'left-plan' }}">
+     <div style="min-height: 300px; height: 100%; display: flex; flex-direction: column;" class=" planing-content {{ isset($plan['is_popular']) && $plan['is_popular'] ? 'center-plan' : 'left-plan' }}">
         <div class="planing-top">
             @if (isset($plan['is_popular']) && $plan['is_popular'])
                 <div class="popular-plan"><span>{{ __('Popular') }}</span></div>
@@ -71,14 +71,17 @@ $plans = collect($plansArray);
             </ul>
             </div>
            
-           <div class="mt-auto">
+          
+
+        </div>
+
+
+        <div class="mt-auto  ">
             <a href="{{ route('choose.plan', isset($plan['id']) ? $plan['id'] : '') }}" class="btn btn-subscribe text-center w-100 white-btn">
                 {{ isset($plan['is_trial']) && $plan['is_trial'] ? __('Free ' . (isset($plan['trial_days']) ? $plan['trial_days'] : '') . ' days trial') : __('Subscribe Now') }}
             </a>
          
            </div>
-
-        </div>
     </div>
 </div>
 @endforeach

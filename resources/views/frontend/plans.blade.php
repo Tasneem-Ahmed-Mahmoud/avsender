@@ -16,8 +16,8 @@
     <section class="planing mt-5 mb-5" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450" 
     data-aos-easing="linear">
         <div class="container">
-            <div class="row">
-                <div class="planing-header text-center">
+            <div class="row  justify-content-center">
+                {{-- <div class="planing-header text-center">
                     <div class="planing-title">
 
                         <span>{{ __('(No extra fees, cancel anytime).') }}</span>
@@ -31,7 +31,7 @@
                             <a id="monthly" class="nav-link plan-link" href="#">{{ __('Monthly') }}</a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
 
                 @include('frontend.pricings')
 

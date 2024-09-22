@@ -132,4 +132,27 @@ class MyFatoorah
             return redirect(MyFatoorah::redirect_if_payment_faild());
         }
     }
+
+       public function handleWebhook(Request $request)
+    {
+        // Get the payment data from the request
+        $paymentData = $request->all();
+dd($paymentData);
+        // Check if the required fields are present
+        if (isset($paymentData['InvoiceId']) && isset($paymentData['InvoiceStatus'])) {
+            $invoiceId = $paymentData['InvoiceId'];
+            $invoiceStatus = $paymentData['InvoiceStatus'];
+
+            // Handle the payment status based on your application's logic
+            if ($invoiceStatus === 'Paid') {
+                // Update the order status in the database
+                // Example: Order::where('invoice_id', $invoiceId)->update(['status' => 'paid']);
+            } else {
+                // Handle other statuses (e.g., Failed, Pending)
+            }
+        }
+
+        // Return a success response
+        return response()->json(['status' => 'success']);
+    }
 }

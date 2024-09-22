@@ -63,6 +63,8 @@ Route::group(['middleware' => ['auth', 'web']], function () {
     Route::get('/manual/payment', '\App\Gateway\CustomGateway@status');
     Route::get('payu/payment', '\App\Gateway\Payu@view')->name('payu.view');
     Route::post('payu/status', '\App\Gateway\Payu@status')->name('payu.status');
+    Route::get('/payment/myfatoorah', '\App\Gateway\Myfatoorah@status');
+    Route::post('payment/myfatoorah/webhook', ['\App\Gateway\Myfatoorah@handleWebhook']);
 });
 
 // Route::get('duplicate-plan',function(){
